@@ -103,7 +103,7 @@ export default () => {
   };
 
   return (
-    <>
+    <div style={{ minHeight: 'calc(100vh - 120px)', paddingBottom: '120px', marginBottom: '60px' }}>
       <ProTable<API.EquipmentVO>
         columns={columns}
         actionRef={actionRef}
@@ -225,6 +225,6 @@ export default () => {
           ]}
         />
       </ModalForm>
-    </>
+    </div>
   );
 }; 

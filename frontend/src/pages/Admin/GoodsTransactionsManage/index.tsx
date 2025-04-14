@@ -17,31 +17,12 @@ const columns: ProColumns<API.GoodsTransactions>[] = [
   {
     title: '商品ID',
     dataIndex: 'goodsId',
-    hideInSearch: true,
+    hideInSearch: false,
   },
   {
     title: '会员ID',
     dataIndex: 'memberId',
-    hideInSearch: true,
-  },
-  {
-    title: '购买数量',
-    dataIndex: 'count',
-    hideInSearch: true,
-  },
-  {
-    title: '单价',
-    dataIndex: 'price',
-    valueType: 'money',
-    hideInSearch: true,
-  },
-  {
-    title: '创建时间',
-    dataIndex: 'createTime',
-    valueType: 'dateTime',
-    sorter: true,
-    hideInSearch: true,
-    editable: false,
+    hideInSearch: false,
   },
   {
     title: '更新时间',
@@ -143,8 +124,16 @@ export default () => {
               data: {
                 current: params.current,
                 pageSize: params.pageSize,
-                memberName: params.memberName,
-                memberPhone: params.memberPhone,
+                goodsId: params.goodsId,
+                memberId: params.memberId,
+                countMin: params.countMin,
+                countMax: params.countMax,
+                priceMin: params.priceMin,
+                priceMax: params.priceMax,
+                createTimeStart: params.createTimeStart,
+                createTimeEnd: params.createTimeEnd,
+                sortField: params.sortField,
+                sortOrder: params.sortOrder,
               },
             });
             console.log('响应数据:', res);
@@ -219,7 +208,7 @@ export default () => {
           onChange: (page) => console.log(page),
         }}
         dateFormatter="string"
-        headerTitle="商品销售记录"
+        headerTitle=""
       />
 
       <ModalForm

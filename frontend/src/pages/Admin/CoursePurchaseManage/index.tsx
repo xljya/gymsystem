@@ -127,7 +127,7 @@ export default () => {
   };
 
   return (
-    <>
+    <div style={{ minHeight: 'calc(100vh - 120px)', paddingBottom: '120px', marginBottom: '60px' }}>
       <ProTable<API.CoursePurchaseVO>
         columns={columns}
         actionRef={actionRef}
@@ -152,6 +152,7 @@ export default () => {
               memberId: params.memberId,
               courseId: params.courseId,
               status: params.status,
+              paymentStatus: params.status,
             },
           });
           console.log('响应数据:', res);
@@ -310,6 +311,6 @@ export default () => {
           ]}
         />
       </ModalForm>
-    </>
+    </div>
   );
 }; 

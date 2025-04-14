@@ -279,7 +279,7 @@ export default () => {
           onChange: (page) => console.log(page),
         }}
         dateFormatter="string"
-        headerTitle="商品列表"
+        headerTitle=""
       />
 
       <ModalForm
