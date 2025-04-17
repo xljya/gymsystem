@@ -85,12 +85,12 @@ export default (props: any) => {
   "colorPrimary": "#1677ff",
   "layout": "mix",
   "contentWidth": "Fluid",
-  "fixedHeader": false,
+  "fixedHeader": true,
   "fixSiderbar": true,
   "colorWeak": false,
   "title": "健身房管理系统",
   "pwa": true,
-  "logo": "https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg",
+  "logo": "https://www.liucf.com/images/icon/logo.png",
   "iconfontUrl": "",
   "token": {
     "sider": {
@@ -102,9 +102,9 @@ export default (props: any) => {
       "colorTextMenuActive": "#1677ff",
       "colorTextMenuItemHover": "#1677ff"
     },
-    "layout": {
+    "header": {
       "colorBgHeader": "#fff",
-      "colorBgBody": "#f5f5f5"
+      "colorHeaderTitle": "rgba(0, 0, 0, 0.85)"
     }
   }
 };

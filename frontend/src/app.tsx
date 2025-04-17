@@ -1,11 +1,10 @@
 import { AvatarDropdown, AvatarName, Footer, Question } from '@/components';
-import { LinkOutlined } from '@ant-design/icons';
 import type { Settings as LayoutSettings } from '@ant-design/pro-components';
 import { SettingDrawer } from '@ant-design/pro-components';
 import type { RunTimeLayoutConfig } from '@umijs/max';
 import {RequestConfig} from "@@/plugin-request/request";
-import { Link, history } from '@umijs/max';
-import defaultSettings from '../config/defaultSettings';
+import { history } from '@umijs/max';
+import defaultSettings, { memberSettings } from '../config/defaultSettings';
 import { getLoginMemberUsingGet } from '@/api/memberController';
 import { SYSTEM_LOGO } from '@/constants';
 
@@ -18,11 +17,6 @@ const isDev = process.env.NODE_ENV === 'development';
  * 登录页面路径
  */
 const loginPath = '/member/login';
-
-/**
- * 不需要登录就可以访问的页面白名单
- */
-const NO_NEED_LOGIN_WHITE_LIST = ['/member/register', loginPath];
 
 /**
  * 请求配置
@@ -62,18 +56,22 @@ export async function getInitialState(): Promise<{
   };
 
   // 如果不是登录页面，执行
+  // 当访问路径不是登录页时执行初始化逻辑
   if (history.location.pathname !== '/member/login') {
+    // 获取当前登录用户信息
     const currentUser = await fetchUserInfo();
+    
+    // 返回初始化状态对象
     return {
       fetchUserInfo,
       currentUser,
-      settings: defaultSettings as Partial<LayoutSettings>,
+      settings: currentUser?.memberRole === 'admin' 
+        ? defaultSettings  // 管理员使用默认配置
+        : memberSettings,  // 会员使用会员配置
     };
   }
-  return {
-    fetchUserInfo,
-    settings: defaultSettings as Partial<LayoutSettings>,
-  };
+
+
 }
 
 /**
@@ -102,6 +100,11 @@ export const layout: RunTimeLayoutConfig = ({ initialState, setInitialState }) =
     };
   }
 
+  // 根据用户角色动态设置布局
+  const layoutSettings = initialState?.currentUser?.memberRole === 'admin' 
+    ? defaultSettings 
+    : memberSettings;
+
   return {
     // 右上角操作区
     actionsRender: () => [<Question key="doc" />],
@@ -112,10 +115,6 @@ export const layout: RunTimeLayoutConfig = ({ initialState, setInitialState }) =
       render: (_, avatarChildren) => {
         return <AvatarDropdown>{avatarChildren}</AvatarDropdown>;
       },
-    },
-    // 水印配置
-    waterMarkProps: {
-      content: initialState?.currentUser?.memberName,
     },
     // 页脚配置
     footerRender: () => <Footer />,
@@ -145,7 +144,7 @@ export const layout: RunTimeLayoutConfig = ({ initialState, setInitialState }) =
             <SettingDrawer
               disableUrlParams
               enableDarkTheme
-              settings={initialState?.settings}
+              settings={layoutSettings}
               onSettingChange={(settings) => {
                 setInitialState((preInitialState) => ({
                   ...preInitialState,
@@ -157,7 +156,7 @@ export const layout: RunTimeLayoutConfig = ({ initialState, setInitialState }) =
         </>
       );
     },
-    ...initialState?.settings,
+    ...layoutSettings,
   };
 };
 

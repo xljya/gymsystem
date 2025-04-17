@@ -3,18 +3,34 @@ const routes = [
     path: '/',
     name: '主页',
     component: './Home',
+    access: 'canMember',
+  },
+  {
+    path: '/test',
+    name: '测试页面',
+    component: './Member/Test',
+    access: 'canMember',
+  },
+  {
+    path: '/admin/welcome',
+    name: '欢迎',
+    component: './Admin/Welcome',
+    icon: 'crown',
+    access: 'canAdmin',
   },
   {
     path: '/member/login',
     name: '会员登录',
     component: './Member/Login',
     hideInMenu: true,
+    access: 'guest',
   },
   {
     path: '/member/register',
     name: '会员注册',
     component: './Member/Register',
     hideInMenu: true,
+    access: 'guest',
   },
   {
     path: '/admin/memberManage',
@@ -64,12 +80,6 @@ const routes = [
     icon: 'ShoppingOutlined',
     component: './Admin/GoodsTransactionsManage',
     access: 'canAdmin',
-  },
-  {
-    path: '/welcome',
-    name: '欢迎',
-    component: './Welcome',
-    hideInMenu: true,
   },
   {
     path: '*',

@@ -58,8 +58,12 @@ const Login: React.FC = () => {
         });
         
         message.success('登录成功！');
-        // 使用 replace 而不是 push，避免浏览器历史记录堆积
-        navigate('/', { replace: true });
+        // 根据用户角色跳转到不同页面
+        if (res.data.memberRole === 'admin') {
+          navigate('/admin/welcome', { replace: true });
+        } else {
+          navigate('/', { replace: true });
+        }
       } else {
         message.error(res.message || '登录失败，请重试！');
       }
