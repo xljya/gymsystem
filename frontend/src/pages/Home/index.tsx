@@ -1,97 +1,76 @@
-import React from 'react';
+// HomePage.tsx
 import { PageContainer, ProCard } from '@ant-design/pro-components';
-import { useModel } from '@umijs/max';
-import { Card, Row, Col, Statistic, Space } from 'antd';
-import { UserOutlined, TeamOutlined, ShoppingCartOutlined, BookOutlined } from '@ant-design/icons';
+import { Typography } from 'antd';
+import React from 'react';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import { Autoplay, Pagination } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import styles from './HomePage.module.css';
+
+const { Title } = Typography;
+
+const images = [
+  'https://image.liucf.com/images/2025/04/432f02f157d8bcdb87aba0ffcb94bd72.jpg',
+  'https://image.liucf.com/images/2025/04/b11b212ca4ce5bdfa335fb946bdccb0d.jpg',
+  'https://image.liucf.com/images/2025/04/5ae0501c13a43d599eb16976c1a53693.jpg',
+  'https://image.liucf.com/images/2025/04/afa5cf032bf8244b348581245473e76a.jpg',
+];
 
 const HomePage: React.FC = () => {
-  const { initialState } = useModel('@@initialState');
-  const { currentUser } = initialState || {};
-
   return (
-    <div style={{ minHeight: 'calc(100vh - 120px)', paddingBottom: '120px', marginBottom: '60px' }}>
+    <>
+      <div className={styles.swiperContainer}>
+        <Swiper
+          modules={[Autoplay, Pagination]}
+          autoplay={{ delay: 3000, disableOnInteraction: false }}
+          loop
+          pagination={{
+            el: '.swiper-pagination',
+            clickable: true,
+          }}
+          className={styles.swiper}
+        >
+          {images.map((url, index) => (
+            <SwiperSlide key={index}>
+              <img src={url} alt={`slide-${index}`} className={styles.slideImage} />
+            </SwiperSlide>
+          ))}
+          {/* 分页器容器：这行必须保留，否则不会显示 */}
+          <div className="swiper-pagination"></div>
+        </Swiper>
+      </div>
+
       <PageContainer>
         <div style={{ padding: '24px' }}>
-          <ProCard
-            title={`欢迎回来，${currentUser?.memberName || '会员'}！`}
-            subTitle="以下是您的健身数据概览"
-            extra={<Space>上次登录时间：{currentUser?.updateTime || '未知'}</Space>}
-            style={{ marginBottom: 24 }}
-          >
-            <Row gutter={[16, 16]}>
-              <Col span={6}>
-                <Card>
-                  <Statistic
-                    title="剩余课程"
-                    value={0}
-                    prefix={<BookOutlined />}
-                    valueStyle={{ color: '#3f8600' }}
-                  />
-                </Card>
-              </Col>
-              <Col span={6}>
-                <Card>
-                  <Statistic
-                    title="我的教练"
-                    value={0}
-                    prefix={<TeamOutlined />}
-                    valueStyle={{ color: '#3f8600' }}
-                  />
-                </Card>
-              </Col>
-              <Col span={6}>
-                <Card>
-                  <Statistic
-                    title="消费记录"
-                    value={0}
-                    prefix={<ShoppingCartOutlined />}
-                    valueStyle={{ color: '#3f8600' }}
-                  />
-                </Card>
-              </Col>
-              <Col span={6}>
-                <Card>
-                  <Statistic
-                    title="会员积分"
-                    value={0}
-                    prefix={<UserOutlined />}
-                    valueStyle={{ color: '#3f8600' }}
-                  />
-                </Card>
-              </Col>
-            </Row>
-          </ProCard>
-
-          <ProCard
-            title="健身小贴士"
-            style={{ marginBottom: 24 }}
-          >
+          <ProCard title={<Title level={3}>健身小贴士</Title>} style={{ marginBottom: 24 }}>
             <div style={{ padding: '16px' }}>
-              <h3>科学健身，健康生活</h3>
-              <p>1. 运动前请做好充分的热身准备</p>
-              <p>2. 根据个人情况选择合适的运动强度</p>
-              <p>3. 保持规律的锻炼习惯</p>
-              <p>4. 注意补充水分和营养</p>
-              <p>5. 运动后做好拉伸放松</p>
-            </div>
-          </ProCard>
-
-          <ProCard
-            title="最新活动"
-            style={{ marginBottom: 24 }}
-          >
-            <div style={{ padding: '16px' }}>
-              <h3>会员专享活动</h3>
-              <p>1. 新会员注册即送100积分</p>
-              <p>2. 推荐好友入会，双方各得200积分</p>
-              <p>3. 每月消费满1000元，赠送私教课程一节</p>
-              <p>4. 生日当月消费享8折优惠</p>
+              <div style={{ marginBottom: '16px' }}>
+                <Title level={4}>科学健身，健康生活</Title>
+                <ul style={{ fontSize: '16px', lineHeight: '2' }}>
+                  <li>1. 运动前请做好充分的热身准备</li>
+                  <li>2. 根据个人情况选择合适的运动强度</li>
+                  <li>3. 保持规律的锻炼习惯</li>
+                  <li>4. 注意补充水分和营养</li>
+                  <li>5. 运动后做好拉伸放松</li>
+                </ul>
+              </div>
+              <div>
+                <Title level={4}>健身注意事项</Title>
+                <ul style={{ fontSize: '16px', lineHeight: '2' }}>
+                  <li>1. 穿着合适的运动服装和鞋子</li>
+                  <li>2. 注意运动姿势的正确性</li>
+                  <li>3. 循序渐进，不要急于求成</li>
+                  <li>4. 保持充足的睡眠和休息</li>
+                  <li>5. 定期进行身体检查</li>
+                </ul>
+              </div>
             </div>
           </ProCard>
         </div>
       </PageContainer>
-    </div>
+    </>
   );
 };
 
-export default HomePage; 
+export default HomePage;
