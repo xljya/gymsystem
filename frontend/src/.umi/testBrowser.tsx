@@ -10,7 +10,7 @@ import { getRoutes } from './core/route';
 import type { Location } from 'history';
 
 
-import 'C:/bysj/gymsystem-frontend/src/global.less';
+import 'C:/bysj/gymsystem-frontend/src/global.css';
 import 'C:/bysj/gymsystem-frontend/src/global.tsx';
 import 'antd/dist/reset.css';
 const publicPath = '/';

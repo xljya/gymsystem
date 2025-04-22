@@ -41,7 +41,7 @@ const HomePage: React.FC = () => {
         </Swiper>
       </div>
 
-      <PageContainer>
+      <PageContainer header={{ title: false }}>
         <div style={{ padding: '24px' }}>
           <ProCard title={<Title level={3}>健身小贴士</Title>} style={{ marginBottom: 24 }}>
             <div style={{ padding: '16px' }}>

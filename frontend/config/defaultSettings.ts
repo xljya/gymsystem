@@ -79,6 +79,7 @@ export const memberSettings: ProLayoutProps = {
   pwa: true,
   title: '健身房会员页面',
   logo: 'https://www.liucf.com/images/icon/logo.png',
+  className: 'member-layout',
   token: {
     sider: {
       colorMenuBackground: '#fff',

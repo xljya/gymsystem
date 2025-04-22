@@ -7,7 +7,6 @@ const TestPage: React.FC = () => {
       <PageContainer>
         <div style={{ padding: '24px' }}>
           <ProCard
-            title="测试页面"
             style={{ marginBottom: 24 }}
           >
             <div style={{ padding: '16px' }}>
