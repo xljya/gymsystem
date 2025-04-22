@@ -7,6 +7,7 @@ import 'swiper/css/pagination';
 import { Autoplay, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import styles from './HomePage.module.css';
+import PartnersSection from './PartnersSection'; // 导入合作伙伴组件
 
 const { Title } = Typography;
 
@@ -41,32 +42,15 @@ const HomePage: React.FC = () => {
         </Swiper>
       </div>
 
-      <PageContainer header={{ title: false }}>
+      <PageContainer 
+        header={{ title: false }} 
+        style={{ backgroundColor: 'rgb(250, 250, 250)' }}
+      >
         <div style={{ padding: '24px' }}>
-          <ProCard title={<Title level={3}>健身小贴士</Title>} style={{ marginBottom: 24 }}>
-            <div style={{ padding: '16px' }}>
-              <div style={{ marginBottom: '16px' }}>
-                <Title level={4}>科学健身，健康生活</Title>
-                <ul style={{ fontSize: '16px', lineHeight: '2' }}>
-                  <li>1. 运动前请做好充分的热身准备</li>
-                  <li>2. 根据个人情况选择合适的运动强度</li>
-                  <li>3. 保持规律的锻炼习惯</li>
-                  <li>4. 注意补充水分和营养</li>
-                  <li>5. 运动后做好拉伸放松</li>
-                </ul>
-              </div>
-              <div>
-                <Title level={4}>健身注意事项</Title>
-                <ul style={{ fontSize: '16px', lineHeight: '2' }}>
-                  <li>1. 穿着合适的运动服装和鞋子</li>
-                  <li>2. 注意运动姿势的正确性</li>
-                  <li>3. 循序渐进，不要急于求成</li>
-                  <li>4. 保持充足的睡眠和休息</li>
-                  <li>5. 定期进行身体检查</li>
-                </ul>
-              </div>
-            </div>
-          </ProCard>
+          
+          
+          {/* 在这里添加合作伙伴区块 */}
+          <PartnersSection />
         </div>
       </PageContainer>
     </>
