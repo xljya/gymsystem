@@ -1,15 +1,15 @@
 // HomePage.tsx
-import { PageContainer, ProCard } from '@ant-design/pro-components';
-import { Typography } from 'antd';
+import { PageContainer } from '@ant-design/pro-components';
 import React from 'react';
 import 'swiper/css';
 import 'swiper/css/pagination';
+
 import { Autoplay, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import CustomCarousel from './CustomCarousel';
 import styles from './HomePage.module.css';
-import PartnersSection from './PartnersSection'; // 导入合作伙伴组件
-
-const { Title } = Typography;
+import PartnersSection from './PartnersSection';
+import Programs from './Programs';
 
 const images = [
   'https://image.liucf.com/images/2025/04/432f02f157d8bcdb87aba0ffcb94bd72.jpg',
@@ -21,35 +21,43 @@ const images = [
 const HomePage: React.FC = () => {
   return (
     <>
-      <div className={styles.swiperContainer}>
+      {/* 首页大轮播图 */}
+      <div className={`${styles['home-swiper-container']} home-swiper-container`}>
         <Swiper
           modules={[Autoplay, Pagination]}
           autoplay={{ delay: 3000, disableOnInteraction: false }}
           loop
           pagination={{
-            el: '.swiper-pagination',
+            el: '.home-swiper-container .swiper-pagination',
             clickable: true,
           }}
-          className={styles.swiper}
+          className={styles['home-swiper']}
         >
           {images.map((url, index) => (
             <SwiperSlide key={index}>
-              <img src={url} alt={`slide-${index}`} className={styles.slideImage} />
+              <img src={url} alt={`slide-${index}`} className={styles['home-slide-image']} />
             </SwiperSlide>
           ))}
-          {/* 分页器容器：这行必须保留，否则不会显示 */}
+          {/* 分页器容器 */}
           <div className="swiper-pagination"></div>
         </Swiper>
       </div>
 
-      <PageContainer 
-        header={{ title: false }} 
-        style={{ backgroundColor: 'rgb(250, 250, 250)' }}
-      >
+      {/* 页面内容区 */}
+      <PageContainer header={{ title: false }} style={{ backgroundColor: 'rgb(250, 250, 250)' }}>
         <div style={{ padding: '24px' }}>
-          
-          
-          {/* 在这里添加合作伙伴区块 */}
+          <Programs />
+        </div>
+      </PageContainer>
+
+      <PageContainer header={{ title: false }} style={{ backgroundColor: 'rgb(241, 241, 241)' }}>
+      
+          <CustomCarousel />
+    
+      </PageContainer>
+
+      <PageContainer header={{ title: false }} style={{ backgroundColor: 'rgb(250, 250, 250)' }}>
+        <div style={{ padding: '24px' }}>
           <PartnersSection />
         </div>
       </PageContainer>

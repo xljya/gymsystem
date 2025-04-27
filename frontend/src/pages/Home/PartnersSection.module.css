@@ -35,7 +35,7 @@
   /* background-image: linear-gradient(to bottom, rgba(59, 130, 246, 0.6), rgba(37, 99, 235, 0.8)); */
 
   /* 新增：基于 #1890ff 的渐变 (rgb(24, 144, 255)) */
-  background-image: linear-gradient(to bottom, rgba(24, 144, 255, 0.65), rgba(24, 144, 255, 0.9)); /* 从上到下，65% 透明度到 90% 透明度 */
+  /* background-image: linear-gradient(to bottom, rgba(24, 144, 255, 0.65), rgba(24, 144, 255, 0.9)); */ /* 从上到下，65% 透明度到 90% 透明度 */
 
   display: flex;
   flex-direction: column;
@@ -52,14 +52,14 @@
 }
 
 /* 可选：悬停时稍微隐藏或模糊背景 Logo */
-.logoContainer:hover .logoContent {
+/* .logoContainer:hover .logoContent {
   opacity: 0.3; /* 或使用 filter: blur(2px); */
-}
+/* } */
 
 /* 可选：悬停时容器轻微放大 */
-/* .logoContainer:hover {
-  transform: scale(1.05);
-} */
+.logoContainer:hover {
+  transform: scale(1.10);
+}
 
 /* 遮罩层中的按钮样式 (保持白色) */
 .overlayButton {
@@ -88,4 +88,5 @@
 
 .learnMoreButton:hover {
   background-color: rgba(255, 255, 255, 0.2);
-} */ 
+} */
+

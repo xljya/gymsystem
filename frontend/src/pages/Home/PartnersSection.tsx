@@ -1,4 +1,4 @@
-import { Button, Col, ConfigProvider, Row, Typography } from 'antd';
+import { Col, ConfigProvider, Row, Typography } from 'antd';
 import styles from './PartnersSection.module.css';
 
 const { Title } = Typography;
@@ -24,9 +24,24 @@ const brandPartners = [
     logoUrl: 'https://image.liucf.com/images/2025/04/6e936a6d9a2ee84e02bc18a23736b7e8.png',
     linkUrl: 'https://www.deepseek.com/',
   },
-  { id: 4, name: '品牌 D', logoUrl: null, linkUrl: 'https://example.com/partner-d' },
-  { id: 5, name: '品牌 E', logoUrl: null, linkUrl: 'https://example.com/partner-e' },
-  { id: 6, name: '品牌 F', logoUrl: null, linkUrl: 'https://example.com/partner-f' },
+  {
+    id: 4,
+    name: '品牌 D',
+    logoUrl: 'https://image.liucf.com/images/2025/04/92428c150b738025360250e8725c6d67.png',
+    linkUrl: 'https://github.com/',
+  },
+  {
+    id: 5,
+    name: '品牌 E',
+    logoUrl: 'https://image.liucf.com/images/2025/04/1f50cddc01ae0ffca8b92446d9ed1b34.svg',
+    linkUrl: 'https://cherry-ai.com/',
+  },
+  {
+    id: 6,
+    name: '品牌 F',
+    logoUrl: 'https://image.liucf.com/images/2025/04/d0e56d131bfb5f12169280b4ac424a3a.png',
+    linkUrl: 'https://leonardo.ai/',
+  },
 ];
 
 const PartnersSection = () => {
@@ -66,7 +81,11 @@ const PartnersSection = () => {
           {brandPartners.length > 0 ? (
             brandPartners.map((partner) => (
               <Col key={partner.id} xs={12} md={8}>
-                <div className={styles.logoContainer}>
+                <div
+                  className={styles.logoContainer}
+                  onClick={() => window.open(partner.linkUrl, '_blank')}
+                  style={{ cursor: 'pointer' }} // 添加指针样式以提示可点击
+                >
                   <div className={styles.logoContent}>
                     {partner.logoUrl ? (
                       <img
@@ -78,7 +97,8 @@ const PartnersSection = () => {
                       `${partner.name}` // 显示占位文字
                     )}
                   </div>
-                  <div className={styles.overlay}>
+                  {/* 移除按钮，注释掉遮罩层内容 */}
+                  {/* <div className={styles.overlay}>
                     <Button
                       type="primary"
                       href={partner.linkUrl}
@@ -86,10 +106,11 @@ const PartnersSection = () => {
                       rel="noopener noreferrer"
                       className={styles.overlayButton}
                       ghost
+                      onClick={(e) => e.stopPropagation()} // 阻止事件冒泡到父级 div
                     >
                       了解更多
                     </Button>
-                  </div>
+                  </div> */}
                 </div>
               </Col>
             ))

@@ -1,0 +1,117 @@
+/* 轮播图整体容器样式 */
+.carouselContainer {
+  position: relative;
+  width: 100%;
+  max-width: 831px;
+  margin: 0 auto;
+  padding-bottom: 50px;
+  overflow: visible; /* 允许箭头飞出去 */
+}
+
+/* 轮播图外层容器 */
+.outerContainer {
+  width: 731px;
+  margin: 0 auto;
+  position: relative;
+  overflow: visible;
+}
+
+/* Swiper轮播图容器 */
+.carousel {
+  width: 731px;
+  position: relative;
+  overflow: visible;
+}
+
+/* 单个轮播项内容容器 */
+.slideContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* 轮播图片样式 */
+.slideContent img {
+  width: 731px;
+  height: 425px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* 标题、描述、了解更多样式 */
+.slideContent h3,
+.slideContent p,
+.slideContent strong {
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* 分页器样式 */
+:global(.custom-carousel-container .swiper-pagination) {
+  position: absolute !important;
+  bottom: 0px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  display: flex !important;
+  gap: 8px !important;
+  z-index: 10 !important;
+  width: auto !important;
+}
+
+/* 分页小圆点 */
+:global(.custom-carousel-container .swiper-pagination-bullet) {
+  width: 10px !important;
+  height: 10px !important;
+  background: rgb(6, 6, 6) !important;
+  opacity: 0.6 !important;
+  border-radius: 50% !important;
+  transition: background 0.3s ease, opacity 0.3s ease !important;
+  margin: 0 4px !important;
+  border: none !important;
+  padding: 0 !important;
+  cursor: pointer !important;
+}
+
+/* 激活的小圆点 */
+:global(.custom-carousel-container .swiper-pagination-bullet-active),
+:global(.custom-carousel-container .swiper-pagination-bullet:hover) {
+  background: rgb(255, 196, 37) !important;
+  opacity: 1 !important;
+}
+
+/* 左右箭头样式 */
+:global(.custom-carousel-container .swiper-button-prev),
+:global(.custom-carousel-container .swiper-button-next) {
+  color: rgb(6, 6, 6) !important;
+  width: 32px !important;
+  height: 32px !important;
+  background: rgba(255, 255, 255, 0.8) !important;
+  border-radius: 50% !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  z-index: 20 !important;
+  position: absolute !important;
+}
+
+/* 左箭头位置，飞出去 */
+:global(.custom-carousel-container .swiper-button-prev) {
+  left: -50px !important;
+}
+
+/* 右箭头位置，飞出去 */
+:global(.custom-carousel-container .swiper-button-next) {
+  right: -50px !important;
+}
+
+/* 箭头图标大小 */
+:global(.custom-carousel-container .swiper-button-prev::after),
+:global(.custom-carousel-container .swiper-button-next::after) {
+  font-size: 18px !important;
+  font-weight: bold !important;
+}
