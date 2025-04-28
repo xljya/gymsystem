@@ -1,4 +1,4 @@
-import { AvatarDropdown, AvatarName, Footer, Question } from '@/components';
+import { AvatarDropdown, AvatarName, Question } from '@/components';
 import type { Settings as LayoutSettings } from '@ant-design/pro-components';
 import { SettingDrawer } from '@ant-design/pro-components';
 import type { RunTimeLayoutConfig } from '@umijs/max';
@@ -7,6 +7,8 @@ import { history } from '@umijs/max';
 import defaultSettings, { memberSettings } from '../config/defaultSettings';
 import { getLoginMemberUsingGet } from '@/api/memberController';
 import { SYSTEM_LOGO } from '@/constants';
+import AdminFooter from '@/components/Footer';
+import MemberFooter from '@/components/Footer/MemberFooter';
 
 /**
  * 判断当前是否为开发环境
@@ -116,8 +118,10 @@ export const layout: RunTimeLayoutConfig = ({ initialState, setInitialState }) =
         return <AvatarDropdown>{avatarChildren}</AvatarDropdown>;
       },
     },
-    // 页脚配置
-    footerRender: () => <Footer />,
+    // 页脚配置 - 根据用户角色显示不同的页脚
+    footerRender: () => initialState?.currentUser?.memberRole === 'admin' 
+      ? <AdminFooter /> 
+      : <MemberFooter />,
     // 页面切换时的处理
     onPageChange: () => {
       const { location } = history;
