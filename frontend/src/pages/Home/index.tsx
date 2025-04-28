@@ -51,9 +51,9 @@ const HomePage: React.FC = () => {
       </PageContainer>
 
       <PageContainer header={{ title: false }} style={{ backgroundColor: 'rgb(241, 241, 241)' }}>
-      
+         <div style={{ padding: '24px' }}>
           <CustomCarousel />
-    
+    </div>
       </PageContainer>
 
       <PageContainer header={{ title: false }} style={{ backgroundColor: 'rgb(250, 250, 250)' }}>

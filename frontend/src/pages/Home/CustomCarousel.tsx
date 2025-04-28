@@ -1,25 +1,50 @@
 // 导入React和相关依赖
-import React from 'react';
+import React, { useRef } from 'react';
 // 导入Swiper组件和Slide组件
 import { Swiper, SwiperSlide } from 'swiper/react';
 // 导入Swiper所需功能模块
-import { Autoplay, Navigation, Pagination } from 'swiper/modules';
+import SwiperCore from 'swiper';
+import { Autoplay, Pagination } from 'swiper/modules';
 // 导入样式文件
 import styles from './CustomCarousel.module.css';
 // 导入Swiper基础样式
 import 'swiper/css';
-import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+
+// 自定义SVG箭头
+const ArrowLeft = () => (
+  <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+    <path
+      d="M12 15L6 9L12 3"
+      stroke="#060606"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+const ArrowRight = () => (
+  <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+    <path
+      d="M6 3L12 9L6 15"
+      stroke="#060606"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
 
 // 定义轮播图组件
 const CustomCarousel: React.FC = () => {
+  const swiperRef = useRef<SwiperCore>();
+
   // 定义轮播图数据
   const slides = [
     {
       id: 1,
       title: 'BODYPUMP',
-      description:
-        'The full-body weights workout that uses high-repetition resistance training gets you strong, toned and fit – fast.',
+      description: '...', // 内容不再显示，可以保留数据或移除
       image:
         'https://lmimirroralphapvr.azureedge.net/static/media/32448/d96dbe7e-e65c-43cc-b570-693385c7f7f4/lm-workouts-bodypump-equipment-960x560.jpg',
       link: '/workouts/bodypump',
@@ -27,8 +52,7 @@ const CustomCarousel: React.FC = () => {
     {
       id: 2,
       title: 'BODYCOMBAT',
-      description:
-        'The high-energy, martial arts-inspired, non-contact workout. Punch, kick and strike your way to fitness.',
+      description: '...',
       image:
         'https://lmimirroralphapvr.azureedge.net/static/media/37079/cd493b18-ca8b-44e3-9c65-3e0f587b3c83/bodycombat-homepage-image.jpg',
       link: '/workouts/bodycombat',
@@ -36,8 +60,7 @@ const CustomCarousel: React.FC = () => {
     {
       id: 3,
       title: 'LES MILLS SHAPES',
-      description:
-        'This is the workout you never knew you needed. An invigorating blend of Pilates, sculpt, and power yoga set to modern beats.',
+      description: '...',
       image:
         'https://lmimirroralphapvr.azureedge.net/static/media/37080/377b49d8-3800-47cc-b3a1-fc343fa5023/les-mills-shapes-homepage-image.jpg',
       link: '/workouts/shapes',
@@ -46,12 +69,42 @@ const CustomCarousel: React.FC = () => {
 
   return (
     <div className={`${styles.carouselContainer} custom-carousel-container`}>
+      {/* 添加标题和描述 */}
+      <div className="text-center mb-8 mt-[60px]">
+        <h2 className="text-3xl md:text-5xl font-bold text-lesmills-black mb-4">
+          探索我们的训练器械
+        </h2>
+        <p className="text-xl text-lesmills-darkgray max-w-3xl mx-auto">
+          体验顶级的训练设备，助您达成健身目标，塑造理想体型
+        </p>
+      </div>
+
+      {/* 左箭头按钮 */}
+      <button
+        type="button"
+        className={styles.customArrow + ' ' + styles.customArrowLeft}
+        onClick={() => swiperRef.current?.slidePrev()}
+        aria-label="上一张"
+      >
+        <ArrowLeft />
+      </button>
+      {/* 右箭头按钮 */}
+      <button
+        type="button"
+        className={styles.customArrow + ' ' + styles.customArrowRight}
+        onClick={() => swiperRef.current?.slideNext()}
+        aria-label="下一张"
+      >
+        <ArrowRight />
+      </button>
       <div className={styles.outerContainer}>
         <Swiper
-          modules={[Navigation, Pagination, Autoplay]}
+          modules={[Pagination, Autoplay]}
           spaceBetween={20}
           slidesPerView={1}
-          navigation
+          onSwiper={(swiper) => {
+            swiperRef.current = swiper;
+          }}
           pagination={{ clickable: true }}
           autoplay={{ delay: 7000 }}
           loop
@@ -63,11 +116,7 @@ const CustomCarousel: React.FC = () => {
                 <a href={slide.link} title={slide.title}>
                   <img src={slide.image} alt={slide.title} />
                 </a>
-                <h3>{slide.title}</h3>
-                <p>{slide.description}</p>
-                <a href={slide.link} title={slide.title}>
-                  <strong>了解更多</strong>
-                </a>
+                <p className={styles.placeholderDescription}>待写描述</p>
               </div>
             </SwiperSlide>
           ))}
