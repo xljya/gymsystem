@@ -45,4 +45,9 @@ public class CoursePurchaseQueryRequest extends PageRequest implements Serializa
      * 购买时间范围-结束
      */
     private Date purchaseTimeEnd;
+
+    /**
+     * 状态（1-有效，0-无效）
+     */
+    private Integer status;
 } 

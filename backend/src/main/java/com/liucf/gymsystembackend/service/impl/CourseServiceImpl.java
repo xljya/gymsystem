@@ -2,29 +2,40 @@ package com.liucf.gymsystembackend.service.impl;
 
 import cn.hutool.core.util.StrUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.liucf.gymsystembackend.exception.BusinessException;
 import com.liucf.gymsystembackend.exception.ErrorCode;
 import com.liucf.gymsystembackend.mapper.CourseMapper;
+import com.liucf.gymsystembackend.mapper.CourseCategoryMapper;
 import com.liucf.gymsystembackend.model.dto.course.CourseQueryRequest;
 import com.liucf.gymsystembackend.model.entity.Course;
+import com.liucf.gymsystembackend.model.entity.CourseCategory;
 import com.liucf.gymsystembackend.model.vo.CourseVO;
 import com.liucf.gymsystembackend.service.CourseService;
+import com.liucf.gymsystembackend.service.CoachService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
+import javax.annotation.Resource;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
 /**
-* @author yueyue
-* @description 针对表【course(课程信息表)】的数据库操作Service实现
-* @createDate 2025-04-09 02:36:38
-*/
+ * 课程服务实现
+ */
 @Service
 public class CourseServiceImpl extends ServiceImpl<CourseMapper, Course>
-    implements CourseService{
+    implements CourseService {
+
+    @Resource
+    private CourseCategoryMapper courseCategoryMapper;
+
+    @Resource
+    private CoachService coachService;
 
     @Override
     public CourseVO getCourseVO(Course course) {
@@ -51,13 +62,194 @@ public class CourseServiceImpl extends ServiceImpl<CourseMapper, Course>
         }
         Long courseId = courseQueryRequest.getCourseId();
         String courseName = courseQueryRequest.getCourseName();
+        Long categoryId = courseQueryRequest.getCategoryId();
         Long coachId = courseQueryRequest.getCoachId();
+        String difficultyLevel = courseQueryRequest.getDifficultyLevel();
+        Integer duration = courseQueryRequest.getDuration();
 
         QueryWrapper<Course> queryWrapper = new QueryWrapper<>();
-        queryWrapper.eq(courseId != null, "course_id", courseId);
-        queryWrapper.eq(coachId != null, "coach_id", coachId);
+        queryWrapper.eq(courseId != null, "id", courseId);
         queryWrapper.like(StrUtil.isNotBlank(courseName), "course_name", courseName);
+        queryWrapper.eq(categoryId != null, "category_id", categoryId);
+        queryWrapper.eq(coachId != null, "coach_id", coachId);
+        queryWrapper.eq(StrUtil.isNotBlank(difficultyLevel), "difficulty_level", difficultyLevel);
+        queryWrapper.eq(duration != null, "duration", duration);
         return queryWrapper;
+    }
+
+    @Override
+    @Transactional(rollbackFor = Exception.class)
+    public boolean createCourse(String courseName, Long categoryId, Long coachId, String description,
+                              Integer duration, BigDecimal sellingPrice, String difficultyLevel,
+                              String imageUrl) {
+        // 1. 校验参数
+        if (StrUtil.isBlank(courseName)) {
+            throw new BusinessException(ErrorCode.PARAMS_ERROR, "课程名称不能为空");
+        }
+        if (categoryId == null) {
+            throw new BusinessException(ErrorCode.PARAMS_ERROR, "课程类别不能为空");
+        }
+        if (coachId == null) {
+            throw new BusinessException(ErrorCode.PARAMS_ERROR, "教练不能为空");
+        }
+        if (duration == null || duration <= 0) {
+            throw new BusinessException(ErrorCode.PARAMS_ERROR, "课程时长必须大于0");
+        }
+        if (sellingPrice == null || sellingPrice.compareTo(BigDecimal.ZERO) < 0) {
+            throw new BusinessException(ErrorCode.PARAMS_ERROR, "课程价格不能为负数");
+        }
+
+        // 2. 检查类别是否存在
+        if (courseCategoryMapper.selectById(categoryId) == null) {
+            throw new BusinessException(ErrorCode.NOT_FOUND_ERROR, "课程类别不存在");
+        }
+
+        // 3. 检查教练是否存在
+        if (coachService.getById(coachId) == null) {
+            throw new BusinessException(ErrorCode.NOT_FOUND_ERROR, "教练不存在");
+        }
+
+        // 4. 检查课程名称是否重复
+        QueryWrapper<Course> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("course_name", courseName);
+        long count = this.count(queryWrapper);
+        if (count > 0) {
+            throw new BusinessException(ErrorCode.OPERATION_ERROR, "课程名称已存在");
+        }
+
+        // 5. 创建课程
+        Course course = new Course();
+        course.setCourseName(courseName);
+        course.setCategoryId(categoryId);
+        course.setCoachId(coachId);
+        course.setDescription(description);
+        course.setDuration(duration);
+        course.setSellingPrice(sellingPrice);
+        course.setDifficultyLevel(difficultyLevel);
+        course.setImageUrl(imageUrl);
+        return this.save(course);
+    }
+
+    @Override
+    @Transactional(rollbackFor = Exception.class)
+    public boolean updateCourse(Long courseId, String courseName, Long categoryId, Long coachId, String description,
+                              Integer duration, BigDecimal sellingPrice, String difficultyLevel,
+                              String imageUrl) {
+        // 1. 校验参数
+        if (courseId == null) {
+            throw new BusinessException(ErrorCode.PARAMS_ERROR, "课程ID不能为空");
+        }
+
+        // 2. 检查课程是否存在
+        Course course = this.getById(courseId);
+        if (course == null) {
+            throw new BusinessException(ErrorCode.NOT_FOUND_ERROR, "课程不存在");
+        }
+
+        // 3. 如果修改了类别，检查类别是否存在
+        if (categoryId != null && !categoryId.equals(course.getCategoryId())) {
+            if (courseCategoryMapper.selectById(categoryId) == null) {
+                throw new BusinessException(ErrorCode.NOT_FOUND_ERROR, "课程类别不存在");
+            }
+        }
+
+        // 4. 如果修改了教练，检查教练是否存在
+        if (coachId != null && !coachId.equals(course.getCoachId())) {
+            if (coachService.getById(coachId) == null) {
+                throw new BusinessException(ErrorCode.NOT_FOUND_ERROR, "教练不存在");
+            }
+        }
+
+        // 5. 如果修改了名称，检查是否重复
+        if (StrUtil.isNotBlank(courseName) && !courseName.equals(course.getCourseName())) {
+            QueryWrapper<Course> queryWrapper = new QueryWrapper<>();
+            queryWrapper.eq("course_name", courseName);
+            long count = this.count(queryWrapper);
+            if (count > 0) {
+                throw new BusinessException(ErrorCode.OPERATION_ERROR, "课程名称已存在");
+            }
+        }
+
+        // 6. 更新课程
+        if (StrUtil.isNotBlank(courseName)) {
+            course.setCourseName(courseName);
+        }
+        if (categoryId != null) {
+            course.setCategoryId(categoryId);
+        }
+        if (coachId != null) {
+            course.setCoachId(coachId);
+        }
+        if (StrUtil.isNotBlank(description)) {
+            course.setDescription(description);
+        }
+        if (duration != null && duration > 0) {
+            course.setDuration(duration);
+        }
+        if (sellingPrice != null && sellingPrice.compareTo(BigDecimal.ZERO) >= 0) {
+            course.setSellingPrice(sellingPrice);
+        }
+        if (StrUtil.isNotBlank(difficultyLevel)) {
+            course.setDifficultyLevel(difficultyLevel);
+        }
+        if (StrUtil.isNotBlank(imageUrl)) {
+            course.setImageUrl(imageUrl);
+        }
+        return this.updateById(course);
+    }
+
+    @Override
+    @Transactional(rollbackFor = Exception.class)
+    public boolean deleteCourse(Long courseId) {
+        // 1. 校验参数
+        if (courseId == null) {
+            throw new BusinessException(ErrorCode.PARAMS_ERROR, "课程ID不能为空");
+        }
+
+        // 2. 检查课程是否存在
+        Course course = this.getById(courseId);
+        if (course == null) {
+            throw new BusinessException(ErrorCode.NOT_FOUND_ERROR, "课程不存在");
+        }
+
+        // 3. 检查课程是否有关联的课程安排
+        // TODO: 需要添加课程安排表的检查
+
+        // 4. 删除课程
+        return this.removeById(courseId);
+    }
+
+    @Override
+    public List<Course> getCoursesByCategoryId(Long categoryId) {
+        if (categoryId == null) {
+            throw new BusinessException(ErrorCode.PARAMS_ERROR, "类别ID不能为空");
+        }
+        QueryWrapper<Course> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("category_id", categoryId);
+        return this.list(queryWrapper);
+    }
+
+    @Override
+    public List<Course> getCoursesByCoachId(Long coachId) {
+        if (coachId == null) {
+            throw new BusinessException(ErrorCode.PARAMS_ERROR, "教练ID不能为空");
+        }
+        QueryWrapper<Course> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("coach_id", coachId);
+        return this.list(queryWrapper);
+    }
+
+    @Override
+    public Page<CourseVO> getCourseVOPage(Page<Course> coursePage) {
+        if (coursePage == null || coursePage.getRecords() == null) {
+            return new Page<>();
+        }
+        Page<CourseVO> courseVOPage = new Page<>((int)coursePage.getCurrent(), 
+                                               (int)coursePage.getSize(), 
+                                               coursePage.getTotal());
+        List<CourseVO> courseVOList = this.getCourseVOList(coursePage.getRecords());
+        courseVOPage.setRecords(courseVOList);
+        return courseVOPage;
     }
 }
 

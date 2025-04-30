@@ -61,4 +61,9 @@ public class GoodsTransactionsQueryRequest extends PageRequest implements Serial
      * 创建时间范围-结束
      */
     private Date createTimeEnd;
+
+    /**
+     * 会员姓名
+     */
+    private String memberName;
 } 

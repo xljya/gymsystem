@@ -19,7 +19,7 @@ public class CourseAddRequest implements Serializable {
     private String courseName;
 
     /**
-     * 教练ID（关联 coach 表）
+     * 教练ID
      */
     private Long coachId;
 
@@ -29,7 +29,27 @@ public class CourseAddRequest implements Serializable {
     private BigDecimal sellingPrice;
 
     /**
-     * 课程时长（分钟）默认两小时
+     * 课程时长（分钟）
      */
     private Integer duration;
+
+    /**
+     * 课程类别ID
+     */
+    private Long categoryId;
+
+    /**
+     * 难度等级
+     */
+    private String difficultyLevel;
+
+    /**
+     * 课程描述
+     */
+    private String description;
+
+    /**
+     * 课程图片URL
+     */
+    private String imageUrl;
 } 

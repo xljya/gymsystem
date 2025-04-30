@@ -12,6 +12,8 @@ import java.util.Date;
 @Data
 public class GoodsVO implements Serializable {
 
+    private static final long serialVersionUID = 1L;
+
     /**
      * 商品ID
      */
@@ -26,11 +28,6 @@ public class GoodsVO implements Serializable {
      * 计量单位(瓶/个/根等)
      */
     private String unit;
-
-    /**
-     * 进货单价
-     */
-    private BigDecimal unitPrice;
 
     /**
      * 销售单价
@@ -51,6 +48,4 @@ public class GoodsVO implements Serializable {
      * 创建时间
      */
     private Date createTime;
-
-    private static final long serialVersionUID = 1L;
 } 

@@ -1,6 +1,5 @@
 package com.liucf.gymsystembackend.controller;
 
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.liucf.gymsystembackend.annotation.AuthCheck;
 import com.liucf.gymsystembackend.common.BaseResponse;

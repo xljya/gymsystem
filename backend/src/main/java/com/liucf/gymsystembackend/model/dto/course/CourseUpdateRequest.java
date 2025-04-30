@@ -37,4 +37,24 @@ public class CourseUpdateRequest implements Serializable {
      * 课程时长（分钟）默认两小时
      */
     private Integer duration;
+
+    /**
+     * 课程类别ID
+     */
+    private Long categoryId;
+
+    /**
+     * 难度等级
+     */
+    private String difficultyLevel;
+
+    /**
+     * 课程描述
+     */
+    private String description;
+
+    /**
+     * 课程图片URL
+     */
+    private String imageUrl;
 } 

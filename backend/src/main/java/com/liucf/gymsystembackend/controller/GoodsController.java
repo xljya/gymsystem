@@ -38,7 +38,7 @@ public class GoodsController {
      */
     @PostMapping("/add")
     @AuthCheck(mustRole = MemberConstant.ADMIN_ROLE)
-    public BaseResponse<Long> addGoods(@RequestBody GoodsAddRequest goodsAddRequest) {
+    public BaseResponse<Integer> addGoods(@RequestBody GoodsAddRequest goodsAddRequest) {
         ThrowUtils.throwIf(goodsAddRequest == null, ErrorCode.PARAMS_ERROR);
         Goods goods = new Goods();
         BeanUtils.copyProperties(goodsAddRequest, goods);

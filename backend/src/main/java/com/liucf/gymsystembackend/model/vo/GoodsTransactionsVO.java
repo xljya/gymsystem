@@ -45,11 +45,6 @@ public class GoodsTransactionsVO implements Serializable {
     private String memberName;
 
     /**
-     * 会员手机号
-     */
-    private String memberPhone;
-
-    /**
      * 购买数量
      */
     private Integer count;

@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * 器材查询请求
@@ -24,4 +25,9 @@ public class EquipmentQueryRequest extends PageRequest implements Serializable {
      * 器材名称
      */
     private String eqName;
+
+    /**
+     * 器材状态(0-正常,1-维修中,2-报废)
+     */
+    private Integer eqStatus;
 } 

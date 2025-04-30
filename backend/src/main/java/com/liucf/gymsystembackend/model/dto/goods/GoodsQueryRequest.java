@@ -5,12 +5,14 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
+import java.util.Date;
 
 /**
  * 商品查询请求
  */
-@Data
 @EqualsAndHashCode(callSuper = true)
+@Data
 public class GoodsQueryRequest extends PageRequest implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -29,4 +31,9 @@ public class GoodsQueryRequest extends PageRequest implements Serializable {
      * 计量单位
      */
     private String unit;
+
+    /**
+     * 是否删除(0-未删除,1-已删除)
+     */
+    private Integer isDelete;
 } 

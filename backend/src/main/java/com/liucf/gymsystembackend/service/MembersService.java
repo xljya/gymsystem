@@ -1,11 +1,9 @@
 package com.liucf.gymsystembackend.service;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.liucf.gymsystembackend.exception.BusinessException;
-import com.liucf.gymsystembackend.exception.ErrorCode;
 import com.liucf.gymsystembackend.model.dto.member.MemberQueryRequest;
-import com.liucf.gymsystembackend.model.entity.Members;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.liucf.gymsystembackend.model.entity.Members;
 import com.liucf.gymsystembackend.model.vo.LoginMemberVO;
 import com.liucf.gymsystembackend.model.vo.MemberVO;
 

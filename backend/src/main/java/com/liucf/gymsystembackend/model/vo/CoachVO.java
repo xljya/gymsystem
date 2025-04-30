@@ -11,6 +11,8 @@ import java.util.Date;
 @Data
 public class CoachVO implements Serializable {
 
+    private static final long serialVersionUID = 1L;
+
     /**
      * 教练ID
      */
@@ -52,16 +54,6 @@ public class CoachVO implements Serializable {
     private String courseType;
 
     /**
-     * 薪资（如：8000）
-     */
-    private String coachSalary;
-
-    /**
-     * 住址
-     */
-    private String coachAddress;
-
-    /**
      * 状态(0-在职,1-休假,2-离职)
      */
     private Integer coachStatus;
@@ -70,6 +62,4 @@ public class CoachVO implements Serializable {
      * 创建时间
      */
     private Date createTime;
-
-    private static final long serialVersionUID = 1L;
 } 
