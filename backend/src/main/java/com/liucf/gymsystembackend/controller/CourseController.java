@@ -13,11 +13,10 @@ import com.liucf.gymsystembackend.exception.ThrowUtils;
 import com.liucf.gymsystembackend.model.dto.course.CourseAddRequest;
 import com.liucf.gymsystembackend.model.dto.course.CourseQueryRequest;
 import com.liucf.gymsystembackend.model.dto.course.CourseUpdateRequest;
+import com.liucf.gymsystembackend.model.entity.Coach;
 import com.liucf.gymsystembackend.model.entity.Course;
 import com.liucf.gymsystembackend.model.vo.CourseVO;
 import com.liucf.gymsystembackend.service.CourseService;
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.web.bind.annotation.*;
@@ -31,7 +30,6 @@ import java.util.List;
 @RestController
 @RequestMapping("/course")
 @Slf4j
-@Api(tags = "课程管理接口")
 public class CourseController {
 
     @Resource
@@ -41,10 +39,9 @@ public class CourseController {
      * 创建课程（仅管理员）
      */
     @PostMapping("/add")
-    @ApiOperation(value = "添加课程")
     @AuthCheck(mustRole = MemberConstant.ADMIN_ROLE)
     public BaseResponse<Long> addCourse(@RequestBody CourseAddRequest courseAddRequest) {
-        if (courseAddRequest == null) {
+       /* if (courseAddRequest == null) {
             throw new BusinessException(ErrorCode.PARAMS_ERROR);
         }
         Course course = new Course();
@@ -62,6 +59,12 @@ public class CourseController {
         if (!result) {
             throw new BusinessException(ErrorCode.OPERATION_ERROR);
         }
+        return ResultUtils.success(course.getCourseId());*/
+        ThrowUtils.throwIf(courseAddRequest == null, ErrorCode.PARAMS_ERROR);
+        Course course = new Course();
+        BeanUtils.copyProperties(courseAddRequest, course);
+        boolean result = courseService.save(course);
+        ThrowUtils.throwIf(!result, ErrorCode.OPERATION_ERROR);
         return ResultUtils.success(course.getCourseId());
     }
 
@@ -69,7 +72,6 @@ public class CourseController {
      * 根据 id 获取课程（仅管理员）
      */
     @GetMapping("/get")
-    @ApiOperation(value = "根据id获取课程")
     @AuthCheck(mustRole = MemberConstant.ADMIN_ROLE)
     public BaseResponse<Course> getCourseById(long courseId) {
         ThrowUtils.throwIf(courseId <= 0, ErrorCode.PARAMS_ERROR);
@@ -92,7 +94,6 @@ public class CourseController {
      * 删除课程（仅管理员）
      */
     @PostMapping("/delete")
-    @ApiOperation(value = "删除课程")
     @AuthCheck(mustRole = MemberConstant.ADMIN_ROLE)
     public BaseResponse<Boolean> deleteCourse(@RequestBody Long id) {
         if (id == null || id <= 0) {
@@ -106,7 +107,6 @@ public class CourseController {
      * 更新课程（仅管理员）
      */
     @PostMapping("/update")
-    @ApiOperation(value = "更新课程")
     @AuthCheck(mustRole = MemberConstant.ADMIN_ROLE)
     public BaseResponse<Boolean> updateCourse(@RequestBody CourseUpdateRequest courseUpdateRequest) {
         if (courseUpdateRequest == null || courseUpdateRequest.getCourseId() == null) {
@@ -132,25 +132,21 @@ public class CourseController {
      * 分页获取课程列表（仅管理员）
      */
     @PostMapping("/list/page")
-    @ApiOperation(value = "分页获取课程列表")
     @AuthCheck(mustRole = MemberConstant.ADMIN_ROLE)
-    public BaseResponse<Page<CourseVO>> listCourseByPage(CourseQueryRequest courseQueryRequest) {
-        if (courseQueryRequest == null) {
-            throw new BusinessException(ErrorCode.PARAMS_ERROR);
-        }
+    public BaseResponse<Page<CourseVO>> listCourseByPage(@RequestBody CourseQueryRequest courseQueryRequest) {
+        ThrowUtils.throwIf(courseQueryRequest == null, ErrorCode.PARAMS_ERROR);
         long current = courseQueryRequest.getCurrent();
-        long size = courseQueryRequest.getPageSize();
-        // 限制爬虫
-        if (size > 50) {
-            throw new BusinessException(ErrorCode.PARAMS_ERROR, "分页大小不能超过50");
-        }
+        long pageSize = courseQueryRequest.getPageSize();
         QueryWrapper<Course> queryWrapper = courseService.getQueryWrapper(courseQueryRequest);
-        Page<Course> coursePage = courseService.page(new Page<>(current, size), queryWrapper);
-        return ResultUtils.success(courseService.getCourseVOPage(coursePage));
+        Page<Course> coursePage = courseService.page(new Page<>(current, pageSize), queryWrapper);
+        // 组装VO分页
+        Page<CourseVO> courseVOPage = new Page<>(current, pageSize, coursePage.getTotal());
+        List<CourseVO> courseVOList = courseService.getCourseVOList(coursePage.getRecords());
+        courseVOPage.setRecords(courseVOList);
+        return ResultUtils.success(courseVOPage);
     }
 
     @GetMapping("/list/category/{categoryId}")
-    @ApiOperation(value = "根据类别ID获取课程列表")
     @AuthCheck(mustRole = MemberConstant.ADMIN_ROLE)
     public BaseResponse<List<CourseVO>> listCourseByCategoryId(@PathVariable Long categoryId) {
         if (categoryId == null || categoryId <= 0) {
@@ -161,7 +157,6 @@ public class CourseController {
     }
 
     @GetMapping("/list/coach/{coachId}")
-    @ApiOperation(value = "根据教练ID获取课程列表")
     @AuthCheck(mustRole = MemberConstant.ADMIN_ROLE)
     public BaseResponse<List<CourseVO>> listCourseByCoachId(@PathVariable Long coachId) {
         if (coachId == null || coachId <= 0) {
