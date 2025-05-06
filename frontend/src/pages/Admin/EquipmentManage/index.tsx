@@ -1,9 +1,13 @@
-import type { ActionType, ProColumns } from '@ant-design/pro-components';
-import { ProTable, TableDropdown, ModalForm, ProFormText } from '@ant-design/pro-components';
-import { useRef, useState } from 'react';
-import { message } from 'antd';
-import { updateEquipmentUsingPost, deleteEquipmentUsingPost, addEquipmentUsingPost } from '@/api/equipmentController';
+import {
+  addEquipmentUsingPost,
+  deleteEquipmentUsingPost,
+  updateEquipmentUsingPost,
+} from '@/api/equipmentController';
 import request from '@/utils/request';
+import type { ActionType, ProColumns } from '@ant-design/pro-components';
+import { ModalForm, ProFormText, ProTable, TableDropdown } from '@ant-design/pro-components';
+import { message } from 'antd';
+import { useRef, useState } from 'react';
 
 const columns: ProColumns<API.EquipmentVO>[] = [
   {
@@ -60,23 +64,23 @@ const columns: ProColumns<API.EquipmentVO>[] = [
         key="actionGroup"
         onSelect={(key) => {
           if (key === 'delete' && record.eqId) {
-            deleteEquipmentUsingPost({ eqId: Number(record.eqId) }).then((res) => {
-              console.log('删除响应:', res);
-              if (res) {
-                message.success('删除成功');
-                action?.reload();
-              } else {
+            deleteEquipmentUsingPost({ eqId: Number(record.eqId) })
+              .then((res) => {
+                console.log('删除响应:', res);
+                if (res) {
+                  message.success('删除成功');
+                  action?.reload();
+                } else {
+                  message.error('删除失败');
+                }
+              })
+              .catch((error) => {
+                console.error('删除错误:', error);
                 message.error('删除失败');
-              }
-            }).catch(error => {
-              console.error('删除错误:', error);
-              message.error('删除失败');
-            });
+              });
           }
         }}
-        menus={[
-          { key: 'delete', name: '删除' },
-        ]}
+        menus={[{ key: 'delete', name: '删除' }]}
       />,
     ],
   },
@@ -227,4 +231,4 @@ export default () => {
       </ModalForm>
     </div>
   );
-}; 
+};

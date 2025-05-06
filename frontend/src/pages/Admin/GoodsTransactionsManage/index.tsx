@@ -4,6 +4,7 @@ import { useRef, useState } from 'react';
 import { message } from 'antd';
 import request from '@/utils/request';
 
+// 商品销售记录管理
 const columns: ProColumns<API.GoodsTransactions>[] = [
   {
     dataIndex: 'id',

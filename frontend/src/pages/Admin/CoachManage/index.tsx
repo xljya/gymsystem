@@ -5,7 +5,9 @@ import { Image, message, Tag } from 'antd';
 import { updateCoachUsingPost, deleteCoachUsingPost, addCoachUsingPost } from '@/api/coachController';
 import request from '@/utils/request';
 
+// 教练管理
 const columns: ProColumns<API.CoachVO>[] = [
+  // ...（省略表格列定义，和原来一样）
   {
     dataIndex: 'coachId',
     valueType: 'index',
@@ -154,14 +156,25 @@ export default () => {
   const actionRef = useRef<ActionType>();
   const [createModalVisible, setCreateModalVisible] = useState<boolean>(false);
 
+  /**
+   * 新增教练的表单是如何提交的？
+   * 
+   * 1. 当用户点击“新增教练”按钮时，createModalVisible 设为 true，弹出 ModalForm 表单。
+   * 2. 用户填写表单后，点击提交，ModalForm 的 onFinish 会被触发。
+   * 3. onFinish 会调用 handleAdd 方法，并将表单填写的数据（values）作为参数传入。
+   * 4. handleAdd 方法内部会调用 addCoachUsingPost(fields) 向后端发送新增教练的请求。
+   * 5. 如果后端返回成功，弹出“添加成功”提示，关闭弹窗，并刷新表格数据。
+   * 6. 如果失败，则弹出“添加失败”提示。
+   */
   const handleAdd = async (fields: API.CoachAddRequest) => {
     try {
+      // 这里将表单数据提交到后端
       const res = await addCoachUsingPost(fields);
       console.log('新增响应:', res);
       if (res) {
         message.success('添加成功');
-        setCreateModalVisible(false);
-        actionRef.current?.reload();
+        setCreateModalVisible(false); // 关闭弹窗
+        actionRef.current?.reload();  // 刷新表格
       } else {
         message.error('添加失败');
       }
@@ -187,25 +200,49 @@ export default () => {
             新增教练
           </a>,
         ]}
+        // ProTable 的 request 方法，用于请求教练列表分页数据
         request={async (params) => {
+          // 打印请求参数，便于调试
           console.log('请求参数:', params);
+          // 发送 POST 请求到后端接口，获取教练分页数据
           const res = await request('/api/coach/list/page/vo', {
             method: 'POST',
             data: {
+              // 当前页码
               current: params.current,
+              // 每页条数
               pageSize: params.pageSize,
+              // 搜索条件：教练姓名
               coachName: params.coachName,
+              // 搜索条件：教练账号
               coachAccount: params.coachAccount,
+              // 搜索条件：性别
               gender: params.gender,
             },
           });
+          // 打印响应数据，便于调试
           console.log('响应数据:', res);
+          // 返回 ProTable 需要的数据格式
           return {
+            // data 字段：表格要展示的数据，来源于接口返回的 records 字段
+            // 如果 records 不存在，则返回空数组
             data: res.records || [],
+            // success 字段：请求是否成功，这里直接写 true
             success: true,
+            // total 字段：数据总数，来源于接口返回的 total 字段
+            // 如果 total 不存在，则返回 0
             total: Number(res.total) || 0,
           };
         }}
+        /*
+          解读：
+          data 数据是怎么来的？
+          - data 字段是 ProTable 组件用来渲染表格的主要数据源。
+          - 这里的 data: res.records || []，意思是从后端接口 /api/coach/list/page/vo 的响应结果中，取出 records 字段作为表格的数据。
+          - 如果接口没有返回 records 字段，则用空数组代替，避免表格报错。
+          - 通常后端会返回一个分页对象，包含 records（当前页数据数组）、total（总条数）等字段。
+          - 所以 data 实际上就是后端分页接口返回的当前页的教练数据列表。
+        */
         editable={{
           type: 'single',
           onSave: async (key, record) => {
@@ -273,12 +310,14 @@ export default () => {
         headerTitle=""
       />
 
+      {/* 新增教练的表单，提交时会触发 onFinish，调用 handleAdd 方法 */}
       <ModalForm
         title="新增教练"
         width="400px"
         open={createModalVisible}
         onOpenChange={setCreateModalVisible}
         onFinish={async (values) => {
+          // 这里会把表单数据传递给 handleAdd 进行提交
           await handleAdd(values as API.CoachAddRequest);
         }}
       >

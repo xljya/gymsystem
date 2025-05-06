@@ -1,23 +1,14 @@
-import {
-  addCourseUsingPost,
-  deleteCourseUsingPost,
-  updateCourseUsingPost,
-} from '@/api/courseController';
+import { addCategoryUsingPost, deleteCategoryUsingPost, updateCategoryUsingPost } from '@/api/courseCategoryController';
 import request from '@/utils/request';
 import type { ActionType, ProColumns } from '@ant-design/pro-components';
-import {
-  ModalForm,
-  ProFormDigit,
-  ProFormText,
-  ProTable,
-  TableDropdown,
-} from '@ant-design/pro-components';
+import { ModalForm, ProFormText, ProTable, TableDropdown } from '@ant-design/pro-components';
 import { message } from 'antd';
 import { useRef, useState } from 'react';
 
-const columns: ProColumns<API.CourseVO>[] = [
+// 课程类别管理
+const columns: ProColumns<API.CourseCategoryVO>[] = [
   {
-    dataIndex: 'courseId',
+    dataIndex: 'id',
     valueType: 'index',
     width: 48,
     title: '序号',
@@ -26,38 +17,41 @@ const columns: ProColumns<API.CourseVO>[] = [
     render: (_, __, index) => index + 1,
   },
   {
-    title: '课程名称',
-    dataIndex: 'courseName',
+    title: '类别ID',
+    dataIndex: 'categoryId',
+    hideInSearch: true,
+    editable: false,
+  },
+  {
+    title: '课程类别名称',
+    dataIndex: 'categoryName',
     copyable: true,
     ellipsis: true,
     formItemProps: {
-      rules: [{ required: true, message: '此项为必填项' }],
+      rules: [{ required: true, message: '请输入课程类别名称' }],
     },
   },
   {
-    title: '教练ID',
-    dataIndex: 'coachId',
-    hideInSearch: true,
-  },
-  {
-    title: '课程价格',
-    dataIndex: 'sellingPrice',
-    valueType: 'money',
-    hideInSearch: true,
-  },
-  {
-    title: '课程时长(分钟)',
-    dataIndex: 'duration',
+    title: '类别描述',
+    dataIndex: 'categoryDesc',
+    ellipsis: true,
     hideInSearch: true,
   },
   {
     title: '创建时间',
     dataIndex: 'createTime',
     valueType: 'dateTime',
-    sorter: true,
     hideInSearch: true,
     editable: false,
   },
+  {
+    title: '更新时间',
+    dataIndex: 'updateTime',
+    valueType: 'dateTime',
+    hideInSearch: true,
+    editable: false,
+  },
+
   {
     title: '操作',
     valueType: 'option',
@@ -65,8 +59,8 @@ const columns: ProColumns<API.CourseVO>[] = [
       <a
         key="editable"
         onClick={() => {
-          if (record.courseId) {
-            action?.startEditable?.(record.courseId);
+          if (record.categoryId) {
+            action?.startEditable?.(record.categoryId);
           }
         }}
       >
@@ -75,8 +69,8 @@ const columns: ProColumns<API.CourseVO>[] = [
       <TableDropdown
         key="actionGroup"
         onSelect={(key) => {
-          if (key === 'delete' && record.courseId) {
-            deleteCourseUsingPost(record.courseId)
+          if (key === 'delete' && record.categoryId) {
+            deleteCategoryUsingPost({ id: record.categoryId })
               .then((res) => {
                 console.log('删除响应:', res);
                 if (res) {
@@ -102,16 +96,15 @@ export default () => {
   const actionRef = useRef<ActionType>();
   const [createVisible, setCreateVisible] = useState(false);
 
-  const handleAdd = async (fields: API.CourseAddRequest) => {
+  const handleAdd = async (fields: API.CourseCategoryAddRequest) => {
     try {
-      const res = await addCourseUsingPost(fields);
-      console.log('添加返回:', res);
+      const res = await addCategoryUsingPost(fields);
       if (res) {
         message.success('添加成功');
         setCreateVisible(false);
         actionRef.current?.reload();
       } else {
-        message.error('添加失败');
+         message.error('添加失败');
       }
     } catch {
       message.error('添加异常');
@@ -120,51 +113,70 @@ export default () => {
 
   return (
     <div style={{ minHeight: 'calc(100vh - 120px)', paddingBottom: 120, marginBottom: 60 }}>
-      <ProTable<API.CourseVO>
+      <ProTable<API.CourseCategoryVO>
         columns={columns}
         actionRef={actionRef}
         cardBordered
         toolBarRender={() => [
-          <a key="add" onClick={() => setCreateVisible(true)}>
-            新增课程
+          <a
+            key="add"
+            onClick={() => {
+              setCreateVisible(true);
+            }}
+          >
+            新增课程类别
           </a>,
         ]}
         request={async (params) => {
+          // 打印请求参数，便于调试
           console.log('请求参数:', params);
-          const res = await request('/api/course/list/page', {
-            method: 'POST',
-            data: {
-              current: params.current,
-              pageSize: params.pageSize,
-              courseId: params.courseId,
-              courseName: params.courseName,
-            },
-          });
-
-          return {
-            data: res.records || [],
-            success: true,
-            total: Number(res.total) || 0,
-          };
+          // 发送 GET 请求到后端接口，获取课程类别分页数据
+          try {
+            const res = await request('/api/course/category/list/page/vo', {
+              method: 'POST',
+              // 搜索条件
+              data: {
+                current: params.current,
+                pageSize: params.pageSize,
+                categoryName: params.categoryName,
+              },
+            });
+            // 打印响应数据，便于调试
+            console.log('响应数据:', res);
+            // 返回 ProTable 需要的数据格式
+            return {
+              data: res.records || [],
+              success: true,
+              total: Number(res.total) || 0,
+            };
+          } catch (error) {
+            console.error('获取课程类别列表失败:', error);
+            message.error('获取课程类别列表失败');
+            return {
+              data: [],
+              success: false,
+              total: 0,
+            };
+          }
         }}
         editable={{
           type: 'single',
           onSave: async (key, record) => {
             try {
-              const res = await updateCourseUsingPost({
-                courseId: record.courseId,
-                courseName: record.courseName,
-                coachId: record.coachId,
-                sellingPrice: record.sellingPrice,
-                duration: record.duration,
+              const res = await updateCategoryUsingPost({
+                categoryId: record.categoryId,
+                categoryName: record.categoryName,
+                categoryDesc: record.categoryDesc,
               });
+              console.log('更新响应:', res);
               if (res) {
                 message.success('更新成功');
                 actionRef.current?.reload();
               } else {
                 message.error('更新失败');
               }
-            } catch {
+            } catch (error) {
+              console.error('更新错误:', error);
               message.error('更新异常');
             }
           },
@@ -175,11 +187,8 @@ export default () => {
           defaultValue: {
             option: { fixed: 'right', disable: true },
           },
-          onChange(value) {
-            console.log('value: ', value);
-          },
         }}
-        rowKey="courseId"
+        rowKey="categoryId"
         search={{
           labelWidth: 'auto',
         }}
@@ -201,50 +210,27 @@ export default () => {
         }}
         pagination={{
           pageSize: 5,
-          onChange: (page) => console.log(page),
+          onChange: (page) => console.log('当前页:', page),
         }}
         dateFormatter="string"
         headerTitle=""
       />
- 
+
       <ModalForm
-        title="新增课程"
+        title="新增课程类别"
         width={400}
         open={createVisible}
         onOpenChange={setCreateVisible}
         onFinish={async (values) => {
-          await handleAdd(values as API.CourseAddRequest);
+          await handleAdd(values as API.CourseCategoryAddRequest);
         }}
       >
-        <ProFormDigit
-          name="categoryId"
-          label="课程类别ID"
-          min={1}
-          rules={[{ required: true, message: '请输入课程类别ID' }]}
-        />
-        <ProFormDigit
-          name="coachId"
-          label="教练ID"
-          min={1}
-          rules={[{ required: true, message: '请输入教练ID' }]}
-        />
         <ProFormText
-          name="courseName"
-          label="课程名称"
-          rules={[{ required: true, message: '请输入课程名称' }]}
+          name="categoryName"
+          label="类别名称"
+          rules={[{ required: true, message: '请输入类别名称' }]}
         />
-        <ProFormDigit
-          name="sellingPrice"
-          label="课程价格"
-          min={0}
-          rules={[{ required: true, message: '请输入课程价格' }]}
-        />
-        <ProFormDigit
-          name="duration"
-          label="课程时长(分钟)"
-          min={1}
-          rules={[{ required: true, message: '请输入课程时长' }]}
-        />
+        <ProFormText name="categoryDesc" label="类别描述" />
       </ModalForm>
     </div>
   );

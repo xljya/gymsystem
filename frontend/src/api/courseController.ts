@@ -18,10 +18,7 @@ export async function addCourseUsingPost(
 }
 
 /** deleteCourse POST /api/course/delete */
-export async function deleteCourseUsingPost(
-  body: API.DeleteRequest,
-  options?: { [key: string]: any },
-) {
+export async function deleteCourseUsingPost(body: number, options?: { [key: string]: any }) {
   return request<API.BaseResponseBoolean_>('/api/course/delete', {
     method: 'POST',
     headers: {
@@ -62,12 +59,40 @@ export async function getCourseVoByIdUsingGet(
   });
 }
 
-/** listCourseVOByPage POST /api/course/list/page/vo */
-export async function listCourseVoByPageUsingPost(
+/** listCourseByCategoryId GET /api/course/list/category/${param0} */
+export async function listCourseByCategoryIdUsingGet(
+  // 叠加生成的Param类型 (非body参数swagger默认没有生成对象)
+  params: API.listCourseByCategoryIdUsingGETParams,
+  options?: { [key: string]: any },
+) {
+  const { categoryId: param0, ...queryParams } = params;
+  return request<API.BaseResponseListCourseVO_>(`/api/course/list/category/${param0}`, {
+    method: 'GET',
+    params: { ...queryParams },
+    ...(options || {}),
+  });
+}
+
+/** listCourseByCoachId GET /api/course/list/coach/${param0} */
+export async function listCourseByCoachIdUsingGet(
+  // 叠加生成的Param类型 (非body参数swagger默认没有生成对象)
+  params: API.listCourseByCoachIdUsingGETParams,
+  options?: { [key: string]: any },
+) {
+  const { coachId: param0, ...queryParams } = params;
+  return request<API.BaseResponseListCourseVO_>(`/api/course/list/coach/${param0}`, {
+    method: 'GET',
+    params: { ...queryParams },
+    ...(options || {}),
+  });
+}
+
+/** listCourseByPage POST /api/course/list/page */
+export async function listCourseByPageUsingPost(
   body: API.CourseQueryRequest,
   options?: { [key: string]: any },
 ) {
-  return request<API.BaseResponsePageCourseVO_>('/api/course/list/page/vo', {
+  return request<API.BaseResponsePageCourseVO_>('/api/course/list/page', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

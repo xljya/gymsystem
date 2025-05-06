@@ -7,7 +7,7 @@ export async function addGoodsUsingPost(
   body: API.GoodsAddRequest,
   options?: { [key: string]: any },
 ) {
-  return request<API.BaseResponseLong_>('/api/goods/add', {
+  return request<API.BaseResponseInt_>('/api/goods/add', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

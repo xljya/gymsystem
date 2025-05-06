@@ -77,6 +77,24 @@ declare namespace API {
     message?: string;
   };
 
+  type BaseResponseInt_ = {
+    code?: number;
+    data?: number;
+    message?: string;
+  };
+
+  type BaseResponseListCourseScheduleVO_ = {
+    code?: number;
+    data?: CourseScheduleVO[];
+    message?: string;
+  };
+
+  type BaseResponseListCourseVO_ = {
+    code?: number;
+    data?: CourseVO[];
+    message?: string;
+  };
+
   type BaseResponseListMembers_ = {
     code?: number;
     data?: Members[];
@@ -113,9 +131,27 @@ declare namespace API {
     message?: string;
   };
 
+  type BaseResponsePageCourseBookingVO_ = {
+    code?: number;
+    data?: PageCourseBookingVO_;
+    message?: string;
+  };
+
+  type BaseResponsePageCourseCategoryVO_ = {
+    code?: number;
+    data?: PageCourseCategoryVO_;
+    message?: string;
+  };
+
   type BaseResponsePageCoursePurchaseVO_ = {
     code?: number;
     data?: PageCoursePurchaseVO_;
+    message?: string;
+  };
+
+  type BaseResponsePageCourseScheduleVO_ = {
+    code?: number;
+    data?: PageCourseScheduleVO_;
     message?: string;
   };
 
@@ -218,12 +254,10 @@ declare namespace API {
 
   type CoachVO = {
     coachAccount?: string;
-    coachAddress?: string;
     coachAge?: number;
     coachAvatar?: string;
     coachId?: number;
     coachName?: string;
-    coachSalary?: string;
     coachStatus?: number;
     courseType?: string;
     createTime?: string;
@@ -232,21 +266,96 @@ declare namespace API {
   };
 
   type Course = {
+    categoryId?: number;
     coachId?: number;
+    coachName?: string;
     courseId?: number;
     courseName?: string;
     createTime?: string;
+    description?: string;
+    difficultyLevel?: string;
     duration?: number;
+    imageUrl?: string;
     isDelete?: number;
     sellingPrice?: number;
     updateTime?: string;
   };
 
   type CourseAddRequest = {
+    categoryId?: number;
     coachId?: number;
     courseName?: string;
+    description?: string;
+    difficultyLevel?: string;
     duration?: number;
+    imageUrl?: string;
     sellingPrice?: number;
+  };
+
+  type CourseBookingAddRequest = {
+    attendanceStatus?: number;
+    bookingId?: number;
+    bookingStatus?: number;
+    memberId?: number;
+    scheduleId?: number;
+  };
+
+  type CourseBookingQueryRequest = {
+    attendanceStatus?: number;
+    bookingId?: number;
+    bookingStatus?: number;
+    current?: number;
+    memberId?: number;
+    pageSize?: number;
+    scheduleId?: number;
+    sortField?: string;
+    sortOrder?: string;
+  };
+
+  type CourseBookingUpdateRequest = {
+    attendanceStatus?: number;
+    bookingId?: number;
+    bookingStatus?: number;
+    memberId?: number;
+    scheduleId?: number;
+  };
+
+  type CourseBookingVO = {
+    attendanceStatus?: number;
+    bookingId?: number;
+    bookingStatus?: number;
+    createTime?: string;
+    memberId?: number;
+    scheduleId?: number;
+  };
+
+  type CourseCategoryAddRequest = {
+    categoryDesc?: string;
+    categoryName?: string;
+  };
+
+  type CourseCategoryQueryRequest = {
+    categoryDesc?: string;
+    categoryId?: number;
+    categoryName?: string;
+    current?: number;
+    pageSize?: number;
+    sortField?: string;
+    sortOrder?: string;
+  };
+
+  type CourseCategoryUpdateRequest = {
+    categoryDesc?: string;
+    categoryId?: number;
+    categoryName?: string;
+  };
+
+  type CourseCategoryVO = {
+    categoryDesc?: string;
+    categoryId?: number;
+    categoryName?: string;
+    createTime?: string;
+    updateTime?: string;
   };
 
   type CoursePurchase = {
@@ -281,6 +390,7 @@ declare namespace API {
     purchaseTimeStart?: string;
     sortField?: string;
     sortOrder?: string;
+    status?: number;
   };
 
   type CoursePurchaseUpdateRequest = {
@@ -305,20 +415,79 @@ declare namespace API {
   };
 
   type CourseQueryRequest = {
+    categoryId?: number;
     coachId?: number;
     courseId?: number;
     courseName?: string;
     current?: number;
+    difficultyLevel?: string;
+    duration?: number;
     pageSize?: number;
     sortField?: string;
     sortOrder?: string;
   };
 
+  type CourseScheduleAddRequest = {
+    coachId?: number;
+    courseId?: number;
+    endTime?: string;
+    maxParticipants?: number;
+    roomNumber?: string;
+    startTime?: string;
+  };
+
+  type CourseScheduleQueryRequest = {
+    coachId?: number;
+    courseId?: number;
+    current?: number;
+    endTime?: string;
+    endTimeBegin?: string;
+    endTimeEnd?: string;
+    pageSize?: number;
+    scheduleId?: number;
+    sortField?: string;
+    sortOrder?: string;
+    startTime?: string;
+    startTimeBegin?: string;
+    startTimeEnd?: string;
+    status?: number;
+  };
+
+  type CourseScheduleUpdateRequest = {
+    coachId?: number;
+    courseId?: number;
+    endTime?: string;
+    maxParticipants?: number;
+    roomNumber?: string;
+    scheduleId?: number;
+    startTime?: string;
+    status?: number;
+  };
+
+  type CourseScheduleVO = {
+    coachId?: number;
+    courseId?: number;
+    createTime?: string;
+    currentParticipants?: number;
+    endTime?: string;
+    isDelete?: number;
+    maxParticipants?: number;
+    roomNumber?: string;
+    scheduleId?: number;
+    startTime?: string;
+    status?: number;
+    updateTime?: string;
+  };
+
   type CourseUpdateRequest = {
+    categoryId?: number;
     coachId?: number;
     courseId?: number;
     courseName?: string;
+    description?: string;
+    difficultyLevel?: string;
     duration?: number;
+    imageUrl?: string;
     sellingPrice?: number;
   };
 
@@ -332,12 +501,17 @@ declare namespace API {
   };
 
   type DeleteRequest = {
+    bookingId?: number;
+    categoryId?: number;
     coachId?: number;
     courseId?: number;
     eqId?: number;
     goodsId?: number;
     id?: number;
     memberId?: number;
+    purchaseId?: number;
+    scheduleId?: number;
+    transactionId?: number;
   };
 
   type Equipment = {
@@ -358,6 +532,7 @@ declare namespace API {
     current?: number;
     eqId?: number;
     eqName?: string;
+    eqStatus?: number;
     pageSize?: number;
     sortField?: string;
     sortOrder?: string;
@@ -473,6 +648,7 @@ declare namespace API {
     current?: number;
     goodsId?: number;
     goodsName?: string;
+    isDelete?: number;
     pageSize?: number;
     sortField?: string;
     sortOrder?: string;
@@ -506,6 +682,7 @@ declare namespace API {
     goodsId?: number;
     id?: number;
     memberId?: number;
+    memberName?: string;
     pageSize?: number;
     priceMax?: number;
     priceMin?: number;
@@ -530,7 +707,6 @@ declare namespace API {
     id?: number;
     memberId?: number;
     memberName?: string;
-    memberPhone?: string;
     price?: number;
     totalAmount?: number;
     updateTime?: string;
@@ -554,7 +730,16 @@ declare namespace API {
     remark?: string;
     sellPrice?: number;
     unit?: string;
-    unitPrice?: number;
+  };
+
+  type listCourseByCategoryIdUsingGETParams = {
+    /** categoryId */
+    categoryId: number;
+  };
+
+  type listCourseByCoachIdUsingGETParams = {
+    /** coachId */
+    coachId: number;
   };
 
   type LoginMemberVO = {
@@ -639,10 +824,34 @@ declare namespace API {
     total?: number;
   };
 
+  type PageCourseBookingVO_ = {
+    current?: number;
+    pages?: number;
+    records?: CourseBookingVO[];
+    size?: number;
+    total?: number;
+  };
+
+  type PageCourseCategoryVO_ = {
+    current?: number;
+    pages?: number;
+    records?: CourseCategoryVO[];
+    size?: number;
+    total?: number;
+  };
+
   type PageCoursePurchaseVO_ = {
     current?: number;
     pages?: number;
     records?: CoursePurchaseVO[];
+    size?: number;
+    total?: number;
+  };
+
+  type PageCourseScheduleVO_ = {
+    current?: number;
+    pages?: number;
+    records?: CourseScheduleVO[];
     size?: number;
     total?: number;
   };
