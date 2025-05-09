@@ -49,7 +49,7 @@ export const adminSettings: ProLayoutProps = {
   colorWeak: false,
   title: '健身房管理系统',
   pwa: true,
-  logo: 'https://www.liucf.com/images/icon/logo.png',
+  logo: '/icons/logo.png',
   iconfontUrl: '',
   token: {
     sider: {
@@ -78,7 +78,7 @@ export const memberSettings: ProLayoutProps = {
   fixSiderbar: false,
   pwa: true,
   title: '健身房会员页面',
-  logo: 'https://www.liucf.com/images/icon/logo.png',
+  logo: '/icons/logo.png',
   className: 'member-layout',
   token: {
     sider: {

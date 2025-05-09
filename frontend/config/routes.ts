@@ -6,10 +6,17 @@ const routes = [
     access: 'canMember',
   },
   {
-    path: '/test',
-    name: '测试页面',
-    component: './Member/Test',
+    path: '/course',
+    name: '课程',
+    component: './Course',
+    exact: true,
     access: 'canMember',
+  },
+  {
+    path: '/course/:id',
+    component: './Course',
+    access: 'canMember',
+    hideInMenu: true,
   },
   {
     path: '/admin/welcome',

@@ -268,7 +268,6 @@ declare namespace API {
   type Course = {
     categoryId?: number;
     coachId?: number;
-    coachName?: string;
     courseId?: number;
     courseName?: string;
     createTime?: string;
@@ -492,11 +491,17 @@ declare namespace API {
   };
 
   type CourseVO = {
+    categoryName?: string;
     coachId?: number;
+    coachName?: string;
     courseId?: number;
     courseName?: string;
     createTime?: string;
+    description?: string;
+    difficultyLevel?: string;
     duration?: number;
+    imageUrl?: string;
+    schedule?: ScheduleVO[];
     sellingPrice?: number;
   };
 
@@ -576,9 +581,9 @@ declare namespace API {
     id?: number;
   };
 
-  type getCourseVOByIdUsingGETParams = {
-    /** courseId */
-    courseId?: number;
+  type getCourseVoByIdWithScheduleUsingGETParams = {
+    /** id */
+    id: number;
   };
 
   type getEquipmentByIdUsingGETParams = {
@@ -742,6 +747,11 @@ declare namespace API {
     coachId: number;
   };
 
+  type listCoursesByCategoryIdWithScheduleUsingGETParams = {
+    /** categoryId */
+    categoryId?: number;
+  };
+
   type LoginMemberVO = {
     createTime?: string;
     gender?: number;
@@ -894,5 +904,10 @@ declare namespace API {
     records?: MemberVO[];
     size?: number;
     total?: number;
+  };
+
+  type ScheduleVO = {
+    day?: string;
+    time?: string;
   };
 }

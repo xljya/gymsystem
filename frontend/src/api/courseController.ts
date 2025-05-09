@@ -44,13 +44,13 @@ export async function getCourseByIdUsingGet(
   });
 }
 
-/** getCourseVOById GET /api/course/get/vo */
-export async function getCourseVoByIdUsingGet(
+/** getCourseVoByIdWithSchedule GET /api/course/getCourseVoById */
+export async function getCourseVoByIdWithScheduleUsingGet(
   // 叠加生成的Param类型 (非body参数swagger默认没有生成对象)
-  params: API.getCourseVOByIdUsingGETParams,
+  params: API.getCourseVoByIdWithScheduleUsingGETParams,
   options?: { [key: string]: any },
 ) {
-  return request<API.BaseResponseCourseVO_>('/api/course/get/vo', {
+  return request<API.BaseResponseCourseVO_>('/api/course/getCourseVoById', {
     method: 'GET',
     params: {
       ...params,
@@ -98,6 +98,29 @@ export async function listCourseByPageUsingPost(
       'Content-Type': 'application/json',
     },
     data: body,
+    ...(options || {}),
+  });
+}
+
+/** listAllCourses GET /api/course/listAllCourses */
+export async function listAllCoursesUsingGet(options?: { [key: string]: any }) {
+  return request<API.BaseResponseListCourseVO_>('/api/course/listAllCourses', {
+    method: 'GET',
+    ...(options || {}),
+  });
+}
+
+/** listCoursesByCategoryIdWithSchedule GET /api/course/listCourseByCategoryId */
+export async function listCoursesByCategoryIdWithScheduleUsingGet(
+  // 叠加生成的Param类型 (非body参数swagger默认没有生成对象)
+  params: API.listCoursesByCategoryIdWithScheduleUsingGETParams,
+  options?: { [key: string]: any },
+) {
+  return request<API.BaseResponseListCourseVO_>('/api/course/listCourseByCategoryId', {
+    method: 'GET',
+    params: {
+      ...params,
+    },
     ...(options || {}),
   });
 }

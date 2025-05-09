@@ -1,5 +1,5 @@
 // logo地址
-export const SYSTEM_LOGO = "https://liuyueyue.top/images/preview.jpg";
+export const SYSTEM_LOGO = "/icons/preview.jpg";
 
 /**
  * 个人主页介绍地址

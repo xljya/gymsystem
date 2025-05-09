@@ -1,14 +1,14 @@
+import { getLoginMemberUsingGet } from '@/api/memberController';
 import { AvatarDropdown, AvatarName, Question } from '@/components';
+import AdminFooter from '@/components/Footer';
+import MemberFooter from '@/components/Footer/MemberFooter';
+import { SYSTEM_LOGO } from '@/constants';
+import { RequestConfig } from '@@/plugin-request/request';
 import type { Settings as LayoutSettings } from '@ant-design/pro-components';
 import { SettingDrawer } from '@ant-design/pro-components';
 import type { RunTimeLayoutConfig } from '@umijs/max';
-import {RequestConfig} from "@@/plugin-request/request";
 import { history } from '@umijs/max';
 import defaultSettings, { memberSettings } from '../config/defaultSettings';
-import { getLoginMemberUsingGet } from '@/api/memberController';
-import { SYSTEM_LOGO } from '@/constants';
-import AdminFooter from '@/components/Footer';
-import MemberFooter from '@/components/Footer/MemberFooter';
 
 /**
  * 判断当前是否为开发环境
@@ -31,6 +31,7 @@ export const request: RequestConfig = {
 /**
  * 获取应用初始状态
  * 这个函数会在应用启动时被调用，用于初始化全局状态
+/**
  * @returns 包含设置、当前会员信息、加载状态和获取会员信息函数的对象
  */
 export async function getInitialState(): Promise<{
@@ -43,7 +44,7 @@ export async function getInitialState(): Promise<{
     try {
       const res = await getLoginMemberUsingGet();
       console.log('获取用户信息响应:', res);
-      
+
       if (res) {
         return {
           ...res,
@@ -62,18 +63,17 @@ export async function getInitialState(): Promise<{
   if (history.location.pathname !== '/member/login') {
     // 获取当前登录用户信息
     const currentUser = await fetchUserInfo();
-    
+
     // 返回初始化状态对象
     return {
       fetchUserInfo,
       currentUser,
-      settings: currentUser?.memberRole === 'admin' 
-        ? defaultSettings  // 管理员使用默认配置
-        : memberSettings,  // 会员使用会员配置
+      settings:
+        currentUser?.memberRole === 'admin'
+          ? defaultSettings // 管理员使用默认配置
+          : memberSettings, // 会员使用会员配置
     };
   }
-
-
 }
 
 /**
@@ -81,8 +81,21 @@ export async function getInitialState(): Promise<{
  * 配置应用的布局、菜单、权限等
  */
 export const layout: RunTimeLayoutConfig = ({ initialState, setInitialState }) => {
-  // 如果是登录页面或注册页面，不显示布局
-  if (history.location.pathname === '/member/login' || history.location.pathname === '/member/register') {
+  // 定义不需要布局的路由白名单
+  const layoutWhitelist = [
+    '/member/login',
+    '/member/register',
+    // 可以在此添加其他不需要默认布局的路由
+  ];
+
+  // 检查当前路径是否在白名单中
+  const isInWhitelist = layoutWhitelist.some(
+    (path) =>
+      history.location.pathname === path || history.location.pathname.startsWith(path + '/'),
+  );
+
+  // 如果是白名单页面，不显示布局
+  if (isInWhitelist) {
     return {
       pure: true,
       menuRender: false,
@@ -103,9 +116,8 @@ export const layout: RunTimeLayoutConfig = ({ initialState, setInitialState }) =
   }
 
   // 根据用户角色动态设置布局
-  const layoutSettings = initialState?.currentUser?.memberRole === 'admin' 
-    ? defaultSettings 
-    : memberSettings;
+  const layoutSettings =
+    initialState?.currentUser?.memberRole === 'admin' ? defaultSettings : memberSettings;
 
   return {
     // 右上角操作区
@@ -119,9 +131,8 @@ export const layout: RunTimeLayoutConfig = ({ initialState, setInitialState }) =
       },
     },
     // 页脚配置 - 根据用户角色显示不同的页脚
-    footerRender: () => initialState?.currentUser?.memberRole === 'admin' 
-      ? <AdminFooter /> 
-      : <MemberFooter />,
+    footerRender: () =>
+      initialState?.currentUser?.memberRole === 'admin' ? <AdminFooter /> : <MemberFooter />,
     // 页面切换时的处理
     onPageChange: () => {
       const { location } = history;
@@ -141,8 +152,15 @@ export const layout: RunTimeLayoutConfig = ({ initialState, setInitialState }) =
     // 增加一个 loading 的状态
     childrenRender: (children) => {
       return (
-        <>
-          {children}
+        // 页脚始终保持在底部
+        <div
+          style={{
+            minHeight: '100vh',
+            display: 'flex',
+            flexDirection: 'column',
+          }}
+        >
+          <div style={{ flex: 1 }}>{children}</div>
           {/* 开发环境下显示设置抽屉 */}
           {isDev && (
             <SettingDrawer
@@ -157,7 +175,7 @@ export const layout: RunTimeLayoutConfig = ({ initialState, setInitialState }) =
               }}
             />
           )}
-        </>
+        </div>
       );
     },
     ...layoutSettings,
@@ -172,3 +190,54 @@ export const layout: RunTimeLayoutConfig = ({ initialState, setInitialState }) =
 // export const request = {
 //   ...errorConfig,
 // };
+
+export function onRouteChange({ location, clientRoutes, routes, action }) {
+  if (typeof window !== 'undefined') {
+    let targetPath = location.pathname;
+    let shouldScrollToOffset = false;
+
+    // 检查是否需要重定向
+    if (location.pathname === '/course/0') {
+      history.replace('/course');
+      targetPath = '/course'; // 更新目标路径，用于后续滚动判断
+      // 注意：此处不直接滚动，等待history.replace生效后，action === 'REPLACE'时由后续逻辑处理
+    }
+
+    if (action === 'PUSH' || action === 'REPLACE') {
+      // 判断是否为 /course 或 /course/:id (非/course/0) 路径，以应用偏移
+      // 之前的重定向已将 /course/0 转换为 /course，所以这里只需判断 targetPath
+      if (
+        targetPath.startsWith('/course/') &&
+        targetPath.length > '/course/'.length &&
+        targetPath[targetPath.length - 1] !== '/'
+      ) {
+        shouldScrollToOffset = true;
+      } else if (targetPath === '/course') {
+        // 当路径是 /course (包括从 /course/0 重定向而来)，也应用偏移
+        shouldScrollToOffset = true;
+      }
+
+      const contentElement =
+        document.querySelector('.ant-pro-layout-content') ||
+        document.querySelector('.ant-pro-page-container-children-content') ||
+        document.querySelector('#root main > section');
+      const fixedOffset = 450;
+      let scrollTop = 0;
+
+      if (shouldScrollToOffset) {
+        if (contentElement) {
+          scrollTop = contentElement.getBoundingClientRect().top + window.pageYOffset + fixedOffset;
+        } else {
+          scrollTop = fixedOffset;
+        }
+      } else {
+        // 其他路径，默认滚动到页面最顶部 (0)
+        scrollTop = 0;
+      }
+
+      requestAnimationFrame(() => {
+        window.scrollTo(0, scrollTop);
+      });
+    }
+  }
+}

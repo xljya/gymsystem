@@ -4,6 +4,7 @@ import 'swiper/css/pagination';
 import { Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import styles from './Programs.module.css';
+import { Link } from '@umijs/max';
 
 // 定义健身课程数据
 const programsList = [
@@ -14,30 +15,34 @@ const programsList = [
     image:
       'https://images.unsplash.com/photo-1580261450046-d0a30080dc9b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2009&q=80',
     color: 'bg-red-500',
+    link: '/course/0',
   },
   {
     id: 2,
-    title: '健身课程',
-    description: '健身课程。',
+    title: '瑜伽',
+    description: '瑜伽。',
     image:
       'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2020&q=80',
     color: 'bg-blue-500',
+    link: '/course/1',
   },
   {
     id: 3,
-    title: '高强度间歇课程',
-    description: '高强度间歇课程。',
+    title: '格斗',
+    description: '格斗。',
     image:
       'https://images.unsplash.com/photo-1517438322307-e67111335449?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80',
     color: 'bg-yellow-500',
+    link: '/course/7',
   },
   {
     id: 4,
-    title: '青少年趣动课程',
-    description: '青少年趣动课程。',
+    title: '力量训练',
+    description: '力量训练。',
     image:
       'https://images.unsplash.com/photo-1517963879433-6ad2b056d712?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
     color: 'bg-green-500',
+    link: '/course/2',
   },
 ];
 
@@ -67,25 +72,27 @@ const Programs = () => {
         >
           {programsList.map((program) => (
             <SwiperSlide key={program.id}>
-              <div className={styles.programCardContainer}>
-                <Card
-                  className={styles.programCard}
-                  cover={
-                    <div className={styles.programImage}>
-                      <img
-                        src={program.image}
-                        alt={program.title}
-                        className={styles.programImage}
-                      />
-                    </div>
-                  }
-                >
-                  <div className={`${program.color} h-2 -mt-6 mb-4`}></div>
-                  <Card.Meta
-                    title={<h3 className="text-xl font-bold px-6 pb-4 text-center">{program.title}</h3>}
-                  />
-                </Card>
-              </div>
+              <Link to={program.link} style={{ textDecoration: 'none' }}>
+                <div className={styles.programCardContainer}>
+                  <Card
+                    className={styles.programCard}
+                    cover={
+                      <div className={styles.programImage}>
+                        <img
+                          src={program.image}
+                          alt={program.title}
+                          className={styles.programImage}
+                        />
+                      </div>
+                    }
+                  >
+                    <div className={`${program.color} h-2 -mt-6 mb-4`}></div>
+                    <Card.Meta
+                      title={<h3 className="text-xl font-bold px-6 pb-4 text-center">{program.title}</h3>}
+                    />
+                  </Card>
+                </div>
+              </Link>
             </SwiperSlide>
           ))}
         </Swiper>
