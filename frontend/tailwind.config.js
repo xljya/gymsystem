@@ -1,5 +1,11 @@
 module.exports = {
-  content: ['./src/pages/**/*.tsx', './src/components/**/*.tsx', './src/layouts/**/*.tsx'],
+  // Updated content paths
+  content: [
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}", // Added from new config
+    "./src/**/*.{ts,tsx}",   // More generic, covers existing src paths
+  ],
   // 启用 class 模式的暗色主题
   darkMode: ['class'],
   // class 前缀（默认为空）
@@ -21,6 +27,13 @@ module.exports = {
         ring: 'hsl(var(--ring))', // ring 色
         background: 'hsl(var(--background))', // 背景色
         foreground: 'hsl(var(--foreground))', // 前景色
+        // Added Les Mills colors from new config
+        lesmills: {
+          red: '#E40520',
+          black: '#111111',
+          gray: '#F5F5F5',
+          'dark-gray': '#333333',
+        },
         primary: {
           DEFAULT: 'hsl(var(--primary))',
           foreground: 'hsl(var(--primary-foreground))',
@@ -92,7 +105,8 @@ module.exports = {
             height: '0',
           },
         },
-        'pulse-soft': {
+        // Renamed from 'pulse-soft' to 'pulse-light' based on new config
+        'pulse-light': {
           '0%, 100%': { opacity: '1' },
           '50%': { opacity: '0.8' },
         },
@@ -101,10 +115,15 @@ module.exports = {
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
-        'pulse-soft': 'pulse-soft 2s ease-in-out infinite',
+        // Renamed from 'pulse-soft' to 'pulse-light'
+        'pulse-light': 'pulse-light 2s ease-in-out infinite',
+      },
+      // Added fontFamily from new config
+      fontFamily: {
+        sans: ['Inter', 'sans-serif'],
       },
     },
   },
-  // 插件配置，使用 ESModule 方式引入 tailwindcss-animate
-  plugins: [import('tailwindcss-animate').then((mod) => mod.default)],
+  // Changed plugin import to CommonJS style
+  plugins: [require("tailwindcss-animate")],
 };

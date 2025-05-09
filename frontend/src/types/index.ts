@@ -8,6 +8,7 @@ export interface Trainer {
   coachStatus?: number;
   createTime?: string;
   entryDate?: string;
+  coachAddress?: string; // 新增教练地址
   rating?: number; // 前端展示用，非后端数据
   experience?: number; // 前端展示用，非后端数据
 }

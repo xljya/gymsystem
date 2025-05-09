@@ -164,7 +164,8 @@ export async function fetchTrainer(coachId: string): Promise<Trainer | null> {
           createTime: coach.createTime,
           entryDate: coach.entryDate,
           rating: 4.5 + Math.random() * 0.5,
-          experience: Math.floor(Math.random() * 10) + 1,
+          experience: coach.entryDate ? Math.max(1, Math.floor((Date.now() - new Date(coach.entryDate).getTime()) / (1000 * 60 * 60 * 24 * 365))) : undefined,
+          coachAddress: coach.coachAddress || coach.address || '未知',
         };
       }
       return null;
@@ -220,7 +221,8 @@ export async function fetchTrainers(): Promise<Trainer[]> {
             createTime: coach.createTime,
             entryDate: coach.entryDate,
             rating: 4.5 + Math.random() * 0.5,
-            experience: Math.floor(Math.random() * 10) + 1,
+            experience: coach.entryDate ? Math.max(1, Math.floor((Date.now() - new Date(coach.entryDate).getTime()) / (1000 * 60 * 60 * 24 * 365))) : undefined,
+            coachAddress: coach.coachAddress || coach.address || '未知',
           }));
       }
       return []; // 如果没有教练记录，返回空数组

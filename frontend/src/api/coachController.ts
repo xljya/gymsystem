@@ -62,6 +62,14 @@ export async function getCoachVoByIdUsingGet(
   });
 }
 
+/** listDistinctCoachAddresses GET /api/coach/list/addresses */
+export async function listDistinctCoachAddressesUsingGet(options?: { [key: string]: any }) {
+  return request<API.BaseResponseListString_>('/api/coach/list/addresses', {
+    method: 'GET',
+    ...(options || {}),
+  });
+}
+
 /** listCoachVOByPage POST /api/coach/list/page/vo */
 export async function listCoachVoByPageUsingPost(
   body: API.CoachQueryRequest,

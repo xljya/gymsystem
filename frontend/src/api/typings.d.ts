@@ -101,6 +101,12 @@ declare namespace API {
     message?: string;
   };
 
+  type BaseResponseListString_ = {
+    code?: number;
+    data?: string[];
+    message?: string;
+  };
+
   type BaseResponseLoginMemberVO_ = {
     code?: number;
     data?: LoginMemberVO;
@@ -254,6 +260,7 @@ declare namespace API {
 
   type CoachVO = {
     coachAccount?: string;
+    coachAddress?: string;
     coachAge?: number;
     coachAvatar?: string;
     coachId?: number;
@@ -263,6 +270,7 @@ declare namespace API {
     createTime?: string;
     entryDate?: string;
     gender?: number;
+    updateTime?: string;
   };
 
   type Course = {
@@ -908,6 +916,7 @@ declare namespace API {
 
   type ScheduleVO = {
     day?: string;
+    scheduleId?: number;
     time?: string;
   };
 }

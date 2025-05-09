@@ -19,6 +19,12 @@ const routes = [
     hideInMenu: true,
   },
   {
+    path: '/coach',
+    name: '教练',
+    component: './Coach',
+    access: 'canMember',
+  },
+  {
     path: '/admin/welcome',
     name: '欢迎',
     component: './Admin/Welcome',
