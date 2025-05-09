@@ -103,6 +103,22 @@ public class CoachServiceImpl extends ServiceImpl<CoachMapper, Coach>
         queryWrapper.like(StrUtil.isNotBlank(courseType), "course_type", courseType);
         return queryWrapper;
     }
+
+    @Override
+    public List<String> listDistinctCoachAddresses() {
+        QueryWrapper<Coach> queryWrapper = new QueryWrapper<>();
+        // 选择 coach_address 列，并去重
+        queryWrapper.select("DISTINCT coach_address");
+        // 执行查询，将结果映射为 String 列表
+        // listObjs 会返回一个 List<Object>，但由于我们只查询一个列，且指定了其类型（通常是String），
+        // MyBatis-Plus 会尝试将其转换为对应类型。
+        // 如果 coach_address 在数据库中可能为 null，要去重后过滤掉 null 值
+        List<Object> objectList = this.listObjs(queryWrapper);
+        return objectList.stream()
+                         .filter(obj -> obj instanceof String && StrUtil.isNotBlank((String) obj))
+                         .map(obj -> (String) obj)
+                         .collect(Collectors.toList());
+    }
 }
 
 

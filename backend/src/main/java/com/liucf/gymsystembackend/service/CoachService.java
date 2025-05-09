@@ -54,4 +54,11 @@ public interface CoachService extends IService<Coach> {
      * @return 查询包装器
      */
     QueryWrapper<Coach> getQueryWrapper(CoachQueryRequest coachQueryRequest);
+
+    /**
+     * 获取所有不重复的教练地址
+     *
+     * @return 不重复的教练地址列表
+     */
+    List<String> listDistinctCoachAddresses();
 }

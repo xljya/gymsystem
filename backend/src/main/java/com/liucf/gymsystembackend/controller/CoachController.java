@@ -23,6 +23,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.annotation.Resource;
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 /**
  * 教练接口
@@ -67,6 +68,7 @@ public class CoachController {
      * 根据 id 获取脱敏的教练信息
      */
     @GetMapping("/get/vo")
+    @AuthCheck(mustRole = MemberConstant.MEMBER_ROLE)
     public BaseResponse<CoachVO> getCoachVOById(long coachId) {
         BaseResponse<Coach> response = getCoachById(coachId);
         Coach coach = response.getData();
@@ -103,10 +105,10 @@ public class CoachController {
     }
 
     /**
-     * 分页获取教练列表（仅管理员）
+     * 分页获取教练列表
      */
     @PostMapping("/list/page/vo")
-//    @AuthCheck(mustRole = MemberConstant.ADMIN_ROLE)
+    @AuthCheck(mustRole = MemberConstant.MEMBER_ROLE)
     public BaseResponse<Page<CoachVO>> listCoachVOByPage(@RequestBody CoachQueryRequest coachQueryRequest) {
         ThrowUtils.throwIf(coachQueryRequest == null, ErrorCode.PARAMS_ERROR);
         long current = coachQueryRequest.getCurrent();
@@ -123,6 +125,7 @@ public class CoachController {
      * 教练注册
      */
     @PostMapping("/register")
+    @AuthCheck(mustRole = MemberConstant.MEMBER_ROLE)
     public BaseResponse<Long> coachRegister(@RequestBody CoachRegisterRequest coachRegisterRequest) {
         if (coachRegisterRequest == null) {
             throw new BusinessException(ErrorCode.PARAMS_ERROR);
@@ -140,5 +143,15 @@ public class CoachController {
         long result = coachService.coachRegister(coachAccount, coachName, coachAvatar, gender,
                 coachAge, entryDate, courseType, coachSalary, coachAddress);
         return ResultUtils.success(result);
+    }
+
+    /**
+     * 获取所有不重复的教练地址
+     */
+    @GetMapping("/list/addresses")
+    @AuthCheck(mustRole = MemberConstant.MEMBER_ROLE)
+    public BaseResponse<List<String>> listDistinctCoachAddresses() {
+        List<String> distinctAddresses = coachService.listDistinctCoachAddresses();
+        return ResultUtils.success(distinctAddresses);
     }
 } 
