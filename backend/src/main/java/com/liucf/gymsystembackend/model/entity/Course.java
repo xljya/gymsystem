@@ -40,11 +40,6 @@ public class Course implements Serializable {
      */
     private Integer duration;
 
-    /**
-     * 教练姓名（非数据库字段，用于VO）
-     */
-    @TableField(exist = false)
-    private String coachName;
 
     /**
      * 创建时间

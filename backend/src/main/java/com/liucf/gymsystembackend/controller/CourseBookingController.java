@@ -39,7 +39,7 @@ public class CourseBookingController {
      * 预约课程
      */
     @PostMapping("/add")
-    @AuthCheck(mustRole = MemberConstant.ADMIN_ROLE)
+    @AuthCheck(mustRole = MemberConstant.MEMBER_ROLE)
     public BaseResponse<Long> addBooking(@RequestBody CourseBookingAddRequest courseBookingAddRequest) {
         ThrowUtils.throwIf(courseBookingAddRequest == null, ErrorCode.PARAMS_ERROR);
         // 映射DTO到Entity

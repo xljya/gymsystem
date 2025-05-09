@@ -25,4 +25,22 @@
         current_participants,room_number,status,
         create_time,update_time,is_delete
     </sql>
+
+    <select id="selectSchedulesByCourseId" resultType="com.liucf.gymsystembackend.model.entity.CourseSchedule">
+        SELECT *
+        FROM course_schedule
+        WHERE course_id = #{courseId} AND is_delete = 0
+        ORDER BY start_time ASC
+    </select>
+
+    <select id="selectSchedulesByCourseIds" resultType="com.liucf.gymsystembackend.model.entity.CourseSchedule">
+        SELECT *
+        FROM course_schedule
+        WHERE course_id IN 
+        <foreach item="id" collection="courseIds" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+        AND is_delete = 0
+        ORDER BY start_time
+    </select>
 </mapper>

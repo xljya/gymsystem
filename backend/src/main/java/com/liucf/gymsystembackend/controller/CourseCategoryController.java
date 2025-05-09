@@ -80,7 +80,7 @@ public class CourseCategoryController {
      * 分页获取课程类别（VO）
      */
     @PostMapping("/list/page/vo")
-    @AuthCheck(mustRole = MemberConstant.ADMIN_ROLE)
+//    @AuthCheck(mustRole = MemberConstant.ADMIN_ROLE)
     public BaseResponse<Page<CourseCategoryVO>> listCategoryByPage(@RequestBody CourseCategoryQueryRequest queryRequest) {
         ThrowUtils.throwIf(queryRequest == null, ErrorCode.PARAMS_ERROR);
         long current = queryRequest.getCurrent();

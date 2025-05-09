@@ -105,4 +105,27 @@ public interface CourseService extends IService<Course> {
      * @return 课程视图对象分页信息
      */
     Page<CourseVO> getCourseVOPage(Page<Course> coursePage);
+
+    /**
+     * 根据课程ID获取课程VO（包含分类、教练名称和排期信息）
+     *
+     * @param courseId 课程ID
+     * @return CourseVO，如果找不到则返回null
+     */
+    CourseVO getCourseVoWithScheduleById(Long courseId);
+
+    /**
+     * 获取所有课程VO列表（包含分类、教练名称和排期信息）
+     *
+     * @return List<CourseVO>
+     */
+    List<CourseVO> listAllCoursesWithSchedule();
+
+    /**
+     * 根据分类ID获取课程VO列表（包含分类、教练名称和排期信息）
+     *
+     * @param categoryId 分类ID
+     * @return List<CourseVO>
+     */
+    List<CourseVO> listCoursesByCategoryIdWithSchedule(Long categoryId);
 }

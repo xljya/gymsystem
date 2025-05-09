@@ -106,7 +106,7 @@ public class CoachController {
      * 分页获取教练列表（仅管理员）
      */
     @PostMapping("/list/page/vo")
-    @AuthCheck(mustRole = MemberConstant.ADMIN_ROLE)
+//    @AuthCheck(mustRole = MemberConstant.ADMIN_ROLE)
     public BaseResponse<Page<CoachVO>> listCoachVOByPage(@RequestBody CoachQueryRequest coachQueryRequest) {
         ThrowUtils.throwIf(coachQueryRequest == null, ErrorCode.PARAMS_ERROR);
         long current = coachQueryRequest.getCurrent();
