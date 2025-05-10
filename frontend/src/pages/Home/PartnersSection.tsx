@@ -33,8 +33,8 @@ const brandPartners = [
   {
     id: 5,
     name: '品牌 E',
-    logoUrl: 'https://image.liucf.com/images/2025/04/1f50cddc01ae0ffca8b92446d9ed1b34.svg',
-    linkUrl: 'https://cherry-ai.com/',
+    logoUrl: 'https://image.liucf.com/images/2025/05/e697701b4950608cdb41ec0ea923ccf3.svg',
+    linkUrl: 'https://lovable.dev/',
   },
   {
     id: 6,

@@ -3,8 +3,8 @@ module.exports = {
   content: [
     "./pages/**/*.{ts,tsx}",
     "./components/**/*.{ts,tsx}",
-    "./app/**/*.{ts,tsx}", // Added from new config
-    "./src/**/*.{ts,tsx}",   // More generic, covers existing src paths
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
   ],
   // 启用 class 模式的暗色主题
   darkMode: ['class'],
@@ -80,6 +80,12 @@ module.exports = {
           light: '#F9F9F9', // 健身浅色
           gray: '#707070', // 健身灰
         },
+        gym: {
+          primary: "#1A1F2C",
+          accent: "#ea384c",
+          light: "#F6F6F7",
+          gray: "#8E9196",
+        },
       },
       // 扩展圆角
       borderRadius: {
@@ -110,6 +116,26 @@ module.exports = {
           '0%, 100%': { opacity: '1' },
           '50%': { opacity: '0.8' },
         },
+        'fade-in': {
+          '0%': {
+            opacity: '0',
+            transform: 'translateY(10px)',
+          },
+          '100%': {
+            opacity: '1',
+            transform: 'translateY(0)',
+          },
+        },
+        'fade-out': {
+          '0%': {
+            opacity: '1',
+            transform: 'translateY(0)',
+          },
+          '100%': {
+            opacity: '0',
+            transform: 'translateY(10px)',
+          },
+        },
       },
       // 自定义动画
       animation: {
@@ -117,6 +143,8 @@ module.exports = {
         'accordion-up': 'accordion-up 0.2s ease-out',
         // Renamed from 'pulse-soft' to 'pulse-light'
         'pulse-light': 'pulse-light 2s ease-in-out infinite',
+        'fade-in': 'fade-in 0.3s ease-out',
+        'fade-out': 'fade-out 0.3s ease-out',
       },
       // Added fontFamily from new config
       fontFamily: {

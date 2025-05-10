@@ -25,6 +25,48 @@ const routes = [
     access: 'canMember',
   },
   {
+    path: '/equipment',
+    name: '健身器械',
+    component: './Equipment',
+    access: 'canMember',
+  },
+  {
+    path: '/equipment/all',
+    name: '健身器械列表',
+    component: './Equipment/EquipmentList',
+    hideInMenu: true,
+  },
+  {
+    path: '/equipment/:id',
+    name: '健身器械详情',
+    component: './Equipment/EquipmentDetail',
+    hideInMenu: true,
+  },
+  {
+    path: '/goods',
+    name: '运动商品',
+    component: './Goods',
+    access: 'canMember',
+  },
+  {
+    path: '/goods/:id',
+    name: '运动商品详情',
+    component: './Goods/GoodsDetail',
+    hideInMenu: true,
+  },
+  {
+    path: '/goods/all',
+    name: '运动商品列表',
+    component: './Goods/GoodsList',
+    hideInMenu: true,
+  },
+  {
+    path: '/about',
+    name: '关于我们',
+    component: './About',
+    access: 'canMember',
+  },
+  {
     path: '/admin/welcome',
     name: '欢迎',
     component: './Admin/Welcome',

@@ -1,5 +1,5 @@
 import { getLoginMemberUsingGet } from '@/api/memberController';
-import { AvatarDropdown, AvatarName, Question } from '@/components';
+import { AvatarDropdown, AvatarName } from '@/components';
 import AdminFooter from '@/components/Footer';
 import MemberFooter from '@/components/Footer/MemberFooter';
 import { SYSTEM_LOGO } from '@/constants';
@@ -9,6 +9,7 @@ import { SettingDrawer } from '@ant-design/pro-components';
 import type { RunTimeLayoutConfig } from '@umijs/max';
 import { history } from '@umijs/max';
 import defaultSettings, { memberSettings } from '../config/defaultSettings';
+import { Toaster } from "@/components/ui/toaster";
 
 /**
  * 判断当前是否为开发环境
@@ -121,7 +122,6 @@ export const layout: RunTimeLayoutConfig = ({ initialState, setInitialState }) =
 
   return {
     // 右上角操作区
-    actionsRender: () => [<Question key="doc" />],
     // 头像配置
     avatarProps: {
       src: initialState?.currentUser?.memberAvatar || SYSTEM_LOGO,
@@ -175,6 +175,7 @@ export const layout: RunTimeLayoutConfig = ({ initialState, setInitialState }) =
               }}
             />
           )}
+          <Toaster />
         </div>
       );
     },
