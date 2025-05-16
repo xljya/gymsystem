@@ -1,10 +1,10 @@
 module.exports = {
   // Updated content paths
   content: [
-    "./pages/**/*.{ts,tsx}",
-    "./components/**/*.{ts,tsx}",
-    "./app/**/*.{ts,tsx}",
-    "./src/**/*.{ts,tsx}",
+    "./src/**/*.{js,jsx,ts,tsx}",
+    "./src/pages/**/*.{js,jsx,ts,tsx}",
+    "./src/components/**/*.{js,jsx,ts,tsx}",
+    "./src/layouts/**/*.{js,jsx,ts,tsx}",
   ],
   // 启用 class 模式的暗色主题
   darkMode: ['class'],

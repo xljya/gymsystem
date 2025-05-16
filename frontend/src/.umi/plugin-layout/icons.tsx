@@ -3,13 +3,13 @@
 // DO NOT CHANGE IT MANUALLY!
 import CrownOutlined from 'C:/bysj/gymsystem-frontend/node_modules/@ant-design/icons/es/icons/CrownOutlined';
 import UserOutlined from 'C:/bysj/gymsystem-frontend/node_modules/@ant-design/icons/es/icons/UserOutlined';
-import TeamOutlined from 'C:/bysj/gymsystem-frontend/node_modules/@ant-design/icons/es/icons/TeamOutlined';
 import ReadOutlined from 'C:/bysj/gymsystem-frontend/node_modules/@ant-design/icons/es/icons/ReadOutlined';
-import CreditCardOutlined from 'C:/bysj/gymsystem-frontend/node_modules/@ant-design/icons/es/icons/CreditCardOutlined';
-import ToolOutlined from 'C:/bysj/gymsystem-frontend/node_modules/@ant-design/icons/es/icons/ToolOutlined';
-import ShoppingOutlined from 'C:/bysj/gymsystem-frontend/node_modules/@ant-design/icons/es/icons/ShoppingOutlined';
-import TransactionOutlined from 'C:/bysj/gymsystem-frontend/node_modules/@ant-design/icons/es/icons/TransactionOutlined';
 import AppstoreOutlined from 'C:/bysj/gymsystem-frontend/node_modules/@ant-design/icons/es/icons/AppstoreOutlined';
 import CalendarOutlined from 'C:/bysj/gymsystem-frontend/node_modules/@ant-design/icons/es/icons/CalendarOutlined';
 import ScheduleOutlined from 'C:/bysj/gymsystem-frontend/node_modules/@ant-design/icons/es/icons/ScheduleOutlined';
-export default { CrownOutlined, UserOutlined, TeamOutlined, ReadOutlined, CreditCardOutlined, ToolOutlined, ShoppingOutlined, TransactionOutlined, AppstoreOutlined, CalendarOutlined, ScheduleOutlined };
+import CreditCardOutlined from 'C:/bysj/gymsystem-frontend/node_modules/@ant-design/icons/es/icons/CreditCardOutlined';
+import TeamOutlined from 'C:/bysj/gymsystem-frontend/node_modules/@ant-design/icons/es/icons/TeamOutlined';
+import ToolOutlined from 'C:/bysj/gymsystem-frontend/node_modules/@ant-design/icons/es/icons/ToolOutlined';
+import ShoppingOutlined from 'C:/bysj/gymsystem-frontend/node_modules/@ant-design/icons/es/icons/ShoppingOutlined';
+import TransactionOutlined from 'C:/bysj/gymsystem-frontend/node_modules/@ant-design/icons/es/icons/TransactionOutlined';
+export default { CrownOutlined, UserOutlined, ReadOutlined, AppstoreOutlined, CalendarOutlined, ScheduleOutlined, CreditCardOutlined, TeamOutlined, ToolOutlined, ShoppingOutlined, TransactionOutlined };

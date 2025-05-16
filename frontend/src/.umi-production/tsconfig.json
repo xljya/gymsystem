@@ -27,7 +27,7 @@
         "src/.umi/*"
       ],
       "@umijs/max": [
-        "D:\\MyCode\\用户中心管理\\user-center-front\\usercenter\\node_modules\\umi"
+        "../../node_modules/umi"
       ],
       "@umijs/max/typings": [
         "src/.umi/typings"

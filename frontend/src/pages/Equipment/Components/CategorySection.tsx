@@ -5,33 +5,36 @@ import { Dumbbell, Bike } from "lucide-react";
 
 const categories = [
   {
-    id: "cardio",
-    name: "有氧器械",
-    description: "提升心肺功能，增强耐力",
+    id: 'cardio',
+    name: '有氧器械',
+    description: '提升心肺功能，增强耐力',
     icon: <Bike className="w-10 h-10 text-gym-accent" />,
-    image: "https://images.unsplash.com/photo-1591741549298-ab52bc504ef2?q=80&w=2669&auto=format&fit=crop"
+    image: 'https://image.liucf.com/images/2025/05/715aaff5c48c04e1dd1cca498e8633cb.jpeg',
   },
   {
-    id: "strength",
-    name: "力量器械",
-    description: "增强肌肉力量，塑造身体线条",
+    id: 'strength',
+    name: '力量器械',
+    description: '增强肌肉力量，塑造身体线条',
     icon: <Dumbbell className="w-10 h-10 text-gym-accent" />,
-    image: "https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?q=80&w=2669&auto=format&fit=crop"
+    image:
+      'https://img.28082003.com//xlxlimg_1747424592083_3.jpg',
   },
   {
-    id: "functional",
-    name: "功能性训练器械",
-    description: "提高身体协调性和灵活性",
+    id: 'functional',
+    name: '功能性训练器械',
+    description: '提高身体协调性和灵活性',
     icon: <Dumbbell className="w-10 h-10 text-gym-accent" />,
-    image: "https://images.unsplash.com/photo-1598289431512-b98b2cbade6f?q=80&w=2574&auto=format&fit=crop"
+    image:
+      'https://img.28082003.com//xlxlimg_1747424871489_0.jpg',
   },
   {
-    id: "accessories",
-    name: "健身配件",
-    description: "辅助训练，提高健身效果",
+    id: 'accessories',
+    name: '健身配件',
+    description: '辅助训练，提高健身效果',
     icon: <Bike className="w-10 h-10 text-gym-accent" />,
-    image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=2670&auto=format&fit=crop"
-  }
+    image:
+      'https://img.28082003.com//xlxlimg_1747424592088_9.jpg',
+  },
 ];
 
 const CategorySection = () => {

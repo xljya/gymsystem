@@ -47,23 +47,23 @@ const CustomCarousel: React.FC = () => {
       description: '...', // 内容不再显示，可以保留数据或移除
       image:
         'https://lmimirroralphapvr.azureedge.net/static/media/32448/d96dbe7e-e65c-43cc-b570-693385c7f7f4/lm-workouts-bodypump-equipment-960x560.jpg',
-      link: '/workouts/bodypump',
+      link: '/equipment/all?category=strength',
     },
     {
       id: 2,
       title: 'BODYCOMBAT',
       description: '...',
       image:
-        'https://lmimirroralphapvr.azureedge.net/static/media/37079/cd493b18-ca8b-44e3-9c65-3e0f587b3c83/bodycombat-homepage-image.jpg',
-      link: '/workouts/bodycombat',
+        'https://img.28082003.com//xlxlimg_1747424871489_0.jpg',
+      link: '/equipment/all?category=functional',
     },
     {
       id: 3,
-      title: 'LES MILLS SHAPES',
+      title: 'SHAPES',
       description: '...',
       image:
-        'https://lmimirroralphapvr.azureedge.net/static/media/37080/377b49d8-3800-47cc-b3a1-fc343fa5023/les-mills-shapes-homepage-image.jpg',
-      link: '/workouts/shapes',
+        'https://img.28082003.com//xlxlimg_1747424592088_9.jpg',
+      link: '/equipment/all?category=accessories',
     },
   ];
 
@@ -116,7 +116,7 @@ const CustomCarousel: React.FC = () => {
                 <a href={slide.link} title={slide.title}>
                   <img src={slide.image} alt={slide.title} />
                 </a>
-                <p className={styles.placeholderDescription}>待写描述</p>
+                <p className={styles.placeholderDescription}></p>
               </div>
             </SwiperSlide>
           ))}

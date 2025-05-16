@@ -1,48 +1,69 @@
 
+// 器械数据类型定义
 export interface Equipment {
+  // 器械唯一标识
   id: string;
+  // 器械名称
   name: string;
+  // 器械分类（如：cardio, strength等）
   category: string;
+  // 简短描述
   shortDescription: string;
+  // 详细描述
   description: string;
+  // 技术参数，键值对形式
   specifications: {
     [key: string]: string;
   };
+  // 产品特点列表
   features: string[];
+  // 主图URL
   image: string;
+  // 轮播图URL数组
   images: string[];
+  // 是否首页推荐
   featured: boolean;
 }
 
 export const equipmentData: Equipment[] = [
   {
+    // 器械ID，唯一标识
     id: "treadmill-pro-2000",
+    // 器械名称
     name: "高级跑步机 Pro 2000",
+    // 分类（有氧器械）
     category: "cardio",
+    // 简短描述
     shortDescription: "专业级跑步机，配备先进的减震系统和智能显示屏",
+    // 详细描述
     description: "高级跑步机 Pro 2000是一款专为健身爱好者设计的高端跑步机。它配备了先进的减震系统，可以有效减少对关节的冲击，让您的跑步体验更加舒适。智能显示屏可以实时监控您的心率、速度、距离和卡路里消耗，帮助您更好地掌握训练情况。强大的马达可以提供稳定的动力，支持高达20公里每小时的速度，满足不同强度的训练需求。",
+    // 技术参数
     specifications: {
-      "尺寸": "200 x 90 x 130 cm",
-      "最大速度": "20 公里/小时",
-      "最大承重": "150 公斤",
-      "功率": "3.0 HP",
-      "跑步带尺寸": "50 x 150 cm",
-      "坡度": "0-15%"
+      "尺寸": "200 x 90 x 130 cm",         // 设备尺寸
+      "最大速度": "20 公里/小时",           // 最大速度
+      "最大承重": "150 公斤",               // 最大承重
+      "功率": "3.0 HP",                    // 电机功率
+      "跑步带尺寸": "50 x 150 cm",          // 跑步带尺寸
+      "坡度": "0-15%"                      // 坡度范围
     },
+    // 产品特点
     features: [
-      "先进的减震系统，保护关节",
-      "15寸智能触控显示屏",
-      "内置多种训练课程",
-      "心率监测功能",
-      "可折叠设计，节省空间",
-      "静音设计，降低噪音"
+      "先进的减震系统，保护关节",         // 减震系统
+      "15寸智能触控显示屏",               // 智能显示屏
+      "内置多种训练课程",                 // 多种训练课程
+      "心率监测功能",                     // 心率监测
+      "可折叠设计，节省空间",             // 可折叠
+      "静音设计，降低噪音"                // 静音
     ],
-    image: "https://images.unsplash.com/photo-1591741549298-ab52bc504ef2?q=80&w=2669&auto=format&fit=crop",
+    // 主图
+    image: "https://img.28082003.com//xlxlimg_1747424592033_0.jpg",
+    // 轮播图
     images: [
-      "https://images.unsplash.com/photo-1591741549298-ab52bc504ef2?q=80&w=2669&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1576678927484-cc907957088c?q=80&w=2574&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1540497077202-7c8a3999166f?q=80&w=2670&auto=format&fit=crop"
+      "https://img.28082003.com//xlxlimg_1747424592033_0.jpg",
+      "https://img.28082003.com//xlxlimg_1747424592080_1.jpg",   // 正视图
+      "https://img.28082003.com//xlxlimg_1747424592082_2.jpg"    // 细节图
     ],
+    // 是否首页推荐
     featured: true
   },
   {
@@ -65,11 +86,10 @@ export const equipmentData: Equipment[] = [
       "安全保护杠，确保训练安全",
       "可拆卸设计，方便安装和移动"
     ],
-    image: "https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?q=80&w=2669&auto=format&fit=crop",
+    image: "https://img.28082003.com//xlxlimg_1747424592083_3.jpg",
     images: [
-      "https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?q=80&w=2669&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1534368786749-b63e728a4a79?q=80&w=2670&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1571902943202-507ec2618e8f?q=80&w=2675&auto=format&fit=crop"
+      "https://img.28082003.com//xlxlimg_1747424592083_3.jpg",
+      "https://img.28082003.com//xlxlimg_1747424592084_4.jpg"
     ],
     featured: true
   },
@@ -94,11 +114,11 @@ export const equipmentData: Equipment[] = [
       "节省空间，适合家庭健身房",
       "安全锁定机制，防止训练中滑落"
     ],
-    image: "https://images.unsplash.com/photo-1598289431512-b98b2cbade6f?q=80&w=2574&auto=format&fit=crop",
+    image: "https://image.liucf.com/images/2025/05/e3e8f4f4d66545ec1433f0d98f51ed50.jpeg",
     images: [
-      "https://images.unsplash.com/photo-1598289431512-b98b2cbade6f?q=80&w=2574&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1584380931214-dbb5b72e7fd0?q=80&w=2574&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?q=80&w=2574&auto=format&fit=crop"
+      "https://image.liucf.com/images/2025/05/e3e8f4f4d66545ec1433f0d98f51ed50.jpeg",
+      "https://img.28082003.com//xlxlimg_1747424592085_5.jpg",
+      "https://img.28082003.com//xlxlimg_1747424592086_6.jpg"
     ],
     featured: true
   },
@@ -124,11 +144,11 @@ export const equipmentData: Equipment[] = [
       "静音设计，不打扰他人",
       "运输轮，方便移动"
     ],
-    image: "https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=2670&auto=format&fit=crop",
+    image: "https://image.liucf.com/images/2025/05/d47a3e469775d99ac252a06686703a20.jpeg",
     images: [
-      "https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=2670&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1619158401201-8fa932695178?q=80&w=2574&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1595078475328-1ab05d0a6a0e?q=80&w=2600&auto=format&fit=crop"
+      "https://image.liucf.com/images/2025/05/d47a3e469775d99ac252a06686703a20.jpeg",
+      "https://img.28082003.com//xlxlimg_1747424592087_7.jpg",
+      "https://img.28082003.com//xlxlimg_1747424592087_8.jpg"
     ],
     featured: true
   },
@@ -152,11 +172,11 @@ export const equipmentData: Equipment[] = [
       "便携设计，随时随地锻炼",
       "附带训练指南和收纳袋"
     ],
-    image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=2670&auto=format&fit=crop",
+    image: "https://img.28082003.com//xlxlimg_1747424592088_9.jpg",
     images: [
-      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=2670&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1616803689943-5601631c7fec?q=80&w=2670&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1601422407692-ec4eeec1d9b3?q=80&w=2670&auto=format&fit=crop"
+      "https://img.28082003.com//xlxlimg_1747424592088_9.jpg",
+      "https://img.28082003.com//xlxlimg_1747424592090_10.jpg",
+      "https://img.28082003.com//xlxlimg_1747424592091_11.jpg"
     ],
     featured: false
   },
@@ -181,11 +201,11 @@ export const equipmentData: Equipment[] = [
       "标准奥林匹克杠铃尺寸",
       "附带引体向上杠和深蹲架"
     ],
-    image: "https://images.unsplash.com/photo-1534367610401-9f5ed68180aa?q=80&w=2670&auto=format&fit=crop",
+    image: "https://img.28082003.com//xlxlimg_1747424592092_12.jpg",
     images: [
-      "https://images.unsplash.com/photo-1534367610401-9f5ed68180aa?q=80&w=2670&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=2670&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?q=80&w=2669&auto=format&fit=crop"
+      "https://img.28082003.com//xlxlimg_1747424592092_12.jpg",
+      "https://img.28082003.com//xlxlimg_1747424592093_13.jpg",
+      "https://img.28082003.com//xlxlimg_1747424592083_3.jpg"
     ],
     featured: false
   },
@@ -211,11 +231,11 @@ export const equipmentData: Equipment[] = [
       "可折叠存储，节省空间",
       "适合各种健身水平的用户"
     ],
-    image: "https://images.unsplash.com/photo-1599058917212-d750089bc07e?q=80&w=2669&auto=format&fit=crop",
+    image: "https://img.28082003.com//xlxlimg_1747424592093_14.jpg",
     images: [
-      "https://images.unsplash.com/photo-1599058917212-d750089bc07e?q=80&w=2669&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1534258936925-c58bed479fcb?q=80&w=2631&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1518458028785-8fbcd101ebb9?q=80&w=2670&auto=format&fit=crop"
+      "https://img.28082003.com//xlxlimg_1747424592093_14.jpg",
+      "https://img.28082003.com//xlxlimg_1747424592095_15.jpg",
+      "https://img.28082003.com//xlxlimg_1747424592096_16.jpg"
     ],
     featured: false
   },
@@ -239,11 +259,11 @@ export const equipmentData: Equipment[] = [
       "人体工学手柄设计，握感舒适",
       "适合全身性功能训练"
     ],
-    image: "https://images.unsplash.com/photo-1517344884509-a0c97ec11bcc?q=80&w=2670&auto=format&fit=crop",
+    image: "https://img.28082003.com//xlxlimg_1747424592097_17.jpg",
     images: [
-      "https://images.unsplash.com/photo-1517344884509-a0c97ec11bcc?q=80&w=2670&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1605296867424-35fc25c9212a?q=80&w=2670&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=2670&auto=format&fit=crop"
+      "https://img.28082003.com//xlxlimg_1747424592097_17.jpg",
+      "https://img.28082003.com//xlxlimg_1747424592098_18.jpg",
+      "https://img.28082003.com//xlxlimg_1747424592099_19.jpg"
     ],
     featured: false
   }

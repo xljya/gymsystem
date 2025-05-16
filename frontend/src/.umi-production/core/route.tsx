@@ -4,23 +4,36 @@
 import React from 'react';
 
 export async function getRoutes() {
-  const routes = {"1":{"path":"/user","layout":false,"id":"1"},"2":{"path":"/user","parentId":"1","id":"2"},"3":{"name":"登录","path":"/user/login","parentId":"2","id":"3"},"4":{"name":"注册","path":"/user/register","parentId":"2","id":"4"},"5":{"parentId":"1","id":"5"},"6":{"path":"/welcome","name":"欢迎","icon":"smile","parentId":"ant-design-pro-layout","id":"6"},"7":{"path":"/admin","name":"管理页","icon":"crown","access":"canAdmin","parentId":"ant-design-pro-layout","id":"7"},"8":{"path":"/admin","redirect":"/admin/user-manage","parentId":"7","id":"8"},"9":{"path":"/admin/user-manage","name":"用户管理","icon":"smile","parentId":"7","id":"9"},"10":{"name":"查询表格","icon":"table","path":"/list","parentId":"ant-design-pro-layout","id":"10"},"11":{"path":"/","redirect":"/welcome","parentId":"ant-design-pro-layout","id":"11"},"12":{"path":"*","layout":false,"id":"12"},"ant-design-pro-layout":{"id":"ant-design-pro-layout","path":"/","isLayout":true}} as const;
+  const routes = {"1":{"path":"/","name":"主页","access":"canMember","parentId":"ant-design-pro-layout","id":"1"},"2":{"path":"/course","name":"课程","exact":true,"access":"canMember","parentId":"ant-design-pro-layout","id":"2"},"3":{"path":"/course/:id","access":"canMember","hideInMenu":true,"parentId":"ant-design-pro-layout","id":"3"},"4":{"path":"/coach","name":"教练","access":"canMember","parentId":"ant-design-pro-layout","id":"4"},"5":{"path":"/equipment","name":"健身器械","access":"canMember","parentId":"ant-design-pro-layout","id":"5"},"6":{"path":"/equipment/all","name":"健身器械列表","hideInMenu":true,"parentId":"ant-design-pro-layout","id":"6"},"7":{"path":"/equipment/:id","name":"健身器械详情","hideInMenu":true,"parentId":"ant-design-pro-layout","id":"7"},"8":{"path":"/goods","name":"运动商品","access":"canMember","parentId":"ant-design-pro-layout","id":"8"},"9":{"path":"/goods/:id","name":"运动商品详情","hideInMenu":true,"parentId":"ant-design-pro-layout","id":"9"},"10":{"path":"/goods/all","name":"运动商品列表","hideInMenu":true,"parentId":"ant-design-pro-layout","id":"10"},"11":{"path":"/about","name":"关于我们","access":"canMember","parentId":"ant-design-pro-layout","id":"11"},"12":{"path":"/admin/welcome","name":"欢迎","icon":"CrownOutlined","access":"canAdmin","parentId":"ant-design-pro-layout","id":"12"},"13":{"path":"/member/login","name":"会员登录","hideInMenu":true,"access":"guest","parentId":"ant-design-pro-layout","id":"13"},"14":{"path":"/member/register","name":"会员注册","hideInMenu":true,"access":"guest","parentId":"ant-design-pro-layout","id":"14"},"15":{"path":"/admin/memberManage","name":"会员管理","icon":"UserOutlined","access":"canAdmin","parentId":"ant-design-pro-layout","id":"15"},"16":{"path":"/admin/course-manage","name":"课程管理","icon":"ReadOutlined","access":"canAdmin","parentId":"ant-design-pro-layout","id":"16"},"17":{"path":"/admin/category","name":"课程类别管理","icon":"AppstoreOutlined","access":"canAdmin","parentId":"ant-design-pro-layout","id":"17"},"18":{"path":"/admin/schedule","name":"课程排期管理","icon":"CalendarOutlined","access":"canAdmin","parentId":"ant-design-pro-layout","id":"18"},"19":{"path":"/admin/booking","name":"课程预约管理","icon":"ScheduleOutlined","access":"canAdmin","parentId":"ant-design-pro-layout","id":"19"},"20":{"path":"/admin/course-purchase-manage","name":"课程购买记录管理","icon":"CreditCardOutlined","access":"canAdmin","hideInMenu":true,"parentId":"ant-design-pro-layout","id":"20"},"21":{"path":"/admin/coachManage","name":"教练管理","icon":"TeamOutlined","access":"canAdmin","parentId":"ant-design-pro-layout","id":"21"},"22":{"path":"/admin/equipment-manage","name":"器械管理","icon":"ToolOutlined","access":"canAdmin","parentId":"ant-design-pro-layout","id":"22"},"23":{"path":"/admin/goods-manage","name":"商品管理","icon":"ShoppingOutlined","access":"canAdmin","parentId":"ant-design-pro-layout","id":"23"},"24":{"path":"/admin/goods-transactions-manage","name":"商品销售管理","icon":"TransactionOutlined","access":"canAdmin","parentId":"ant-design-pro-layout","id":"24"},"25":{"path":"*","layout":false,"id":"25"},"ant-design-pro-layout":{"id":"ant-design-pro-layout","path":"/","isLayout":true}} as const;
   return {
     routes,
     routeComponents: {
-'1': React.lazy(() => import('./EmptyRoute')),
-'2': React.lazy(() => import('./EmptyRoute')),
-'3': React.lazy(() => import(/* webpackChunkName: "p__User__Login__index" */'@/pages/User/Login/index.tsx')),
-'4': React.lazy(() => import(/* webpackChunkName: "p__User__Register__index" */'@/pages/User/Register/index.tsx')),
-'5': React.lazy(() => import(/* webpackChunkName: "p__404" */'@/pages/404.tsx')),
-'6': React.lazy(() => import(/* webpackChunkName: "p__Welcome" */'@/pages/Welcome.tsx')),
-'7': React.lazy(() => import('./EmptyRoute')),
-'8': React.lazy(() => import('./EmptyRoute')),
-'9': React.lazy(() => import(/* webpackChunkName: "p__Admin__UserManage__index" */'@/pages/Admin/UserManage/index.tsx')),
-'10': React.lazy(() => import(/* webpackChunkName: "p__TableList__index" */'@/pages/TableList/index.tsx')),
-'11': React.lazy(() => import('./EmptyRoute')),
-'12': React.lazy(() => import(/* webpackChunkName: "p__404" */'@/pages/404.tsx')),
-'ant-design-pro-layout': React.lazy(() => import(/* webpackChunkName: "t__plugin-layout__Layout" */'D:/MyCode/用户中心管理/user-center-front/usercenter/src/.umi-production/plugin-layout/Layout.tsx')),
+'1': React.lazy(() => import(/* webpackChunkName: "p__Home__index" */'@/pages/Home/index.tsx')),
+'2': React.lazy(() => import(/* webpackChunkName: "p__Course__index" */'@/pages/Course/index.tsx')),
+'3': React.lazy(() => import(/* webpackChunkName: "p__Course__index" */'@/pages/Course/index.tsx')),
+'4': React.lazy(() => import(/* webpackChunkName: "p__Coach__index" */'@/pages/Coach/index.tsx')),
+'5': React.lazy(() => import(/* webpackChunkName: "p__Equipment__index" */'@/pages/Equipment/index.tsx')),
+'6': React.lazy(() => import(/* webpackChunkName: "p__Equipment__EquipmentList" */'@/pages/Equipment/EquipmentList.tsx')),
+'7': React.lazy(() => import(/* webpackChunkName: "p__Equipment__EquipmentDetail" */'@/pages/Equipment/EquipmentDetail.tsx')),
+'8': React.lazy(() => import(/* webpackChunkName: "p__Goods__index" */'@/pages/Goods/index.tsx')),
+'9': React.lazy(() => import(/* webpackChunkName: "p__Goods__GoodsDetail" */'@/pages/Goods/GoodsDetail.tsx')),
+'10': React.lazy(() => import(/* webpackChunkName: "p__Goods__GoodsList" */'@/pages/Goods/GoodsList.tsx')),
+'11': React.lazy(() => import(/* webpackChunkName: "p__About__index" */'@/pages/About/index.tsx')),
+'12': React.lazy(() => import(/* webpackChunkName: "p__Admin__Welcome__index" */'@/pages/Admin/Welcome/index.tsx')),
+'13': React.lazy(() => import(/* webpackChunkName: "p__Member__Login__index" */'@/pages/Member/Login/index.tsx')),
+'14': React.lazy(() => import(/* webpackChunkName: "p__Member__Register__index" */'@/pages/Member/Register/index.tsx')),
+'15': React.lazy(() => import(/* webpackChunkName: "p__Admin__MemberManage__index" */'@/pages/Admin/MemberManage/index.tsx')),
+'16': React.lazy(() => import(/* webpackChunkName: "p__Admin__CourseManage__index" */'@/pages/Admin/CourseManage/index.tsx')),
+'17': React.lazy(() => import(/* webpackChunkName: "p__Admin__CourseCategoryManage__index" */'@/pages/Admin/CourseCategoryManage/index.tsx')),
+'18': React.lazy(() => import(/* webpackChunkName: "p__Admin__CourseScheduleManage__index" */'@/pages/Admin/CourseScheduleManage/index.tsx')),
+'19': React.lazy(() => import(/* webpackChunkName: "p__Admin__CourseBookingManage__index" */'@/pages/Admin/CourseBookingManage/index.tsx')),
+'20': React.lazy(() => import(/* webpackChunkName: "p__Admin__CoursePurchaseManage__index" */'@/pages/Admin/CoursePurchaseManage/index.tsx')),
+'21': React.lazy(() => import(/* webpackChunkName: "p__Admin__CoachManage__index" */'@/pages/Admin/CoachManage/index.tsx')),
+'22': React.lazy(() => import(/* webpackChunkName: "p__Admin__EquipmentManage__index" */'@/pages/Admin/EquipmentManage/index.tsx')),
+'23': React.lazy(() => import(/* webpackChunkName: "p__Admin__GoodsManage__index" */'@/pages/Admin/GoodsManage/index.tsx')),
+'24': React.lazy(() => import(/* webpackChunkName: "p__Admin__GoodsTransactionsManage__index" */'@/pages/Admin/GoodsTransactionsManage/index.tsx')),
+'25': React.lazy(() => import(/* webpackChunkName: "p__404" */'@/pages/404.tsx')),
+'ant-design-pro-layout': React.lazy(() => import(/* webpackChunkName: "t__plugin-layout__Layout" */'C:/bysj/gymsystem-frontend/src/.umi-production/plugin-layout/Layout.tsx')),
 },
   };
 }

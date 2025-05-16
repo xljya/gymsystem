@@ -41,25 +41,25 @@ const columns: ProColumns<API.GoodsVO>[] = [
       ],
     },
   },
-  {
-    title: '单价',
-    dataIndex: 'unitPrice',
-    valueType: 'money',
-    hideInSearch: true,
-    formItemProps: {
-      rules: [
-        {
-          required: true,
-          message: '请输入单价',
-        },
-        {
-          type: 'number',
-          min: 0,
-          message: '单价不能小于0',
-        },
-      ],
-    },
-  },
+  // {
+  //   title: '单价',
+  //   dataIndex: 'unitPrice',
+  //   valueType: 'money',
+  //   hideInSearch: true,
+  //   formItemProps: {
+  //     rules: [
+  //       {
+  //         required: true,
+  //         message: '请输入单价',
+  //       },
+  //       {
+  //         type: 'number',
+  //         min: 0,
+  //         message: '单价不能小于0',
+  //       },
+  //     ],
+  //   },
+  // },
   {
     title: '售价',
     dataIndex: 'sellPrice',
@@ -231,7 +231,7 @@ export default () => {
                   goodsId: record.goodsId,
                   goodsName: record.goodsName,
                   unit: record.unit,
-                  unitPrice: record.unitPrice,
+                  // unitPrice: record.unitPrice,
                   sellPrice: record.sellPrice,
                   inventory: record.inventory,
                   remark: record.remark,

@@ -79,7 +79,7 @@ const Login: React.FC = () => {
         <LoginForm
           logo={<img alt="logo" src={SYSTEM_LOGO} />}
           title="会员登录"
-          subTitle="欢迎使用健身管理系统"
+          subTitle="欢迎使用健身房管理系统"
           submitter={{
             searchConfig: {
               submitText: '登录',

@@ -8,7 +8,7 @@ const HeroSection: React.FC = () => {
     <section className="relative bg-fitness-dark text-white py-16 md:py-24">
       <div className="absolute inset-0 overflow-hidden">
         <img 
-          src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80"
+          src="https://img.28082003.com//xlxlimg_1747424870937_0.jpg"
           alt="Fitness Hero Background" 
           className="w-full h-full object-cover opacity-30"
         />

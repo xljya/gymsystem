@@ -69,7 +69,7 @@ const Register: React.FC = () => {
         <LoginForm
           logo={<img alt="logo" src={SYSTEM_LOGO} />}
           title="会员注册"
-          subTitle="欢迎加入我们的健身管理系统"
+          subTitle="欢迎加入我们的健身房"
           submitter={{
             searchConfig: {
               submitText: '注册',

@@ -3,14 +3,15 @@
 // DO NOT CHANGE IT MANUALLY!
 import React, { useEffect, useState } from 'react';
 import { ApplyPluginsType } from 'umi';
-import { renderClient, RenderClientOpts } from 'D:/MyCode/用户中心管理/user-center-front/usercenter/node_modules/@umijs/renderer-react';
+import { renderClient, RenderClientOpts } from 'C:/bysj/gymsystem-frontend/node_modules/@umijs/renderer-react';
 import { createHistory } from './core/history';
 import { createPluginManager } from './core/plugin';
 import { getRoutes } from './core/route';
 import type { Location } from 'history';
 
-import 'D:/MyCode/用户中心管理/user-center-front/usercenter/src/global.less';
-import 'D:/MyCode/用户中心管理/user-center-front/usercenter/src/global.tsx';
+
+import 'C:/bysj/gymsystem-frontend/src/global.css';
+import 'C:/bysj/gymsystem-frontend/src/global.tsx';
 import 'antd/dist/reset.css';
 const publicPath = '/';
 const runtimePublicPath = false;

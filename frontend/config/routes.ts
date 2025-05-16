@@ -95,17 +95,31 @@ const routes = [
     access: 'canAdmin',
   },
   {
-    path: '/admin/coachManage',
-    name: '教练管理',
-    icon: 'TeamOutlined',
-    component: './Admin/CoachManage',
-    access: 'canAdmin',
-  },
-  {
     path: '/admin/course-manage',
     name: '课程管理',
     icon: 'ReadOutlined', // BookOutlined 可换成 ReadOutlined，更贴合课程/阅读
     component: './Admin/CourseManage',
+    access: 'canAdmin',
+  },
+  {
+    path: '/admin/category',
+    name: '课程类别管理',
+    icon: 'AppstoreOutlined',
+    component: './Admin/CourseCategoryManage',
+    access: 'canAdmin',
+  },
+  {
+    path: '/admin/schedule',
+    name: '课程排期管理',
+    icon: 'CalendarOutlined',
+    component: './Admin/CourseScheduleManage',
+    access: 'canAdmin',
+  },
+  {
+    path: '/admin/booking',
+    name: '课程预约管理',
+    icon: 'ScheduleOutlined',
+    component: './Admin/CourseBookingManage',
     access: 'canAdmin',
   },
   {
@@ -114,10 +128,19 @@ const routes = [
     icon: 'CreditCardOutlined', // ShoppingOutlined 可换成 CreditCardOutlined，更贴合购买记录
     component: './Admin/CoursePurchaseManage',
     access: 'canAdmin',
+    hideInMenu: true,
   },
   {
+    path: '/admin/coachManage',
+    name: '教练管理',
+    icon: 'TeamOutlined',
+    component: './Admin/CoachManage',
+    access: 'canAdmin',
+  },
+
+  {
     path: '/admin/equipment-manage',
-    name: '器材管理',
+    name: '器械管理',
     icon: 'ToolOutlined',
     component: './Admin/EquipmentManage',
     access: 'canAdmin',
@@ -131,32 +154,12 @@ const routes = [
   },
   {
     path: '/admin/goods-transactions-manage',
-    name: '商品销售记录',
+    name: '商品销售管理',
     icon: 'TransactionOutlined', // ShoppingOutlined 可换成 TransactionOutlined，更贴合交易/记录
     component: './Admin/GoodsTransactionsManage',
     access: 'canAdmin',
   },
-  {
-    path: '/admin/category',
-    name: '课程类别管理',
-    icon: 'AppstoreOutlined',
-    component: './Admin/CourseCategoryManage',
-    access: 'canAdmin',
-  },
-  {
-    path: '/admin/schedule',
-    name: '课程安排管理',
-    icon: 'CalendarOutlined',
-    component: './Admin/CourseScheduleManage',
-    access: 'canAdmin',
-  },
-  {
-    path: '/admin/booking',
-    name: '课程预约管理',
-    icon: 'ScheduleOutlined',
-    component: './Admin/CourseBookingManage',
-    access: 'canAdmin',
-  },
+  
   {
     path: '*',
     layout: false,

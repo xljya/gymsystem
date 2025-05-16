@@ -216,5 +216,5 @@ import "C:/bysj/gymsystem-frontend/node_modules/core-js/modules/web.url.can-pars
 import "C:/bysj/gymsystem-frontend/node_modules/core-js/modules/web.url-search-params.delete.js";
 import "C:/bysj/gymsystem-frontend/node_modules/core-js/modules/web.url-search-params.has.js";
 import "C:/bysj/gymsystem-frontend/node_modules/core-js/modules/web.url-search-params.size.js";
-import 'C:/bysj/gymsystem-frontend/node_modules/regenerator-runtime/runtime.js';
+import 'C:/bysj/gymsystem-frontend/node_modules/@umijs/preset-umi/node_modules/regenerator-runtime/runtime.js';
 export {};

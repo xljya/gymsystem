@@ -1,33 +1,41 @@
-
 import { Link } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
 import { ShoppingBag, Package, Box, Gift } from "lucide-react";
 
-const categories = [{
-  id: "electronics",
-  name: "电子产品",
-  description: "高科技电子设备，提升生活品质",
-  icon: <Package className="w-10 h-10 text-blue-500" />,
-  image: "https://images.unsplash.com/photo-1593642632823-8f785ba67e45?q=80&w=2669&auto=format&fit=crop"
-}, {
-  id: "clothing",
-  name: "服饰鞋包",
-  description: "时尚服装鞋包，展现个人风采",
-  icon: <ShoppingBag className="w-10 h-10 text-blue-500" />,
-  image: "https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?q=80&w=2670&auto=format&fit=crop"
-}, {
-  id: "household",
-  name: "家居用品",
-  description: "精美家居用品，打造温馨家园",
-  icon: <Box className="w-10 h-10 text-blue-500" />,
-  image: "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?q=80&w=2574&auto=format&fit=crop"
-}, {
-  id: "gifts",
-  name: "礼品专区",
-  description: "精选礼品，让心意传递更有温度",
-  icon: <Gift className="w-10 h-10 text-blue-500" />,
-  image: "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?q=80&w=2340&auto=format&fit=crop"
-}];
+const categories = [
+  {
+    id: 'supplements',
+    name: '营养补剂',
+    description: '蛋白粉、BCAA 等运动营养补给',
+    icon: <Package className="w-10 h-10 text-blue-500" />,
+    image:
+      'https://img.28082003.com//xlxlimg_1747424875211_0.jpg',
+  },
+  {
+    id: 'apparel',
+    name: '运动服饰',
+    description: '速干 T 恤、运动短裤、瑜伽裤等专业服饰',
+    icon: <ShoppingBag className="w-10 h-10 text-blue-500" />,
+    image:
+      'https://img.28082003.com//xlxlimg_1747424875212_1.jpg',
+  },
+  {
+    id: 'accessories',
+    name: '健身配件',
+    description: '泡沫轴、弹力带、护具手套等辅助配件',
+    icon: <Box className="w-10 h-10 text-blue-500" />,
+    image:
+      'https://img.28082003.com//xlxlimg_1747424875214_2.jpg',
+  },
+  {
+    id: 'gear',
+    name: '训练装备',
+    description: '跳绳、壶铃、瑜伽垫等小型器械',
+    icon: <Gift className="w-10 h-10 text-blue-500" />,
+    image:
+      'https://img.28082003.com//xlxlimg_1747424875215_3.jpg',
+  },
+];
 
 const CategorySection = () => {
   return (
@@ -41,7 +49,7 @@ const CategorySection = () => {
         </div>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {categories.map((category, index) => (
+          {categories.map((category) => (
             <Link to={`/goods/all?category=${category.id}`} key={category.id} className="hover-scale">
               <Card className="h-full overflow-hidden border border-gray-200 rounded-lg shadow-md">
                 <div 

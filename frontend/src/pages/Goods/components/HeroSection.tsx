@@ -10,7 +10,7 @@ const HeroSection = () => {
       <div 
         className="absolute inset-0 bg-black opacity-50 z-0"
         style={{
-          backgroundImage: "url('https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?q=80&w=2670&auto=format&fit=crop')",
+          backgroundImage: "url('https://img.28082003.com//xlxlimg_1747424878263_0.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           mixBlendMode: "overlay"

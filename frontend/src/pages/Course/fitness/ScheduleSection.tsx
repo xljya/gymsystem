@@ -71,14 +71,14 @@ const ScheduleSection: React.FC<ScheduleSectionProps> = ({ classes, currentUser 
         console.error('[ScheduleSection] 预约API错误:');
         Modal.error({
           title: '预约失败',
-          content: '请稍后再试',
+          content: '操作未成功，请稍后再试',
         });
       }
     } catch (error: any) {
       console.error('[ScheduleSection] Catch block error:', error);
       Modal.error({
         title: '预约失败',
-        content: '请稍后再试',
+        content: error?.message || '请稍后再试',
       });
     } finally {
       setLoadingScheduleId(null);
@@ -153,7 +153,7 @@ const ScheduleSection: React.FC<ScheduleSectionProps> = ({ classes, currentUser 
           okText="确定"
           cancelText="关闭"
         >
-          <p>课程 "{successCourseName}" 预约成功！</p>
+          <p>课程 &quot;{successCourseName}&quot; 预约成功！</p>
         </Modal>
       </div>
     </section>

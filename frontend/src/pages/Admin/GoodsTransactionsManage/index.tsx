@@ -1,5 +1,5 @@
 import type { ActionType, ProColumns } from '@ant-design/pro-components';
-import { ProTable, TableDropdown, ModalForm, ProFormText, ProFormDigit } from '@ant-design/pro-components';
+import { ProTable, TableDropdown, ModalForm, ProFormText } from '@ant-design/pro-components';
 import { useRef, useState } from 'react';
 import { message } from 'antd';
 import request from '@/utils/request';
@@ -24,6 +24,16 @@ const columns: ProColumns<API.GoodsTransactions>[] = [
     title: '会员ID',
     dataIndex: 'memberId',
     hideInSearch: false,
+  },
+  {
+    title: '购买数量',
+    dataIndex: 'count',
+    hideInSearch: true, // 关闭搜索条件
+  },
+  {
+    title: '总价',
+    dataIndex: 'price',
+    hideInSearch: true, // 关闭搜索条件
   },
   {
     title: '更新时间',
@@ -69,9 +79,7 @@ const columns: ProColumns<API.GoodsTransactions>[] = [
             }
           }
         }}
-        menus={[
-          { key: 'delete', name: '删除' },
-        ]}
+        menus={[{ key: 'delete', name: '删除' }]}
       />,
     ],
   },

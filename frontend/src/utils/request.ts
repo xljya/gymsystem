@@ -5,7 +5,6 @@
 import { extend } from 'umi-request';
 import { message } from "antd";
 import { history } from "@@/core/history";
-import { stringify } from "querystring";
 
 /**
  * 配置request请求时的默认参数
@@ -40,7 +39,7 @@ request.interceptors.request.use((url, options): any => {
 /**
  * 所有响应拦截器
  */
-request.interceptors.response.use(async (response, options): Promise<any> => {
+request.interceptors.response.use(async (response): Promise<any> => {
     const res = await response.clone().json();
     console.log('响应数据:', res);
     
@@ -62,7 +61,7 @@ request.interceptors.response.use(async (response, options): Promise<any> => {
         history.replace('/member/login');
         return Promise.reject(new Error('请先登录'));
     } else {
-        return Promise.reject(new Error(res.description || '请求失败'));
+        return Promise.reject(new Error(res.message || '请求失败'));
     }
 });
 

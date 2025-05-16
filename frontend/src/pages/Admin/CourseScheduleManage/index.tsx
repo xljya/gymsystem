@@ -167,7 +167,7 @@ export default () => {
               setCreateModalVisible(true);
             }}
           >
-            新增课程安排
+            新增课程排期
           </a>,
         ]}
         request={async (params) => {
@@ -257,7 +257,7 @@ export default () => {
       />
 
       <ModalForm
-        title="新增课程安排"
+        title="新增课程排期"
         width="400px"
         open={createModalVisible}
         onOpenChange={setCreateModalVisible}

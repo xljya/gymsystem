@@ -105,7 +105,7 @@ export async function fetchCourses(categoryId?: string): Promise<FitnessClass[]>
             title: course.courseName || '未命名课程',
             category: course.categoryName || '未分类',
             description: course.description || '暂无描述',
-            image: course.imageUrl || 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438',
+            image: course.imageUrl || 'https://img.28082003.com//xlxlimg_1747424866128_0.jpg',
             duration: course.duration || 60,
             intensity: mapDifficultyToIntensity(course.difficultyLevel),
             coachId: String(course.coachId || 0),
@@ -269,7 +269,7 @@ export async function fetchCourseDetail(courseId: string): Promise<FitnessClass 
           title: course.courseName || '未命名课程',
           category: course.categoryName || '未分类',
           description: course.description || '暂无描述',
-          image: course.imageUrl || 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438',
+          image: course.imageUrl || 'https://img.28082003.com//xlxlimg_1747424866128_0.jpg',
           duration: course.duration || 60,
           intensity: mapDifficultyToIntensity(course.difficultyLevel),
           coachId: String(course.coachId || 0),
@@ -295,7 +295,7 @@ export async function fetchCourseDetail(courseId: string): Promise<FitnessClass 
   }
 }
 
-// 获取课程安排
+// 获取课程排期
 export async function fetchCourseSchedules(courseId: string): Promise<{day: string, time: string}[]> {
   try {
     const response = await listScheduleByCourseIdUsingPost({
@@ -326,7 +326,7 @@ export async function fetchCourseSchedules(courseId: string): Promise<{day: stri
           return { day, time };
         });
       }
-      return []; // 如果没有课程安排，返回空数组
+      return []; // 如果没有课程排期，返回空数组
     }
     // 只有code !== 0才会走到这里
     const errorCode = response.code === undefined ? '未定义' : response.code;

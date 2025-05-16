@@ -1,7 +1,6 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
-import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Link } from "react-router-dom";
@@ -11,12 +10,18 @@ import { Input } from "@/components/ui/input";
 import { PageContainer } from "@ant-design/pro-components"
 
 const GoodsList = () => {
-  const navigate = useNavigate();
+  const location = useLocation();
   const [searchQuery, setSearchQuery] = useState("");
   
-  const filteredGoods = goodsData.filter(item => 
-    item.goodsName.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  // 获取 URL 中的 category 查询参数
+  const searchParams = new URLSearchParams(location.search);
+  const currentCategory = searchParams.get("category");
+
+  const filteredGoods = goodsData.filter(item => {
+    const matchName = item.goodsName.toLowerCase().includes(searchQuery.toLowerCase());
+    const matchCategory = currentCategory ? item.category === currentCategory : true;
+    return matchName && matchCategory;
+  });
 
   return (
     <div style={{ 
@@ -41,7 +46,7 @@ const GoodsList = () => {
           </p>
         </div>
       </div>
-
+      
       <PageContainer 
         header={{ 
           title: false,
@@ -128,7 +133,7 @@ const GoodsList = () => {
           )}
         </div>
       </PageContainer>
-      <Footer />
+      
     </div>
   );
 };
