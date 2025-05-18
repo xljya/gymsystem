@@ -22,7 +22,7 @@ export const goodsData: GoodsItem[] = [
   {
     id: "g001",
     goodsName: "高效乳清蛋白粉（巧克力味）",
-    remark: "https://img.liuyueyue.top//xl20250512013748084.png",
+    remark: "https://img.28082003.com//xl20250512013748084.png",
     sellPrice: 299,
     inventory: 120,
     description: "每份含25g优质乳清蛋白，促进肌肉增长与修复，低脂低糖，口感顺滑易溶解。",

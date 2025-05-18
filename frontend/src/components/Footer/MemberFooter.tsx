@@ -53,196 +53,77 @@ const MemberFooter = () => {
             <h3 className="text-lg font-bold mb-4">关于</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/" className="text-gray-400 hover:text-lesmills-red">
-                  查找课程
+                <Link to="/course" className="text-gray-400 hover:text-lesmills-red">
+                  课程
                 </Link>
               </li>
               <li>
-                <Link to="/" className="text-gray-400 hover:text-lesmills-red">
-                  教练员
+                <Link to="/coach" className="text-gray-400 hover:text-lesmills-red">
+                  教练
                 </Link>
               </li>
               <li>
-                <Link to="/" className="text-gray-400 hover:text-lesmills-red">
-                  查看器械
+                <Link to="/equipment/all" className="text-gray-400 hover:text-lesmills-red">
+                  健身器械
                 </Link>
               </li>
               <li>
-                <Link to="/" className="text-gray-400 hover:text-lesmills-red">
-                  隐私条款
+                <Link to="/goods/all" className="text-gray-400 hover:text-lesmills-red">
+                  运动商品
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* 更新后的三列“健身课程” */}
+          {/* 更新后的三列"健身课程" */}
           <div className="md:col-span-2 grid grid-cols-1 sm:grid-cols-3 gap-8">
             {/* 列 1: Fitness Classes */}
             <div>
               <h3 className="text-lg font-bold mb-4">健身课程</h3>
               <ul className="space-y-2">
+              
                 <li>
-                  <Link to="/" className="text-gray-400 hover:text-lesmills-red">
-                    健身课程：
+                  <Link to="/course/1" className="text-gray-400 hover:text-lesmills-red">
+                    瑜伽
                   </Link>
                 </li>
                 <li>
-                  <Link to="/" className="text-gray-400 hover:text-lesmills-red">
-                    身体攻击
+                  <Link to="/course/2" className="text-gray-400 hover:text-lesmills-red">
+                    力量训练
                   </Link>
                 </li>
                 <li>
-                  <Link to="/" className="text-gray-400 hover:text-lesmills-red">
-                    BODYBALANCE 身体平衡
+                  <Link to="/course/3" className="text-gray-400 hover:text-lesmills-red">
+                    有氧运动
                   </Link>
                 </li>
                 <li>
-                  <Link to="/" className="text-gray-400 hover:text-lesmills-red">
-                    BODYCOMBAT （人体战斗）
+                  <Link to="/course/4" className="text-gray-400 hover:text-lesmills-red">
+                    普拉提
                   </Link>
                 </li>
                 <li>
-                  <Link to="/" className="text-gray-400 hover:text-lesmills-red">
-                    BODYJAM 公司
+                  <Link to="/course/6" className="text-gray-400 hover:text-lesmills-red">
+                    舞蹈
                   </Link>
                 </li>
                 <li>
-                  <Link to="/" className="text-gray-400 hover:text-lesmills-red">
-                    BODYPUMP （身体泵）
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/" className="text-gray-400 hover:text-lesmills-red">
-                    BODYSTEP
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/" className="text-gray-400 hover:text-lesmills-red">
-                    功能强度
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/" className="text-gray-400 hover:text-lesmills-red">
-                    LES MILLS CORE
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/" className="text-gray-400 hover:text-lesmills-red">
-                    LES MILLS 颁奖典礼
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/" className="text-gray-400 hover:text-lesmills-red">
-                    LES MILLS 普拉提
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/" className="text-gray-400 hover:text-lesmills-red">
-                    LES MILLS 形状
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/" className="text-gray-400 hover:text-lesmills-red">
-                    LES MILLS 蓬勃发展
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/" className="text-gray-400 hover:text-lesmills-red">
-                    LES MILLS 调色
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/" className="text-gray-400 hover:text-lesmills-red">
-                    转速
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/" className="text-gray-400 hover:text-lesmills-red">
-                    实力发展
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/" className="text-gray-400 hover:text-lesmills-red">
-                    旅行
+                  <Link to="/course/7" className="text-gray-400 hover:text-lesmills-red">
+                    格斗
                   </Link>
                 </li>
               </ul>
             </div>
-            {/* 列 2: HIIT Workouts */}
-            <div>
-              <h3 className="text-lg font-bold mb-4 invisible">高强度间歇性课程</h3>{' '}
-              {/* 隐藏标题以对齐 */}
-              <ul className="space-y-2">
-                <li>
-                  <Link to="/" className="text-gray-400 hover:text-lesmills-red">
-                    高强度间歇性课程：
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/" className="text-gray-400 hover:text-lesmills-red">
-                    LES MILLS GRIT ATHLETIC
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/" className="text-gray-400 hover:text-lesmills-red">
-                    LES MILLS GRIT CARDIO
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/" className="text-gray-400 hover:text-lesmills-red">
-                    LES MILLS 砂砾强度
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/" className="text-gray-400 hover:text-lesmills-red">
-                    莱美冲刺赛
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            {/* 列 3: Youth Classes */}
-            <div>
-              <h3 className="text-lg font-bold mb-4 invisible">青少年趣动课程</h3>{' '}
-              {/* 隐藏标题以对齐 */}
-              <ul className="space-y-2">
-                <li>
-                  <Link to="/" className="text-gray-400 hover:text-lesmills-red">
-                    青少年趣动课程：
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/" className="text-gray-400 hover:text-lesmills-red">
-                    为搬家而生 2-3 岁
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/" className="text-gray-400 hover:text-lesmills-red">
-                    为运动而生 4-5 岁
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/" className="text-gray-400 hover:text-lesmills-red">
-                    为运动而生 6-7 岁
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/" className="text-gray-400 hover:text-lesmills-red">
-                    为运动而生 8-12 岁
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/" className="text-gray-400 hover:text-lesmills-red">
-                    为运动而生 13-16 岁
-                  </Link>
-                </li>
-              </ul>
-            </div>
+            
           </div>
         </div>
 
         <div className="mt-12 pt-8 border-t border-gray-800 text-center">
           <p className="text-gray-400">
             © {new Date().getFullYear()} Stargaze. All rights reserved.
+          </p>
+          <p className="text-gray-400 mt-2">
+            Powered by <a href="https://ui.shadcn.com" className="hover:text-lesmills-red transition-colors" target="_blank" rel="noopener noreferrer">shadcn/ui</a>
           </p>
         </div>
       </div>

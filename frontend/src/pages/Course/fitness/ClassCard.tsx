@@ -47,7 +47,7 @@ const ClassCard: React.FC<ClassCardProps> = ({ fitnessClass, trainer /*, current
   // const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
 
   let imageUrl = fitnessClass.image;
-  if (imageUrl.includes('img.liuyueyue.top') && !imageUrl.includes('!/fw/300')) {
+  if (imageUrl.includes('img.28082003.com') && !imageUrl.includes('!/fw/300')) {
     const [base, query] = imageUrl.split('?');
     imageUrl = `${base}!/fw/300${query ? '?' + query : ''}`;
   }

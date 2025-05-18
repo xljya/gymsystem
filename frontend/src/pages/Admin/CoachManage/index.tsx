@@ -45,7 +45,7 @@ const columns: ProColumns<API.CoachVO>[] = [
     render: (_, record) => (
       <div style={{ width: '100%', textAlign: 'center' }}>
         <Image 
-          src={record.coachAvatar || 'https://liuyueyue.top/images/preview.jpg'} 
+          src={record.coachAvatar || 'https://28082003.com/images/preview.jpg'} 
           width={50} 
           height={50}
           style={{ objectFit: 'cover' }}

@@ -15,8 +15,9 @@ let urlMap = {};
 try {
   if (fs.existsSync(urlMapPath)) {
     const fileContent = fs.readFileSync(urlMapPath, 'utf-8');
-    if (fileContent) { // Ensure content is not empty
-        urlMap = JSON.parse(fileContent);
+    if (fileContent) {
+      // Ensure content is not empty
+      urlMap = JSON.parse(fileContent);
     }
   }
 } catch (err) {
@@ -53,7 +54,7 @@ async function downloadImage(url, index) {
     const pathname = new URL(safeUrl).pathname;
     const potentialExt = path.extname(pathname).split('?')[0];
     if (potentialExt) {
-        ext = potentialExt;
+      ext = potentialExt;
     }
   } catch (e) {
     console.warn(`⚠️ 无法从 URL 解析扩展名: ${url}. 将使用默认扩展名 ${ext}`);
@@ -98,19 +99,23 @@ async function processFile(filePath, picgoInstance) {
     const originalUrl = match[0];
     if (urlMap[originalUrl]) {
       newUrls[originalUrl] = urlMap[originalUrl]; // Already processed and mapped globally
-    } else if (!urlsToProcess.some(item => item.originalUrl === originalUrl)) { // Avoid duplicates in this batch
+    } else if (!urlsToProcess.some((item) => item.originalUrl === originalUrl)) {
+      // Avoid duplicates in this batch
       urlsToProcess.push({ originalUrl, index: urlsToProcess.length });
     }
   }
 
   if (urlsToProcess.length > 0) {
     console.log(`⏳ 准备下载 ${urlsToProcess.length} 张图片 (文件: ${filePath})`);
-    const downloadPromises = urlsToProcess.map(item => downloadImage(item.originalUrl, item.index));
+    const downloadPromises = urlsToProcess.map((item) =>
+      downloadImage(item.originalUrl, item.index),
+    );
     const downloadedFilePaths = await Promise.all(downloadPromises);
 
     const localPathsToUpload = [];
     for (let i = 0; i < urlsToProcess.length; i++) {
-      if (downloadedFilePaths[i]) { // Check if download was successful
+      if (downloadedFilePaths[i]) {
+        // Check if download was successful
         localPathsToUpload.push({
           originalUrl: urlsToProcess[i].originalUrl,
           filePath: downloadedFilePaths[i],
@@ -121,7 +126,9 @@ async function processFile(filePath, picgoInstance) {
     if (localPathsToUpload.length > 0) {
       try {
         console.log(`⏫ 准备上传 ${localPathsToUpload.length} 张图片到 PicGo (文件: ${filePath})`);
-        const uploadedResults = await picgoInstance.upload(localPathsToUpload.map(x => x.filePath));
+        const uploadedResults = await picgoInstance.upload(
+          localPathsToUpload.map((x) => x.filePath),
+        );
 
         for (let i = 0; i < localPathsToUpload.length; i++) {
           const { originalUrl } = localPathsToUpload[i];
@@ -133,7 +140,9 @@ async function processFile(filePath, picgoInstance) {
             urlMap[originalUrl] = uploadedUrl;
             newUrls[originalUrl] = uploadedUrl;
           } else {
-            console.error(`❌ 上传后未获取到 URL: ${originalUrl}, 返回: ${JSON.stringify(uploadedInfo)}`);
+            console.error(
+              `❌ 上传后未获取到 URL: ${originalUrl}, 返回: ${JSON.stringify(uploadedInfo)}`,
+            );
           }
         }
         // Save map after each successful batch of uploads for a file
@@ -146,14 +155,14 @@ async function processFile(filePath, picgoInstance) {
 
   // 替换文件内容
   // Need to iterate based on keys in newUrls which contains both pre-mapped and newly mapped URLs
-  Object.keys(newUrls).forEach(oldUrl => {
+  Object.keys(newUrls).forEach((oldUrl) => {
     const newUrl = newUrls[oldUrl];
-    if (content.includes(oldUrl) && oldUrl !== newUrl) { // Ensure there's something to replace and it's a different URL
+    if (content.includes(oldUrl) && oldUrl !== newUrl) {
+      // Ensure there's something to replace and it's a different URL
       content = content.split(oldUrl).join(newUrl);
       changed = true;
     }
   });
-
 
   if (changed) {
     try {

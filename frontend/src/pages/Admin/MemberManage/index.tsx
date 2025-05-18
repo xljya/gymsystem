@@ -41,7 +41,7 @@ const columns: ProColumns<API.MemberVO>[] = [
     dataIndex: 'memberAvatar',
     render: (_, record) => (
       <div>
-        <Image src={record.memberAvatar || 'https://liuyueyue.top/images/preview.jpg'} width={100} />
+        <Image src={record.memberAvatar || 'https://28082003.com/images/preview.jpg'} width={100} />
       </div>
     ),
   },

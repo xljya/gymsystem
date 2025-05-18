@@ -21,7 +21,6 @@
       "lint:js": "eslint --cache --ext .js,.jsx,.ts,.tsx --format=pretty ./src",
       "lint:prettier": "prettier -c --write \"**/**.{js,jsx,tsx,ts,less,md,json}\" --end-of-line auto",
       "openapi": "node openapi.config.js",
-      "prepare": "husky install",
       "prettier": "prettier -c --write \"**/**.{js,jsx,tsx,ts,less,md,json}\"",
       "preview": "npm run build && max preview --port 8000",
       "record": "cross-env NODE_ENV=development REACT_APP_ENV=test max record --scene=login",
@@ -161,7 +160,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 1
+        "register": 2
       },
       "enableBy": "register",
       "type": "preset",
@@ -174,7 +173,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 54
+        "register": 18
       },
       "enableBy": "register",
       "type": "preset",
@@ -187,7 +186,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 16
+        "register": 9
       },
       "enableBy": "register",
       "type": "preset",
@@ -204,7 +203,7 @@
             1
           ]
         },
-        "register": 7
+        "register": 6
       },
       "enableBy": "register",
       "type": "preset",
@@ -221,7 +220,7 @@
             0
           ]
         },
-        "register": 8
+        "register": 7
       },
       "enableBy": "register",
       "type": "plugin",
@@ -238,7 +237,7 @@
             2
           ]
         },
-        "register": 1
+        "register": 2
       },
       "enableBy": "register",
       "type": "plugin",
@@ -252,10 +251,6 @@
       "time": {
         "hooks": {
           "modifyRoutes": [
-            0,
-            0,
-            0,
-            0,
             0,
             0,
             0,
@@ -279,23 +274,19 @@
       "time": {
         "hooks": {
           "modifyAppData": [
-            103
+            62
           ],
           "onGenerateFiles": [
             7,
             15,
+            41,
             19,
+            18,
             15,
-            24,
-            20,
-            21,
-            16,
-            19,
-            16,
-            17
+            20
           ]
         },
-        "register": 47
+        "register": 38
       },
       "enableBy": "register",
       "type": "plugin",
@@ -309,11 +300,7 @@
       "time": {
         "hooks": {
           "addEntryCode": [
-            0,
-            0,
-            0,
-            0,
-            0,
+            1,
             0,
             0,
             0,
@@ -336,25 +323,12 @@
       "time": {
         "hooks": {
           "onCheckConfig": [
-            1
+            0
           ],
           "onCheck": [
-            1
+            0
           ],
           "onPrepareBuildSuccess": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
             0,
             0,
             0,
@@ -371,14 +345,6 @@
           ],
           "onCheckCode": [
             0,
-            1,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            1,
             0,
             0,
             1,
@@ -388,10 +354,20 @@
             0,
             0,
             0,
-            0,
             1,
             0,
             0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
             0,
             0,
             0,
@@ -431,7 +407,7 @@
             0
           ]
         },
-        "register": 3
+        "register": 2
       },
       "enableBy": "register",
       "type": "plugin",
@@ -445,10 +421,10 @@
       "time": {
         "hooks": {
           "onCheck": [
-            0
+            1
           ]
         },
-        "register": 1
+        "register": 2
       },
       "enableBy": "register",
       "type": "plugin",
@@ -461,7 +437,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 1
+        "register": 2
       },
       "enableBy": "config",
       "type": "plugin",
@@ -475,10 +451,10 @@
       "time": {
         "hooks": {
           "modifyConfig": [
-            1
+            0
           ]
         },
-        "register": 23
+        "register": 17
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1333,10 +1309,10 @@
       "time": {
         "hooks": {
           "onStart": [
-            0
+            1
           ]
         },
-        "register": 1
+        "register": 2
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1350,10 +1326,10 @@
       "time": {
         "hooks": {
           "addBeforeMiddlewares": [
-            14
+            22
           ]
         },
-        "register": 2
+        "register": 3
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1366,7 +1342,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 120
+        "register": 99
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1379,7 +1355,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 230
+        "register": 179
       },
       "enableBy": "config",
       "type": "plugin",
@@ -1392,7 +1368,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 36
+        "register": 31
       },
       "enableBy": "config",
       "type": "plugin",
@@ -1413,6 +1389,13 @@
           ],
           "modifyHTMLFavicon": [
             0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
             0
           ]
         },
@@ -1430,23 +1413,15 @@
       "time": {
         "hooks": {
           "onGenerateFiles": [
-            3,
-            1,
-            1,
+            4,
             1,
             2,
             1,
-            0,
-            0,
-            0,
-            0,
+            1,
+            1,
             1
           ],
           "addRuntimePlugin": [
-            0,
-            0,
-            0,
-            0,
             0,
             0,
             0,
@@ -1482,7 +1457,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 57
+        "register": 47
       },
       "type": "plugin",
       "path": "C:/bysj/gymsystem-frontend/node_modules/@umijs/preset-umi/dist/features/mock/mock.js",
@@ -1494,7 +1469,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 6
+        "register": 2
       },
       "enableBy": "config",
       "type": "plugin",
@@ -1521,26 +1496,14 @@
         "hooks": {
           "onGenerateFiles": [
             0,
+            0,
             1,
-            0,
-            0,
-            0,
-            0,
-            0,
             0,
             0,
             0,
             0
           ],
           "addEntryImports": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
             0,
             0,
             0,
@@ -1587,17 +1550,13 @@
             1
           ],
           "onGenerateFiles": [
-            104,
-            32,
-            25,
-            16,
-            24,
+            106,
             31,
-            21,
-            12,
-            12,
-            10,
-            20
+            59,
+            40,
+            31,
+            32,
+            24
           ],
           "addPolyfillImports": [
             0,
@@ -1609,15 +1568,7 @@
             0,
             0,
             0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
+            1,
             0,
             0,
             0,
@@ -1650,14 +1601,6 @@
             0,
             0,
             0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
             0
           ]
         },
@@ -1675,11 +1618,7 @@
       "time": {
         "hooks": {
           "onGenerateFiles": [
-            337,
-            0,
-            0,
-            0,
-            0,
+            282,
             0,
             0,
             0,
@@ -1701,7 +1640,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 1
+        "register": 2
       },
       "enableBy": "config",
       "type": "plugin",
@@ -1718,14 +1657,10 @@
             1,
             0,
             1,
-            0,
-            0,
-            0,
-            0,
-            0,
+            1,
             0,
             1,
-            1
+            0
           ],
           "addBeforeMiddlewares": [
             0
@@ -1746,30 +1681,22 @@
         "hooks": {
           "onGenerateFiles": [
             30,
-            15,
-            60,
-            11,
-            36,
-            9,
-            51,
-            9,
-            38,
-            9,
-            57,
-            9,
-            44,
-            9,
-            29,
-            9,
-            30,
-            7,
-            28,
-            7,
-            31,
+            12,
+            48,
+            13,
+            100,
+            12,
+            42,
+            17,
+            37,
+            8,
+            54,
+            6,
+            42,
             8
           ]
         },
-        "register": 10
+        "register": 7
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1782,7 +1709,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 3
+        "register": 2
       },
       "enableBy": "config",
       "type": "plugin",
@@ -1795,7 +1722,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 2
+        "register": 0
       },
       "type": "plugin",
       "path": "C:/bysj/gymsystem-frontend/node_modules/@umijs/preset-umi/dist/features/routeProps/routeProps.js",
@@ -1807,7 +1734,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 6
+        "register": 8
       },
       "enableBy": "config",
       "type": "plugin",
@@ -1821,20 +1748,16 @@
       "time": {
         "hooks": {
           "onGenerateFiles": [
-            609,
-            41,
-            22,
-            21,
-            18,
+            621,
+            27,
+            27,
             25,
-            20,
-            16,
-            18,
-            15,
-            14
+            19,
+            38,
+            22
           ]
         },
-        "register": 7
+        "register": 4
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1851,7 +1774,7 @@
             0
           ]
         },
-        "register": 17
+        "register": 5
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1864,7 +1787,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 11
+        "register": 5
       },
       "enableBy": "config",
       "type": "plugin",
@@ -1877,7 +1800,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 4
+        "register": 1
       },
       "enableBy": "config",
       "type": "plugin",
@@ -1890,7 +1813,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 17
+        "register": 9
       },
       "type": "plugin",
       "path": "C:/bysj/gymsystem-frontend/node_modules/@umijs/preset-umi/dist/features/apiRoute/apiRoute.js",
@@ -1902,7 +1825,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 32
+        "register": 29
       },
       "enableBy": "config",
       "type": "plugin",
@@ -1917,16 +1840,12 @@
         "hooks": {
           "onGenerateFiles": [
             4,
+            2,
+            4,
+            2,
+            1,
             3,
-            2,
-            2,
-            2,
-            2,
-            1,
-            1,
-            1,
-            0,
-            1
+            3
           ]
         },
         "register": 2
@@ -1941,7 +1860,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 1
+        "register": 2
       },
       "enableBy": "config",
       "type": "plugin",
@@ -1954,7 +1873,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 2
+        "register": 3
       },
       "enableBy": "config",
       "type": "plugin",
@@ -2009,7 +1928,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 10
+        "register": 5
       },
       "type": "plugin",
       "path": "C:/bysj/gymsystem-frontend/node_modules/@umijs/preset-umi/dist/features/ui/ui.js",
@@ -2021,7 +1940,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 2
+        "register": 1
       },
       "enableBy": "config",
       "type": "plugin",
@@ -2047,11 +1966,18 @@
       "time": {
         "hooks": {
           "addHTMLHeadScripts": [
+            0,
             1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
             0
           ]
         },
-        "register": 3
+        "register": 4
       },
       "type": "plugin",
       "path": "C:/bysj/gymsystem-frontend/node_modules/@umijs/preset-umi/dist/features/routePreloadOnLoad/routePreloadOnLoad.js",
@@ -2076,7 +2002,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 21
+        "register": 16
       },
       "enableBy": "register",
       "type": "plugin",
@@ -2089,7 +2015,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 69
+        "register": 57
       },
       "enableBy": "register",
       "type": "plugin",
@@ -2103,13 +2029,13 @@
       "time": {
         "hooks": {
           "modifyAppData": [
-            29
+            28
           ],
           "onStart": [
             0
           ]
         },
-        "register": 106
+        "register": 69
       },
       "type": "plugin",
       "path": "C:/bysj/gymsystem-frontend/node_modules/@umijs/preset-umi/dist/commands/dev/dev.js",
@@ -2147,7 +2073,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 1
+        "register": 0
       },
       "enableBy": "register",
       "type": "plugin",
@@ -2173,7 +2099,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 1
+        "register": 2
       },
       "enableBy": "register",
       "type": "plugin",
@@ -2225,7 +2151,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 1
+        "register": 0
       },
       "enableBy": "register",
       "type": "plugin",
@@ -2251,7 +2177,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 0
+        "register": 1
       },
       "enableBy": "register",
       "type": "plugin",
@@ -2264,7 +2190,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 2
+        "register": 1
       },
       "enableBy": "register",
       "type": "plugin",
@@ -2316,7 +2242,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 2
+        "register": 0
       },
       "enableBy": "register",
       "type": "plugin",
@@ -2355,7 +2281,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 34
+        "register": 32
       },
       "enableBy": "register",
       "type": "plugin",
@@ -2401,30 +2327,22 @@
             0,
             0,
             0,
-            0,
-            0,
-            0,
-            0,
-            0
+            1
           ],
           "onGenerateFiles": [
-            4,
-            1,
-            1,
-            1,
-            1,
-            2,
-            1,
+            3,
+            0,
             1,
             0,
             1,
+            2,
             1
           ],
           "addTmpGenerateWatcherPaths": [
             0
           ]
         },
-        "register": 4
+        "register": 2
       },
       "enableBy": "config",
       "type": "plugin",
@@ -2452,28 +2370,20 @@
       "time": {
         "hooks": {
           "modifyConfig": [
-            15
+            7
           ],
           "modifyAppData": [
             0
           ],
           "addEntryImportsAhead": [
+            0,
+            0,
             1,
             0,
             0,
             0,
             0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
+            1,
             0,
             0,
             0,
@@ -2482,10 +2392,6 @@
             0
           ],
           "addRuntimePlugin": [
-            0,
-            0,
-            0,
-            0,
             0,
             0,
             0,
@@ -2501,24 +2407,16 @@
             0,
             0,
             0,
-            0,
-            0,
-            0,
-            0,
             0
           ],
           "onGenerateFiles": [
-            14,
-            5,
-            1,
+            6,
+            3,
+            4,
             1,
             2,
             2,
-            2,
-            1,
-            0,
-            1,
-            0
+            1
           ],
           "addExtraBabelPlugins": [
             0
@@ -2527,7 +2425,7 @@
             0
           ]
         },
-        "register": 11
+        "register": 9
       },
       "type": "plugin",
       "path": "C:/bysj/gymsystem-frontend/node_modules/@umijs/plugins/dist/antd.js",
@@ -2559,10 +2457,6 @@
             0,
             0,
             0,
-            0,
-            0,
-            0,
-            0,
             0
           ],
           "addRuntimePluginKey": [
@@ -2572,21 +2466,13 @@
             0,
             0,
             0,
-            0,
-            0,
-            0,
-            0,
             0
           ],
           "onGenerateFiles": [
-            3,
+            4,
             1,
             1,
             1,
-            1,
-            1,
-            0,
-            0,
             1,
             1,
             1
@@ -2598,14 +2484,10 @@
             0,
             0,
             0,
-            1,
-            0,
-            0,
-            0,
             0
           ]
         },
-        "register": 1
+        "register": 2
       },
       "enableBy": "config",
       "type": "plugin",
@@ -2627,10 +2509,6 @@
             0,
             0,
             0,
-            1,
-            0,
-            0,
-            0,
             0,
             0,
             0,
@@ -2646,10 +2524,6 @@
             0,
             0,
             0,
-            0,
-            0,
-            0,
-            0,
             0
           ],
           "addRuntimePluginKey": [
@@ -2659,27 +2533,19 @@
             0,
             0,
             0,
-            0,
-            0,
-            0,
-            0,
             0
           ],
           "onGenerateFiles": [
-            12,
-            8,
-            4,
+            16,
             5,
-            5,
-            5,
-            5,
-            4,
+            7,
             3,
-            3,
+            2,
+            10,
             2
           ]
         },
-        "register": 9
+        "register": 5
       },
       "enableBy": "config",
       "type": "plugin",
@@ -2692,7 +2558,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 7
+        "register": 6
       },
       "enableBy": "config",
       "type": "plugin",
@@ -2725,24 +2591,16 @@
             0,
             0,
             0,
-            0,
-            0,
-            0,
-            0,
             0
           ],
           "onGenerateFiles": [
-            80,
-            81,
-            69,
-            80,
-            80,
-            74,
+            79,
             70,
-            78,
+            88,
+            68,
             73,
-            71,
-            74
+            119,
+            77
           ],
           "addTmpGenerateWatcherPaths": [
             0
@@ -2762,13 +2620,9 @@
       "time": {
         "hooks": {
           "modifyConfig": [
-            2
+            1
           ],
           "addEntryCodeAhead": [
-            0,
-            0,
-            0,
-            0,
             0,
             0,
             0,
@@ -2778,20 +2632,16 @@
             0
           ],
           "onGenerateFiles": [
-            4,
-            1,
-            1,
-            0,
-            1,
+            3,
             1,
             0,
-            0,
             1,
-            0,
-            2
+            1,
+            1,
+            1
           ]
         },
-        "register": 2
+        "register": 1
       },
       "enableBy": "config",
       "type": "plugin",
@@ -2810,15 +2660,11 @@
             0,
             0,
             0,
-            1,
-            0,
-            0,
-            0,
             0,
             0
           ]
         },
-        "register": 3
+        "register": 2
       },
       "enableBy": "register",
       "type": "plugin",
@@ -2831,7 +2677,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 4
+        "register": 3
       },
       "type": "plugin",
       "path": "C:/bysj/gymsystem-frontend/node_modules/@umijs/plugins/dist/qiankun/master.js",
@@ -2855,7 +2701,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 1
+        "register": 2
       },
       "enableBy": "config",
       "type": "plugin",
@@ -2875,27 +2721,19 @@
             0,
             0,
             0,
-            0,
-            0,
-            0,
-            0,
             0
           ],
           "onGenerateFiles": [
             8,
             1,
-            0,
             2,
             1,
-            1,
             0,
-            1,
-            1,
             1,
             1
           ]
         },
-        "register": 3
+        "register": 1
       },
       "enableBy": "config",
       "type": "plugin",
@@ -2930,15 +2768,7 @@
             0,
             0,
             0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
+            1,
             0,
             0,
             0,
@@ -2946,10 +2776,10 @@
             0
           ],
           "onBeforeCompiler": [
-            2900
+            2566
           ]
         },
-        "register": 2
+        "register": 1
       },
       "enableBy": "config",
       "type": "plugin",
@@ -3010,11 +2840,10 @@
       "time": {
         "hooks": {
           "onCheckPkgJSON": [
-            0,
             0
           ]
         },
-        "register": 1
+        "register": 0
       },
       "enableBy": "register",
       "type": "plugin",
@@ -3057,7 +2886,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 420
+        "register": 316
       },
       "enableBy": "config",
       "type": "plugin",
@@ -3070,7 +2899,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 286
+        "register": 241
       },
       "enableBy": "config",
       "type": "plugin",
@@ -3085,7 +2914,7 @@
       },
       "time": {
         "hooks": {},
-        "register": 1
+        "register": 6
       },
       "enableBy": "config",
       "type": "plugin",
@@ -3114,20 +2943,16 @@
             0
           ],
           "onGenerateFiles": [
-            4,
-            1,
-            1,
-            0,
-            1,
-            1,
+            3,
+            2,
+            3,
             0,
             0,
             0,
-            1,
-            1
+            0
           ]
         },
-        "register": 90
+        "register": 120
       },
       "type": "plugin",
       "path": "C:/bysj/gymsystem-frontend/node_modules/@umijs/request-record/dist/cjs/index.js",
@@ -4710,7 +4535,7 @@
       "parentId": "ant-design-pro-layout",
       "id": "11",
       "absPath": "/about",
-      "__content": "import { Card, CardContent } from '@/components/ui/card';\r\nimport { PageContainer } from '@ant-design/pro-components';\r\nimport { Dumbbell } from 'lucide-react';\r\n\r\nconst About = () => {\r\n  return (\r\n    <div className=\"min-h-screen flex flex-col\">\r\n      <div\r\n        className=\"bg-gym-primary text-white py-16 w-full\"\r\n        style={{\r\n          position: 'relative',\r\n          zIndex: 10,\r\n          boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)',\r\n          paddingTop: '8rem',\r\n          paddingBottom: '4rem',\r\n        }}\r\n      >\r\n        <div className=\"container mx-auto px-4 text-center\">\r\n          <h1 className=\"text-3xl md:text-4xl font-bold mb-4\">关于我们</h1>\r\n          <p className=\"text-white/80 max-w-2xl mx-auto\">\r\n            专业的健身房系统，为您的健身需求提供最佳解决方案\r\n          </p>\r\n        </div>\r\n      </div>\r\n\r\n      <PageContainer\r\n        header={{\r\n          title: false,\r\n          breadcrumb: {},\r\n        }}\r\n        style={{\r\n          backgroundColor: 'transparent',\r\n          padding: 0,\r\n        }}\r\n      >\r\n        <div className=\"container mx-auto px-4 py-12\">\r\n          <div className=\"grid grid-cols-1 lg:grid-cols-2 gap-10 items-center mb-16\">\r\n            <div>\r\n              <h2 className=\"text-2xl md:text-3xl font-bold text-black mb-4\">我们的使命</h2>\r\n              <p className=\"text-gym-gray mb-4\">\r\n                我们致力于为健身爱好者和专业健身场所提供高品质的健身器械解决方案。通过我们的专业展示平台，您可以了解各类健身器械的详细信息，帮助您做出明智的选择。\r\n              </p>\r\n              <p className=\"text-gym-gray\">\r\n                无论您是想打造家庭健身房，还是建设专业的商业健身中心，我们都能为您提供专业的建议和解决方案，让您的健身环境更加完善。\r\n              </p>\r\n            </div>\r\n            <div className=\"rounded-lg overflow-hidden shadow-lg\">\r\n              <img\r\n                src=\"https://img.28082003.com//xlxlimg_1747424592095_15.jpg\"\r\n                alt=\"健身房环境\"\r\n                className=\"w-full h-auto object-cover\"\r\n              />\r\n            </div>\r\n          </div>\r\n\r\n          <div className=\"text-center mb-16\">\r\n            <Dumbbell className=\"w-16 h-16 text-gym-accent mx-auto mb-4\" />\r\n            <h2 className=\"text-2xl md:text-3xl font-bold text-black mb-4\">我们的优势</h2>\r\n            <p className=\"text-gym-gray max-w-2xl mx-auto mb-10\">\r\n              多年来，我们一直专注于健身器械领域，积累了丰富的经验和专业知识\r\n            </p>\r\n\r\n            <div className=\"grid grid-cols-1 md:grid-cols-3 gap-8\">\r\n              {[\r\n                {\r\n                  title: '专业知识',\r\n                  description: '我们的团队拥有多年的健身行业经验，对各类健身器械有深入的了解',\r\n                },\r\n                {\r\n                  title: '优质器材',\r\n                  description: '我们只展示高品质的健身器械，确保您获得最佳的健身体验',\r\n                },\r\n                {\r\n                  title: '专业服务',\r\n                  description: '我们提供专业的咨询服务，帮助您选择最适合的健身器械',\r\n                },\r\n              ].map((advantage) => (\r\n                <Card\r\n                  key={advantage.title}\r\n                  className=\"overflow-hidden hover-scale border border-gray-200 rounded-lg shadow-md text-left\"\r\n                >\r\n                  <CardContent className=\"p-6\">\r\n                    <h3 className=\"text-xl font-bold text-black mb-3\">{advantage.title}</h3>\r\n                    <p className=\"text-gym-gray\">{advantage.description}</p>\r\n                  </CardContent>\r\n                </Card>\r\n              ))}\r\n            </div>\r\n          </div>\r\n\r\n          <div className=\"grid grid-cols-1 lg:grid-cols-2 gap-10 items-center\">\r\n            <div className=\"order-2 lg:order-1 rounded-lg overflow-hidden shadow-lg\">\r\n              <img\r\n                src=\"https://img.28082003.com//xlxlimg_1747424592093_13.jpg\"\r\n                alt=\"专业团队\"\r\n                className=\"w-full h-auto object-cover\"\r\n              />\r\n            </div>\r\n            <div className=\"order-1 lg:order-2 text-left lg:text-left\">\r\n              <h2 className=\"text-2xl md:text-3xl font-bold text-black mb-4\">我们的团队</h2>\r\n              <p className=\"text-gym-gray mb-4\">\r\n                我们的团队由健身行业的专业人士组成，包括健身教练、器械工程师和健身顾问。他们拥有丰富的经验和专业知识，可以为您提供最专业的建议。\r\n              </p>\r\n              <p className=\"text-gym-gray\">\r\n                无论您是健身初学者还是资深健身爱好者，我们的团队都能理解您的需求，为您提供最适合的健身器械解决方案。\r\n              </p>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </PageContainer>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default About;\r\n",
+      "__content": "import { Card, CardContent } from '@/components/ui/card';\r\nimport { PageContainer } from '@ant-design/pro-components';\r\nimport { Dumbbell } from 'lucide-react';\r\n\r\nconst About = () => {\r\n  return (\r\n    <div className=\"min-h-screen flex flex-col\">\r\n      <div\r\n        className=\"bg-gym-primary text-white py-16 w-full\"\r\n        style={{\r\n          position: 'relative',\r\n          zIndex: 10,\r\n          boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)',\r\n          paddingTop: '8rem',\r\n          paddingBottom: '4rem',\r\n        }}\r\n      >\r\n        <div className=\"container mx-auto px-4 text-center\">\r\n          <h1 className=\"text-3xl md:text-4xl font-bold mb-4\">关于我们</h1>\r\n          <p className=\"text-white/80 max-w-2xl mx-auto\">\r\n            一站式健身房管理系统，为您的健身之旅提供全方位支持\r\n          </p>\r\n        </div>\r\n      </div>\r\n\r\n      <PageContainer\r\n        header={{\r\n          title: false,\r\n          breadcrumb: {},\r\n        }}\r\n        style={{\r\n          backgroundColor: 'transparent',\r\n          padding: 0,\r\n        }}\r\n      >\r\n        <div className=\"container mx-auto px-4 py-12\">\r\n          <div className=\"grid grid-cols-1 lg:grid-cols-2 gap-10 items-center mb-16\">\r\n            <div>\r\n              <h2 className=\"text-2xl md:text-3xl font-bold text-black mb-4\">我们的使命</h2>\r\n              <p className=\"text-gym-gray mb-4\">\r\n                我们致力于打造一个全方位的健身体验平台，集多样化课程、专业教练指导、优质器械展示和健身用品销售于一体。我们的目标是让每一位会员都能找到适合自己的健身方式，实现健康生活。\r\n              </p>\r\n              <p className=\"text-gym-gray\">\r\n                无论您是健身初学者还是资深健身爱好者，我们的平台都能为您提供从课程预约、教练选择到器械指导的一站式服务，让您的健身之旅更加便捷和高效。\r\n              </p>\r\n            </div>\r\n            <div className=\"rounded-lg overflow-hidden shadow-lg\">\r\n              <img\r\n                src=\"https://img.28082003.com//xlxlimg_1747424592095_15.jpg\"\r\n                alt=\"健身房环境\"\r\n                className=\"w-full h-auto object-cover\"\r\n              />\r\n            </div>\r\n          </div>\r\n\r\n          <div className=\"text-center mb-16\">\r\n            <Dumbbell className=\"w-16 h-16 text-gym-accent mx-auto mb-4\" />\r\n            <h2 className=\"text-2xl md:text-3xl font-bold text-black mb-4\">我们的优势</h2>\r\n            <p className=\"text-gym-gray max-w-2xl mx-auto mb-10\">\r\n              多年来，我们不断创新和完善，为会员提供卓越的健身体验\r\n            </p>\r\n\r\n            <div className=\"grid grid-cols-1 md:grid-cols-3 gap-8\">\r\n              {[\r\n                {\r\n                  title: '多样化课程',\r\n                  description: '提供从瑜伽、力量训练到有氧运动等多种类型的专业课程，满足不同会员的健身需求',\r\n                },\r\n                {\r\n                  title: '专业教练团队',\r\n                  description: '拥有经验丰富的教练团队，提供一对一指导和小组课程，帮助会员科学健身',\r\n                },\r\n                {\r\n                  title: '综合服务体系',\r\n                  description: '集课程预约、器械展示、商品销售于一体，为会员提供便捷的一站式健身服务',\r\n                },\r\n              ].map((advantage) => (\r\n                <Card\r\n                  key={advantage.title}\r\n                  className=\"overflow-hidden hover-scale border border-gray-200 rounded-lg shadow-md text-left\"\r\n                >\r\n                  <CardContent className=\"p-6\">\r\n                    <h3 className=\"text-xl font-bold text-black mb-3\">{advantage.title}</h3>\r\n                    <p className=\"text-gym-gray\">{advantage.description}</p>\r\n                  </CardContent>\r\n                </Card>\r\n              ))}\r\n            </div>\r\n          </div>\r\n\r\n          <div className=\"grid grid-cols-1 lg:grid-cols-2 gap-10 items-center\">\r\n            <div className=\"order-2 lg:order-1 rounded-lg overflow-hidden shadow-lg\">\r\n              <img\r\n                src=\"https://img.28082003.com//xlxlimg_1747424592093_13.jpg\"\r\n                alt=\"专业团队\"\r\n                className=\"w-full h-auto object-cover\"\r\n              />\r\n            </div>\r\n            <div className=\"order-1 lg:order-2 text-left lg:text-left\">\r\n              <h2 className=\"text-2xl md:text-3xl font-bold text-black mb-4\">我们的团队</h2>\r\n              <p className=\"text-gym-gray mb-4\">\r\n                我们的团队由健身行业的专业人士组成，包括资深教练、健身顾问和客户服务专家。他们不仅拥有专业知识，更致力于为每位会员提供个性化的健身指导。\r\n              </p>\r\n              <p className=\"text-gym-gray\">\r\n                从会员注册到课程选择，从器械使用到健身计划制定，我们的团队将全程陪伴您的健身旅程，确保您获得最佳的健身效果和体验。\r\n              </p>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </PageContainer>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default About;\r\n",
       "__isJSFile": true,
       "__absFile": "C:/bysj/gymsystem-frontend/src/pages/About/index.tsx"
     },
@@ -4762,7 +4587,7 @@
       "parentId": "ant-design-pro-layout",
       "id": "15",
       "absPath": "/admin/memberManage",
-      "__content": "import type { ActionType, ProColumns } from '@ant-design/pro-components';\r\nimport { ProTable, TableDropdown, ModalForm, ProFormText, ProFormSelect } from '@ant-design/pro-components';\r\nimport { useRef, useState } from 'react';\r\nimport { Image, message, Tag } from 'antd';\r\nimport { listMemberVoByPageUsingPost, updateMemberUsingPost, deleteMemberUsingPost, addMemberUsingPost } from '@/api/memberController';\r\nimport request from '@/utils/request';\r\n\r\nconst columns: ProColumns<API.MemberVO>[] = [\r\n  {\r\n    dataIndex: 'id',\r\n    valueType: 'index',\r\n    width: 48,\r\n    title: '序号',\r\n    hideInSearch: true,\r\n    editable: false,\r\n    render: (_, __, index) => index + 1,\r\n  },\r\n  {\r\n    title: '会员名称',\r\n    dataIndex: 'memberName',\r\n    copyable: true,\r\n    ellipsis: true,\r\n    formItemProps: {\r\n      rules: [\r\n        {\r\n          required: true,\r\n          message: '此项为必填项',\r\n        },\r\n      ],\r\n    },\r\n  },\r\n  {\r\n    title: '会员账号',\r\n    dataIndex: 'memberAccount',\r\n    copyable: true,\r\n    ellipsis: true,\r\n    editable: false,\r\n  },\r\n  {\r\n    title: '头像',\r\n    dataIndex: 'memberAvatar',\r\n    render: (_, record) => (\r\n      <div>\r\n        <Image src={record.memberAvatar || 'https://liuyueyue.top/images/preview.jpg'} width={100} />\r\n      </div>\r\n    ),\r\n  },\r\n  {\r\n    title: '性别',\r\n    dataIndex: 'gender',\r\n    valueEnum: {\r\n      0: { text: '未知', status: 'Default' },\r\n      1: { text: '男', status: 'Success' },\r\n      2: { text: '女', status: 'Error' },\r\n    },\r\n  },\r\n  {\r\n    title: '角色',\r\n    dataIndex: 'memberRole',\r\n    valueType: 'select',\r\n    valueEnum: {\r\n      member: { text: '普通会员', status: 'Default' },\r\n      admin: { text: '管理员', status: 'Success' },\r\n    },\r\n    render: (_, record) => {\r\n      const color = record.memberRole === 'admin' ? 'success' : 'processing';\r\n      return (\r\n        <Tag color={color}>\r\n          {record.memberRole === 'admin' ? '管理员' : '普通会员'}\r\n        </Tag>\r\n      );\r\n    },\r\n  },\r\n  {\r\n    title: '创建时间',\r\n    dataIndex: 'createTime',\r\n    valueType: 'dateTime',\r\n    sorter: true,\r\n    hideInSearch: true,\r\n    editable: false,\r\n  },\r\n  {\r\n    title: '操作',\r\n    valueType: 'option',\r\n    render: (text, record, _, action) => [\r\n      <a\r\n        key=\"editable\"\r\n        onClick={() => {\r\n          if (record.id) {\r\n            action?.startEditable?.(record.id);\r\n          }\r\n        }}\r\n      >\r\n        编辑\r\n      </a>,\r\n      <TableDropdown\r\n        key=\"actionGroup\"\r\n        onSelect={(key) => {\r\n          if (key === 'delete' && record.id) {\r\n            deleteMemberUsingPost({ id: record.id }).then((res) => {\r\n              console.log('删除响应:', res);\r\n              if (res) {\r\n                message.success('删除成功');\r\n                action?.reload();\r\n              } else {\r\n                message.error('删除失败');\r\n              }\r\n            }).catch(error => {\r\n              console.error('删除错误:', error);\r\n              message.error('删除失败');\r\n            });\r\n          }\r\n        }}\r\n        menus={[\r\n          { key: 'delete', name: '删除' },\r\n        ]}\r\n      />,\r\n    ],\r\n  },\r\n];\r\n\r\nexport default () => {\r\n  const actionRef = useRef<ActionType>();\r\n  const [createModalVisible, setCreateModalVisible] = useState<boolean>(false);\r\n\r\n  const handleAdd = async (fields: API.MemberAddRequest) => {\r\n    try {\r\n      const res = await addMemberUsingPost(fields);\r\n      console.log('新增响应:', res);\r\n      if (res) {\r\n        message.success('添加成功');\r\n        setCreateModalVisible(false);\r\n        actionRef.current?.reload();\r\n      } else {\r\n        message.error('添加失败');\r\n      }\r\n    } catch (error) {\r\n      console.error('添加错误:', error);\r\n      message.error('添加失败');\r\n    }\r\n  };\r\n\r\n  return (\r\n    <div style={{ minHeight: 'calc(100vh - 120px)', paddingBottom: '120px', marginBottom: '60px' }}>\r\n      <ProTable<API.MemberVO>\r\n        columns={columns}\r\n        actionRef={actionRef}\r\n        cardBordered\r\n        toolBarRender={() => [\r\n          <a\r\n            key=\"add\"\r\n            onClick={() => {\r\n              setCreateModalVisible(true);\r\n            }}\r\n          >\r\n            新增会员\r\n          </a>,\r\n        ]}\r\n        request={async (params) => {\r\n          console.log('请求参数:', params);\r\n          const res = await request('/api/member/list/page/vo', {\r\n            method: 'POST',\r\n            data: {\r\n              current: params.current,\r\n              pageSize: params.pageSize,\r\n              memberName: params.memberName,\r\n              memberAccount: params.memberAccount,\r\n              memberRole: params.memberRole,\r\n              gender: params.gender,\r\n            },\r\n          });\r\n          console.log('响应数据:', res);\r\n          return {\r\n            data: res.records || [],\r\n            success: true,\r\n            total: Number(res.total) || 0,\r\n          };\r\n        }}\r\n        editable={{\r\n          type: 'single',\r\n          onSave: async (key, record) => {\r\n            try {\r\n              const res = await updateMemberUsingPost({\r\n                id: record.id,\r\n                memberName: record.memberName,\r\n                memberAvatar: record.memberAvatar,\r\n                gender: record.gender,\r\n                memberRole: record.memberRole,\r\n              });\r\n              console.log('更新响应:', res);\r\n              if (res) {\r\n                message.success('更新成功');\r\n                actionRef.current?.reload();\r\n              } else {\r\n                message.error('更新失败');\r\n              }\r\n            } catch (error) {\r\n              console.error('更新错误:', error);\r\n              message.error('更新失败');\r\n            }\r\n          },\r\n        }}\r\n        columnsState={{\r\n          persistenceKey: 'pro-table-singe-demos',\r\n          persistenceType: 'localStorage',\r\n          defaultValue: {\r\n            option: { fixed: 'right', disable: true },\r\n          },\r\n          onChange(value) {\r\n            console.log('value: ', value);\r\n          },\r\n        }}\r\n        rowKey=\"id\"\r\n        search={{\r\n          labelWidth: 'auto',\r\n        }}\r\n        options={{\r\n          setting: {\r\n            listsHeight: 400,\r\n          },\r\n        }}\r\n        form={{\r\n          syncToUrl: (values, type) => {\r\n            if (type === 'get') {\r\n              return {\r\n                ...values,\r\n                created_at: [values.startTime, values.endTime],\r\n              };\r\n            }\r\n            return values;\r\n          },\r\n        }}\r\n        pagination={{\r\n          pageSize: 5,\r\n          onChange: (page) => console.log(page),\r\n        }}\r\n        dateFormatter=\"string\"\r\n        headerTitle=\"\"\r\n      />\r\n\r\n      <ModalForm\r\n        title=\"新增会员\"\r\n        width=\"400px\"\r\n        open={createModalVisible}\r\n        onOpenChange={setCreateModalVisible}\r\n        onFinish={async (values) => {\r\n          await handleAdd(values as API.MemberAddRequest);\r\n        }}\r\n      >\r\n        <ProFormText\r\n          name=\"memberName\"\r\n          label=\"会员名称\"\r\n          rules={[\r\n            {\r\n              required: true,\r\n              message: '请输入会员名称',\r\n            },\r\n          ]}\r\n        />\r\n        <ProFormText\r\n          name=\"memberAccount\"\r\n          label=\"会员账号\"\r\n          rules={[\r\n            {\r\n              required: true,\r\n              message: '请输入会员账号',\r\n            },\r\n            {\r\n              min: 4,\r\n              message: '账号长度不能小于4位',\r\n            },\r\n            {\r\n              pattern: /^[a-zA-Z0-9_]+$/,\r\n              message: '账号只能包含字母、数字和下划线',\r\n            },\r\n          ]}\r\n        />\r\n        <ProFormSelect\r\n          name=\"gender\"\r\n          label=\"性别\"\r\n          valueEnum={{\r\n            0: '未知',\r\n            1: '男',\r\n            2: '女',\r\n          }}\r\n          rules={[\r\n            {\r\n              required: true,\r\n              message: '请选择性别',\r\n            },\r\n          ]}\r\n        />\r\n        <ProFormSelect\r\n          name=\"memberRole\"\r\n          label=\"角色\"\r\n          valueEnum={{\r\n            member: '普通会员',\r\n            admin: '管理员',\r\n          }}\r\n          rules={[\r\n            {\r\n              required: true,\r\n              message: '请选择角色',\r\n            },\r\n          ]}\r\n        />\r\n      </ModalForm>\r\n    </div>\r\n  );\r\n};",
+      "__content": "import type { ActionType, ProColumns } from '@ant-design/pro-components';\r\nimport { ProTable, TableDropdown, ModalForm, ProFormText, ProFormSelect } from '@ant-design/pro-components';\r\nimport { useRef, useState } from 'react';\r\nimport { Image, message, Tag } from 'antd';\r\nimport { listMemberVoByPageUsingPost, updateMemberUsingPost, deleteMemberUsingPost, addMemberUsingPost } from '@/api/memberController';\r\nimport request from '@/utils/request';\r\n\r\nconst columns: ProColumns<API.MemberVO>[] = [\r\n  {\r\n    dataIndex: 'id',\r\n    valueType: 'index',\r\n    width: 48,\r\n    title: '序号',\r\n    hideInSearch: true,\r\n    editable: false,\r\n    render: (_, __, index) => index + 1,\r\n  },\r\n  {\r\n    title: '会员名称',\r\n    dataIndex: 'memberName',\r\n    copyable: true,\r\n    ellipsis: true,\r\n    formItemProps: {\r\n      rules: [\r\n        {\r\n          required: true,\r\n          message: '此项为必填项',\r\n        },\r\n      ],\r\n    },\r\n  },\r\n  {\r\n    title: '会员账号',\r\n    dataIndex: 'memberAccount',\r\n    copyable: true,\r\n    ellipsis: true,\r\n    editable: false,\r\n  },\r\n  {\r\n    title: '头像',\r\n    dataIndex: 'memberAvatar',\r\n    render: (_, record) => (\r\n      <div>\r\n        <Image src={record.memberAvatar || 'https://28082003.com/images/preview.jpg'} width={100} />\r\n      </div>\r\n    ),\r\n  },\r\n  {\r\n    title: '性别',\r\n    dataIndex: 'gender',\r\n    valueEnum: {\r\n      0: { text: '未知', status: 'Default' },\r\n      1: { text: '男', status: 'Success' },\r\n      2: { text: '女', status: 'Error' },\r\n    },\r\n  },\r\n  {\r\n    title: '角色',\r\n    dataIndex: 'memberRole',\r\n    valueType: 'select',\r\n    valueEnum: {\r\n      member: { text: '普通会员', status: 'Default' },\r\n      admin: { text: '管理员', status: 'Success' },\r\n    },\r\n    render: (_, record) => {\r\n      const color = record.memberRole === 'admin' ? 'success' : 'processing';\r\n      return (\r\n        <Tag color={color}>\r\n          {record.memberRole === 'admin' ? '管理员' : '普通会员'}\r\n        </Tag>\r\n      );\r\n    },\r\n  },\r\n  {\r\n    title: '创建时间',\r\n    dataIndex: 'createTime',\r\n    valueType: 'dateTime',\r\n    sorter: true,\r\n    hideInSearch: true,\r\n    editable: false,\r\n  },\r\n  {\r\n    title: '操作',\r\n    valueType: 'option',\r\n    render: (text, record, _, action) => [\r\n      <a\r\n        key=\"editable\"\r\n        onClick={() => {\r\n          if (record.id) {\r\n            action?.startEditable?.(record.id);\r\n          }\r\n        }}\r\n      >\r\n        编辑\r\n      </a>,\r\n      <TableDropdown\r\n        key=\"actionGroup\"\r\n        onSelect={(key) => {\r\n          if (key === 'delete' && record.id) {\r\n            deleteMemberUsingPost({ id: record.id }).then((res) => {\r\n              console.log('删除响应:', res);\r\n              if (res) {\r\n                message.success('删除成功');\r\n                action?.reload();\r\n              } else {\r\n                message.error('删除失败');\r\n              }\r\n            }).catch(error => {\r\n              console.error('删除错误:', error);\r\n              message.error('删除失败');\r\n            });\r\n          }\r\n        }}\r\n        menus={[\r\n          { key: 'delete', name: '删除' },\r\n        ]}\r\n      />,\r\n    ],\r\n  },\r\n];\r\n\r\nexport default () => {\r\n  const actionRef = useRef<ActionType>();\r\n  const [createModalVisible, setCreateModalVisible] = useState<boolean>(false);\r\n\r\n  const handleAdd = async (fields: API.MemberAddRequest) => {\r\n    try {\r\n      const res = await addMemberUsingPost(fields);\r\n      console.log('新增响应:', res);\r\n      if (res) {\r\n        message.success('添加成功');\r\n        setCreateModalVisible(false);\r\n        actionRef.current?.reload();\r\n      } else {\r\n        message.error('添加失败');\r\n      }\r\n    } catch (error) {\r\n      console.error('添加错误:', error);\r\n      message.error('添加失败');\r\n    }\r\n  };\r\n\r\n  return (\r\n    <div style={{ minHeight: 'calc(100vh - 120px)', paddingBottom: '120px', marginBottom: '60px' }}>\r\n      <ProTable<API.MemberVO>\r\n        columns={columns}\r\n        actionRef={actionRef}\r\n        cardBordered\r\n        toolBarRender={() => [\r\n          <a\r\n            key=\"add\"\r\n            onClick={() => {\r\n              setCreateModalVisible(true);\r\n            }}\r\n          >\r\n            新增会员\r\n          </a>,\r\n        ]}\r\n        request={async (params) => {\r\n          console.log('请求参数:', params);\r\n          const res = await request('/api/member/list/page/vo', {\r\n            method: 'POST',\r\n            data: {\r\n              current: params.current,\r\n              pageSize: params.pageSize,\r\n              memberName: params.memberName,\r\n              memberAccount: params.memberAccount,\r\n              memberRole: params.memberRole,\r\n              gender: params.gender,\r\n            },\r\n          });\r\n          console.log('响应数据:', res);\r\n          return {\r\n            data: res.records || [],\r\n            success: true,\r\n            total: Number(res.total) || 0,\r\n          };\r\n        }}\r\n        editable={{\r\n          type: 'single',\r\n          onSave: async (key, record) => {\r\n            try {\r\n              const res = await updateMemberUsingPost({\r\n                id: record.id,\r\n                memberName: record.memberName,\r\n                memberAvatar: record.memberAvatar,\r\n                gender: record.gender,\r\n                memberRole: record.memberRole,\r\n              });\r\n              console.log('更新响应:', res);\r\n              if (res) {\r\n                message.success('更新成功');\r\n                actionRef.current?.reload();\r\n              } else {\r\n                message.error('更新失败');\r\n              }\r\n            } catch (error) {\r\n              console.error('更新错误:', error);\r\n              message.error('更新失败');\r\n            }\r\n          },\r\n        }}\r\n        columnsState={{\r\n          persistenceKey: 'pro-table-singe-demos',\r\n          persistenceType: 'localStorage',\r\n          defaultValue: {\r\n            option: { fixed: 'right', disable: true },\r\n          },\r\n          onChange(value) {\r\n            console.log('value: ', value);\r\n          },\r\n        }}\r\n        rowKey=\"id\"\r\n        search={{\r\n          labelWidth: 'auto',\r\n        }}\r\n        options={{\r\n          setting: {\r\n            listsHeight: 400,\r\n          },\r\n        }}\r\n        form={{\r\n          syncToUrl: (values, type) => {\r\n            if (type === 'get') {\r\n              return {\r\n                ...values,\r\n                created_at: [values.startTime, values.endTime],\r\n              };\r\n            }\r\n            return values;\r\n          },\r\n        }}\r\n        pagination={{\r\n          pageSize: 5,\r\n          onChange: (page) => console.log(page),\r\n        }}\r\n        dateFormatter=\"string\"\r\n        headerTitle=\"\"\r\n      />\r\n\r\n      <ModalForm\r\n        title=\"新增会员\"\r\n        width=\"400px\"\r\n        open={createModalVisible}\r\n        onOpenChange={setCreateModalVisible}\r\n        onFinish={async (values) => {\r\n          await handleAdd(values as API.MemberAddRequest);\r\n        }}\r\n      >\r\n        <ProFormText\r\n          name=\"memberName\"\r\n          label=\"会员名称\"\r\n          rules={[\r\n            {\r\n              required: true,\r\n              message: '请输入会员名称',\r\n            },\r\n          ]}\r\n        />\r\n        <ProFormText\r\n          name=\"memberAccount\"\r\n          label=\"会员账号\"\r\n          rules={[\r\n            {\r\n              required: true,\r\n              message: '请输入会员账号',\r\n            },\r\n            {\r\n              min: 4,\r\n              message: '账号长度不能小于4位',\r\n            },\r\n            {\r\n              pattern: /^[a-zA-Z0-9_]+$/,\r\n              message: '账号只能包含字母、数字和下划线',\r\n            },\r\n          ]}\r\n        />\r\n        <ProFormSelect\r\n          name=\"gender\"\r\n          label=\"性别\"\r\n          valueEnum={{\r\n            0: '未知',\r\n            1: '男',\r\n            2: '女',\r\n          }}\r\n          rules={[\r\n            {\r\n              required: true,\r\n              message: '请选择性别',\r\n            },\r\n          ]}\r\n        />\r\n        <ProFormSelect\r\n          name=\"memberRole\"\r\n          label=\"角色\"\r\n          valueEnum={{\r\n            member: '普通会员',\r\n            admin: '管理员',\r\n          }}\r\n          rules={[\r\n            {\r\n              required: true,\r\n              message: '请选择角色',\r\n            },\r\n          ]}\r\n        />\r\n      </ModalForm>\r\n    </div>\r\n  );\r\n};",
       "__isJSFile": true,
       "__absFile": "C:/bysj/gymsystem-frontend/src/pages/Admin/MemberManage/index.tsx"
     },
@@ -4841,7 +4666,7 @@
       "parentId": "ant-design-pro-layout",
       "id": "21",
       "absPath": "/admin/coachManage",
-      "__content": "import type { ActionType, ProColumns } from '@ant-design/pro-components';\r\nimport { ProTable, TableDropdown, ModalForm, ProFormText, ProFormSelect, ProFormDatePicker } from '@ant-design/pro-components';\r\nimport { useRef, useState } from 'react';\r\nimport { Image, message, Tag } from 'antd';\r\nimport { updateCoachUsingPost, deleteCoachUsingPost, addCoachUsingPost } from '@/api/coachController';\r\nimport request from '@/utils/request';\r\n\r\n// 教练管理\r\nconst columns: ProColumns<API.CoachVO>[] = [\r\n  // ...（省略表格列定义，和原来一样）\r\n  {\r\n    dataIndex: 'coachId',\r\n    valueType: 'index',\r\n    width: 48,\r\n    title: '序号',\r\n    hideInSearch: true,\r\n    editable: false,\r\n    render: (_, __, index) => index + 1,\r\n  },\r\n  {\r\n    title: '教练名称',\r\n    dataIndex: 'coachName',\r\n    copyable: true,\r\n    ellipsis: true,\r\n    formItemProps: {\r\n      rules: [\r\n        {\r\n          required: true,\r\n          message: '此项为必填项',\r\n        },\r\n      ],\r\n    },\r\n  },\r\n  {\r\n    title: '教练账号',\r\n    dataIndex: 'coachAccount',\r\n    copyable: true,\r\n    ellipsis: true,\r\n    editable: false,\r\n  },\r\n  {\r\n    title: '头像',\r\n    dataIndex: 'coachAvatar',\r\n    width: 100,\r\n    render: (_, record) => (\r\n      <div style={{ width: '100%', textAlign: 'center' }}>\r\n        <Image \r\n          src={record.coachAvatar || 'https://liuyueyue.top/images/preview.jpg'} \r\n          width={50} \r\n          height={50}\r\n          style={{ objectFit: 'cover' }}\r\n        />\r\n      </div>\r\n    ),\r\n  },\r\n  {\r\n    title: '性别',\r\n    dataIndex: 'gender',\r\n    valueEnum: {\r\n      0: { text: '未知', status: 'Default' },\r\n      1: { text: '男', status: 'Success' },\r\n      2: { text: '女', status: 'Error' },\r\n    },\r\n  },\r\n  {\r\n    title: '年龄',\r\n    dataIndex: 'coachAge',\r\n    hideInSearch: true,\r\n  },\r\n  {\r\n    title: '课程类型',\r\n    dataIndex: 'courseType',\r\n    hideInSearch: true,\r\n  },\r\n  {\r\n    title: '薪资',\r\n    dataIndex: 'coachSalary',\r\n    hideInSearch: true,\r\n  },\r\n  {\r\n    title: '地址',\r\n    dataIndex: 'coachAddress',\r\n    hideInSearch: true,\r\n  },\r\n  {\r\n    title: '入职日期',\r\n    dataIndex: 'entryDate',\r\n    valueType: 'date',\r\n    hideInSearch: true,\r\n  },\r\n  {\r\n    title: '状态',\r\n    dataIndex: 'coachStatus',\r\n    valueEnum: {\r\n      0: { text: '在职', status: 'Success' },\r\n      1: { text: '离职', status: 'Error' },\r\n    },\r\n    render: (_, record) => {\r\n      const color = record.coachStatus === 0 ? 'success' : 'error';\r\n      return (\r\n        <Tag color={color}>\r\n          {record.coachStatus === 0 ? '在职' : '离职'}\r\n        </Tag>\r\n      );\r\n    },\r\n  },\r\n  {\r\n    title: '创建时间',\r\n    dataIndex: 'createTime',\r\n    valueType: 'dateTime',\r\n    sorter: true,\r\n    hideInSearch: true,\r\n    editable: false,\r\n  },\r\n  {\r\n    title: '操作',\r\n    valueType: 'option',\r\n    render: (text, record, _, action) => [\r\n      <a\r\n        key=\"editable\"\r\n        onClick={() => {\r\n          if (record.coachId) {\r\n            action?.startEditable?.(record.coachId);\r\n          }\r\n        }}\r\n      >\r\n        编辑\r\n      </a>,\r\n      <TableDropdown\r\n        key=\"actionGroup\"\r\n        onSelect={(key) => {\r\n          if (key === 'delete' && record.coachId) {\r\n            deleteCoachUsingPost({ id: record.coachId }).then((res) => {\r\n              console.log('删除响应:', res);\r\n              if (res) {\r\n                message.success('删除成功');\r\n                action?.reload();\r\n              } else {\r\n                message.error('删除失败');\r\n              }\r\n            }).catch(error => {\r\n              console.error('删除错误:', error);\r\n              message.error('删除失败');\r\n            });\r\n          }\r\n        }}\r\n        menus={[\r\n          { key: 'delete', name: '删除' },\r\n        ]}\r\n      />,\r\n    ],\r\n  },\r\n];\r\n\r\nexport default () => {\r\n  const actionRef = useRef<ActionType>();\r\n  const [createModalVisible, setCreateModalVisible] = useState<boolean>(false);\r\n\r\n  /**\r\n   * 新增教练的表单是如何提交的？\r\n   * \r\n   * 1. 当用户点击“新增教练”按钮时，createModalVisible 设为 true，弹出 ModalForm 表单。\r\n   * 2. 用户填写表单后，点击提交，ModalForm 的 onFinish 会被触发。\r\n   * 3. onFinish 会调用 handleAdd 方法，并将表单填写的数据（values）作为参数传入。\r\n   * 4. handleAdd 方法内部会调用 addCoachUsingPost(fields) 向后端发送新增教练的请求。\r\n   * 5. 如果后端返回成功，弹出“添加成功”提示，关闭弹窗，并刷新表格数据。\r\n   * 6. 如果失败，则弹出“添加失败”提示。\r\n   */\r\n  const handleAdd = async (fields: API.CoachAddRequest) => {\r\n    try {\r\n      // 这里将表单数据提交到后端\r\n      const res = await addCoachUsingPost(fields);\r\n      console.log('新增响应:', res);\r\n      if (res) {\r\n        message.success('添加成功');\r\n        setCreateModalVisible(false); // 关闭弹窗\r\n        actionRef.current?.reload();  // 刷新表格\r\n      } else {\r\n        message.error('添加失败');\r\n      }\r\n    } catch (error) {\r\n      console.error('添加错误:', error);\r\n      message.error('添加失败');\r\n    }\r\n  };\r\n\r\n  return (\r\n    <div style={{ minHeight: 'calc(100vh - 120px)', paddingBottom: '120px', marginBottom: '60px' }}>\r\n      <ProTable<API.CoachVO>\r\n        columns={columns}\r\n        actionRef={actionRef}\r\n        cardBordered\r\n        toolBarRender={() => [\r\n          <a\r\n            key=\"add\"\r\n            onClick={() => {\r\n              setCreateModalVisible(true);\r\n            }}\r\n          >\r\n            新增教练\r\n          </a>,\r\n        ]}\r\n        // ProTable 的 request 方法，用于请求教练列表分页数据\r\n        request={async (params) => {\r\n          // 打印请求参数，便于调试\r\n          console.log('请求参数:', params);\r\n          // 发送 POST 请求到后端接口，获取教练分页数据\r\n          const res = await request('/api/coach/list/page/vo', {\r\n            method: 'POST',\r\n            data: {\r\n              // 当前页码\r\n              current: params.current,\r\n              // 每页条数\r\n              pageSize: params.pageSize,\r\n              // 搜索条件：教练姓名\r\n              coachName: params.coachName,\r\n              // 搜索条件：教练账号\r\n              coachAccount: params.coachAccount,\r\n              // 搜索条件：性别\r\n              gender: params.gender,\r\n            },\r\n          });\r\n          // 打印响应数据，便于调试\r\n          console.log('响应数据:', res);\r\n          // 返回 ProTable 需要的数据格式\r\n          return {\r\n            // data 字段：表格要展示的数据，来源于接口返回的 records 字段\r\n            // 如果 records 不存在，则返回空数组\r\n            data: res.records || [],\r\n            // success 字段：请求是否成功，这里直接写 true\r\n            success: true,\r\n            // total 字段：数据总数，来源于接口返回的 total 字段\r\n            // 如果 total 不存在，则返回 0\r\n            total: Number(res.total) || 0,\r\n          };\r\n        }}\r\n        /*\r\n          解读：\r\n          data 数据是怎么来的？\r\n          - data 字段是 ProTable 组件用来渲染表格的主要数据源。\r\n          - 这里的 data: res.records || []，意思是从后端接口 /api/coach/list/page/vo 的响应结果中，取出 records 字段作为表格的数据。\r\n          - 如果接口没有返回 records 字段，则用空数组代替，避免表格报错。\r\n          - 通常后端会返回一个分页对象，包含 records（当前页数据数组）、total（总条数）等字段。\r\n          - 所以 data 实际上就是后端分页接口返回的当前页的教练数据列表。\r\n        */\r\n        editable={{\r\n          type: 'single',\r\n          onSave: async (key, record) => {\r\n            try {\r\n              const res = await updateCoachUsingPost({\r\n                coachId: record.coachId,\r\n                coachName: record.coachName,\r\n                coachAvatar: record.coachAvatar,\r\n                gender: record.gender,\r\n                coachAge: record.coachAge,\r\n                courseType: record.courseType,\r\n                coachSalary: record.coachSalary,\r\n                coachAddress: record.coachAddress,\r\n                entryDate: record.entryDate,\r\n                coachStatus: record.coachStatus,\r\n              });\r\n              console.log('更新响应:', res);\r\n              if (res) {\r\n                message.success('更新成功');\r\n                actionRef.current?.reload();\r\n              } else {\r\n                message.error('更新失败');\r\n              }\r\n            } catch (error) {\r\n              console.error('更新错误:', error);\r\n              message.error('更新失败');\r\n            }\r\n          },\r\n        }}\r\n        columnsState={{\r\n          persistenceKey: 'pro-table-singe-demos',\r\n          persistenceType: 'localStorage',\r\n          defaultValue: {\r\n            option: { fixed: 'right', disable: true },\r\n          },\r\n          onChange(value) {\r\n            console.log('value: ', value);\r\n          },\r\n        }}\r\n        rowKey=\"coachId\"\r\n        search={{\r\n          labelWidth: 'auto',\r\n        }}\r\n        options={{\r\n          setting: {\r\n            listsHeight: 400,\r\n          },\r\n        }}\r\n        form={{\r\n          syncToUrl: (values, type) => {\r\n            if (type === 'get') {\r\n              return {\r\n                ...values,\r\n                created_at: [values.startTime, values.endTime],\r\n              };\r\n            }\r\n            return values;\r\n          },\r\n        }}\r\n        pagination={{\r\n          pageSize: 5,\r\n          onChange: (page) => console.log(page),\r\n        }}\r\n        dateFormatter=\"string\"\r\n        headerTitle=\"\"\r\n      />\r\n\r\n      {/* 新增教练的表单，提交时会触发 onFinish，调用 handleAdd 方法 */}\r\n      <ModalForm\r\n        title=\"新增教练\"\r\n        width=\"400px\"\r\n        open={createModalVisible}\r\n        onOpenChange={setCreateModalVisible}\r\n        onFinish={async (values) => {\r\n          // 这里会把表单数据传递给 handleAdd 进行提交\r\n          await handleAdd(values as API.CoachAddRequest);\r\n        }}\r\n      >\r\n        <ProFormText\r\n          name=\"coachName\"\r\n          label=\"教练名称\"\r\n          rules={[\r\n            {\r\n              required: true,\r\n              message: '请输入教练名称',\r\n            },\r\n          ]}\r\n        />\r\n        <ProFormText\r\n          name=\"coachAccount\"\r\n          label=\"教练账号\"\r\n          rules={[\r\n            {\r\n              required: true,\r\n              message: '请输入教练账号',\r\n            },\r\n            {\r\n              min: 4,\r\n              message: '账号长度不能小于4位',\r\n            },\r\n            {\r\n              pattern: /^[a-zA-Z0-9_]+$/,\r\n              message: '账号只能包含字母、数字和下划线',\r\n            },\r\n          ]}\r\n        />\r\n        <ProFormSelect\r\n          name=\"gender\"\r\n          label=\"性别\"\r\n          valueEnum={{\r\n            0: '未知',\r\n            1: '男',\r\n            2: '女',\r\n          }}\r\n          rules={[\r\n            {\r\n              required: true,\r\n              message: '请选择性别',\r\n            },\r\n          ]}\r\n        />\r\n        <ProFormText\r\n          name=\"coachAge\"\r\n          label=\"年龄\"\r\n          rules={[\r\n            {\r\n              required: true,\r\n              message: '请输入年龄',\r\n            },\r\n          ]}\r\n        />\r\n        <ProFormText\r\n          name=\"courseType\"\r\n          label=\"课程类型\"\r\n          rules={[\r\n            {\r\n              required: true,\r\n              message: '请输入课程类型',\r\n            },\r\n          ]}\r\n        />\r\n        <ProFormText\r\n          name=\"coachSalary\"\r\n          label=\"薪资\"\r\n          rules={[\r\n            {\r\n              required: true,\r\n              message: '请输入薪资',\r\n            },\r\n          ]}\r\n        />\r\n        <ProFormText\r\n          name=\"coachAddress\"\r\n          label=\"地址\"\r\n          rules={[\r\n            {\r\n              required: true,\r\n              message: '请输入地址',\r\n            },\r\n          ]}\r\n        />\r\n        <ProFormDatePicker\r\n          name=\"entryDate\"\r\n          label=\"入职日期\"\r\n          rules={[\r\n            {\r\n              required: true,\r\n              message: '请选择入职日期',\r\n            },\r\n          ]}\r\n        />\r\n      </ModalForm>\r\n    </div>\r\n  );\r\n}; ",
+      "__content": "import type { ActionType, ProColumns } from '@ant-design/pro-components';\r\nimport { ProTable, TableDropdown, ModalForm, ProFormText, ProFormSelect, ProFormDatePicker } from '@ant-design/pro-components';\r\nimport { useRef, useState } from 'react';\r\nimport { Image, message, Tag } from 'antd';\r\nimport { updateCoachUsingPost, deleteCoachUsingPost, addCoachUsingPost } from '@/api/coachController';\r\nimport request from '@/utils/request';\r\n\r\n// 教练管理\r\nconst columns: ProColumns<API.CoachVO>[] = [\r\n  // ...（省略表格列定义，和原来一样）\r\n  {\r\n    dataIndex: 'coachId',\r\n    valueType: 'index',\r\n    width: 48,\r\n    title: '序号',\r\n    hideInSearch: true,\r\n    editable: false,\r\n    render: (_, __, index) => index + 1,\r\n  },\r\n  {\r\n    title: '教练名称',\r\n    dataIndex: 'coachName',\r\n    copyable: true,\r\n    ellipsis: true,\r\n    formItemProps: {\r\n      rules: [\r\n        {\r\n          required: true,\r\n          message: '此项为必填项',\r\n        },\r\n      ],\r\n    },\r\n  },\r\n  {\r\n    title: '教练账号',\r\n    dataIndex: 'coachAccount',\r\n    copyable: true,\r\n    ellipsis: true,\r\n    editable: false,\r\n  },\r\n  {\r\n    title: '头像',\r\n    dataIndex: 'coachAvatar',\r\n    width: 100,\r\n    render: (_, record) => (\r\n      <div style={{ width: '100%', textAlign: 'center' }}>\r\n        <Image \r\n          src={record.coachAvatar || 'https://28082003.com/images/preview.jpg'} \r\n          width={50} \r\n          height={50}\r\n          style={{ objectFit: 'cover' }}\r\n        />\r\n      </div>\r\n    ),\r\n  },\r\n  {\r\n    title: '性别',\r\n    dataIndex: 'gender',\r\n    valueEnum: {\r\n      0: { text: '未知', status: 'Default' },\r\n      1: { text: '男', status: 'Success' },\r\n      2: { text: '女', status: 'Error' },\r\n    },\r\n  },\r\n  {\r\n    title: '年龄',\r\n    dataIndex: 'coachAge',\r\n    hideInSearch: true,\r\n  },\r\n  {\r\n    title: '课程类型',\r\n    dataIndex: 'courseType',\r\n    hideInSearch: true,\r\n  },\r\n  {\r\n    title: '薪资',\r\n    dataIndex: 'coachSalary',\r\n    hideInSearch: true,\r\n  },\r\n  {\r\n    title: '地址',\r\n    dataIndex: 'coachAddress',\r\n    hideInSearch: true,\r\n  },\r\n  {\r\n    title: '入职日期',\r\n    dataIndex: 'entryDate',\r\n    valueType: 'date',\r\n    hideInSearch: true,\r\n  },\r\n  {\r\n    title: '状态',\r\n    dataIndex: 'coachStatus',\r\n    valueEnum: {\r\n      0: { text: '在职', status: 'Success' },\r\n      1: { text: '离职', status: 'Error' },\r\n    },\r\n    render: (_, record) => {\r\n      const color = record.coachStatus === 0 ? 'success' : 'error';\r\n      return (\r\n        <Tag color={color}>\r\n          {record.coachStatus === 0 ? '在职' : '离职'}\r\n        </Tag>\r\n      );\r\n    },\r\n  },\r\n  {\r\n    title: '创建时间',\r\n    dataIndex: 'createTime',\r\n    valueType: 'dateTime',\r\n    sorter: true,\r\n    hideInSearch: true,\r\n    editable: false,\r\n  },\r\n  {\r\n    title: '操作',\r\n    valueType: 'option',\r\n    render: (text, record, _, action) => [\r\n      <a\r\n        key=\"editable\"\r\n        onClick={() => {\r\n          if (record.coachId) {\r\n            action?.startEditable?.(record.coachId);\r\n          }\r\n        }}\r\n      >\r\n        编辑\r\n      </a>,\r\n      <TableDropdown\r\n        key=\"actionGroup\"\r\n        onSelect={(key) => {\r\n          if (key === 'delete' && record.coachId) {\r\n            deleteCoachUsingPost({ id: record.coachId }).then((res) => {\r\n              console.log('删除响应:', res);\r\n              if (res) {\r\n                message.success('删除成功');\r\n                action?.reload();\r\n              } else {\r\n                message.error('删除失败');\r\n              }\r\n            }).catch(error => {\r\n              console.error('删除错误:', error);\r\n              message.error('删除失败');\r\n            });\r\n          }\r\n        }}\r\n        menus={[\r\n          { key: 'delete', name: '删除' },\r\n        ]}\r\n      />,\r\n    ],\r\n  },\r\n];\r\n\r\nexport default () => {\r\n  const actionRef = useRef<ActionType>();\r\n  const [createModalVisible, setCreateModalVisible] = useState<boolean>(false);\r\n\r\n  /**\r\n   * 新增教练的表单是如何提交的？\r\n   * \r\n   * 1. 当用户点击“新增教练”按钮时，createModalVisible 设为 true，弹出 ModalForm 表单。\r\n   * 2. 用户填写表单后，点击提交，ModalForm 的 onFinish 会被触发。\r\n   * 3. onFinish 会调用 handleAdd 方法，并将表单填写的数据（values）作为参数传入。\r\n   * 4. handleAdd 方法内部会调用 addCoachUsingPost(fields) 向后端发送新增教练的请求。\r\n   * 5. 如果后端返回成功，弹出“添加成功”提示，关闭弹窗，并刷新表格数据。\r\n   * 6. 如果失败，则弹出“添加失败”提示。\r\n   */\r\n  const handleAdd = async (fields: API.CoachAddRequest) => {\r\n    try {\r\n      // 这里将表单数据提交到后端\r\n      const res = await addCoachUsingPost(fields);\r\n      console.log('新增响应:', res);\r\n      if (res) {\r\n        message.success('添加成功');\r\n        setCreateModalVisible(false); // 关闭弹窗\r\n        actionRef.current?.reload();  // 刷新表格\r\n      } else {\r\n        message.error('添加失败');\r\n      }\r\n    } catch (error) {\r\n      console.error('添加错误:', error);\r\n      message.error('添加失败');\r\n    }\r\n  };\r\n\r\n  return (\r\n    <div style={{ minHeight: 'calc(100vh - 120px)', paddingBottom: '120px', marginBottom: '60px' }}>\r\n      <ProTable<API.CoachVO>\r\n        columns={columns}\r\n        actionRef={actionRef}\r\n        cardBordered\r\n        toolBarRender={() => [\r\n          <a\r\n            key=\"add\"\r\n            onClick={() => {\r\n              setCreateModalVisible(true);\r\n            }}\r\n          >\r\n            新增教练\r\n          </a>,\r\n        ]}\r\n        // ProTable 的 request 方法，用于请求教练列表分页数据\r\n        request={async (params) => {\r\n          // 打印请求参数，便于调试\r\n          console.log('请求参数:', params);\r\n          // 发送 POST 请求到后端接口，获取教练分页数据\r\n          const res = await request('/api/coach/list/page/vo', {\r\n            method: 'POST',\r\n            data: {\r\n              // 当前页码\r\n              current: params.current,\r\n              // 每页条数\r\n              pageSize: params.pageSize,\r\n              // 搜索条件：教练姓名\r\n              coachName: params.coachName,\r\n              // 搜索条件：教练账号\r\n              coachAccount: params.coachAccount,\r\n              // 搜索条件：性别\r\n              gender: params.gender,\r\n            },\r\n          });\r\n          // 打印响应数据，便于调试\r\n          console.log('响应数据:', res);\r\n          // 返回 ProTable 需要的数据格式\r\n          return {\r\n            // data 字段：表格要展示的数据，来源于接口返回的 records 字段\r\n            // 如果 records 不存在，则返回空数组\r\n            data: res.records || [],\r\n            // success 字段：请求是否成功，这里直接写 true\r\n            success: true,\r\n            // total 字段：数据总数，来源于接口返回的 total 字段\r\n            // 如果 total 不存在，则返回 0\r\n            total: Number(res.total) || 0,\r\n          };\r\n        }}\r\n        /*\r\n          解读：\r\n          data 数据是怎么来的？\r\n          - data 字段是 ProTable 组件用来渲染表格的主要数据源。\r\n          - 这里的 data: res.records || []，意思是从后端接口 /api/coach/list/page/vo 的响应结果中，取出 records 字段作为表格的数据。\r\n          - 如果接口没有返回 records 字段，则用空数组代替，避免表格报错。\r\n          - 通常后端会返回一个分页对象，包含 records（当前页数据数组）、total（总条数）等字段。\r\n          - 所以 data 实际上就是后端分页接口返回的当前页的教练数据列表。\r\n        */\r\n        editable={{\r\n          type: 'single',\r\n          onSave: async (key, record) => {\r\n            try {\r\n              const res = await updateCoachUsingPost({\r\n                coachId: record.coachId,\r\n                coachName: record.coachName,\r\n                coachAvatar: record.coachAvatar,\r\n                gender: record.gender,\r\n                coachAge: record.coachAge,\r\n                courseType: record.courseType,\r\n                coachSalary: record.coachSalary,\r\n                coachAddress: record.coachAddress,\r\n                entryDate: record.entryDate,\r\n                coachStatus: record.coachStatus,\r\n              });\r\n              console.log('更新响应:', res);\r\n              if (res) {\r\n                message.success('更新成功');\r\n                actionRef.current?.reload();\r\n              } else {\r\n                message.error('更新失败');\r\n              }\r\n            } catch (error) {\r\n              console.error('更新错误:', error);\r\n              message.error('更新失败');\r\n            }\r\n          },\r\n        }}\r\n        columnsState={{\r\n          persistenceKey: 'pro-table-singe-demos',\r\n          persistenceType: 'localStorage',\r\n          defaultValue: {\r\n            option: { fixed: 'right', disable: true },\r\n          },\r\n          onChange(value) {\r\n            console.log('value: ', value);\r\n          },\r\n        }}\r\n        rowKey=\"coachId\"\r\n        search={{\r\n          labelWidth: 'auto',\r\n        }}\r\n        options={{\r\n          setting: {\r\n            listsHeight: 400,\r\n          },\r\n        }}\r\n        form={{\r\n          syncToUrl: (values, type) => {\r\n            if (type === 'get') {\r\n              return {\r\n                ...values,\r\n                created_at: [values.startTime, values.endTime],\r\n              };\r\n            }\r\n            return values;\r\n          },\r\n        }}\r\n        pagination={{\r\n          pageSize: 5,\r\n          onChange: (page) => console.log(page),\r\n        }}\r\n        dateFormatter=\"string\"\r\n        headerTitle=\"\"\r\n      />\r\n\r\n      {/* 新增教练的表单，提交时会触发 onFinish，调用 handleAdd 方法 */}\r\n      <ModalForm\r\n        title=\"新增教练\"\r\n        width=\"400px\"\r\n        open={createModalVisible}\r\n        onOpenChange={setCreateModalVisible}\r\n        onFinish={async (values) => {\r\n          // 这里会把表单数据传递给 handleAdd 进行提交\r\n          await handleAdd(values as API.CoachAddRequest);\r\n        }}\r\n      >\r\n        <ProFormText\r\n          name=\"coachName\"\r\n          label=\"教练名称\"\r\n          rules={[\r\n            {\r\n              required: true,\r\n              message: '请输入教练名称',\r\n            },\r\n          ]}\r\n        />\r\n        <ProFormText\r\n          name=\"coachAccount\"\r\n          label=\"教练账号\"\r\n          rules={[\r\n            {\r\n              required: true,\r\n              message: '请输入教练账号',\r\n            },\r\n            {\r\n              min: 4,\r\n              message: '账号长度不能小于4位',\r\n            },\r\n            {\r\n              pattern: /^[a-zA-Z0-9_]+$/,\r\n              message: '账号只能包含字母、数字和下划线',\r\n            },\r\n          ]}\r\n        />\r\n        <ProFormSelect\r\n          name=\"gender\"\r\n          label=\"性别\"\r\n          valueEnum={{\r\n            0: '未知',\r\n            1: '男',\r\n            2: '女',\r\n          }}\r\n          rules={[\r\n            {\r\n              required: true,\r\n              message: '请选择性别',\r\n            },\r\n          ]}\r\n        />\r\n        <ProFormText\r\n          name=\"coachAge\"\r\n          label=\"年龄\"\r\n          rules={[\r\n            {\r\n              required: true,\r\n              message: '请输入年龄',\r\n            },\r\n          ]}\r\n        />\r\n        <ProFormText\r\n          name=\"courseType\"\r\n          label=\"课程类型\"\r\n          rules={[\r\n            {\r\n              required: true,\r\n              message: '请输入课程类型',\r\n            },\r\n          ]}\r\n        />\r\n        <ProFormText\r\n          name=\"coachSalary\"\r\n          label=\"薪资\"\r\n          rules={[\r\n            {\r\n              required: true,\r\n              message: '请输入薪资',\r\n            },\r\n          ]}\r\n        />\r\n        <ProFormText\r\n          name=\"coachAddress\"\r\n          label=\"地址\"\r\n          rules={[\r\n            {\r\n              required: true,\r\n              message: '请输入地址',\r\n            },\r\n          ]}\r\n        />\r\n        <ProFormDatePicker\r\n          name=\"entryDate\"\r\n          label=\"入职日期\"\r\n          rules={[\r\n            {\r\n              required: true,\r\n              message: '请选择入职日期',\r\n            },\r\n          ]}\r\n        />\r\n      </ModalForm>\r\n    </div>\r\n  );\r\n}; ",
       "__isJSFile": true,
       "__absFile": "C:/bysj/gymsystem-frontend/src/pages/Admin/CoachManage/index.tsx"
     },
@@ -6214,7 +6039,7 @@
             "format": "esm"
           },
           "src/utils/request.ts": {
-            "bytes": 1888,
+            "bytes": 1887,
             "imports": [
               {
                 "path": "umi-request",
@@ -6365,7 +6190,7 @@
             "format": "esm"
           },
           "src/components/Footer/MemberFooter.tsx": {
-            "bytes": 10543,
+            "bytes": 5932,
             "imports": [
               {
                 "path": "react-router-dom",
@@ -7057,7 +6882,7 @@
             "format": "esm"
           },
           "src/pages/Course/fitness/ClassCard.tsx": {
-            "bytes": 4274,
+            "bytes": 4273,
             "imports": [
               {
                 "path": "react",
@@ -7786,7 +7611,7 @@
             "format": "esm"
           },
           "src/data/goodsData.ts": {
-            "bytes": 7810,
+            "bytes": 7809,
             "imports": [],
             "format": "esm"
           },
@@ -7945,7 +7770,7 @@
             "format": "esm"
           },
           "src/pages/About/index.tsx": {
-            "bytes": 5127,
+            "bytes": 5292,
             "imports": [
               {
                 "path": "src/components/ui/card.tsx",
@@ -8109,7 +7934,7 @@
             "format": "esm"
           },
           "src/pages/Admin/MemberManage/index.tsx": {
-            "bytes": 8554,
+            "bytes": 8553,
             "imports": [
               {
                 "path": "@ant-design/pro-components",
@@ -8306,7 +8131,7 @@
             "format": "esm"
           },
           "src/pages/Admin/CoachManage/index.tsx": {
-            "bytes": 12663,
+            "bytes": 12662,
             "imports": [
               {
                 "path": "@ant-design/pro-components",
@@ -11195,7 +11020,7 @@
                 "bytesInOutput": 1304
               },
               "src/utils/request.ts": {
-                "bytesInOutput": 1565
+                "bytesInOutput": 1564
               },
               "src/api/memberController.ts": {
                 "bytesInOutput": 1564
@@ -11216,7 +11041,7 @@
                 "bytesInOutput": 134
               },
               "src/components/Footer/MemberFooter.tsx": {
-                "bytesInOutput": 10473
+                "bytesInOutput": 5996
               },
               "config/defaultSettings.ts": {
                 "bytesInOutput": 1884
@@ -11306,7 +11131,7 @@
                 "bytesInOutput": 1102
               },
               "src/pages/Course/fitness/ClassCard.tsx": {
-                "bytesInOutput": 3623
+                "bytesInOutput": 3622
               },
               "src/pages/Course/fitness/HeroSection.tsx": {
                 "bytesInOutput": 2661
@@ -11396,7 +11221,7 @@
                 "bytesInOutput": 859
               },
               "src/data/goodsData.ts": {
-                "bytesInOutput": 11182
+                "bytesInOutput": 11181
               },
               "src/components/ui/input.tsx": {
                 "bytesInOutput": 908
@@ -11411,7 +11236,7 @@
                 "bytesInOutput": 5857
               },
               "src/pages/About/index.tsx": {
-                "bytesInOutput": 6965
+                "bytesInOutput": 7295
               },
               "src/pages/Admin/Welcome/index.tsx": {
                 "bytesInOutput": 5745
@@ -11423,7 +11248,7 @@
                 "bytesInOutput": 5883
               },
               "src/pages/Admin/MemberManage/index.tsx": {
-                "bytesInOutput": 10339
+                "bytesInOutput": 10338
               },
               "src/pages/Admin/CourseManage/index.tsx": {
                 "bytesInOutput": 8399
@@ -11444,7 +11269,7 @@
                 "bytesInOutput": 10574
               },
               "src/pages/Admin/CoachManage/index.tsx": {
-                "bytesInOutput": 13233
+                "bytesInOutput": 13232
               },
               "src/api/equipmentController.ts": {
                 "bytesInOutput": 829
@@ -11495,7 +11320,7 @@
                 "bytesInOutput": 1522
               }
             },
-            "bytes": 400134
+            "bytes": 395982
           }
         }
       }
