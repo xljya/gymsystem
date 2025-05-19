@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.liucf.gymsystembackend.mapper.CoachMapper">
+
+    <resultMap id="BaseResultMap" type="com.liucf.gymsystembackend.model.entity.Coach">
+            <id property="coachId" column="coach_id" jdbcType="BIGINT"/>
+            <result property="coachName" column="coach_name" jdbcType="VARCHAR"/>
+            <result property="coachAccount" column="coach_account" jdbcType="VARCHAR"/>
+            <result property="coachAvatar" column="coach_avatar" jdbcType="VARCHAR"/>
+            <result property="gender" column="gender" jdbcType="TINYINT"/>
+            <result property="coachAge" column="coach_age" jdbcType="INTEGER"/>
+            <result property="entryDate" column="entry_date" jdbcType="DATE"/>
+            <result property="courseType" column="course_type" jdbcType="VARCHAR"/>
+            <result property="coachSalary" column="coach_salary" jdbcType="VARCHAR"/>
+            <result property="coachAddress" column="coach_address" jdbcType="VARCHAR"/>
+            <result property="coachStatus" column="coach_status" jdbcType="TINYINT"/>
+            <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+            <result property="isDelete" column="is_delete" jdbcType="TINYINT"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        coach_id,coach_name,coach_account,
+        coach_avatar,gender,coach_age,
+        entry_date,course_type,coach_salary,
+        coach_address,coach_status,create_time,
+        update_time,is_delete
+    </sql>
+</mapper>
