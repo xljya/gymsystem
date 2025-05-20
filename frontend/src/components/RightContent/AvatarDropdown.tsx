@@ -1,5 +1,5 @@
 import { memberLogoutUsingPost } from '@/api/memberController';
-import { LogoutOutlined, SettingOutlined, UserOutlined } from '@ant-design/icons';
+import { LogoutOutlined, SettingOutlined, UserOutlined, CalendarOutlined } from '@ant-design/icons';
 import { history, useModel } from '@umijs/max';
 import { Spin, message } from 'antd';
 import { createStyles } from 'antd-style';
@@ -84,6 +84,10 @@ export const AvatarDropdown: React.FC<GlobalHeaderRightProps> = ({ menu, childre
         loginOut();
         return;
       }
+      if (key === 'my-bookings') {
+        history.push('/member/bookings');
+        return;
+      }
       history.push(`/account/${key}`);
     },
     [],
@@ -126,6 +130,15 @@ export const AvatarDropdown: React.FC<GlobalHeaderRightProps> = ({ menu, childre
           },
           {
             type: 'divider' as const,
+          },
+        ]
+      : []),
+    ...(currentUser?.memberRole !== 'admin'
+      ? [
+          {
+            key: 'my-bookings',
+            icon: <CalendarOutlined />,
+            label: '我的预约',
           },
         ]
       : []),

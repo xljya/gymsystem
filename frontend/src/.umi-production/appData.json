@@ -21,7 +21,6 @@
       "lint:js": "eslint --cache --ext .js,.jsx,.ts,.tsx --format=pretty ./src",
       "lint:prettier": "prettier -c --write \"**/**.{js,jsx,tsx,ts,less,md,json}\" --end-of-line auto",
       "openapi": "node openapi.config.js",
-      "prepare": "husky install",
       "prettier": "prettier -c --write \"**/**.{js,jsx,tsx,ts,less,md,json}\"",
       "preview": "npm run build && max preview --port 8000",
       "record": "cross-env NODE_ENV=development REACT_APP_ENV=test max record --scene=login",
@@ -96,6 +95,7 @@
       "moment": "^2.30.1",
       "next-themes": "^0.4.6",
       "omit.js": "^2.0.2",
+      "picgo": "^1.5.8",
       "querystring": "^0.2.1",
       "rc-menu": "^9.12.4",
       "rc-util": "^5.38.1",
@@ -173,7 +173,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 87
+        "register": 82
       },
       "enableBy": "register",
       "type": "preset",
@@ -186,7 +186,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 26
+        "register": 21
       },
       "enableBy": "register",
       "type": "preset",
@@ -203,7 +203,7 @@
             2
           ]
         },
-        "register": 13
+        "register": 8
       },
       "enableBy": "register",
       "type": "preset",
@@ -220,7 +220,7 @@
             0
           ]
         },
-        "register": 13
+        "register": 9
       },
       "enableBy": "register",
       "type": "plugin",
@@ -237,7 +237,7 @@
             3
           ]
         },
-        "register": 3
+        "register": 2
       },
       "enableBy": "register",
       "type": "plugin",
@@ -268,10 +268,10 @@
       "time": {
         "hooks": {
           "modifyAppData": [
-            191
+            107
           ]
         },
-        "register": 77
+        "register": 45
       },
       "enableBy": "register",
       "type": "plugin",
@@ -284,7 +284,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 2
+        "register": 1
       },
       "enableBy": "register",
       "type": "plugin",
@@ -301,7 +301,7 @@
             0
           ],
           "onCheck": [
-            1
+            0
           ]
         },
         "register": 3
@@ -334,7 +334,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 13
+        "register": 8
       },
       "enableBy": "config",
       "type": "plugin",
@@ -351,7 +351,7 @@
             0
           ]
         },
-        "register": 36
+        "register": 22
       },
       "enableBy": "register",
       "type": "plugin",
@@ -703,7 +703,7 @@
       "enableBy": "register",
       "time": {
         "hooks": {},
-        "register": 0
+        "register": 1
       }
     },
     "virtual: config-runtimePublicPath": {
@@ -1206,10 +1206,10 @@
       "time": {
         "hooks": {
           "onStart": [
-            1
+            0
           ]
         },
-        "register": 3
+        "register": 2
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1222,7 +1222,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 3
+        "register": 2
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1235,7 +1235,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 224
+        "register": 132
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1248,7 +1248,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 382
+        "register": 298
       },
       "enableBy": "config",
       "type": "plugin",
@@ -1261,7 +1261,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 52
+        "register": 35
       },
       "enableBy": "config",
       "type": "plugin",
@@ -1275,10 +1275,10 @@
       "time": {
         "hooks": {
           "modifyAppData": [
-            0
+            1
           ]
         },
-        "register": 2
+        "register": 1
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1291,7 +1291,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 4
+        "register": 2
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1304,7 +1304,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 6
+        "register": 4
       },
       "enableBy": "config",
       "type": "plugin",
@@ -1317,7 +1317,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 104
+        "register": 70
       },
       "type": "plugin",
       "path": "C:/bysj/gymsystem-frontend/node_modules/@umijs/preset-umi/dist/features/mock/mock.js",
@@ -1329,7 +1329,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 5
+        "register": 4
       },
       "enableBy": "config",
       "type": "plugin",
@@ -1342,7 +1342,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 2
+        "register": 3
       },
       "type": "plugin",
       "path": "C:/bysj/gymsystem-frontend/node_modules/@umijs/preset-umi/dist/features/okam/okam.js",
@@ -1367,7 +1367,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 3
+        "register": 2
       },
       "enableBy": "config",
       "type": "plugin",
@@ -1381,10 +1381,10 @@
       "time": {
         "hooks": {
           "modifyConfig": [
-            2
+            3
           ]
         },
-        "register": 7
+        "register": 4
       },
       "type": "plugin",
       "path": "C:/bysj/gymsystem-frontend/node_modules/@umijs/preset-umi/dist/features/polyfill/polyfill.js",
@@ -1396,7 +1396,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 1
+        "register": 2
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1409,7 +1409,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 7
+        "register": 4
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1435,7 +1435,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 3
+        "register": 7
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1448,7 +1448,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 21
+        "register": 13
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1461,7 +1461,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 6
+        "register": 4
       },
       "enableBy": "config",
       "type": "plugin",
@@ -1486,7 +1486,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 11
+        "register": 8
       },
       "enableBy": "config",
       "type": "plugin",
@@ -1499,7 +1499,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 11
+        "register": 6
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1512,7 +1512,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 13
+        "register": 7
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1525,7 +1525,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 11
+        "register": 7
       },
       "enableBy": "config",
       "type": "plugin",
@@ -1551,7 +1551,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 23
+        "register": 15
       },
       "type": "plugin",
       "path": "C:/bysj/gymsystem-frontend/node_modules/@umijs/preset-umi/dist/features/apiRoute/apiRoute.js",
@@ -1563,7 +1563,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 81
+        "register": 33
       },
       "enableBy": "config",
       "type": "plugin",
@@ -1576,7 +1576,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 5
+        "register": 3
       },
       "type": "plugin",
       "path": "C:/bysj/gymsystem-frontend/node_modules/@umijs/preset-umi/dist/features/test/test.js",
@@ -1588,7 +1588,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 5
+        "register": 2
       },
       "type": "plugin",
       "path": "C:/bysj/gymsystem-frontend/node_modules/@umijs/preset-umi/dist/features/clickToComponent/clickToComponent.js",
@@ -1600,7 +1600,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 5
+        "register": 2
       },
       "enableBy": "config",
       "type": "plugin",
@@ -1613,7 +1613,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 2
+        "register": 1
       },
       "enableBy": "config",
       "type": "plugin",
@@ -1626,7 +1626,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 5
+        "register": 4
       },
       "type": "plugin",
       "path": "C:/bysj/gymsystem-frontend/node_modules/@umijs/preset-umi/dist/features/webpack/webpack.js",
@@ -1642,7 +1642,7 @@
             0
           ]
         },
-        "register": 2
+        "register": 1
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1655,7 +1655,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 15
+        "register": 8
       },
       "type": "plugin",
       "path": "C:/bysj/gymsystem-frontend/node_modules/@umijs/preset-umi/dist/features/ui/ui.js",
@@ -1667,7 +1667,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 4
+        "register": 2
       },
       "enableBy": "config",
       "type": "plugin",
@@ -1680,7 +1680,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 11
+        "register": 7
       },
       "type": "plugin",
       "path": "C:/bysj/gymsystem-frontend/node_modules/@umijs/preset-umi/dist/features/hmrGuardian/hmrGuardian.js",
@@ -1692,7 +1692,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 8
+        "register": 5
       },
       "type": "plugin",
       "path": "C:/bysj/gymsystem-frontend/node_modules/@umijs/preset-umi/dist/features/routePreloadOnLoad/routePreloadOnLoad.js",
@@ -1717,7 +1717,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 36
+        "register": 31
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1730,7 +1730,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 128
+        "register": 87
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1743,7 +1743,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 147
+        "register": 116
       },
       "type": "plugin",
       "path": "C:/bysj/gymsystem-frontend/node_modules/@umijs/preset-umi/dist/commands/dev/dev.js",
@@ -1755,7 +1755,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 9
+        "register": 1
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1781,7 +1781,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 2
+        "register": 1
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1794,7 +1794,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 4
+        "register": 1
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1820,7 +1820,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 9
+        "register": 5
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1846,7 +1846,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 7
+        "register": 1
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1859,7 +1859,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 2
+        "register": 1
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1911,7 +1911,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 2
+        "register": 1
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1950,7 +1950,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 2
+        "register": 1
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1963,7 +1963,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 1
+        "register": 2
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1976,7 +1976,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 3
+        "register": 2
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1989,7 +1989,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 61
+        "register": 33
       },
       "enableBy": "register",
       "type": "plugin",
@@ -2002,7 +2002,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 4
+        "register": 2
       },
       "enableBy": "register",
       "type": "plugin",
@@ -2015,7 +2015,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 9
+        "register": 6
       },
       "enableBy": "register",
       "type": "plugin",
@@ -2028,7 +2028,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 5
+        "register": 4
       },
       "enableBy": "config",
       "type": "plugin",
@@ -2043,7 +2043,7 @@
       },
       "time": {
         "hooks": {},
-        "register": 2
+        "register": 1
       },
       "type": "plugin",
       "path": "C:/bysj/gymsystem-frontend/node_modules/@umijs/plugins/dist/analytics.js",
@@ -2056,13 +2056,13 @@
       "time": {
         "hooks": {
           "modifyConfig": [
-            13
+            23
           ],
           "modifyAppData": [
             0
           ]
         },
-        "register": 18
+        "register": 11
       },
       "type": "plugin",
       "path": "C:/bysj/gymsystem-frontend/node_modules/@umijs/plugins/dist/antd.js",
@@ -2074,7 +2074,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 21
+        "register": 11
       },
       "enableBy": "config",
       "type": "plugin",
@@ -2087,7 +2087,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 3
+        "register": 1
       },
       "enableBy": "config",
       "type": "plugin",
@@ -2112,7 +2112,7 @@
             1
           ]
         },
-        "register": 11
+        "register": 8
       },
       "enableBy": "config",
       "type": "plugin",
@@ -2125,7 +2125,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 10
+        "register": 6
       },
       "enableBy": "config",
       "type": "plugin",
@@ -2138,7 +2138,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 6
+        "register": 4
       },
       "enableBy": "config",
       "type": "plugin",
@@ -2151,7 +2151,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 4
+        "register": 3
       },
       "enableBy": "config",
       "type": "plugin",
@@ -2168,7 +2168,7 @@
             3
           ]
         },
-        "register": 2
+        "register": 1
       },
       "enableBy": "config",
       "type": "plugin",
@@ -2181,7 +2181,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 5
+        "register": 3
       },
       "enableBy": "register",
       "type": "plugin",
@@ -2194,7 +2194,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 5
+        "register": 3
       },
       "type": "plugin",
       "path": "C:/bysj/gymsystem-frontend/node_modules/@umijs/plugins/dist/qiankun/master.js",
@@ -2206,7 +2206,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 4
+        "register": 3
       },
       "type": "plugin",
       "path": "C:/bysj/gymsystem-frontend/node_modules/@umijs/plugins/dist/qiankun/slave.js",
@@ -2218,7 +2218,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 3
+        "register": 2
       },
       "enableBy": "config",
       "type": "plugin",
@@ -2244,7 +2244,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 5
+        "register": 3
       },
       "enableBy": "config",
       "type": "plugin",
@@ -2270,7 +2270,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 4
+        "register": 2
       },
       "enableBy": "config",
       "type": "plugin",
@@ -2284,10 +2284,10 @@
       "time": {
         "hooks": {
           "modifyConfig": [
-            1
+            0
           ]
         },
-        "register": 2
+        "register": 0
       },
       "enableBy": "register",
       "type": "plugin",
@@ -2301,7 +2301,7 @@
       "time": {
         "hooks": {
           "modifyAppData": [
-            0
+            1
           ]
         },
         "register": 1
@@ -2321,7 +2321,7 @@
             0
           ]
         },
-        "register": 2
+        "register": 1
       },
       "enableBy": "register",
       "type": "plugin",
@@ -2351,7 +2351,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 2
+        "register": 1
       },
       "enableBy": "register",
       "type": "plugin",
@@ -2364,7 +2364,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 688
+        "register": 498
       },
       "enableBy": "config",
       "type": "plugin",
@@ -2377,7 +2377,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 568
+        "register": 329
       },
       "enableBy": "config",
       "type": "plugin",
@@ -2392,7 +2392,7 @@
       },
       "time": {
         "hooks": {},
-        "register": 2
+        "register": 1
       },
       "enableBy": "config",
       "type": "plugin",
@@ -2421,7 +2421,7 @@
             0
           ]
         },
-        "register": 226
+        "register": 97
       },
       "type": "plugin",
       "path": "C:/bysj/gymsystem-frontend/node_modules/@umijs/request-record/dist/cjs/index.js",
@@ -2433,7 +2433,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 3
+        "register": 1
       },
       "enableBy": "register",
       "type": "plugin",
@@ -4004,7 +4004,7 @@
       "parentId": "ant-design-pro-layout",
       "id": "11",
       "absPath": "/about",
-      "__content": "import { Dumbbell } from 'lucide-react';\r\nimport { PageContainer } from '@ant-design/pro-components';\r\nimport { Card, CardContent } from '@/components/ui/card';\r\n\r\nconst About = () => {\r\n  return (\r\n    <div className=\"min-h-screen flex flex-col\">\r\n      <div className=\"bg-gym-primary text-white py-16 w-full\" \r\n           style={{\r\n             position: 'relative',\r\n             zIndex: 10,\r\n             boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)',\r\n             paddingTop: '8rem',\r\n             paddingBottom: '4rem',\r\n           }}>\r\n        <div className=\"container mx-auto px-4 text-center\">\r\n          <h1 className=\"text-3xl md:text-4xl font-bold mb-4\">关于我们</h1>\r\n          <p className=\"text-white/80 max-w-2xl mx-auto\">\r\n            专业的健身房系统，为您的健身需求提供最佳解决方案\r\n          </p>\r\n        </div>\r\n      </div>\r\n\r\n      <PageContainer\r\n        header={{\r\n          title: false,\r\n          breadcrumb: {}\r\n        }}\r\n        style={{\r\n          backgroundColor: 'transparent',\r\n          padding: 0,\r\n        }}\r\n      >\r\n        <div className=\"container mx-auto px-4 py-12\">\r\n          <div className=\"grid grid-cols-1 lg:grid-cols-2 gap-10 items-center mb-16\">\r\n            <div>\r\n              <h2 className=\"text-2xl md:text-3xl font-bold text-black mb-4\">我们的使命</h2>\r\n              <p className=\"text-gym-gray mb-4\">\r\n                我们致力于为健身爱好者和专业健身场所提供高品质的健身器械解决方案。通过我们的专业展示平台，您可以了解各类健身器械的详细信息，帮助您做出明智的选择。\r\n              </p>\r\n              <p className=\"text-gym-gray\">\r\n                无论您是想打造家庭健身房，还是建设专业的商业健身中心，我们都能为您提供专业的建议和解决方案，让您的健身环境更加完善。\r\n              </p>\r\n            </div>\r\n            <div className=\"rounded-lg overflow-hidden shadow-lg\">\r\n              <img\r\n                src=\"https://images.unsplash.com/photo-1534258936925-c58bed479fcb?q=80&w=2631&auto=format&fit=crop\"\r\n                alt=\"健身房环境\"\r\n                className=\"w-full h-auto object-cover\"\r\n              />\r\n            </div>\r\n          </div>\r\n\r\n          <div className=\"text-center mb-16\">\r\n            <Dumbbell className=\"w-16 h-16 text-gym-accent mx-auto mb-4\" />\r\n            <h2 className=\"text-2xl md:text-3xl font-bold text-black mb-4\">我们的优势</h2>\r\n            <p className=\"text-gym-gray max-w-2xl mx-auto mb-10\">\r\n              多年来，我们一直专注于健身器械领域，积累了丰富的经验和专业知识\r\n            </p>\r\n\r\n            <div className=\"grid grid-cols-1 md:grid-cols-3 gap-8\">\r\n              {[\r\n                {\r\n                  title: \"专业知识\",\r\n                  description: \"我们的团队拥有多年的健身行业经验，对各类健身器械有深入的了解\",\r\n                },\r\n                {\r\n                  title: \"优质器材\",\r\n                  description: \"我们只展示高品质的健身器械，确保您获得最佳的健身体验\",\r\n                },\r\n                {\r\n                  title: \"专业服务\",\r\n                  description: \"我们提供专业的咨询服务，帮助您选择最适合的健身器械\",\r\n                }\r\n              ].map((advantage) => (\r\n                <Card key={advantage.title} className=\"overflow-hidden hover-scale border border-gray-200 rounded-lg shadow-md text-left\">\r\n                  <CardContent className=\"p-6\">\r\n                    <h3 className=\"text-xl font-bold text-black mb-3\">{advantage.title}</h3>\r\n                    <p className=\"text-gym-gray\">{advantage.description}</p>\r\n                  </CardContent>\r\n                </Card>\r\n              ))}\r\n            </div>\r\n          </div>\r\n\r\n          <div className=\"grid grid-cols-1 lg:grid-cols-2 gap-10 items-center\">\r\n            <div className=\"order-2 lg:order-1 rounded-lg overflow-hidden shadow-lg\">\r\n              <img\r\n                src=\"https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=2670&auto=format&fit=crop\"\r\n                alt=\"专业团队\"\r\n                className=\"w-full h-auto object-cover\"\r\n              />\r\n            </div>\r\n            <div className=\"order-1 lg:order-2 text-left lg:text-left\">\r\n              <h2 className=\"text-2xl md:text-3xl font-bold text-black mb-4\">我们的团队</h2>\r\n              <p className=\"text-gym-gray mb-4\">\r\n                我们的团队由健身行业的专业人士组成，包括健身教练、器械工程师和健身顾问。他们拥有丰富的经验和专业知识，可以为您提供最专业的建议。\r\n              </p>\r\n              <p className=\"text-gym-gray\">\r\n                无论您是健身初学者还是资深健身爱好者，我们的团队都能理解您的需求，为您提供最适合的健身器械解决方案。\r\n              </p>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </PageContainer>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default About;\r\n",
+      "__content": "import { Card, CardContent } from '@/components/ui/card';\r\nimport { PageContainer } from '@ant-design/pro-components';\r\nimport { Dumbbell } from 'lucide-react';\r\n\r\nconst About = () => {\r\n  return (\r\n    <div className=\"min-h-screen flex flex-col\">\r\n      <div\r\n        className=\"bg-gym-primary text-white py-16 w-full\"\r\n        style={{\r\n          position: 'relative',\r\n          zIndex: 10,\r\n          boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)',\r\n          paddingTop: '8rem',\r\n          paddingBottom: '4rem',\r\n        }}\r\n      >\r\n        <div className=\"container mx-auto px-4 text-center\">\r\n          <h1 className=\"text-3xl md:text-4xl font-bold mb-4\">关于我们</h1>\r\n          <p className=\"text-white/80 max-w-2xl mx-auto\">\r\n            一站式健身房管理系统，为您的健身之旅提供全方位支持\r\n          </p>\r\n        </div>\r\n      </div>\r\n\r\n      <PageContainer\r\n        header={{\r\n          title: false,\r\n          breadcrumb: {},\r\n        }}\r\n        style={{\r\n          backgroundColor: 'transparent',\r\n          padding: 0,\r\n        }}\r\n      >\r\n        <div className=\"container mx-auto px-4 py-12\">\r\n          <div className=\"grid grid-cols-1 lg:grid-cols-2 gap-10 items-center mb-16\">\r\n            <div>\r\n              <h2 className=\"text-2xl md:text-3xl font-bold text-black mb-4\">我们的使命</h2>\r\n              <p className=\"text-gym-gray mb-4\">\r\n                我们致力于打造一个全方位的健身体验平台，集多样化课程、专业教练指导、优质器械展示和健身用品销售于一体。我们的目标是让每一位会员都能找到适合自己的健身方式，实现健康生活。\r\n              </p>\r\n              <p className=\"text-gym-gray\">\r\n                无论您是健身初学者还是资深健身爱好者，我们的平台都能为您提供从课程预约、教练选择到器械指导的一站式服务，让您的健身之旅更加便捷和高效。\r\n              </p>\r\n            </div>\r\n            <div className=\"rounded-lg overflow-hidden shadow-lg\">\r\n              <img\r\n                src=\"https://img.28082003.com//xlxlimg_1747424592095_15.jpg\"\r\n                alt=\"健身房环境\"\r\n                className=\"w-full h-auto object-cover\"\r\n              />\r\n            </div>\r\n          </div>\r\n\r\n          <div className=\"text-center mb-16\">\r\n            <Dumbbell className=\"w-16 h-16 text-gym-accent mx-auto mb-4\" />\r\n            <h2 className=\"text-2xl md:text-3xl font-bold text-black mb-4\">我们的优势</h2>\r\n            <p className=\"text-gym-gray max-w-2xl mx-auto mb-10\">\r\n              多年来，我们不断创新和完善，为会员提供卓越的健身体验\r\n            </p>\r\n\r\n            <div className=\"grid grid-cols-1 md:grid-cols-3 gap-8\">\r\n              {[\r\n                {\r\n                  title: '多样化课程',\r\n                  description: '提供从瑜伽、力量训练到有氧运动等多种类型的专业课程，满足不同会员的健身需求',\r\n                },\r\n                {\r\n                  title: '专业教练团队',\r\n                  description: '拥有经验丰富的教练团队，提供一对一指导和小组课程，帮助会员科学健身',\r\n                },\r\n                {\r\n                  title: '综合服务体系',\r\n                  description: '集课程预约、器械展示、商品销售于一体，为会员提供便捷的一站式健身服务',\r\n                },\r\n              ].map((advantage) => (\r\n                <Card\r\n                  key={advantage.title}\r\n                  className=\"overflow-hidden hover-scale border border-gray-200 rounded-lg shadow-md text-left\"\r\n                >\r\n                  <CardContent className=\"p-6\">\r\n                    <h3 className=\"text-xl font-bold text-black mb-3\">{advantage.title}</h3>\r\n                    <p className=\"text-gym-gray\">{advantage.description}</p>\r\n                  </CardContent>\r\n                </Card>\r\n              ))}\r\n            </div>\r\n          </div>\r\n\r\n          <div className=\"grid grid-cols-1 lg:grid-cols-2 gap-10 items-center\">\r\n            <div className=\"order-2 lg:order-1 rounded-lg overflow-hidden shadow-lg\">\r\n              <img\r\n                src=\"https://img.28082003.com//xlxlimg_1747424592093_13.jpg\"\r\n                alt=\"专业团队\"\r\n                className=\"w-full h-auto object-cover\"\r\n              />\r\n            </div>\r\n            <div className=\"order-1 lg:order-2 text-left lg:text-left\">\r\n              <h2 className=\"text-2xl md:text-3xl font-bold text-black mb-4\">我们的团队</h2>\r\n              <p className=\"text-gym-gray mb-4\">\r\n                我们的团队由健身行业的专业人士组成，包括资深教练、健身顾问和客户服务专家。他们不仅拥有专业知识，更致力于为每位会员提供个性化的健身指导。\r\n              </p>\r\n              <p className=\"text-gym-gray\">\r\n                从会员注册到课程选择，从器械使用到健身计划制定，我们的团队将全程陪伴您的健身旅程，确保您获得最佳的健身效果和体验。\r\n              </p>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </PageContainer>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default About;\r\n",
       "__isJSFile": true,
       "__absFile": "C:/bysj/gymsystem-frontend/src/pages/About/index.tsx"
     },

@@ -160,7 +160,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 2
+        "register": 1
       },
       "enableBy": "register",
       "type": "preset",
@@ -173,7 +173,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 18
+        "register": 45
       },
       "enableBy": "register",
       "type": "preset",
@@ -186,7 +186,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 9
+        "register": 16
       },
       "enableBy": "register",
       "type": "preset",
@@ -203,7 +203,7 @@
             1
           ]
         },
-        "register": 6
+        "register": 8
       },
       "enableBy": "register",
       "type": "preset",
@@ -220,7 +220,7 @@
             0
           ]
         },
-        "register": 7
+        "register": 8
       },
       "enableBy": "register",
       "type": "plugin",
@@ -234,10 +234,10 @@
       "time": {
         "hooks": {
           "onStart": [
-            2
+            1
           ]
         },
-        "register": 2
+        "register": 1
       },
       "enableBy": "register",
       "type": "plugin",
@@ -251,6 +251,17 @@
       "time": {
         "hooks": {
           "modifyRoutes": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
             0,
             0,
             0,
@@ -274,19 +285,30 @@
       "time": {
         "hooks": {
           "modifyAppData": [
-            62
+            69
           ],
           "onGenerateFiles": [
             7,
-            15,
-            41,
-            19,
+            14,
+            17,
             18,
+            18,
+            18,
+            30,
+            16,
+            17,
+            18,
+            25,
             15,
+            88,
+            18,
+            17,
+            16,
+            20,
             20
           ]
         },
-        "register": 38
+        "register": 44
       },
       "enableBy": "register",
       "type": "plugin",
@@ -300,7 +322,18 @@
       "time": {
         "hooks": {
           "addEntryCode": [
-            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
             0,
             0,
             0,
@@ -341,19 +374,12 @@
             0,
             0,
             0,
+            0,
+            0,
             0
           ],
           "onCheckCode": [
             0,
-            0,
-            0,
-            1,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
             1,
             0,
             0,
@@ -367,7 +393,19 @@
             0,
             0,
             0,
+            0,
+            0,
+            0,
             1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
             0,
             0,
             0,
@@ -421,10 +459,10 @@
       "time": {
         "hooks": {
           "onCheck": [
-            1
+            0
           ]
         },
-        "register": 2
+        "register": 1
       },
       "enableBy": "register",
       "type": "plugin",
@@ -454,7 +492,7 @@
             0
           ]
         },
-        "register": 17
+        "register": 18
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1312,7 +1350,7 @@
             1
           ]
         },
-        "register": 2
+        "register": 1
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1329,7 +1367,7 @@
             22
           ]
         },
-        "register": 3
+        "register": 2
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1342,7 +1380,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 99
+        "register": 106
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1355,7 +1393,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 179
+        "register": 209
       },
       "enableBy": "config",
       "type": "plugin",
@@ -1368,7 +1406,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 31
+        "register": 33
       },
       "enableBy": "config",
       "type": "plugin",
@@ -1392,7 +1430,20 @@
             0,
             0,
             0,
+            0,
+            0,
             1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
             0,
             0,
             0,
@@ -1413,15 +1464,37 @@
       "time": {
         "hooks": {
           "onGenerateFiles": [
-            4,
-            1,
-            2,
+            5,
             1,
             1,
             1,
-            1
+            0,
+            1,
+            0,
+            1,
+            1,
+            1,
+            0,
+            1,
+            1,
+            1,
+            0,
+            1,
+            1,
+            0
           ],
           "addRuntimePlugin": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
             0,
             0,
             0,
@@ -1457,7 +1530,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 47
+        "register": 51
       },
       "type": "plugin",
       "path": "C:/bysj/gymsystem-frontend/node_modules/@umijs/preset-umi/dist/features/mock/mock.js",
@@ -1469,7 +1542,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 2
+        "register": 3
       },
       "enableBy": "config",
       "type": "plugin",
@@ -1482,7 +1555,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 2
+        "register": 1
       },
       "type": "plugin",
       "path": "C:/bysj/gymsystem-frontend/node_modules/@umijs/preset-umi/dist/features/okam/okam.js",
@@ -1497,13 +1570,46 @@
           "onGenerateFiles": [
             0,
             0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
             1,
+            0,
+            0,
+            0,
             0,
             0,
             0,
             0
           ],
           "addEntryImports": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
             0,
             0,
             0,
@@ -1547,18 +1653,37 @@
       "time": {
         "hooks": {
           "modifyConfig": [
-            1
+            0
           ],
           "onGenerateFiles": [
-            106,
-            31,
-            59,
-            40,
-            31,
-            32,
-            24
+            218,
+            27,
+            23,
+            25,
+            21,
+            17,
+            15,
+            18,
+            15,
+            18,
+            14,
+            11,
+            47,
+            19,
+            29,
+            16,
+            14,
+            26
           ],
           "addPolyfillImports": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
             0,
             0,
             0,
@@ -1572,10 +1697,24 @@
             0,
             0,
             0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
             0
           ]
         },
-        "register": 5
+        "register": 4
       },
       "type": "plugin",
       "path": "C:/bysj/gymsystem-frontend/node_modules/@umijs/preset-umi/dist/features/polyfill/polyfill.js",
@@ -1601,10 +1740,32 @@
             0,
             0,
             0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
             0
           ]
         },
-        "register": 1
+        "register": 0
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1618,7 +1779,18 @@
       "time": {
         "hooks": {
           "onGenerateFiles": [
-            282,
+            452,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
             0,
             0,
             0,
@@ -1640,7 +1812,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 2
+        "register": 1
       },
       "enableBy": "config",
       "type": "plugin",
@@ -1654,19 +1826,30 @@
       "time": {
         "hooks": {
           "onGenerateFiles": [
-            1,
+            2,
             0,
             1,
             1,
             0,
+            3,
+            0,
+            0,
+            0,
+            0,
             1,
-            0
+            1,
+            1,
+            0,
+            0,
+            1,
+            0,
+            1
           ],
           "addBeforeMiddlewares": [
             0
           ]
         },
-        "register": 1
+        "register": 2
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1680,23 +1863,45 @@
       "time": {
         "hooks": {
           "onGenerateFiles": [
-            30,
-            12,
-            48,
-            13,
-            100,
-            12,
-            42,
-            17,
-            37,
+            76,
+            21,
+            36,
+            11,
+            46,
             8,
-            54,
-            6,
-            42,
-            8
+            34,
+            9,
+            29,
+            7,
+            37,
+            9,
+            34,
+            9,
+            51,
+            8,
+            34,
+            8,
+            30,
+            7,
+            47,
+            11,
+            27,
+            7,
+            77,
+            7,
+            34,
+            9,
+            34,
+            8,
+            34,
+            8,
+            30,
+            8,
+            34,
+            9
           ]
         },
-        "register": 7
+        "register": 11
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1709,7 +1914,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 2
+        "register": 4
       },
       "enableBy": "config",
       "type": "plugin",
@@ -1722,7 +1927,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 0
+        "register": 2
       },
       "type": "plugin",
       "path": "C:/bysj/gymsystem-frontend/node_modules/@umijs/preset-umi/dist/features/routeProps/routeProps.js",
@@ -1734,7 +1939,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 8
+        "register": 12
       },
       "enableBy": "config",
       "type": "plugin",
@@ -1748,16 +1953,27 @@
       "time": {
         "hooks": {
           "onGenerateFiles": [
-            621,
-            27,
-            27,
+            795,
+            23,
+            23,
+            16,
+            15,
+            15,
+            15,
+            16,
+            18,
+            17,
+            18,
+            20,
             25,
+            20,
+            21,
             19,
-            38,
-            22
+            14,
+            17
           ]
         },
-        "register": 4
+        "register": 6
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1774,7 +1990,7 @@
             0
           ]
         },
-        "register": 5
+        "register": 7
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1800,7 +2016,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 1
+        "register": 2
       },
       "enableBy": "config",
       "type": "plugin",
@@ -1813,7 +2029,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 9
+        "register": 12
       },
       "type": "plugin",
       "path": "C:/bysj/gymsystem-frontend/node_modules/@umijs/preset-umi/dist/features/apiRoute/apiRoute.js",
@@ -1825,7 +2041,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 29
+        "register": 30
       },
       "enableBy": "config",
       "type": "plugin",
@@ -1840,12 +2056,23 @@
         "hooks": {
           "onGenerateFiles": [
             4,
-            2,
-            4,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
             2,
             1,
-            3,
-            3
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
           ]
         },
         "register": 2
@@ -1860,7 +2087,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 2
+        "register": 1
       },
       "enableBy": "config",
       "type": "plugin",
@@ -1886,7 +2113,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 1
+        "register": 2
       },
       "enableBy": "config",
       "type": "plugin",
@@ -1899,7 +2126,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 2
+        "register": 3
       },
       "type": "plugin",
       "path": "C:/bysj/gymsystem-frontend/node_modules/@umijs/preset-umi/dist/features/webpack/webpack.js",
@@ -1912,7 +2139,7 @@
       "time": {
         "hooks": {
           "addOnDemandDeps": [
-            0
+            1
           ]
         },
         "register": 1
@@ -1928,7 +2155,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 5
+        "register": 6
       },
       "type": "plugin",
       "path": "C:/bysj/gymsystem-frontend/node_modules/@umijs/preset-umi/dist/features/ui/ui.js",
@@ -1953,7 +2180,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 4
+        "register": 5
       },
       "type": "plugin",
       "path": "C:/bysj/gymsystem-frontend/node_modules/@umijs/preset-umi/dist/features/hmrGuardian/hmrGuardian.js",
@@ -1967,17 +2194,30 @@
         "hooks": {
           "addHTMLHeadScripts": [
             0,
-            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
             0,
             1,
             0,
             0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
             0,
             0,
             0
           ]
         },
-        "register": 4
+        "register": 3
       },
       "type": "plugin",
       "path": "C:/bysj/gymsystem-frontend/node_modules/@umijs/preset-umi/dist/features/routePreloadOnLoad/routePreloadOnLoad.js",
@@ -2002,7 +2242,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 16
+        "register": 18
       },
       "enableBy": "register",
       "type": "plugin",
@@ -2015,7 +2255,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 57
+        "register": 63
       },
       "enableBy": "register",
       "type": "plugin",
@@ -2029,13 +2269,13 @@
       "time": {
         "hooks": {
           "modifyAppData": [
-            28
+            35
           ],
           "onStart": [
             0
           ]
         },
-        "register": 69
+        "register": 92
       },
       "type": "plugin",
       "path": "C:/bysj/gymsystem-frontend/node_modules/@umijs/preset-umi/dist/commands/dev/dev.js",
@@ -2047,7 +2287,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 1
+        "register": 2
       },
       "enableBy": "register",
       "type": "plugin",
@@ -2073,7 +2313,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 0
+        "register": 1
       },
       "enableBy": "register",
       "type": "plugin",
@@ -2086,7 +2326,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 1
+        "register": 2
       },
       "enableBy": "register",
       "type": "plugin",
@@ -2099,7 +2339,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 2
+        "register": 1
       },
       "enableBy": "register",
       "type": "plugin",
@@ -2112,7 +2352,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 4
+        "register": 5
       },
       "enableBy": "register",
       "type": "plugin",
@@ -2138,7 +2378,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 1
+        "register": 0
       },
       "enableBy": "register",
       "type": "plugin",
@@ -2151,7 +2391,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 0
+        "register": 1
       },
       "enableBy": "register",
       "type": "plugin",
@@ -2177,7 +2417,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 1
+        "register": 2
       },
       "enableBy": "register",
       "type": "plugin",
@@ -2242,7 +2482,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 0
+        "register": 3
       },
       "enableBy": "register",
       "type": "plugin",
@@ -2307,7 +2547,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 4
+        "register": 6
       },
       "enableBy": "register",
       "type": "plugin",
@@ -2321,28 +2561,50 @@
       "time": {
         "hooks": {
           "addRuntimePlugin": [
+            1,
             0,
             0,
             0,
             0,
             0,
             0,
-            1
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
           ],
           "onGenerateFiles": [
-            3,
-            0,
+            4,
+            1,
             1,
             0,
+            1,
+            1,
+            0,
+            1,
+            1,
             1,
             2,
+            0,
+            1,
+            1,
+            0,
+            1,
+            1,
             1
           ],
           "addTmpGenerateWatcherPaths": [
             0
           ]
         },
-        "register": 2
+        "register": 4
       },
       "enableBy": "config",
       "type": "plugin",
@@ -2357,7 +2619,7 @@
       },
       "time": {
         "hooks": {},
-        "register": 1
+        "register": 0
       },
       "type": "plugin",
       "path": "C:/bysj/gymsystem-frontend/node_modules/@umijs/plugins/dist/analytics.js",
@@ -2370,7 +2632,7 @@
       "time": {
         "hooks": {
           "modifyConfig": [
-            7
+            5
           ],
           "modifyAppData": [
             0
@@ -2378,12 +2640,34 @@
           "addEntryImportsAhead": [
             0,
             0,
-            1,
             0,
             0,
             0,
             0,
-            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
             0,
             0,
             0,
@@ -2392,6 +2676,17 @@
             0
           ],
           "addRuntimePlugin": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
             0,
             0,
             0,
@@ -2407,25 +2702,47 @@
             0,
             0,
             0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
             0
           ],
           "onGenerateFiles": [
-            6,
+            14,
             3,
-            4,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            3,
+            2,
+            2,
             1,
             2,
-            2,
-            1
+            0,
+            0,
+            2
           ],
           "addExtraBabelPlugins": [
             0
           ],
           "chainWebpack": [
-            0
+            1
           ]
         },
-        "register": 9
+        "register": 12
       },
       "type": "plugin",
       "path": "C:/bysj/gymsystem-frontend/node_modules/@umijs/plugins/dist/antd.js",
@@ -2437,7 +2754,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 11
+        "register": 10
       },
       "enableBy": "config",
       "type": "plugin",
@@ -2457,6 +2774,17 @@
             0,
             0,
             0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
             0
           ],
           "addRuntimePluginKey": [
@@ -2466,14 +2794,36 @@
             0,
             0,
             0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
             0
           ],
           "onGenerateFiles": [
-            4,
+            5,
+            0,
+            0,
             1,
             1,
             1,
             1,
+            1,
+            0,
+            1,
+            2,
+            0,
+            1,
+            1,
+            0,
+            0,
             1,
             1
           ],
@@ -2484,10 +2834,21 @@
             0,
             0,
             0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
             0
           ]
         },
-        "register": 2
+        "register": 1
       },
       "enableBy": "config",
       "type": "plugin",
@@ -2512,12 +2873,34 @@
             0,
             0,
             0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
             0
           ],
           "modifyAppData": [
             1
           ],
           "addRuntimePlugin": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
             0,
             0,
             0,
@@ -2533,19 +2916,41 @@
             0,
             0,
             0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
             0
           ],
           "onGenerateFiles": [
-            16,
+            14,
             5,
-            7,
+            4,
+            2,
+            3,
             3,
             2,
-            10,
-            2
+            3,
+            3,
+            4,
+            6,
+            3,
+            4,
+            5,
+            5,
+            4,
+            3,
+            5
           ]
         },
-        "register": 5
+        "register": 7
       },
       "enableBy": "config",
       "type": "plugin",
@@ -2558,7 +2963,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 6
+        "register": 7
       },
       "enableBy": "config",
       "type": "plugin",
@@ -2571,7 +2976,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 3
+        "register": 4
       },
       "enableBy": "config",
       "type": "plugin",
@@ -2591,22 +2996,44 @@
             0,
             0,
             0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
             0
           ],
           "onGenerateFiles": [
-            79,
-            70,
-            88,
+            134,
+            61,
+            67,
+            65,
             68,
-            73,
-            119,
-            77
+            70,
+            76,
+            71,
+            68,
+            75,
+            77,
+            72,
+            69,
+            74,
+            68,
+            68,
+            67,
+            74
           ],
           "addTmpGenerateWatcherPaths": [
             0
           ]
         },
-        "register": 3
+        "register": 2
       },
       "enableBy": "config",
       "type": "plugin",
@@ -2629,11 +3056,33 @@
             0,
             0,
             0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
             0
           ],
           "onGenerateFiles": [
-            3,
+            5,
             1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
             0,
             1,
             1,
@@ -2641,7 +3090,7 @@
             1
           ]
         },
-        "register": 1
+        "register": 2
       },
       "enableBy": "config",
       "type": "plugin",
@@ -2661,10 +3110,21 @@
             0,
             0,
             0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
             0
           ]
         },
-        "register": 2
+        "register": 3
       },
       "enableBy": "register",
       "type": "plugin",
@@ -2721,19 +3181,41 @@
             0,
             0,
             0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
             0
           ],
           "onGenerateFiles": [
-            8,
+            15,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
             1,
             2,
             1,
-            0,
+            1,
+            2,
+            1,
+            1,
             1,
             1
           ]
         },
-        "register": 1
+        "register": 2
       },
       "enableBy": "config",
       "type": "plugin",
@@ -2746,7 +3228,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 3
+        "register": 4
       },
       "enableBy": "config",
       "type": "plugin",
@@ -2760,15 +3242,37 @@
       "time": {
         "hooks": {
           "addEntryImports": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
             1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
             0,
             0,
             0,
@@ -2776,7 +3280,7 @@
             0
           ],
           "onBeforeCompiler": [
-            2566
+            2932
           ]
         },
         "register": 1
@@ -2843,7 +3347,7 @@
             0
           ]
         },
-        "register": 0
+        "register": 1
       },
       "enableBy": "register",
       "type": "plugin",
@@ -2857,7 +3361,7 @@
       "time": {
         "hooks": {
           "modifyConfig": [
-            1
+            0
           ]
         },
         "register": 1
@@ -2886,7 +3390,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 316
+        "register": 384
       },
       "enableBy": "config",
       "type": "plugin",
@@ -2899,7 +3403,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 241
+        "register": 265
       },
       "enableBy": "config",
       "type": "plugin",
@@ -2914,7 +3418,7 @@
       },
       "time": {
         "hooks": {},
-        "register": 6
+        "register": 1
       },
       "enableBy": "config",
       "type": "plugin",
@@ -2943,16 +3447,27 @@
             0
           ],
           "onGenerateFiles": [
+            4,
             3,
-            2,
-            3,
+            1,
             0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            3,
+            1,
+            1,
+            2,
+            1,
             0,
             0,
             0
           ]
         },
-        "register": 120
+        "register": 79
       },
       "type": "plugin",
       "path": "C:/bysj/gymsystem-frontend/node_modules/@umijs/request-record/dist/cjs/index.js",
@@ -2964,7 +3479,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 2
+        "register": 1
       },
       "enableBy": "register",
       "type": "plugin",
@@ -3072,6 +3587,13 @@
         "component": "./Member/Register",
         "hideInMenu": true,
         "access": "guest"
+      },
+      {
+        "path": "/member/bookings",
+        "name": "我的预约",
+        "component": "./Member/Bookings",
+        "hideInMenu": true,
+        "access": "canMember"
       },
       {
         "path": "/admin/memberManage",
@@ -3346,6 +3868,13 @@
         "component": "./Member/Register",
         "hideInMenu": true,
         "access": "guest"
+      },
+      {
+        "path": "/member/bookings",
+        "name": "我的预约",
+        "component": "./Member/Bookings",
+        "hideInMenu": true,
+        "access": "canMember"
       },
       {
         "path": "/admin/memberManage",
@@ -4579,71 +5108,84 @@
       "__absFile": "C:/bysj/gymsystem-frontend/src/pages/Member/Register/index.tsx"
     },
     "15": {
+      "path": "/member/bookings",
+      "name": "我的预约",
+      "hideInMenu": true,
+      "access": "canMember",
+      "file": "@/pages/Member/Bookings/index.tsx",
+      "parentId": "ant-design-pro-layout",
+      "id": "15",
+      "absPath": "/member/bookings",
+      "__content": "import { PageContainer } from '@ant-design/pro-components';\r\nimport type { ActionType, ProColumns } from '@ant-design/pro-components';\r\nimport { ProTable } from '@ant-design/pro-components';\r\nimport { useModel } from '@umijs/max';\r\nimport { deleteMyBookingUsingPost } from '@/api/courseBookingController';\r\nimport request from '@/utils/request';\r\nimport { useRef } from 'react';\r\nimport { Button, Modal, message } from 'antd';\r\n\r\nconst MemberBookings = () => {\r\n  const { initialState } = useModel('@@initialState');\r\n  const currentUser = initialState?.currentUser;\r\n  const actionRef = useRef<ActionType>();\r\n\r\n  const handleCancelBooking = async (bookingId: number) => {\r\n    Modal.confirm({\r\n      title: '取消预约',\r\n      content: '确定要取消这个课程预约吗？',\r\n      okText: '确定',\r\n      cancelText: '取消',\r\n      onOk: async () => {\r\n        try {\r\n          const res = await deleteMyBookingUsingPost({ id: bookingId });\r\n          console.log('取消预约响应:', res);\r\n          if (res) {\r\n            message.success('预约已取消');\r\n            actionRef.current?.reload();\r\n          } else {\r\n            message.error('取消预约失败，请稍后再试');\r\n          }\r\n        } catch (error) {\r\n          console.error('取消预约错误:', error);\r\n          message.error('取消预约失败，请稍后再试');\r\n        }\r\n      },\r\n    });\r\n  };\r\n\r\n  const columns: ProColumns<API.CourseBookingVO & { courseName?: string; courseDate?: string; startTime?: string; endTime?: string; location?: string; memberName?: string  }>[] = [\r\n    {\r\n      dataIndex: 'index',\r\n      valueType: 'index',\r\n      width: 48,\r\n      title: '序号',\r\n    },\r\n    {\r\n      title: '课程名称',\r\n      dataIndex: 'courseName',\r\n      hideInSearch: true,\r\n    },\r\n    {\r\n      title: '上课日期',\r\n      dataIndex: 'courseDate',\r\n      valueType: 'date',\r\n      hideInSearch: true,\r\n    },\r\n    {\r\n      title: '上课时间',\r\n      dataIndex: 'startTime',\r\n      hideInSearch: true,\r\n      render: (_, record) => {\r\n        return record.startTime && record.endTime ? `${record.startTime} - ${record.endTime}` : '-';\r\n      },\r\n    },\r\n    {\r\n      title: '上课地点',\r\n      dataIndex: 'location',\r\n      hideInSearch: true,\r\n    },\r\n    {\r\n      title: '预约时间',\r\n      dataIndex: 'createTime',\r\n      valueType: 'dateTime',\r\n      sorter: true,\r\n      hideInSearch: true,\r\n    },\r\n    {\r\n      title: '预约状态',\r\n      dataIndex: 'bookingStatus',\r\n      valueEnum: {\r\n        0: { text: '已取消', status: 'Default' },\r\n        1: { text: '已预约', status: 'Processing' },\r\n        2: { text: '已完成', status: 'Success' },\r\n      },\r\n    },\r\n    {\r\n      title: '出勤状态',\r\n      dataIndex: 'attendanceStatus',\r\n      valueEnum: {\r\n        0: { text: '未签到', status: 'Default' },\r\n        1: { text: '已签到', status: 'Success' },\r\n        2: { text: '请假', status: 'Warning' },\r\n        3: { text: '缺席', status: 'Error' },\r\n      },\r\n    },\r\n    {\r\n      title: '操作',\r\n      valueType: 'option',\r\n      render: (_, record) => [\r\n        record.bookingStatus === 1 ? (\r\n          <Button \r\n            key=\"cancel\"\r\n            type=\"link\"\r\n            danger\r\n            onClick={() => handleCancelBooking(record.bookingId as number)}\r\n          >\r\n            取消预约\r\n          </Button>\r\n        ) : null,\r\n      ],\r\n    },\r\n  ];\r\n\r\n  return (\r\n    <PageContainer>\r\n      <ProTable<API.CourseBookingVO>\r\n        headerTitle=\"我的课程预约\"\r\n        actionRef={actionRef}\r\n        rowKey=\"bookingId\"\r\n        search={false}\r\n        toolBarRender={() => []}\r\n        request={async (params) => {\r\n          if (!currentUser?.id) {\r\n            return {\r\n              data: [],\r\n              success: true,\r\n              total: 0,\r\n            };\r\n          }\r\n          \r\n          // 打印请求参数，便于调试\r\n          console.log('会员预约-请求参数:', params);\r\n          \r\n          try {\r\n            // 使用与管理员相同的请求方式\r\n            const res = await request('/api/course/booking/list/page/vo/my', {\r\n              method: 'POST',\r\n              data: {\r\n                memberId: currentUser.id,\r\n                current: params.current,\r\n                pageSize: params.pageSize,\r\n              },\r\n            });\r\n            \r\n            // 打印响应数据，便于调试\r\n            console.log('会员预约-响应数据:', res);\r\n            \r\n            // 返回 ProTable 需要的数据格式\r\n            return {\r\n              data: res.records || [],\r\n              success: true,\r\n              total: Number(res.total) || 0,\r\n            };\r\n          } catch (error) {\r\n            console.error('会员预约-获取数据失败:', error);\r\n            message.error('获取预约数据失败');\r\n            return {\r\n              data: [],\r\n              success: false,\r\n              total: 0,\r\n            };\r\n          }\r\n        }}\r\n        pagination={{\r\n          pageSize: 10,\r\n        }}\r\n        columns={columns}\r\n      />\r\n    </PageContainer>\r\n  );\r\n};\r\n\r\nexport default MemberBookings; ",
+      "__isJSFile": true,
+      "__absFile": "C:/bysj/gymsystem-frontend/src/pages/Member/Bookings/index.tsx"
+    },
+    "16": {
       "path": "/admin/memberManage",
       "name": "会员管理",
       "icon": "UserOutlined",
       "access": "canAdmin",
       "file": "@/pages/Admin/MemberManage/index.tsx",
       "parentId": "ant-design-pro-layout",
-      "id": "15",
+      "id": "16",
       "absPath": "/admin/memberManage",
-      "__content": "import type { ActionType, ProColumns } from '@ant-design/pro-components';\r\nimport { ProTable, TableDropdown, ModalForm, ProFormText, ProFormSelect } from '@ant-design/pro-components';\r\nimport { useRef, useState } from 'react';\r\nimport { Image, message, Tag } from 'antd';\r\nimport { listMemberVoByPageUsingPost, updateMemberUsingPost, deleteMemberUsingPost, addMemberUsingPost } from '@/api/memberController';\r\nimport request from '@/utils/request';\r\n\r\nconst columns: ProColumns<API.MemberVO>[] = [\r\n  {\r\n    dataIndex: 'id',\r\n    valueType: 'index',\r\n    width: 48,\r\n    title: '序号',\r\n    hideInSearch: true,\r\n    editable: false,\r\n    render: (_, __, index) => index + 1,\r\n  },\r\n  {\r\n    title: '会员名称',\r\n    dataIndex: 'memberName',\r\n    copyable: true,\r\n    ellipsis: true,\r\n    formItemProps: {\r\n      rules: [\r\n        {\r\n          required: true,\r\n          message: '此项为必填项',\r\n        },\r\n      ],\r\n    },\r\n  },\r\n  {\r\n    title: '会员账号',\r\n    dataIndex: 'memberAccount',\r\n    copyable: true,\r\n    ellipsis: true,\r\n    editable: false,\r\n  },\r\n  {\r\n    title: '头像',\r\n    dataIndex: 'memberAvatar',\r\n    render: (_, record) => (\r\n      <div>\r\n        <Image src={record.memberAvatar || 'https://28082003.com/images/preview.jpg'} width={100} />\r\n      </div>\r\n    ),\r\n  },\r\n  {\r\n    title: '性别',\r\n    dataIndex: 'gender',\r\n    valueEnum: {\r\n      0: { text: '未知', status: 'Default' },\r\n      1: { text: '男', status: 'Success' },\r\n      2: { text: '女', status: 'Error' },\r\n    },\r\n  },\r\n  {\r\n    title: '角色',\r\n    dataIndex: 'memberRole',\r\n    valueType: 'select',\r\n    valueEnum: {\r\n      member: { text: '普通会员', status: 'Default' },\r\n      admin: { text: '管理员', status: 'Success' },\r\n    },\r\n    render: (_, record) => {\r\n      const color = record.memberRole === 'admin' ? 'success' : 'processing';\r\n      return (\r\n        <Tag color={color}>\r\n          {record.memberRole === 'admin' ? '管理员' : '普通会员'}\r\n        </Tag>\r\n      );\r\n    },\r\n  },\r\n  {\r\n    title: '创建时间',\r\n    dataIndex: 'createTime',\r\n    valueType: 'dateTime',\r\n    sorter: true,\r\n    hideInSearch: true,\r\n    editable: false,\r\n  },\r\n  {\r\n    title: '操作',\r\n    valueType: 'option',\r\n    render: (text, record, _, action) => [\r\n      <a\r\n        key=\"editable\"\r\n        onClick={() => {\r\n          if (record.id) {\r\n            action?.startEditable?.(record.id);\r\n          }\r\n        }}\r\n      >\r\n        编辑\r\n      </a>,\r\n      <TableDropdown\r\n        key=\"actionGroup\"\r\n        onSelect={(key) => {\r\n          if (key === 'delete' && record.id) {\r\n            deleteMemberUsingPost({ id: record.id }).then((res) => {\r\n              console.log('删除响应:', res);\r\n              if (res) {\r\n                message.success('删除成功');\r\n                action?.reload();\r\n              } else {\r\n                message.error('删除失败');\r\n              }\r\n            }).catch(error => {\r\n              console.error('删除错误:', error);\r\n              message.error('删除失败');\r\n            });\r\n          }\r\n        }}\r\n        menus={[\r\n          { key: 'delete', name: '删除' },\r\n        ]}\r\n      />,\r\n    ],\r\n  },\r\n];\r\n\r\nexport default () => {\r\n  const actionRef = useRef<ActionType>();\r\n  const [createModalVisible, setCreateModalVisible] = useState<boolean>(false);\r\n\r\n  const handleAdd = async (fields: API.MemberAddRequest) => {\r\n    try {\r\n      const res = await addMemberUsingPost(fields);\r\n      console.log('新增响应:', res);\r\n      if (res) {\r\n        message.success('添加成功');\r\n        setCreateModalVisible(false);\r\n        actionRef.current?.reload();\r\n      } else {\r\n        message.error('添加失败');\r\n      }\r\n    } catch (error) {\r\n      console.error('添加错误:', error);\r\n      message.error('添加失败');\r\n    }\r\n  };\r\n\r\n  return (\r\n    <div style={{ minHeight: 'calc(100vh - 120px)', paddingBottom: '120px', marginBottom: '60px' }}>\r\n      <ProTable<API.MemberVO>\r\n        columns={columns}\r\n        actionRef={actionRef}\r\n        cardBordered\r\n        toolBarRender={() => [\r\n          <a\r\n            key=\"add\"\r\n            onClick={() => {\r\n              setCreateModalVisible(true);\r\n            }}\r\n          >\r\n            新增会员\r\n          </a>,\r\n        ]}\r\n        request={async (params) => {\r\n          console.log('请求参数:', params);\r\n          const res = await request('/api/member/list/page/vo', {\r\n            method: 'POST',\r\n            data: {\r\n              current: params.current,\r\n              pageSize: params.pageSize,\r\n              memberName: params.memberName,\r\n              memberAccount: params.memberAccount,\r\n              memberRole: params.memberRole,\r\n              gender: params.gender,\r\n            },\r\n          });\r\n          console.log('响应数据:', res);\r\n          return {\r\n            data: res.records || [],\r\n            success: true,\r\n            total: Number(res.total) || 0,\r\n          };\r\n        }}\r\n        editable={{\r\n          type: 'single',\r\n          onSave: async (key, record) => {\r\n            try {\r\n              const res = await updateMemberUsingPost({\r\n                id: record.id,\r\n                memberName: record.memberName,\r\n                memberAvatar: record.memberAvatar,\r\n                gender: record.gender,\r\n                memberRole: record.memberRole,\r\n              });\r\n              console.log('更新响应:', res);\r\n              if (res) {\r\n                message.success('更新成功');\r\n                actionRef.current?.reload();\r\n              } else {\r\n                message.error('更新失败');\r\n              }\r\n            } catch (error) {\r\n              console.error('更新错误:', error);\r\n              message.error('更新失败');\r\n            }\r\n          },\r\n        }}\r\n        columnsState={{\r\n          persistenceKey: 'pro-table-singe-demos',\r\n          persistenceType: 'localStorage',\r\n          defaultValue: {\r\n            option: { fixed: 'right', disable: true },\r\n          },\r\n          onChange(value) {\r\n            console.log('value: ', value);\r\n          },\r\n        }}\r\n        rowKey=\"id\"\r\n        search={{\r\n          labelWidth: 'auto',\r\n        }}\r\n        options={{\r\n          setting: {\r\n            listsHeight: 400,\r\n          },\r\n        }}\r\n        form={{\r\n          syncToUrl: (values, type) => {\r\n            if (type === 'get') {\r\n              return {\r\n                ...values,\r\n                created_at: [values.startTime, values.endTime],\r\n              };\r\n            }\r\n            return values;\r\n          },\r\n        }}\r\n        pagination={{\r\n          pageSize: 5,\r\n          onChange: (page) => console.log(page),\r\n        }}\r\n        dateFormatter=\"string\"\r\n        headerTitle=\"\"\r\n      />\r\n\r\n      <ModalForm\r\n        title=\"新增会员\"\r\n        width=\"400px\"\r\n        open={createModalVisible}\r\n        onOpenChange={setCreateModalVisible}\r\n        onFinish={async (values) => {\r\n          await handleAdd(values as API.MemberAddRequest);\r\n        }}\r\n      >\r\n        <ProFormText\r\n          name=\"memberName\"\r\n          label=\"会员名称\"\r\n          rules={[\r\n            {\r\n              required: true,\r\n              message: '请输入会员名称',\r\n            },\r\n          ]}\r\n        />\r\n        <ProFormText\r\n          name=\"memberAccount\"\r\n          label=\"会员账号\"\r\n          rules={[\r\n            {\r\n              required: true,\r\n              message: '请输入会员账号',\r\n            },\r\n            {\r\n              min: 4,\r\n              message: '账号长度不能小于4位',\r\n            },\r\n            {\r\n              pattern: /^[a-zA-Z0-9_]+$/,\r\n              message: '账号只能包含字母、数字和下划线',\r\n            },\r\n          ]}\r\n        />\r\n        <ProFormSelect\r\n          name=\"gender\"\r\n          label=\"性别\"\r\n          valueEnum={{\r\n            0: '未知',\r\n            1: '男',\r\n            2: '女',\r\n          }}\r\n          rules={[\r\n            {\r\n              required: true,\r\n              message: '请选择性别',\r\n            },\r\n          ]}\r\n        />\r\n        <ProFormSelect\r\n          name=\"memberRole\"\r\n          label=\"角色\"\r\n          valueEnum={{\r\n            member: '普通会员',\r\n            admin: '管理员',\r\n          }}\r\n          rules={[\r\n            {\r\n              required: true,\r\n              message: '请选择角色',\r\n            },\r\n          ]}\r\n        />\r\n      </ModalForm>\r\n    </div>\r\n  );\r\n};",
+      "__content": "import type { ActionType, ProColumns } from '@ant-design/pro-components';\r\nimport { ProTable, TableDropdown, ModalForm, ProFormText, ProFormSelect } from '@ant-design/pro-components';\r\nimport { useRef, useState } from 'react';\r\nimport { Image, message, Tag } from 'antd';\r\nimport { listMemberVoByPageUsingPost, updateMemberUsingPost, deleteMemberUsingPost, addMemberUsingPost } from '@/api/memberController';\r\nimport request from '@/utils/request';\r\n\r\nconst columns: ProColumns<API.MemberVO>[] = [\r\n  {\r\n    dataIndex: 'id',\r\n    valueType: 'index',\r\n    width: 48,\r\n    title: '序号',\r\n    hideInSearch: true,\r\n    editable: false,\r\n    render: (_, __, index) => index + 1,\r\n  },\r\n  {\r\n    title: '会员名称',\r\n    dataIndex: 'memberName',\r\n    copyable: true,\r\n    ellipsis: true,\r\n    formItemProps: {\r\n      rules: [\r\n        {\r\n          required: true,\r\n          message: '此项为必填项',\r\n        },\r\n      ],\r\n    },\r\n  },\r\n  {\r\n    title: '会员账号',\r\n    dataIndex: 'memberAccount',\r\n    copyable: true,\r\n    ellipsis: true,\r\n    editable: false,\r\n  },\r\n  {\r\n    title: '头像',\r\n    dataIndex: 'memberAvatar',\r\n    render: (_, record) => (\r\n      <div>\r\n        <Image\r\n          src={\r\n            record.memberAvatar ||\r\n            'https://image.liucf.com/images/2025/05/90f433495b9f855d61092482c6bfaaef.png'\r\n          }\r\n          width={100}\r\n        />\r\n      </div>\r\n    ),\r\n  },\r\n  {\r\n    title: '性别',\r\n    dataIndex: 'gender',\r\n    valueEnum: {\r\n      0: { text: '未知', status: 'Default' },\r\n      1: { text: '男', status: 'Success' },\r\n      2: { text: '女', status: 'Error' },\r\n    },\r\n  },\r\n  {\r\n    title: '角色',\r\n    dataIndex: 'memberRole',\r\n    valueType: 'select',\r\n    valueEnum: {\r\n      member: { text: '普通会员', status: 'Default' },\r\n      admin: { text: '管理员', status: 'Success' },\r\n    },\r\n    render: (_, record) => {\r\n      const color = record.memberRole === 'admin' ? 'success' : 'processing';\r\n      return <Tag color={color}>{record.memberRole === 'admin' ? '管理员' : '普通会员'}</Tag>;\r\n    },\r\n  },\r\n  {\r\n    title: '创建时间',\r\n    dataIndex: 'createTime',\r\n    valueType: 'dateTime',\r\n    sorter: true,\r\n    hideInSearch: true,\r\n    editable: false,\r\n  },\r\n  {\r\n    title: '操作',\r\n    valueType: 'option',\r\n    render: (text, record, _, action) => [\r\n      <a\r\n        key=\"editable\"\r\n        onClick={() => {\r\n          if (record.id) {\r\n            action?.startEditable?.(record.id);\r\n          }\r\n        }}\r\n      >\r\n        编辑\r\n      </a>,\r\n      <TableDropdown\r\n        key=\"actionGroup\"\r\n        onSelect={(key) => {\r\n          if (key === 'delete' && record.id) {\r\n            deleteMemberUsingPost({ id: record.id })\r\n              .then((res) => {\r\n                console.log('删除响应:', res);\r\n                if (res) {\r\n                  message.success('删除成功');\r\n                  action?.reload();\r\n                } else {\r\n                  message.error('删除失败');\r\n                }\r\n              })\r\n              .catch((error) => {\r\n                console.error('删除错误:', error);\r\n                message.error('删除失败');\r\n              });\r\n          }\r\n        }}\r\n        menus={[{ key: 'delete', name: '删除' }]}\r\n      />,\r\n    ],\r\n  },\r\n];\r\n\r\nexport default () => {\r\n  const actionRef = useRef<ActionType>();\r\n  const [createModalVisible, setCreateModalVisible] = useState<boolean>(false);\r\n\r\n  const handleAdd = async (fields: API.MemberAddRequest) => {\r\n    try {\r\n      const res = await addMemberUsingPost(fields);\r\n      console.log('新增响应:', res);\r\n      if (res) {\r\n        message.success('添加成功');\r\n        setCreateModalVisible(false);\r\n        actionRef.current?.reload();\r\n      } else {\r\n        message.error('添加失败');\r\n      }\r\n    } catch (error) {\r\n      console.error('添加错误:', error);\r\n      message.error('添加失败');\r\n    }\r\n  };\r\n\r\n  return (\r\n    <div style={{ minHeight: 'calc(100vh - 120px)', paddingBottom: '120px', marginBottom: '60px' }}>\r\n      <ProTable<API.MemberVO>\r\n        columns={columns}\r\n        actionRef={actionRef}\r\n        cardBordered\r\n        toolBarRender={() => [\r\n          <a\r\n            key=\"add\"\r\n            onClick={() => {\r\n              setCreateModalVisible(true);\r\n            }}\r\n          >\r\n            新增会员\r\n          </a>,\r\n        ]}\r\n        request={async (params) => {\r\n          console.log('请求参数:', params);\r\n          const res = await request('/api/member/list/page/vo', {\r\n            method: 'POST',\r\n            data: {\r\n              current: params.current,\r\n              pageSize: params.pageSize,\r\n              memberName: params.memberName,\r\n              memberAccount: params.memberAccount,\r\n              memberRole: params.memberRole,\r\n              gender: params.gender,\r\n            },\r\n          });\r\n          console.log('响应数据:', res);\r\n          return {\r\n            data: res.records || [],\r\n            success: true,\r\n            total: Number(res.total) || 0,\r\n          };\r\n        }}\r\n        editable={{\r\n          type: 'single',\r\n          onSave: async (key, record) => {\r\n            try {\r\n              const res = await updateMemberUsingPost({\r\n                id: record.id,\r\n                memberName: record.memberName,\r\n                memberAvatar: record.memberAvatar,\r\n                gender: record.gender,\r\n                memberRole: record.memberRole,\r\n              });\r\n              console.log('更新响应:', res);\r\n              if (res) {\r\n                message.success('更新成功');\r\n                actionRef.current?.reload();\r\n              } else {\r\n                message.error('更新失败');\r\n              }\r\n            } catch (error) {\r\n              console.error('更新错误:', error);\r\n              message.error('更新失败');\r\n            }\r\n          },\r\n        }}\r\n        columnsState={{\r\n          persistenceKey: 'pro-table-singe-demos',\r\n          persistenceType: 'localStorage',\r\n          defaultValue: {\r\n            option: { fixed: 'right', disable: true },\r\n          },\r\n          onChange(value) {\r\n            console.log('value: ', value);\r\n          },\r\n        }}\r\n        rowKey=\"id\"\r\n        search={{\r\n          labelWidth: 'auto',\r\n        }}\r\n        options={{\r\n          setting: {\r\n            listsHeight: 400,\r\n          },\r\n        }}\r\n        form={{\r\n          syncToUrl: (values, type) => {\r\n            if (type === 'get') {\r\n              return {\r\n                ...values,\r\n                created_at: [values.startTime, values.endTime],\r\n              };\r\n            }\r\n            return values;\r\n          },\r\n        }}\r\n        pagination={{\r\n          pageSize: 5,\r\n          onChange: (page) => console.log(page),\r\n        }}\r\n        dateFormatter=\"string\"\r\n        headerTitle=\"\"\r\n      />\r\n\r\n      <ModalForm\r\n        title=\"新增会员\"\r\n        width=\"400px\"\r\n        open={createModalVisible}\r\n        onOpenChange={setCreateModalVisible}\r\n        onFinish={async (values) => {\r\n          await handleAdd(values as API.MemberAddRequest);\r\n        }}\r\n      >\r\n        <ProFormText\r\n          name=\"memberName\"\r\n          label=\"会员名称\"\r\n          rules={[\r\n            {\r\n              required: true,\r\n              message: '请输入会员名称',\r\n            },\r\n          ]}\r\n        />\r\n        <ProFormText\r\n          name=\"memberAccount\"\r\n          label=\"会员账号\"\r\n          rules={[\r\n            {\r\n              required: true,\r\n              message: '请输入会员账号',\r\n            },\r\n            {\r\n              min: 4,\r\n              message: '账号长度不能小于4位',\r\n            },\r\n            {\r\n              pattern: /^[a-zA-Z0-9_]+$/,\r\n              message: '账号只能包含字母、数字和下划线',\r\n            },\r\n          ]}\r\n        />\r\n        <ProFormSelect\r\n          name=\"gender\"\r\n          label=\"性别\"\r\n          valueEnum={{\r\n            0: '未知',\r\n            1: '男',\r\n            2: '女',\r\n          }}\r\n          rules={[\r\n            {\r\n              required: true,\r\n              message: '请选择性别',\r\n            },\r\n          ]}\r\n        />\r\n        <ProFormSelect\r\n          name=\"memberRole\"\r\n          label=\"角色\"\r\n          valueEnum={{\r\n            member: '普通会员',\r\n            admin: '管理员',\r\n          }}\r\n          rules={[\r\n            {\r\n              required: true,\r\n              message: '请选择角色',\r\n            },\r\n          ]}\r\n        />\r\n      </ModalForm>\r\n    </div>\r\n  );\r\n};",
       "__isJSFile": true,
       "__absFile": "C:/bysj/gymsystem-frontend/src/pages/Admin/MemberManage/index.tsx"
     },
-    "16": {
+    "17": {
       "path": "/admin/course-manage",
       "name": "课程管理",
       "icon": "ReadOutlined",
       "access": "canAdmin",
       "file": "@/pages/Admin/CourseManage/index.tsx",
       "parentId": "ant-design-pro-layout",
-      "id": "16",
+      "id": "17",
       "absPath": "/admin/course-manage",
       "__content": "import {\n  addCourseUsingPost,\n  deleteCourseUsingPost,\n  updateCourseUsingPost,\n} from '@/api/courseController';\nimport request from '@/utils/request';\nimport type { ActionType, ProColumns } from '@ant-design/pro-components';\nimport {\n  ModalForm,\n  ProFormDigit,\n  ProFormText,\n  ProTable,\n  TableDropdown,\n} from '@ant-design/pro-components';\nimport { message } from 'antd';\nimport { useRef, useState } from 'react';\n\nconst columns: ProColumns<API.CourseVO>[] = [\n  {\n    dataIndex: 'courseId',\n    valueType: 'index',\n    width: 48,\n    title: '序号',\n    hideInSearch: true,\n    editable: false,\n    render: (_, __, index) => index + 1,\n  },\n  {\n    title: '课程名称',\n    dataIndex: 'courseName',\n    copyable: true,\n    ellipsis: true,\n    formItemProps: {\n      rules: [{ required: true, message: '此项为必填项' }],\n    },\n  },\n  {\n    title: '教练ID',\n    dataIndex: 'coachId',\n    hideInSearch: true,\n  },\n  {\n    title: '课程价格',\n    dataIndex: 'sellingPrice',\n    valueType: 'money',\n    hideInSearch: true,\n  },\n  {\n    title: '课程时长(分钟)',\n    dataIndex: 'duration',\n    hideInSearch: true,\n  },\n  {\n    title: '创建时间',\n    dataIndex: 'createTime',\n    valueType: 'dateTime',\n    sorter: true,\n    hideInSearch: true,\n    editable: false,\n  },\n  {\n    title: '操作',\n    valueType: 'option',\n    render: (text, record, _, action) => [\n      <a\n        key=\"editable\"\n        onClick={() => {\n          if (record.courseId) {\n            action?.startEditable?.(record.courseId);\n          }\n        }}\n      >\n        编辑\n      </a>,\n      <TableDropdown\n        key=\"actionGroup\"\n        onSelect={(key) => {\n          if (key === 'delete' && record.courseId) {\n            deleteCourseUsingPost(record.courseId)\n              .then((res) => {\n                console.log('删除响应:', res);\n                if (res) {\n                  message.success('删除成功');\n                  action?.reload();\n                } else {\n                  message.error('删除失败');\n                }\n              })\n              .catch((error) => {\n                console.error('删除错误:', error);\n                message.error('删除失败');\n              });\n          }\n        }}\n        menus={[{ key: 'delete', name: '删除' }]}\n      />,\n    ],\n  },\n];\n\nexport default () => {\n  const actionRef = useRef<ActionType>();\n  const [createVisible, setCreateVisible] = useState(false);\n\n  const handleAdd = async (fields: API.CourseAddRequest) => {\n    try {\n      const res = await addCourseUsingPost(fields);\n      console.log('添加返回:', res);\n      if (res) {\n        message.success('添加成功');\n        setCreateVisible(false);\n        actionRef.current?.reload();\n      } else {\n        message.error('添加失败');\n      }\n    } catch {\n      message.error('添加异常');\n    }\n  };\n\n  return (\n    <div style={{ minHeight: 'calc(100vh - 120px)', paddingBottom: 120, marginBottom: 60 }}>\n      <ProTable<API.CourseVO>\n        columns={columns}\n        actionRef={actionRef}\n        cardBordered\n        toolBarRender={() => [\n          <a key=\"add\" onClick={() => setCreateVisible(true)}>\n            新增课程\n          </a>,\n        ]}\n        request={async (params) => {\n          console.log('请求参数:', params);\n          const res = await request('/api/course/list/page', {\n            method: 'POST',\n            data: {\n              current: params.current,\n              pageSize: params.pageSize,\n              courseId: params.courseId,\n              courseName: params.courseName,\n            },\n          });\n\n          return {\n            data: res.records || [],\n            success: true,\n            total: Number(res.total) || 0,\n          };\n        }}\n        editable={{\n          type: 'single',\n          onSave: async (key, record) => {\n            try {\n              const res = await updateCourseUsingPost({\n                courseId: record.courseId,\n                courseName: record.courseName,\n                coachId: record.coachId,\n                sellingPrice: record.sellingPrice,\n                duration: record.duration,\n              });\n              if (res) {\n                message.success('更新成功');\n                actionRef.current?.reload();\n              } else {\n                message.error('更新失败');\n              }\n            } catch {\n              message.error('更新异常');\n            }\n          },\n        }}\n        columnsState={{\n          persistenceKey: 'pro-table-singe-demos',\n          persistenceType: 'localStorage',\n          defaultValue: {\n            option: { fixed: 'right', disable: true },\n          },\n          onChange(value) {\n            console.log('value: ', value);\n          },\n        }}\n        rowKey=\"courseId\"\n        search={{\n          labelWidth: 'auto',\n        }}\n        options={{\n          setting: {\n            listsHeight: 400,\n          },\n        }}\n        form={{\n          syncToUrl: (values, type) => {\n            if (type === 'get') {\n              return {\n                ...values,\n                created_at: [values.startTime, values.endTime],\n              };\n            }\n            return values;\n          },\n        }}\n        pagination={{\n          pageSize: 5,\n          onChange: (page) => console.log(page),\n        }}\n        dateFormatter=\"string\"\n        headerTitle=\"\"\n      />\n \n      <ModalForm\n        title=\"新增课程\"\n        width={400}\n        open={createVisible}\n        onOpenChange={setCreateVisible}\n        onFinish={async (values) => {\n          await handleAdd(values as API.CourseAddRequest);\n        }}\n      >\n        <ProFormDigit\n          name=\"categoryId\"\n          label=\"课程类别ID\"\n          min={1}\n          rules={[{ required: true, message: '请输入课程类别ID' }]}\n        />\n        <ProFormDigit\n          name=\"coachId\"\n          label=\"教练ID\"\n          min={1}\n          rules={[{ required: true, message: '请输入教练ID' }]}\n        />\n        <ProFormText\n          name=\"courseName\"\n          label=\"课程名称\"\n          rules={[{ required: true, message: '请输入课程名称' }]}\n        />\n        <ProFormDigit\n          name=\"sellingPrice\"\n          label=\"课程价格\"\n          min={0}\n          rules={[{ required: true, message: '请输入课程价格' }]}\n        />\n        <ProFormDigit\n          name=\"duration\"\n          label=\"课程时长(分钟)\"\n          min={1}\n          rules={[{ required: true, message: '请输入课程时长' }]}\n        />\n      </ModalForm>\n    </div>\n  );\n};\n",
       "__isJSFile": true,
       "__absFile": "C:/bysj/gymsystem-frontend/src/pages/Admin/CourseManage/index.tsx"
     },
-    "17": {
+    "18": {
       "path": "/admin/category",
       "name": "课程类别管理",
       "icon": "AppstoreOutlined",
       "access": "canAdmin",
       "file": "@/pages/Admin/CourseCategoryManage/index.tsx",
       "parentId": "ant-design-pro-layout",
-      "id": "17",
+      "id": "18",
       "absPath": "/admin/category",
       "__content": "import { addCategoryUsingPost, deleteCategoryUsingPost, updateCategoryUsingPost } from '@/api/courseCategoryController';\r\nimport request from '@/utils/request';\r\nimport type { ActionType, ProColumns } from '@ant-design/pro-components';\r\nimport { ModalForm, ProFormText, ProTable, TableDropdown } from '@ant-design/pro-components';\r\nimport { message } from 'antd';\r\nimport { useRef, useState } from 'react';\r\n\r\n// 课程类别管理\r\nconst columns: ProColumns<API.CourseCategoryVO>[] = [\r\n  {\r\n    dataIndex: 'id',\r\n    valueType: 'index',\r\n    width: 48,\r\n    title: '序号',\r\n    hideInSearch: true,\r\n    editable: false,\r\n    render: (_, __, index) => index + 1,\r\n  },\r\n  {\r\n    title: '类别ID',\r\n    dataIndex: 'categoryId',\r\n    hideInSearch: true,\r\n    editable: false,\r\n  },\r\n  {\r\n    title: '课程类别名称',\r\n    dataIndex: 'categoryName',\r\n    copyable: true,\r\n    ellipsis: true,\r\n    formItemProps: {\r\n      rules: [{ required: true, message: '请输入课程类别名称' }],\r\n    },\r\n  },\r\n  {\r\n    title: '类别描述',\r\n    dataIndex: 'categoryDesc',\r\n    ellipsis: true,\r\n    hideInSearch: true,\r\n  },\r\n  {\r\n    title: '创建时间',\r\n    dataIndex: 'createTime',\r\n    valueType: 'dateTime',\r\n    hideInSearch: true,\r\n    editable: false,\r\n  },\r\n  {\r\n    title: '更新时间',\r\n    dataIndex: 'updateTime',\r\n    valueType: 'dateTime',\r\n    hideInSearch: true,\r\n    editable: false,\r\n  },\r\n\r\n  {\r\n    title: '操作',\r\n    valueType: 'option',\r\n    render: (text, record, _, action) => [\r\n      <a\r\n        key=\"editable\"\r\n        onClick={() => {\r\n          if (record.categoryId) {\r\n            action?.startEditable?.(record.categoryId);\r\n          }\r\n        }}\r\n      >\r\n        编辑\r\n      </a>,\r\n      <TableDropdown\r\n        key=\"actionGroup\"\r\n        onSelect={(key) => {\r\n          if (key === 'delete' && record.categoryId) {\r\n            deleteCategoryUsingPost({ id: record.categoryId })\r\n              .then((res) => {\r\n                console.log('删除响应:', res);\r\n                if (res) {\r\n                  message.success('删除成功');\r\n                  action?.reload();\r\n                } else {\r\n                  message.error('删除失败');\r\n                }\r\n              })\r\n              .catch((error) => {\r\n                console.error('删除错误:', error);\r\n                message.error('删除失败');\r\n              });\r\n          }\r\n        }}\r\n        menus={[{ key: 'delete', name: '删除' }]}\r\n      />,\r\n    ],\r\n  },\r\n];\r\n\r\nexport default () => {\r\n  const actionRef = useRef<ActionType>();\r\n  const [createVisible, setCreateVisible] = useState(false);\r\n\r\n  const handleAdd = async (fields: API.CourseCategoryAddRequest) => {\r\n    try {\r\n      const res = await addCategoryUsingPost(fields);\r\n      if (res) {\r\n        message.success('添加成功');\r\n        setCreateVisible(false);\r\n        actionRef.current?.reload();\r\n      } else {\r\n         message.error('添加失败');\r\n      }\r\n    } catch {\r\n      message.error('添加异常');\r\n    }\r\n  };\r\n\r\n  return (\r\n    <div style={{ minHeight: 'calc(100vh - 120px)', paddingBottom: 120, marginBottom: 60 }}>\r\n      <ProTable<API.CourseCategoryVO>\r\n        columns={columns}\r\n        actionRef={actionRef}\r\n        cardBordered\r\n        toolBarRender={() => [\r\n          <a\r\n            key=\"add\"\r\n            onClick={() => {\r\n              setCreateVisible(true);\r\n            }}\r\n          >\r\n            新增课程类别\r\n          </a>,\r\n        ]}\r\n        request={async (params) => {\r\n          // 打印请求参数，便于调试\r\n          console.log('请求参数:', params);\r\n          // 发送 GET 请求到后端接口，获取课程类别分页数据\r\n          try {\r\n            const res = await request('/api/course/category/list/page/vo', {\r\n              method: 'POST',\r\n              // 搜索条件\r\n              data: {\r\n                current: params.current,\r\n                pageSize: params.pageSize,\r\n                categoryName: params.categoryName,\r\n              },\r\n            });\r\n            // 打印响应数据，便于调试\r\n            console.log('响应数据:', res);\r\n            // 返回 ProTable 需要的数据格式\r\n            return {\r\n              data: res.records || [],\r\n              success: true,\r\n              total: Number(res.total) || 0,\r\n            };\r\n          } catch (error) {\r\n            console.error('获取课程类别列表失败:', error);\r\n            message.error('获取课程类别列表失败');\r\n            return {\r\n              data: [],\r\n              success: false,\r\n              total: 0,\r\n            };\r\n          }\r\n        }}\r\n        editable={{\r\n          type: 'single',\r\n          onSave: async (key, record) => {\r\n            try {\r\n              const res = await updateCategoryUsingPost({\r\n                categoryId: record.categoryId,\r\n                categoryName: record.categoryName,\r\n                categoryDesc: record.categoryDesc,\r\n              });\r\n              console.log('更新响应:', res);\r\n              if (res) {\r\n                message.success('更新成功');\r\n                actionRef.current?.reload();\r\n              } else {\r\n                message.error('更新失败');\r\n              }\r\n            } catch (error) {\r\n              console.error('更新错误:', error);\r\n              message.error('更新异常');\r\n            }\r\n          },\r\n        }}\r\n        columnsState={{\r\n          persistenceKey: 'pro-table-singe-demos',\r\n          persistenceType: 'localStorage',\r\n          defaultValue: {\r\n            option: { fixed: 'right', disable: true },\r\n          },\r\n        }}\r\n        rowKey=\"categoryId\"\r\n        search={{\r\n          labelWidth: 'auto',\r\n        }}\r\n        options={{\r\n          setting: {\r\n            listsHeight: 400,\r\n          },\r\n        }}\r\n        form={{\r\n          syncToUrl: (values, type) => {\r\n            if (type === 'get') {\r\n              return {\r\n                ...values,\r\n                created_at: [values.startTime, values.endTime],\r\n              };\r\n            }\r\n            return values;\r\n          },\r\n        }}\r\n        pagination={{\r\n          pageSize: 5,\r\n          onChange: (page) => console.log('当前页:', page),\r\n        }}\r\n        dateFormatter=\"string\"\r\n        headerTitle=\"\"\r\n      />\r\n\r\n      <ModalForm\r\n        title=\"新增课程类别\"\r\n        width={400}\r\n        open={createVisible}\r\n        onOpenChange={setCreateVisible}\r\n        onFinish={async (values) => {\r\n          await handleAdd(values as API.CourseCategoryAddRequest);\r\n        }}\r\n      >\r\n        <ProFormText\r\n          name=\"categoryName\"\r\n          label=\"类别名称\"\r\n          rules={[{ required: true, message: '请输入类别名称' }]}\r\n        />\r\n        <ProFormText name=\"categoryDesc\" label=\"类别描述\" />\r\n      </ModalForm>\r\n    </div>\r\n  );\r\n};\r\n",
       "__isJSFile": true,
       "__absFile": "C:/bysj/gymsystem-frontend/src/pages/Admin/CourseCategoryManage/index.tsx"
     },
-    "18": {
+    "19": {
       "path": "/admin/schedule",
       "name": "课程排期管理",
       "icon": "CalendarOutlined",
       "access": "canAdmin",
       "file": "@/pages/Admin/CourseScheduleManage/index.tsx",
       "parentId": "ant-design-pro-layout",
-      "id": "18",
+      "id": "19",
       "absPath": "/admin/schedule",
       "__content": "import {\n  addScheduleUsingPost,\n  deleteScheduleUsingPost,\n  updateScheduleUsingPost,\n} from '@/api/courseScheduleController';\nimport request from '@/utils/request';\nimport type { ActionType, ProColumns } from '@ant-design/pro-components';\nimport {\n  ModalForm,\n  ProFormDateTimePicker,\n  ProFormDigit,\n  ProFormText,\n  ProTable,\n  TableDropdown,\n} from '@ant-design/pro-components';\nimport { message } from 'antd';\nimport { useRef, useState } from 'react';\n\nconst columns: ProColumns<API.CourseScheduleVO>[] = [\n  {\n    dataIndex: 'id',\n    valueType: 'index',\n    width: 48,\n    title: '序号',\n    hideInSearch: true,\n    editable: false,\n    render: (_, __, index) => index + 1,\n  },\n  {\n    title: '排期ID',\n    dataIndex: 'scheduleId',\n    hideInSearch: true,\n    editable: false,\n  },\n  {\n    title: '课程ID',\n    dataIndex: 'courseId',\n    hideInSearch: false,\n  },\n  {\n    title: '教练ID',\n    dataIndex: 'coachId',\n    hideInSearch: false,\n  },\n  {\n    title: '开始时间',\n    dataIndex: 'startTime',\n    valueType: 'dateTime',\n    sorter: true,\n    hideInSearch: true,\n  },\n  {\n    title: '结束时间',\n    dataIndex: 'endTime',\n    valueType: 'dateTime',\n    sorter: true,\n    hideInSearch: true,\n  },\n  {\n    title: '教室编号',\n    dataIndex: 'roomNumber',\n    hideInSearch: true,\n  },\n  {\n    title: '最大参与人数',\n    dataIndex: 'maxParticipants',\n    hideInSearch: true,\n  },\n  {\n    title: '当前参与人数',\n    dataIndex: 'currentParticipants',\n    hideInSearch: true,\n  },\n  {\n    title: '状态',\n    dataIndex: 'status',\n    valueEnum: {\n      0: { text: '已取消', status: 'Error' },\n      1: { text: '可预约', status: 'Processing' },\n      2: { text: '已满', status: 'Warning' },\n    },\n  },\n  {\n    title: '创建时间',\n    dataIndex: 'createTime',\n    valueType: 'dateTime',\n    sorter: true,\n    hideInSearch: true,\n    editable: false,\n  },\n  {\n    title: '更新时间',\n    dataIndex: 'updateTime',\n    valueType: 'dateTime',\n    sorter: true,\n    hideInSearch: true,\n    editable: false,\n  },\n  {\n    title: '操作',\n    valueType: 'option',\n    render: (text, record, __, action) => [\n      <a\n        key=\"editable\"\n        onClick={() => {\n          if (record.scheduleId) {\n            action?.startEditable?.(record.scheduleId);\n          }\n        }}\n      >\n        编辑\n      </a>,\n      <TableDropdown\n        key=\"actionGroup\"\n        onSelect={(key) => {\n          if (key === 'delete' && record.scheduleId) {\n            deleteScheduleUsingPost({ id: record.scheduleId })\n              .then((res) => {\n                if (res) {\n                  message.success('删除成功');\n                  action?.reload();\n                } else {\n                  message.error('删除失败');\n                }\n              })\n              .catch(() => {\n                message.error('删除操作异常');\n              });\n          }\n        }}\n        menus={[{ key: 'delete', name: '删除' }]}\n      />,\n    ],\n  },\n];\n\nexport default () => {\n  const actionRef = useRef<ActionType>();\n  const [createModalVisible, setCreateModalVisible] = useState<boolean>(false);\n\n  const handleAdd = async (fields: API.CourseScheduleAddRequest) => {\n    try {\n      const res = await addScheduleUsingPost(fields);\n      if (res) {\n        message.success('添加成功');\n        setCreateModalVisible(false);\n        actionRef.current?.reload();\n      } else {\n        message.error('添加失败');\n      }\n    } catch (error) {\n      console.error('添加错误:', error);\n      message.error('添加失败');\n    }\n  };\n\n  return (\n    <div style={{ minHeight: 'calc(100vh - 120px)', paddingBottom: '120px', marginBottom: '60px' }}>\n      <ProTable<API.CourseScheduleVO>\n        columns={columns}\n        actionRef={actionRef}\n        cardBordered\n        toolBarRender={() => [\n          <a\n            key=\"add\"\n            onClick={() => {\n              setCreateModalVisible(true);\n            }}\n          >\n            新增课程排期\n          </a>,\n        ]}\n        request={async (params) => {\n          console.log('请求参数:', params);\n\n          const res = await request('/api/course/schedule/list/page/vo', {\n            method: 'POST',\n            data: {\n              current: params.current,\n              pageSize: params.pageSize,\n              courseId: params.courseId,\n              coachId: params.coachId,\n              status: params.status,\n            },\n          });\n          console.log('响应数据:', res);\n          return {\n            data: res.records || [],\n            success: true,\n            total: Number(res.total) || 0,\n          };\n        }}\n        editable={{\n          type: 'single',\n          onSave: async (key, record) => {\n            try {\n              const res = await updateScheduleUsingPost({\n                scheduleId: record.scheduleId,\n                courseId: record.courseId,\n                coachId: record.coachId,\n                startTime: record.startTime,\n                endTime: record.endTime,\n                roomNumber: record.roomNumber,\n                maxParticipants: record.maxParticipants,\n                status: record.status,\n              });\n              console.log('更新响应:', res);\n              if (res) {\n                message.success('更新成功');\n                actionRef.current?.reload();\n              } else {\n                message.error('更新失败');\n              }\n            } catch (error) {\n              console.error('更新错误:', error);\n              message.error('更新操作失败');\n            }\n          },\n        }}\n        columnsState={{\n          persistenceKey: 'pro-table-singe-demos',\n          persistenceType: 'localStorage',\n          defaultValue: {\n            option: { fixed: 'right', disable: true },\n          },\n          onChange(value) {\n            console.log('value: ', value);\n          },\n        }}\n        rowKey=\"scheduleId\"\n        search={{\n          labelWidth: 'auto',\n        }}\n        options={{\n          setting: {\n            listsHeight: 400,\n          },\n        \n        }}\n        form={{\n          syncToUrl: (values, type) => {\n            if (type === 'get') {\n              return {\n                ...values,\n                created_at: [values.startTime, values.endTime],\n              };\n            }\n            return values;\n          },\n        }}\n        pagination={{\n          pageSize: 5,\n          onChange: (page) => console.log(page),\n        }}\n        dateFormatter=\"string\"\n        headerTitle=\"\"\n      />\n\n      <ModalForm\n        title=\"新增课程排期\"\n        width=\"400px\"\n        open={createModalVisible}\n        onOpenChange={setCreateModalVisible}\n        onFinish={async (values) => {\n          await handleAdd(values as API.CourseScheduleAddRequest);\n        }}\n      >\n        <ProFormDigit\n          name=\"courseId\"\n          label=\"课程ID\"\n          min={1}\n          rules={[{ required: true, message: '请输入课程ID' }]}\n        />\n        <ProFormDigit\n          name=\"coachId\"\n          label=\"教练ID\"\n          min={1}\n          rules={[{ required: true, message: '请输入教练ID' }]}\n        />\n        <ProFormText\n          name=\"roomNumber\"\n          label=\"教室编号\"\n          rules={[{ required: true, message: '请输入教室编号' }]}\n        />\n        <ProFormDateTimePicker\n          name=\"startTime\"\n          label=\"开始时间\"\n          rules={[{ required: true, message: '请选择开始时间' }]}\n        />\n        <ProFormDateTimePicker\n          name=\"endTime\"\n          label=\"结束时间\"\n          rules={[{ required: true, message: '请选择结束时间' }]}\n        />\n        <ProFormDigit\n          name=\"maxParticipants\"\n          label=\"最大参与人数\"\n          min={1}\n          rules={[{ required: true, message: '请输入最大参与人数' }]}\n        />\n      </ModalForm>\n    </div>\n  );\n};\n",
       "__isJSFile": true,
       "__absFile": "C:/bysj/gymsystem-frontend/src/pages/Admin/CourseScheduleManage/index.tsx"
     },
-    "19": {
+    "20": {
       "path": "/admin/booking",
       "name": "课程预约管理",
       "icon": "ScheduleOutlined",
       "access": "canAdmin",
       "file": "@/pages/Admin/CourseBookingManage/index.tsx",
       "parentId": "ant-design-pro-layout",
-      "id": "19",
+      "id": "20",
       "absPath": "/admin/booking",
       "__content": "import request from '@/utils/request';\r\nimport type { ActionType, ProColumns } from '@ant-design/pro-components';\r\nimport { ProFormSelect, ProTable, TableDropdown, ModalForm, ProFormText, ProFormDateTimePicker } from '@ant-design/pro-components';\r\nimport { message } from 'antd';\r\nimport { useRef, useState } from 'react';\r\nimport {\r\n  addBookingUsingPost,\r\n  deleteBookingUsingPost,\r\n  updateBookingUsingPost,\r\n} from '@/api/courseBookingController';\r\n\r\nconst columns: ProColumns<API.CourseBookingVO>[] = [\r\n  {\r\n    dataIndex: 'id',\r\n    valueType: 'index',\r\n    width: 48,\r\n    title: '序号',\r\n    hideInSearch: true,\r\n    editable: false,\r\n    render: (_, __, index) => index + 1,\r\n  },\r\n  {\r\n    title: '预约ID',\r\n    dataIndex: 'bookingId',\r\n    hideInSearch: true,\r\n    editable: false,\r\n  },\r\n  {\r\n    title: '会员ID',\r\n    dataIndex: 'memberId',\r\n    hideInSearch: true,\r\n    editable: false,\r\n  },\r\n  {\r\n    title: '课表ID',\r\n    dataIndex: 'scheduleId',\r\n    hideInSearch: true,\r\n    editable: false,\r\n  },\r\n  {\r\n    title: '创建时间',\r\n    dataIndex: 'createTime',\r\n    valueType: 'dateTime',\r\n    sorter: true,\r\n    hideInSearch: true,\r\n    editable: false,\r\n  },\r\n  {\r\n    title: '预约状态',\r\n    dataIndex: 'bookingStatus',\r\n    valueEnum: {\r\n      0: { text: '已预约', status: 'Processing' },\r\n      1: { text: '已取消', status: 'Default' },\r\n      2: { text: '已完成', status: 'Success' },\r\n    },\r\n  },\r\n  {\r\n    title: '出勤状态',\r\n    dataIndex: 'attendanceStatus',\r\n    valueEnum: {\r\n      0: { text: '未签到', status: 'Default' },\r\n      1: { text: '已签到', status: 'Success' },\r\n      2: { text: '缺席', status: 'Error' },\r\n    },\r\n  },\r\n  {\r\n    title: '操作',\r\n    valueType: 'option',\r\n    render: (text, record, _, action) => [\r\n      <a\r\n        key=\"editable\"\r\n        onClick={() => {\r\n          if (record.bookingId) {\r\n            action?.startEditable?.(record.bookingId);\r\n          }\r\n        }}\r\n      >\r\n        编辑\r\n      </a>,\r\n      <TableDropdown\r\n        key=\"actionGroup\"\r\n        onSelect={(key) => {\r\n          if (key === 'delete' && record.bookingId) {\r\n            deleteBookingUsingPost({ id: record.bookingId })\r\n              .then((res) => {\r\n                console.log('删除响应:', res);\r\n                if (res) {\r\n                  message.success('删除成功');\r\n                  action?.reload();\r\n                } else {\r\n                  message.error('删除失败');\r\n                }\r\n              })\r\n              .catch((error) => {\r\n                console.error('删除错误:', error);\r\n                message.error('删除失败');\r\n              });\r\n          }\r\n        }}\r\n        menus={[{ key: 'delete', name: '删除' }]}\r\n      />,\r\n    ],\r\n  },\r\n];\r\n\r\nexport default () => {\r\n  const actionRef = useRef<ActionType>();\r\n  const [createModalVisible, setCreateModalVisible] = useState<boolean>(false);\r\n\r\n  const handleAdd = async (fields: API.CourseBookingAddRequest) => {\r\n    try {\r\n      const res = await addBookingUsingPost(fields);\r\n      if (res) {\r\n        message.success('添加成功');\r\n        setCreateModalVisible(false);\r\n        actionRef.current?.reload();\r\n      } else {\r\n        message.error('添加失败');\r\n      }\r\n    } catch (error) {\r\n      console.error('添加错误:', error);\r\n      message.error('添加失败');\r\n    }\r\n  };\r\n\r\n\r\n  return (\r\n    <div style={{ minHeight: 'calc(100vh - 120px)', paddingBottom: 120, marginBottom: 60 }}>\r\n      <ProTable<API.CourseBookingVO>\r\n        columns={columns}\r\n        actionRef={actionRef}\r\n        cardBordered\r\n        toolBarRender={() => [\r\n          <a\r\n            key=\"add\"\r\n            onClick={() => {\r\n              setCreateModalVisible(true);\r\n            }}\r\n          >\r\n            新增预约\r\n          </a>,\r\n        ]}\r\n        request={async (params) => {\r\n          // 打印请求参数，便于调试\r\n          console.log('请求参数:', params);\r\n          // 发送 POST 请求到后端接口，获取课程预约分页数据\r\n          const res = await request('/api/course/booking/list/page/vo', {\r\n            method: 'POST',\r\n            data: {\r\n              // 搜索条件\r\n              current: params.current,\r\n              pageSize: params.pageSize,\r\n              bookingId: params.bookingId,\r\n              bookingStatus: params.bookingStatus,\r\n              attendanceStatus: params.attendanceStatus,\r\n            },\r\n          });\r\n          // 打印响应数据，便于调试\r\n          console.log('响应数据:', res);\r\n          // 返回 ProTable 需要的数据格式\r\n          return {\r\n            // data 字段：表格要展示的数据，来源于接口返回的 records 字段\r\n            // 如果 records 不存在，则返回空数组\r\n            data: res.records || [],\r\n            // success 字段：请求是否成功，这里直接写 true\r\n            success: true,\r\n            // total 字段：数据总数，来源于接口返回的 total 字段\r\n            // 如果 total 不存在，则返回 0\r\n            total: Number(res.total) || 0,\r\n          };\r\n        }}\r\n        editable={{\r\n          type: 'single',\r\n          onSave: async (key, record) => {\r\n            try {\r\n              const res = await updateBookingUsingPost({\r\n                bookingId: record.bookingId,\r\n                bookingStatus: record.bookingStatus,\r\n                attendanceStatus: record.attendanceStatus,\r\n                memberId: record.memberId,\r\n                scheduleId: record.scheduleId,\r\n              });\r\n              console.log('更新响应:', res);\r\n              if (res) {\r\n                message.success('更新成功');\r\n                actionRef.current?.reload();\r\n              } else {\r\n                message.error('更新失败');\r\n              }\r\n            } catch (error) {\r\n              console.error('更新错误:', error);\r\n              message.error('更新失败');\r\n            }\r\n          },\r\n        }}\r\n        columnsState={{\r\n          persistenceKey: 'pro-table-singe-demos',\r\n          persistenceType: 'localStorage',\r\n          defaultValue: {\r\n            option: { fixed: 'right', disable: true },\r\n          },\r\n          onChange(value) {\r\n            console.log('columnsState 变化:', value);\r\n          },\r\n        }}\r\n        rowKey=\"bookingId\"\r\n        search={{ labelWidth: 'auto' }}\r\n        options={{ setting: { listsHeight: 400 } }}\r\n        form={{\r\n          syncToUrl: (values, type) => {\r\n            if (type === 'get') {\r\n              return {\r\n                ...values,\r\n                created_at: [values.startTime, values.endTime],\r\n              };\r\n            }\r\n            return values;\r\n          },\r\n        }}\r\n        pagination={{\r\n          pageSize: 5,\r\n          onChange: (page) => console.log('当前页:', page),\r\n        }}\r\n        dateFormatter=\"string\"\r\n        headerTitle=\"\"\r\n      />\r\n\r\n      <ModalForm\r\n        title=\"新增预约\"\r\n        width=\"400px\"\r\n        open={createModalVisible}\r\n        onOpenChange={setCreateModalVisible}\r\n        onFinish={async (values) => {\r\n          await handleAdd(values as API.CourseBookingAddRequest);\r\n        }}\r\n      >\r\n        <ProFormText\r\n          name=\"memberId\"\r\n          label=\"会员ID\"\r\n          rules={[\r\n            {\r\n              required: true,\r\n              message: '请输入会员ID',\r\n            },\r\n          ]}\r\n        />\r\n        <ProFormText\r\n          name=\"scheduleId\"\r\n          label=\"排课ID\"\r\n          rules={[\r\n            {\r\n              required: true,\r\n              message: '请输入排课ID',\r\n            },\r\n          ]}\r\n        />\r\n        <ProFormSelect\r\n          name=\"bookingStatus\"\r\n          label=\"预约状态\"\r\n          valueEnum={{\r\n            0: '已取消',\r\n            1: '已预约',\r\n            2: '已完成',\r\n          }}\r\n          rules={[\r\n            {\r\n              required: true,\r\n              message: '请选择预约状态',\r\n            },\r\n          ]}\r\n        />\r\n        <ProFormSelect\r\n          name=\"attendanceStatus\"\r\n          label=\"出勤状态\"\r\n          valueEnum={{\r\n            0: '未到',\r\n            1: '已到',\r\n            2: '请假',\r\n            3: '爽约',\r\n          }}\r\n          rules={[\r\n            {\r\n              required: true,\r\n              message: '请选择出勤状态',\r\n            },\r\n          ]}\r\n        />\r\n      </ModalForm>\r\n    </div>\r\n  );\r\n};\r\n",
       "__isJSFile": true,
       "__absFile": "C:/bysj/gymsystem-frontend/src/pages/Admin/CourseBookingManage/index.tsx"
     },
-    "20": {
+    "21": {
       "path": "/admin/course-purchase-manage",
       "name": "课程购买记录管理",
       "icon": "CreditCardOutlined",
@@ -4651,69 +5193,69 @@
       "hideInMenu": true,
       "file": "@/pages/Admin/CoursePurchaseManage/index.tsx",
       "parentId": "ant-design-pro-layout",
-      "id": "20",
+      "id": "21",
       "absPath": "/admin/course-purchase-manage",
       "__content": "import type { ActionType, ProColumns } from '@ant-design/pro-components';\r\nimport { ProTable, TableDropdown, ModalForm, ProFormText } from '@ant-design/pro-components';\r\nimport { useRef, useState } from 'react';\r\nimport { message } from 'antd';\r\nimport { updateCoursePurchaseUsingPost, deleteCoursePurchaseUsingPost, addCoursePurchaseUsingPost } from '@/api/coursePurchaseController';\r\nimport request from '@/utils/request';\r\n\r\nconst columns: ProColumns<API.CoursePurchaseVO>[] = [\r\n  {\r\n    dataIndex: 'id',\r\n    valueType: 'index',\r\n    width: 48,\r\n    title: '序号',\r\n    hideInSearch: true,\r\n    editable: false,\r\n    render: (_, __, index) => index + 1,\r\n  },\r\n  {\r\n    title: '会员ID',\r\n    dataIndex: 'memberId',\r\n    hideInSearch: true,\r\n  },\r\n  {\r\n    title: '课程ID',\r\n    dataIndex: 'courseId',\r\n    hideInSearch: true,\r\n  },\r\n  {\r\n    title: '教练ID',\r\n    dataIndex: 'coachId',\r\n    hideInSearch: true,\r\n  },\r\n  {\r\n    title: '课时数',\r\n    dataIndex: 'classCount',\r\n    hideInSearch: true,\r\n  },\r\n  {\r\n    title: '总价',\r\n    dataIndex: 'totalPrice',\r\n    valueType: 'money',\r\n    hideInSearch: true,\r\n  },\r\n  {\r\n    title: '状态',\r\n    dataIndex: 'status',\r\n    valueEnum: {\r\n      0: { text: '无效', status: 'Error' },\r\n      1: { text: '有效', status: 'Success' },\r\n    },\r\n    render: (_, record) => {\r\n      const color = record.status === 1 ? 'success' : 'error';\r\n      const text = record.status === 1 ? '有效' : '无效';\r\n      return <span style={{ color: color === 'success' ? '#52c41a' : '#ff4d4f' }}>{text}</span>;\r\n    },\r\n  },\r\n  {\r\n    title: '创建时间',\r\n    dataIndex: 'createTime',\r\n    valueType: 'dateTime',\r\n    sorter: true,\r\n    hideInSearch: true,\r\n    editable: false,\r\n  },\r\n  {\r\n    title: '操作',\r\n    valueType: 'option',\r\n    render: (text, record, _, action) => [\r\n      <a\r\n        key=\"editable\"\r\n        onClick={() => {\r\n          if (record.id) {\r\n            action?.startEditable?.(record.id);\r\n          }\r\n        }}\r\n      >\r\n        编辑\r\n      </a>,\r\n      <TableDropdown\r\n        key=\"actionGroup\"\r\n        onSelect={(key) => {\r\n          if (key === 'delete' && record.id) {\r\n            deleteCoursePurchaseUsingPost({ id: record.id })\r\n              .then((res) => {\r\n                console.log('删除响应:', res);\r\n                if (res) {\r\n                  message.success('删除成功');\r\n                  action?.reload();\r\n                } else {\r\n                  message.error('删除失败');\r\n                }\r\n              })\r\n              .catch((error) => {\r\n                console.error('删除错误:', error);\r\n                message.error('删除失败');\r\n              });\r\n          }\r\n        }}\r\n        menus={[{ key: 'delete', name: '删除' }]}\r\n      />,\r\n    ],\r\n  },\r\n];\r\n\r\nexport default () => {\r\n  const actionRef = useRef<ActionType>();\r\n  const [createModalVisible, setCreateModalVisible] = useState<boolean>(false);\r\n\r\n  const handleAdd = async (fields: API.CoursePurchaseAddRequest) => {\r\n    try {\r\n      const res = await addCoursePurchaseUsingPost(fields);\r\n      if (res) {\r\n        message.success('添加成功');\r\n        setCreateModalVisible(false);\r\n        actionRef.current?.reload();\r\n      } else {\r\n        message.error('添加失败');\r\n      }\r\n    } catch (error) {\r\n      console.error('添加错误:', error);\r\n      message.error('添加失败');\r\n    }\r\n  };\r\n\r\n  return (\r\n    <div style={{ minHeight: 'calc(100vh - 120px)', paddingBottom: '120px', marginBottom: '60px' }}>\r\n      <ProTable<API.CoursePurchaseVO>\r\n        columns={columns}\r\n        actionRef={actionRef}\r\n        cardBordered\r\n        toolBarRender={() => [\r\n          <a\r\n            key=\"add\"\r\n            onClick={() => {\r\n              setCreateModalVisible(true);\r\n            }}\r\n          >\r\n            新增购买记录\r\n          </a>,\r\n        ]}\r\n        request={async (params) => {\r\n          console.log('请求参数:', params);\r\n          const res = await request('/api/coursePurchase/list/page/vo', {\r\n            method: 'POST',\r\n            data: {\r\n              current: params.current,\r\n              pageSize: params.pageSize,\r\n              memberId: params.memberId,\r\n              courseId: params.courseId,\r\n              status: params.status,\r\n              paymentStatus: params.status,\r\n            },\r\n          });\r\n          console.log('响应数据:', res);\r\n          return {\r\n            data: res.records || [],\r\n            success: true,\r\n            total: Number(res.total) || 0,\r\n          };\r\n        }}\r\n        editable={{\r\n          type: 'single',\r\n          onSave: async (key, record) => {\r\n            try {\r\n              const res = await updateCoursePurchaseUsingPost({\r\n                id: record.id,\r\n                memberId: record.memberId,\r\n                courseId: record.courseId,\r\n                coachId: record.coachId,\r\n                classCount: record.classCount,\r\n                totalPrice: record.totalPrice,\r\n                status: record.status,\r\n              });\r\n              console.log('更新响应:', res);\r\n              if (res) {\r\n                message.success('更新成功');\r\n                actionRef.current?.reload();\r\n              } else {\r\n                message.error('更新失败');\r\n              }\r\n            } catch (error) {\r\n              console.error('更新错误:', error);\r\n              message.error('更新失败');\r\n            }\r\n          },\r\n        }}\r\n        columnsState={{\r\n          persistenceKey: 'pro-table-singe-demos',\r\n          persistenceType: 'localStorage',\r\n          defaultValue: {\r\n            option: { fixed: 'right', disable: true },\r\n          },\r\n          onChange(value) {\r\n            console.log('value: ', value);\r\n          },\r\n        }}\r\n        rowKey=\"id\"\r\n        search={{\r\n          labelWidth: 'auto',\r\n        }}\r\n        options={{\r\n          setting: {\r\n            listsHeight: 400,\r\n          },\r\n        }}\r\n        form={{\r\n          syncToUrl: (values, type) => {\r\n            if (type === 'get') {\r\n              return {\r\n                ...values,\r\n                created_at: [values.startTime, values.endTime],\r\n              };\r\n            }\r\n            return values;\r\n          },\r\n        }}\r\n        pagination={{\r\n          pageSize: 5,\r\n          onChange: (page) => console.log(page),\r\n        }}\r\n        dateFormatter=\"string\"\r\n        headerTitle=\"\"\r\n      />\r\n\r\n      <ModalForm\r\n        title=\"新增购买记录\"\r\n        width=\"400px\"\r\n        open={createModalVisible}\r\n        onOpenChange={setCreateModalVisible}\r\n        onFinish={async (values) => {\r\n          const data = {\r\n            ...values,\r\n            classCount: Number(values.classCount),\r\n            totalPrice: Number(values.totalPrice),\r\n          };\r\n          await handleAdd(data as API.CoursePurchaseAddRequest);\r\n        }}\r\n      >\r\n        <ProFormText\r\n          name=\"memberId\"\r\n          label=\"会员ID\"\r\n          rules={[\r\n            {\r\n              required: true,\r\n              message: '请输入会员ID',\r\n            },\r\n            {\r\n              pattern: /^\\d+$/,\r\n              message: '请输入有效的数字ID',\r\n            },\r\n          ]}\r\n        />\r\n        <ProFormText\r\n          name=\"courseId\"\r\n          label=\"课程ID\"\r\n          rules={[\r\n            {\r\n              required: true,\r\n              message: '请输入课程ID',\r\n            },\r\n            {\r\n              pattern: /^\\d+$/,\r\n              message: '请输入有效的数字ID',\r\n            },\r\n          ]}\r\n        />\r\n        <ProFormText\r\n          name=\"coachId\"\r\n          label=\"教练ID\"\r\n          rules={[\r\n            {\r\n              required: true,\r\n              message: '请输入教练ID',\r\n            },\r\n            {\r\n              pattern: /^\\d+$/,\r\n              message: '请输入有效的数字ID',\r\n            },\r\n          ]}\r\n        />\r\n        <ProFormText\r\n          name=\"classCount\"\r\n          label=\"课时数\"\r\n          rules={[\r\n            {\r\n              required: true,\r\n              message: '请输入课时数',\r\n            },\r\n            {\r\n              pattern: /^\\d+$/,\r\n              message: '请输入有效的数字',\r\n            },\r\n          ]}\r\n        />\r\n        <ProFormText\r\n          name=\"totalPrice\"\r\n          label=\"总价\"\r\n          rules={[\r\n            {\r\n              required: true,\r\n              message: '请输入总价',\r\n            },\r\n            {\r\n              pattern: /^\\d+(\\.\\d{1,2})?$/,\r\n              message: '请输入有效的金额',\r\n            },\r\n          ]}\r\n        />\r\n      </ModalForm>\r\n    </div>\r\n  );\r\n}; ",
       "__isJSFile": true,
       "__absFile": "C:/bysj/gymsystem-frontend/src/pages/Admin/CoursePurchaseManage/index.tsx"
     },
-    "21": {
+    "22": {
       "path": "/admin/coachManage",
       "name": "教练管理",
       "icon": "TeamOutlined",
       "access": "canAdmin",
       "file": "@/pages/Admin/CoachManage/index.tsx",
       "parentId": "ant-design-pro-layout",
-      "id": "21",
+      "id": "22",
       "absPath": "/admin/coachManage",
-      "__content": "import type { ActionType, ProColumns } from '@ant-design/pro-components';\r\nimport { ProTable, TableDropdown, ModalForm, ProFormText, ProFormSelect, ProFormDatePicker } from '@ant-design/pro-components';\r\nimport { useRef, useState } from 'react';\r\nimport { Image, message, Tag } from 'antd';\r\nimport { updateCoachUsingPost, deleteCoachUsingPost, addCoachUsingPost } from '@/api/coachController';\r\nimport request from '@/utils/request';\r\n\r\n// 教练管理\r\nconst columns: ProColumns<API.CoachVO>[] = [\r\n  // ...（省略表格列定义，和原来一样）\r\n  {\r\n    dataIndex: 'coachId',\r\n    valueType: 'index',\r\n    width: 48,\r\n    title: '序号',\r\n    hideInSearch: true,\r\n    editable: false,\r\n    render: (_, __, index) => index + 1,\r\n  },\r\n  {\r\n    title: '教练名称',\r\n    dataIndex: 'coachName',\r\n    copyable: true,\r\n    ellipsis: true,\r\n    formItemProps: {\r\n      rules: [\r\n        {\r\n          required: true,\r\n          message: '此项为必填项',\r\n        },\r\n      ],\r\n    },\r\n  },\r\n  {\r\n    title: '教练账号',\r\n    dataIndex: 'coachAccount',\r\n    copyable: true,\r\n    ellipsis: true,\r\n    editable: false,\r\n  },\r\n  {\r\n    title: '头像',\r\n    dataIndex: 'coachAvatar',\r\n    width: 100,\r\n    render: (_, record) => (\r\n      <div style={{ width: '100%', textAlign: 'center' }}>\r\n        <Image \r\n          src={record.coachAvatar || 'https://28082003.com/images/preview.jpg'} \r\n          width={50} \r\n          height={50}\r\n          style={{ objectFit: 'cover' }}\r\n        />\r\n      </div>\r\n    ),\r\n  },\r\n  {\r\n    title: '性别',\r\n    dataIndex: 'gender',\r\n    valueEnum: {\r\n      0: { text: '未知', status: 'Default' },\r\n      1: { text: '男', status: 'Success' },\r\n      2: { text: '女', status: 'Error' },\r\n    },\r\n  },\r\n  {\r\n    title: '年龄',\r\n    dataIndex: 'coachAge',\r\n    hideInSearch: true,\r\n  },\r\n  {\r\n    title: '课程类型',\r\n    dataIndex: 'courseType',\r\n    hideInSearch: true,\r\n  },\r\n  {\r\n    title: '薪资',\r\n    dataIndex: 'coachSalary',\r\n    hideInSearch: true,\r\n  },\r\n  {\r\n    title: '地址',\r\n    dataIndex: 'coachAddress',\r\n    hideInSearch: true,\r\n  },\r\n  {\r\n    title: '入职日期',\r\n    dataIndex: 'entryDate',\r\n    valueType: 'date',\r\n    hideInSearch: true,\r\n  },\r\n  {\r\n    title: '状态',\r\n    dataIndex: 'coachStatus',\r\n    valueEnum: {\r\n      0: { text: '在职', status: 'Success' },\r\n      1: { text: '离职', status: 'Error' },\r\n    },\r\n    render: (_, record) => {\r\n      const color = record.coachStatus === 0 ? 'success' : 'error';\r\n      return (\r\n        <Tag color={color}>\r\n          {record.coachStatus === 0 ? '在职' : '离职'}\r\n        </Tag>\r\n      );\r\n    },\r\n  },\r\n  {\r\n    title: '创建时间',\r\n    dataIndex: 'createTime',\r\n    valueType: 'dateTime',\r\n    sorter: true,\r\n    hideInSearch: true,\r\n    editable: false,\r\n  },\r\n  {\r\n    title: '操作',\r\n    valueType: 'option',\r\n    render: (text, record, _, action) => [\r\n      <a\r\n        key=\"editable\"\r\n        onClick={() => {\r\n          if (record.coachId) {\r\n            action?.startEditable?.(record.coachId);\r\n          }\r\n        }}\r\n      >\r\n        编辑\r\n      </a>,\r\n      <TableDropdown\r\n        key=\"actionGroup\"\r\n        onSelect={(key) => {\r\n          if (key === 'delete' && record.coachId) {\r\n            deleteCoachUsingPost({ id: record.coachId }).then((res) => {\r\n              console.log('删除响应:', res);\r\n              if (res) {\r\n                message.success('删除成功');\r\n                action?.reload();\r\n              } else {\r\n                message.error('删除失败');\r\n              }\r\n            }).catch(error => {\r\n              console.error('删除错误:', error);\r\n              message.error('删除失败');\r\n            });\r\n          }\r\n        }}\r\n        menus={[\r\n          { key: 'delete', name: '删除' },\r\n        ]}\r\n      />,\r\n    ],\r\n  },\r\n];\r\n\r\nexport default () => {\r\n  const actionRef = useRef<ActionType>();\r\n  const [createModalVisible, setCreateModalVisible] = useState<boolean>(false);\r\n\r\n  /**\r\n   * 新增教练的表单是如何提交的？\r\n   * \r\n   * 1. 当用户点击“新增教练”按钮时，createModalVisible 设为 true，弹出 ModalForm 表单。\r\n   * 2. 用户填写表单后，点击提交，ModalForm 的 onFinish 会被触发。\r\n   * 3. onFinish 会调用 handleAdd 方法，并将表单填写的数据（values）作为参数传入。\r\n   * 4. handleAdd 方法内部会调用 addCoachUsingPost(fields) 向后端发送新增教练的请求。\r\n   * 5. 如果后端返回成功，弹出“添加成功”提示，关闭弹窗，并刷新表格数据。\r\n   * 6. 如果失败，则弹出“添加失败”提示。\r\n   */\r\n  const handleAdd = async (fields: API.CoachAddRequest) => {\r\n    try {\r\n      // 这里将表单数据提交到后端\r\n      const res = await addCoachUsingPost(fields);\r\n      console.log('新增响应:', res);\r\n      if (res) {\r\n        message.success('添加成功');\r\n        setCreateModalVisible(false); // 关闭弹窗\r\n        actionRef.current?.reload();  // 刷新表格\r\n      } else {\r\n        message.error('添加失败');\r\n      }\r\n    } catch (error) {\r\n      console.error('添加错误:', error);\r\n      message.error('添加失败');\r\n    }\r\n  };\r\n\r\n  return (\r\n    <div style={{ minHeight: 'calc(100vh - 120px)', paddingBottom: '120px', marginBottom: '60px' }}>\r\n      <ProTable<API.CoachVO>\r\n        columns={columns}\r\n        actionRef={actionRef}\r\n        cardBordered\r\n        toolBarRender={() => [\r\n          <a\r\n            key=\"add\"\r\n            onClick={() => {\r\n              setCreateModalVisible(true);\r\n            }}\r\n          >\r\n            新增教练\r\n          </a>,\r\n        ]}\r\n        // ProTable 的 request 方法，用于请求教练列表分页数据\r\n        request={async (params) => {\r\n          // 打印请求参数，便于调试\r\n          console.log('请求参数:', params);\r\n          // 发送 POST 请求到后端接口，获取教练分页数据\r\n          const res = await request('/api/coach/list/page/vo', {\r\n            method: 'POST',\r\n            data: {\r\n              // 当前页码\r\n              current: params.current,\r\n              // 每页条数\r\n              pageSize: params.pageSize,\r\n              // 搜索条件：教练姓名\r\n              coachName: params.coachName,\r\n              // 搜索条件：教练账号\r\n              coachAccount: params.coachAccount,\r\n              // 搜索条件：性别\r\n              gender: params.gender,\r\n            },\r\n          });\r\n          // 打印响应数据，便于调试\r\n          console.log('响应数据:', res);\r\n          // 返回 ProTable 需要的数据格式\r\n          return {\r\n            // data 字段：表格要展示的数据，来源于接口返回的 records 字段\r\n            // 如果 records 不存在，则返回空数组\r\n            data: res.records || [],\r\n            // success 字段：请求是否成功，这里直接写 true\r\n            success: true,\r\n            // total 字段：数据总数，来源于接口返回的 total 字段\r\n            // 如果 total 不存在，则返回 0\r\n            total: Number(res.total) || 0,\r\n          };\r\n        }}\r\n        /*\r\n          解读：\r\n          data 数据是怎么来的？\r\n          - data 字段是 ProTable 组件用来渲染表格的主要数据源。\r\n          - 这里的 data: res.records || []，意思是从后端接口 /api/coach/list/page/vo 的响应结果中，取出 records 字段作为表格的数据。\r\n          - 如果接口没有返回 records 字段，则用空数组代替，避免表格报错。\r\n          - 通常后端会返回一个分页对象，包含 records（当前页数据数组）、total（总条数）等字段。\r\n          - 所以 data 实际上就是后端分页接口返回的当前页的教练数据列表。\r\n        */\r\n        editable={{\r\n          type: 'single',\r\n          onSave: async (key, record) => {\r\n            try {\r\n              const res = await updateCoachUsingPost({\r\n                coachId: record.coachId,\r\n                coachName: record.coachName,\r\n                coachAvatar: record.coachAvatar,\r\n                gender: record.gender,\r\n                coachAge: record.coachAge,\r\n                courseType: record.courseType,\r\n                coachSalary: record.coachSalary,\r\n                coachAddress: record.coachAddress,\r\n                entryDate: record.entryDate,\r\n                coachStatus: record.coachStatus,\r\n              });\r\n              console.log('更新响应:', res);\r\n              if (res) {\r\n                message.success('更新成功');\r\n                actionRef.current?.reload();\r\n              } else {\r\n                message.error('更新失败');\r\n              }\r\n            } catch (error) {\r\n              console.error('更新错误:', error);\r\n              message.error('更新失败');\r\n            }\r\n          },\r\n        }}\r\n        columnsState={{\r\n          persistenceKey: 'pro-table-singe-demos',\r\n          persistenceType: 'localStorage',\r\n          defaultValue: {\r\n            option: { fixed: 'right', disable: true },\r\n          },\r\n          onChange(value) {\r\n            console.log('value: ', value);\r\n          },\r\n        }}\r\n        rowKey=\"coachId\"\r\n        search={{\r\n          labelWidth: 'auto',\r\n        }}\r\n        options={{\r\n          setting: {\r\n            listsHeight: 400,\r\n          },\r\n        }}\r\n        form={{\r\n          syncToUrl: (values, type) => {\r\n            if (type === 'get') {\r\n              return {\r\n                ...values,\r\n                created_at: [values.startTime, values.endTime],\r\n              };\r\n            }\r\n            return values;\r\n          },\r\n        }}\r\n        pagination={{\r\n          pageSize: 5,\r\n          onChange: (page) => console.log(page),\r\n        }}\r\n        dateFormatter=\"string\"\r\n        headerTitle=\"\"\r\n      />\r\n\r\n      {/* 新增教练的表单，提交时会触发 onFinish，调用 handleAdd 方法 */}\r\n      <ModalForm\r\n        title=\"新增教练\"\r\n        width=\"400px\"\r\n        open={createModalVisible}\r\n        onOpenChange={setCreateModalVisible}\r\n        onFinish={async (values) => {\r\n          // 这里会把表单数据传递给 handleAdd 进行提交\r\n          await handleAdd(values as API.CoachAddRequest);\r\n        }}\r\n      >\r\n        <ProFormText\r\n          name=\"coachName\"\r\n          label=\"教练名称\"\r\n          rules={[\r\n            {\r\n              required: true,\r\n              message: '请输入教练名称',\r\n            },\r\n          ]}\r\n        />\r\n        <ProFormText\r\n          name=\"coachAccount\"\r\n          label=\"教练账号\"\r\n          rules={[\r\n            {\r\n              required: true,\r\n              message: '请输入教练账号',\r\n            },\r\n            {\r\n              min: 4,\r\n              message: '账号长度不能小于4位',\r\n            },\r\n            {\r\n              pattern: /^[a-zA-Z0-9_]+$/,\r\n              message: '账号只能包含字母、数字和下划线',\r\n            },\r\n          ]}\r\n        />\r\n        <ProFormSelect\r\n          name=\"gender\"\r\n          label=\"性别\"\r\n          valueEnum={{\r\n            0: '未知',\r\n            1: '男',\r\n            2: '女',\r\n          }}\r\n          rules={[\r\n            {\r\n              required: true,\r\n              message: '请选择性别',\r\n            },\r\n          ]}\r\n        />\r\n        <ProFormText\r\n          name=\"coachAge\"\r\n          label=\"年龄\"\r\n          rules={[\r\n            {\r\n              required: true,\r\n              message: '请输入年龄',\r\n            },\r\n          ]}\r\n        />\r\n        <ProFormText\r\n          name=\"courseType\"\r\n          label=\"课程类型\"\r\n          rules={[\r\n            {\r\n              required: true,\r\n              message: '请输入课程类型',\r\n            },\r\n          ]}\r\n        />\r\n        <ProFormText\r\n          name=\"coachSalary\"\r\n          label=\"薪资\"\r\n          rules={[\r\n            {\r\n              required: true,\r\n              message: '请输入薪资',\r\n            },\r\n          ]}\r\n        />\r\n        <ProFormText\r\n          name=\"coachAddress\"\r\n          label=\"地址\"\r\n          rules={[\r\n            {\r\n              required: true,\r\n              message: '请输入地址',\r\n            },\r\n          ]}\r\n        />\r\n        <ProFormDatePicker\r\n          name=\"entryDate\"\r\n          label=\"入职日期\"\r\n          rules={[\r\n            {\r\n              required: true,\r\n              message: '请选择入职日期',\r\n            },\r\n          ]}\r\n        />\r\n      </ModalForm>\r\n    </div>\r\n  );\r\n}; ",
+      "__content": "import type { ActionType, ProColumns } from '@ant-design/pro-components';\r\nimport { ProTable, TableDropdown, ModalForm, ProFormText, ProFormSelect, ProFormDatePicker } from '@ant-design/pro-components';\r\nimport { useRef, useState } from 'react';\r\nimport { Image, message, Tag } from 'antd';\r\nimport { updateCoachUsingPost, deleteCoachUsingPost, addCoachUsingPost } from '@/api/coachController';\r\nimport request from '@/utils/request';\r\n\r\n// 教练管理\r\nconst columns: ProColumns<API.CoachVO>[] = [\r\n  // ...（省略表格列定义，和原来一样）\r\n  {\r\n    dataIndex: 'coachId',\r\n    valueType: 'index',\r\n    width: 48,\r\n    title: '序号',\r\n    hideInSearch: true,\r\n    editable: false,\r\n    render: (_, __, index) => index + 1,\r\n  },\r\n  {\r\n    title: '教练名称',\r\n    dataIndex: 'coachName',\r\n    copyable: true,\r\n    ellipsis: true,\r\n    formItemProps: {\r\n      rules: [\r\n        {\r\n          required: true,\r\n          message: '此项为必填项',\r\n        },\r\n      ],\r\n    },\r\n  },\r\n  {\r\n    title: '教练账号',\r\n    dataIndex: 'coachAccount',\r\n    copyable: true,\r\n    ellipsis: true,\r\n    editable: false,\r\n  },\r\n  {\r\n    title: '头像',\r\n    dataIndex: 'coachAvatar',\r\n    width: 100,\r\n    render: (_, record) => (\r\n      <div style={{ width: '100%', textAlign: 'center' }}>\r\n        <Image\r\n          src={\r\n            record.coachAvatar ||\r\n            'https://image.liucf.com/images/2025/05/90f433495b9f855d61092482c6bfaaef.png'\r\n          }\r\n          width={50}\r\n          height={50}\r\n          style={{ objectFit: 'cover' }}\r\n        />\r\n      </div>\r\n    ),\r\n  },\r\n  {\r\n    title: '性别',\r\n    dataIndex: 'gender',\r\n    valueEnum: {\r\n      0: { text: '未知', status: 'Default' },\r\n      1: { text: '男', status: 'Success' },\r\n      2: { text: '女', status: 'Error' },\r\n    },\r\n  },\r\n  {\r\n    title: '年龄',\r\n    dataIndex: 'coachAge',\r\n    hideInSearch: true,\r\n  },\r\n  {\r\n    title: '课程类型',\r\n    dataIndex: 'courseType',\r\n    hideInSearch: true,\r\n  },\r\n  {\r\n    title: '薪资',\r\n    dataIndex: 'coachSalary',\r\n    hideInSearch: true,\r\n  },\r\n  {\r\n    title: '地址',\r\n    dataIndex: 'coachAddress',\r\n    hideInSearch: true,\r\n  },\r\n  {\r\n    title: '入职日期',\r\n    dataIndex: 'entryDate',\r\n    valueType: 'date',\r\n    hideInSearch: true,\r\n  },\r\n  {\r\n    title: '状态',\r\n    dataIndex: 'coachStatus',\r\n    valueEnum: {\r\n      0: { text: '在职', status: 'Success' },\r\n      1: { text: '离职', status: 'Error' },\r\n    },\r\n    render: (_, record) => {\r\n      const color = record.coachStatus === 0 ? 'success' : 'error';\r\n      return <Tag color={color}>{record.coachStatus === 0 ? '在职' : '离职'}</Tag>;\r\n    },\r\n  },\r\n  {\r\n    title: '创建时间',\r\n    dataIndex: 'createTime',\r\n    valueType: 'dateTime',\r\n    sorter: true,\r\n    hideInSearch: true,\r\n    editable: false,\r\n  },\r\n  {\r\n    title: '操作',\r\n    valueType: 'option',\r\n    render: (text, record, _, action) => [\r\n      <a\r\n        key=\"editable\"\r\n        onClick={() => {\r\n          if (record.coachId) {\r\n            action?.startEditable?.(record.coachId);\r\n          }\r\n        }}\r\n      >\r\n        编辑\r\n      </a>,\r\n      <TableDropdown\r\n        key=\"actionGroup\"\r\n        onSelect={(key) => {\r\n          if (key === 'delete' && record.coachId) {\r\n            deleteCoachUsingPost({ id: record.coachId })\r\n              .then((res) => {\r\n                console.log('删除响应:', res);\r\n                if (res) {\r\n                  message.success('删除成功');\r\n                  action?.reload();\r\n                } else {\r\n                  message.error('删除失败');\r\n                }\r\n              })\r\n              .catch((error) => {\r\n                console.error('删除错误:', error);\r\n                message.error('删除失败');\r\n              });\r\n          }\r\n        }}\r\n        menus={[{ key: 'delete', name: '删除' }]}\r\n      />,\r\n    ],\r\n  },\r\n];\r\n\r\nexport default () => {\r\n  const actionRef = useRef<ActionType>();\r\n  const [createModalVisible, setCreateModalVisible] = useState<boolean>(false);\r\n\r\n  /**\r\n   * 新增教练的表单是如何提交的？\r\n   * \r\n   * 1. 当用户点击“新增教练”按钮时，createModalVisible 设为 true，弹出 ModalForm 表单。\r\n   * 2. 用户填写表单后，点击提交，ModalForm 的 onFinish 会被触发。\r\n   * 3. onFinish 会调用 handleAdd 方法，并将表单填写的数据（values）作为参数传入。\r\n   * 4. handleAdd 方法内部会调用 addCoachUsingPost(fields) 向后端发送新增教练的请求。\r\n   * 5. 如果后端返回成功，弹出“添加成功”提示，关闭弹窗，并刷新表格数据。\r\n   * 6. 如果失败，则弹出“添加失败”提示。\r\n   */\r\n  const handleAdd = async (fields: API.CoachAddRequest) => {\r\n    try {\r\n      // 这里将表单数据提交到后端\r\n      const res = await addCoachUsingPost(fields);\r\n      console.log('新增响应:', res);\r\n      if (res) {\r\n        message.success('添加成功');\r\n        setCreateModalVisible(false); // 关闭弹窗\r\n        actionRef.current?.reload();  // 刷新表格\r\n      } else {\r\n        message.error('添加失败');\r\n      }\r\n    } catch (error) {\r\n      console.error('添加错误:', error);\r\n      message.error('添加失败');\r\n    }\r\n  };\r\n\r\n  return (\r\n    <div style={{ minHeight: 'calc(100vh - 120px)', paddingBottom: '120px', marginBottom: '60px' }}>\r\n      <ProTable<API.CoachVO>\r\n        columns={columns}\r\n        actionRef={actionRef}\r\n        cardBordered\r\n        toolBarRender={() => [\r\n          <a\r\n            key=\"add\"\r\n            onClick={() => {\r\n              setCreateModalVisible(true);\r\n            }}\r\n          >\r\n            新增教练\r\n          </a>,\r\n        ]}\r\n        // ProTable 的 request 方法，用于请求教练列表分页数据\r\n        request={async (params) => {\r\n          // 打印请求参数，便于调试\r\n          console.log('请求参数:', params);\r\n          // 发送 POST 请求到后端接口，获取教练分页数据\r\n          const res = await request('/api/coach/list/page/vo', {\r\n            method: 'POST',\r\n            data: {\r\n              // 当前页码\r\n              current: params.current,\r\n              // 每页条数\r\n              pageSize: params.pageSize,\r\n              // 搜索条件：教练姓名\r\n              coachName: params.coachName,\r\n              // 搜索条件：教练账号\r\n              coachAccount: params.coachAccount,\r\n              // 搜索条件：性别\r\n              gender: params.gender,\r\n            },\r\n          });\r\n          // 打印响应数据，便于调试\r\n          console.log('响应数据:', res);\r\n          // 返回 ProTable 需要的数据格式\r\n          return {\r\n            // data 字段：表格要展示的数据，来源于接口返回的 records 字段\r\n            // 如果 records 不存在，则返回空数组\r\n            data: res.records || [],\r\n            // success 字段：请求是否成功，这里直接写 true\r\n            success: true,\r\n            // total 字段：数据总数，来源于接口返回的 total 字段\r\n            // 如果 total 不存在，则返回 0\r\n            total: Number(res.total) || 0,\r\n          };\r\n        }}\r\n        /*\r\n          解读：\r\n          data 数据是怎么来的？\r\n          - data 字段是 ProTable 组件用来渲染表格的主要数据源。\r\n          - 这里的 data: res.records || []，意思是从后端接口 /api/coach/list/page/vo 的响应结果中，取出 records 字段作为表格的数据。\r\n          - 如果接口没有返回 records 字段，则用空数组代替，避免表格报错。\r\n          - 通常后端会返回一个分页对象，包含 records（当前页数据数组）、total（总条数）等字段。\r\n          - 所以 data 实际上就是后端分页接口返回的当前页的教练数据列表。\r\n        */\r\n        editable={{\r\n          type: 'single',\r\n          onSave: async (key, record) => {\r\n            try {\r\n              const res = await updateCoachUsingPost({\r\n                coachId: record.coachId,\r\n                coachName: record.coachName,\r\n                coachAvatar: record.coachAvatar,\r\n                gender: record.gender,\r\n                coachAge: record.coachAge,\r\n                courseType: record.courseType,\r\n                coachSalary: record.coachSalary,\r\n                coachAddress: record.coachAddress,\r\n                entryDate: record.entryDate,\r\n                coachStatus: record.coachStatus,\r\n              });\r\n              console.log('更新响应:', res);\r\n              if (res) {\r\n                message.success('更新成功');\r\n                actionRef.current?.reload();\r\n              } else {\r\n                message.error('更新失败');\r\n              }\r\n            } catch (error) {\r\n              console.error('更新错误:', error);\r\n              message.error('更新失败');\r\n            }\r\n          },\r\n        }}\r\n        columnsState={{\r\n          persistenceKey: 'pro-table-singe-demos',\r\n          persistenceType: 'localStorage',\r\n          defaultValue: {\r\n            option: { fixed: 'right', disable: true },\r\n          },\r\n          onChange(value) {\r\n            console.log('value: ', value);\r\n          },\r\n        }}\r\n        rowKey=\"coachId\"\r\n        search={{\r\n          labelWidth: 'auto',\r\n        }}\r\n        options={{\r\n          setting: {\r\n            listsHeight: 400,\r\n          },\r\n        }}\r\n        form={{\r\n          syncToUrl: (values, type) => {\r\n            if (type === 'get') {\r\n              return {\r\n                ...values,\r\n                created_at: [values.startTime, values.endTime],\r\n              };\r\n            }\r\n            return values;\r\n          },\r\n        }}\r\n        pagination={{\r\n          pageSize: 5,\r\n          onChange: (page) => console.log(page),\r\n        }}\r\n        dateFormatter=\"string\"\r\n        headerTitle=\"\"\r\n      />\r\n\r\n      {/* 新增教练的表单，提交时会触发 onFinish，调用 handleAdd 方法 */}\r\n      <ModalForm\r\n        title=\"新增教练\"\r\n        width=\"400px\"\r\n        open={createModalVisible}\r\n        onOpenChange={setCreateModalVisible}\r\n        onFinish={async (values) => {\r\n          // 这里会把表单数据传递给 handleAdd 进行提交\r\n          await handleAdd(values as API.CoachAddRequest);\r\n        }}\r\n      >\r\n        <ProFormText\r\n          name=\"coachName\"\r\n          label=\"教练名称\"\r\n          rules={[\r\n            {\r\n              required: true,\r\n              message: '请输入教练名称',\r\n            },\r\n          ]}\r\n        />\r\n        <ProFormText\r\n          name=\"coachAccount\"\r\n          label=\"教练账号\"\r\n          rules={[\r\n            {\r\n              required: true,\r\n              message: '请输入教练账号',\r\n            },\r\n            {\r\n              min: 4,\r\n              message: '账号长度不能小于4位',\r\n            },\r\n            {\r\n              pattern: /^[a-zA-Z0-9_]+$/,\r\n              message: '账号只能包含字母、数字和下划线',\r\n            },\r\n          ]}\r\n        />\r\n        <ProFormSelect\r\n          name=\"gender\"\r\n          label=\"性别\"\r\n          valueEnum={{\r\n            0: '未知',\r\n            1: '男',\r\n            2: '女',\r\n          }}\r\n          rules={[\r\n            {\r\n              required: true,\r\n              message: '请选择性别',\r\n            },\r\n          ]}\r\n        />\r\n        <ProFormText\r\n          name=\"coachAge\"\r\n          label=\"年龄\"\r\n          rules={[\r\n            {\r\n              required: true,\r\n              message: '请输入年龄',\r\n            },\r\n          ]}\r\n        />\r\n        <ProFormText\r\n          name=\"courseType\"\r\n          label=\"课程类型\"\r\n          rules={[\r\n            {\r\n              required: true,\r\n              message: '请输入课程类型',\r\n            },\r\n          ]}\r\n        />\r\n        <ProFormText\r\n          name=\"coachSalary\"\r\n          label=\"薪资\"\r\n          rules={[\r\n            {\r\n              required: true,\r\n              message: '请输入薪资',\r\n            },\r\n          ]}\r\n        />\r\n        <ProFormText\r\n          name=\"coachAddress\"\r\n          label=\"地址\"\r\n          rules={[\r\n            {\r\n              required: true,\r\n              message: '请输入地址',\r\n            },\r\n          ]}\r\n        />\r\n        <ProFormDatePicker\r\n          name=\"entryDate\"\r\n          label=\"入职日期\"\r\n          rules={[\r\n            {\r\n              required: true,\r\n              message: '请选择入职日期',\r\n            },\r\n          ]}\r\n        />\r\n      </ModalForm>\r\n    </div>\r\n  );\r\n}; ",
       "__isJSFile": true,
       "__absFile": "C:/bysj/gymsystem-frontend/src/pages/Admin/CoachManage/index.tsx"
     },
-    "22": {
+    "23": {
       "path": "/admin/equipment-manage",
       "name": "器械管理",
       "icon": "ToolOutlined",
       "access": "canAdmin",
       "file": "@/pages/Admin/EquipmentManage/index.tsx",
       "parentId": "ant-design-pro-layout",
-      "id": "22",
+      "id": "23",
       "absPath": "/admin/equipment-manage",
       "__content": "import {\r\n  addEquipmentUsingPost,\r\n  deleteEquipmentUsingPost,\r\n  updateEquipmentUsingPost,\r\n} from '@/api/equipmentController';\r\nimport request from '@/utils/request';\r\nimport type { ActionType, ProColumns } from '@ant-design/pro-components';\r\nimport { ModalForm, ProFormText, ProTable, TableDropdown } from '@ant-design/pro-components';\r\nimport { message } from 'antd';\r\nimport { useRef, useState } from 'react';\r\n\r\nconst columns: ProColumns<API.EquipmentVO>[] = [\r\n  {\r\n    dataIndex: 'eqId',\r\n    valueType: 'index',\r\n    width: 48,\r\n    title: '序号',\r\n    hideInSearch: true,\r\n    editable: false,\r\n    render: (_, __, index) => index + 1,\r\n  },\r\n  {\r\n    title: '器材名称',\r\n    dataIndex: 'eqName',\r\n    copyable: true,\r\n    ellipsis: true,\r\n    formItemProps: {\r\n      rules: [\r\n        {\r\n          required: true,\r\n          message: '此项为必填项',\r\n        },\r\n      ],\r\n    },\r\n  },\r\n  {\r\n    title: '器材描述',\r\n    dataIndex: 'eqText',\r\n    hideInSearch: true,\r\n  },\r\n  {\r\n    title: '创建时间',\r\n    dataIndex: 'createTime',\r\n    valueType: 'dateTime',\r\n    sorter: true,\r\n    hideInSearch: true,\r\n    editable: false,\r\n  },\r\n  {\r\n    title: '操作',\r\n    valueType: 'option',\r\n    render: (text, record, _, action) => [\r\n      <a\r\n        key=\"editable\"\r\n        onClick={() => {\r\n          if (record.eqId) {\r\n            action?.startEditable?.(record.eqId);\r\n          }\r\n        }}\r\n      >\r\n        编辑\r\n      </a>,\r\n      <TableDropdown\r\n        key=\"actionGroup\"\r\n        onSelect={(key) => {\r\n          if (key === 'delete' && record.eqId) {\r\n            deleteEquipmentUsingPost({ eqId: Number(record.eqId) })\r\n              .then((res) => {\r\n                console.log('删除响应:', res);\r\n                if (res) {\r\n                  message.success('删除成功');\r\n                  action?.reload();\r\n                } else {\r\n                  message.error('删除失败');\r\n                }\r\n              })\r\n              .catch((error) => {\r\n                console.error('删除错误:', error);\r\n                message.error('删除失败');\r\n              });\r\n          }\r\n        }}\r\n        menus={[{ key: 'delete', name: '删除' }]}\r\n      />,\r\n    ],\r\n  },\r\n];\r\n\r\nexport default () => {\r\n  const actionRef = useRef<ActionType>();\r\n  const [createModalVisible, setCreateModalVisible] = useState<boolean>(false);\r\n\r\n  const handleAdd = async (fields: API.EquipmentAddRequest) => {\r\n    try {\r\n      const res = await addEquipmentUsingPost(fields);\r\n      if (res) {\r\n        message.success('添加成功');\r\n        setCreateModalVisible(false);\r\n        actionRef.current?.reload();\r\n      } else {\r\n        message.error('添加失败');\r\n      }\r\n    } catch (error) {\r\n      console.error('添加错误:', error);\r\n      message.error('添加失败');\r\n    }\r\n  };\r\n\r\n  return (\r\n    <div style={{ minHeight: 'calc(100vh - 120px)', paddingBottom: '120px', marginBottom: '60px' }}>\r\n      <ProTable<API.EquipmentVO>\r\n        columns={columns}\r\n        actionRef={actionRef}\r\n        cardBordered\r\n        toolBarRender={() => [\r\n          <a\r\n            key=\"add\"\r\n            onClick={() => {\r\n              setCreateModalVisible(true);\r\n            }}\r\n          >\r\n            新增器材\r\n          </a>,\r\n        ]}\r\n        request={async (params) => {\r\n          console.log('请求参数:', params);\r\n          const res = await request('/api/equipment/list/page/vo', {\r\n            method: 'POST',\r\n            data: {\r\n              current: params.current,\r\n              pageSize: params.pageSize,\r\n              eqName: params.eqName,\r\n            },\r\n          });\r\n          console.log('响应数据:', res);\r\n          return {\r\n            data: res.records || [],\r\n            success: true,\r\n            total: Number(res.total) || 0,\r\n          };\r\n        }}\r\n        editable={{\r\n          type: 'single',\r\n          onSave: async (key, record) => {\r\n            try {\r\n              const res = await updateEquipmentUsingPost({\r\n                eqId: record.eqId,\r\n                eqName: record.eqName,\r\n                eqText: record.eqText,\r\n              });\r\n              console.log('更新响应:', res);\r\n              if (res) {\r\n                message.success('更新成功');\r\n                actionRef.current?.reload();\r\n              } else {\r\n                message.error('更新失败');\r\n              }\r\n            } catch (error) {\r\n              console.error('更新错误:', error);\r\n              message.error('更新失败');\r\n            }\r\n          },\r\n        }}\r\n        columnsState={{\r\n          persistenceKey: 'pro-table-singe-demos',\r\n          persistenceType: 'localStorage',\r\n          defaultValue: {\r\n            option: { fixed: 'right', disable: true },\r\n          },\r\n          onChange(value) {\r\n            console.log('value: ', value);\r\n          },\r\n        }}\r\n        rowKey=\"eqId\"\r\n        search={{\r\n          labelWidth: 'auto',\r\n        }}\r\n        options={{\r\n          setting: {\r\n            listsHeight: 400,\r\n          },\r\n        }}\r\n        form={{\r\n          syncToUrl: (values, type) => {\r\n            if (type === 'get') {\r\n              return {\r\n                ...values,\r\n                created_at: [values.startTime, values.endTime],\r\n              };\r\n            }\r\n            return values;\r\n          },\r\n        }}\r\n        pagination={{\r\n          pageSize: 5,\r\n          onChange: (page) => console.log(page),\r\n        }}\r\n        dateFormatter=\"string\"\r\n        headerTitle=\"\"\r\n      />\r\n\r\n      <ModalForm\r\n        title=\"新增器材\"\r\n        width=\"400px\"\r\n        open={createModalVisible}\r\n        onOpenChange={setCreateModalVisible}\r\n        onFinish={async (values) => {\r\n          await handleAdd(values as API.EquipmentAddRequest);\r\n        }}\r\n      >\r\n        <ProFormText\r\n          name=\"eqName\"\r\n          label=\"器材名称\"\r\n          rules={[\r\n            {\r\n              required: true,\r\n              message: '请输入器材名称',\r\n            },\r\n          ]}\r\n        />\r\n        <ProFormText\r\n          name=\"eqText\"\r\n          label=\"器材描述\"\r\n          rules={[\r\n            {\r\n              required: true,\r\n              message: '请输入器材描述',\r\n            },\r\n          ]}\r\n        />\r\n      </ModalForm>\r\n    </div>\r\n  );\r\n};\r\n",
       "__isJSFile": true,
       "__absFile": "C:/bysj/gymsystem-frontend/src/pages/Admin/EquipmentManage/index.tsx"
     },
-    "23": {
+    "24": {
       "path": "/admin/goods-manage",
       "name": "商品管理",
       "icon": "ShoppingOutlined",
       "access": "canAdmin",
       "file": "@/pages/Admin/GoodsManage/index.tsx",
       "parentId": "ant-design-pro-layout",
-      "id": "23",
+      "id": "24",
       "absPath": "/admin/goods-manage",
       "__content": "import type { ActionType, ProColumns } from '@ant-design/pro-components';\r\nimport { ProTable, TableDropdown, ModalForm, ProFormText, ProFormDigit } from '@ant-design/pro-components';\r\nimport { useRef, useState } from 'react';\r\nimport { message } from 'antd';\r\nimport request from '@/utils/request';\r\n\r\nconst columns: ProColumns<API.GoodsVO>[] = [\r\n  {\r\n    dataIndex: 'goodsId',\r\n    valueType: 'index',\r\n    width: 48,\r\n    title: '序号',\r\n    hideInSearch: true,\r\n    editable: false,\r\n    render: (_, __, index) => index + 1,\r\n  },\r\n  {\r\n    title: '商品名称',\r\n    dataIndex: 'goodsName',\r\n    copyable: true,\r\n    ellipsis: true,\r\n    formItemProps: {\r\n      rules: [\r\n        {\r\n          required: true,\r\n          message: '请输入商品名称',\r\n        },\r\n      ],\r\n    },\r\n  },\r\n  {\r\n    title: '单位',\r\n    dataIndex: 'unit',\r\n    hideInSearch: false,\r\n    formItemProps: {\r\n      rules: [\r\n        {\r\n          required: true,\r\n          message: '请输入单位',\r\n        },\r\n      ],\r\n    },\r\n  },\r\n  // {\r\n  //   title: '单价',\r\n  //   dataIndex: 'unitPrice',\r\n  //   valueType: 'money',\r\n  //   hideInSearch: true,\r\n  //   formItemProps: {\r\n  //     rules: [\r\n  //       {\r\n  //         required: true,\r\n  //         message: '请输入单价',\r\n  //       },\r\n  //       {\r\n  //         type: 'number',\r\n  //         min: 0,\r\n  //         message: '单价不能小于0',\r\n  //       },\r\n  //     ],\r\n  //   },\r\n  // },\r\n  {\r\n    title: '售价',\r\n    dataIndex: 'sellPrice',\r\n    valueType: 'money',\r\n    hideInSearch: true,\r\n    formItemProps: {\r\n      rules: [\r\n        {\r\n          required: true,\r\n          message: '请输入售价',\r\n        },\r\n        {\r\n          type: 'number',\r\n          min: 0,\r\n          message: '售价不能小于0',\r\n        },\r\n      ],\r\n    },\r\n  },\r\n  {\r\n    title: '库存',\r\n    dataIndex: 'inventory',\r\n    hideInSearch: true,\r\n    formItemProps: {\r\n      rules: [\r\n        {\r\n          required: true,\r\n          message: '请输入库存',\r\n        },\r\n        {\r\n          pattern: /^[1-9]\\d*$/,\r\n          message: '请输入大于0的整数',\r\n        },\r\n      ],\r\n    },\r\n  },\r\n  {\r\n    title: '备注',\r\n    dataIndex: 'remark',\r\n    hideInSearch: true,\r\n  },\r\n  {\r\n    title: '创建时间',\r\n    dataIndex: 'createTime',\r\n    valueType: 'dateTime',\r\n    sorter: true,\r\n    hideInSearch: true,\r\n    editable: false,\r\n  },\r\n  {\r\n    title: '操作',\r\n    valueType: 'option',\r\n    render: (text, record, _, action) => [\r\n      <a\r\n        key=\"editable\"\r\n        onClick={() => {\r\n          if (record.goodsId) {\r\n            action?.startEditable?.(record.goodsId);\r\n          }\r\n        }}\r\n      >\r\n        编辑\r\n      </a>,\r\n      <TableDropdown\r\n        key=\"actionGroup\"\r\n        onSelect={async (key) => {\r\n          if (key === 'delete' && record.goodsId) {\r\n            try {\r\n              const res = await request('/api/goods/delete', {\r\n                method: 'POST',\r\n                data: { goodsId: record.goodsId },\r\n              });\r\n              console.log('删除商品响应:', res);\r\n              if (res) {\r\n                message.success('删除成功');\r\n                action?.reload();\r\n              } else {\r\n                message.error('删除失败');\r\n              }\r\n            } catch (error) {\r\n              console.error('删除商品失败:', error);\r\n              message.error('删除失败，请重试');\r\n            }\r\n          }\r\n        }}\r\n        menus={[\r\n          { key: 'delete', name: '删除' },\r\n        ]}\r\n      />,\r\n    ],\r\n  },\r\n];\r\n\r\nexport default () => {\r\n  const actionRef = useRef<ActionType>();\r\n  const [createModalVisible, setCreateModalVisible] = useState<boolean>(false);\r\n\r\n  const handleAdd = async (fields: API.GoodsAddRequest) => {\r\n    try {\r\n      const res = await request('/api/goods/add', {\r\n        method: 'POST',\r\n        data: fields,\r\n      });\r\n      console.log('添加商品响应:', res);\r\n      if (res) {\r\n        message.success('添加成功');\r\n        setCreateModalVisible(false);\r\n        actionRef.current?.reload();\r\n      } else {\r\n        message.error('添加失败');\r\n      }\r\n    } catch (error) {\r\n      console.error('添加商品失败:', error);\r\n      message.error('添加失败，请重试');\r\n    }\r\n  };\r\n\r\n  return (\r\n    <div style={{ minHeight: 'calc(100vh - 120px)', paddingBottom: '120px', marginBottom: '60px' }}>\r\n      <ProTable<API.GoodsVO>\r\n        columns={columns}\r\n        actionRef={actionRef}\r\n        cardBordered\r\n        toolBarRender={() => [\r\n          <a\r\n            key=\"add\"\r\n            onClick={() => {\r\n              setCreateModalVisible(true);\r\n            }}\r\n          >\r\n            新增商品\r\n          </a>,\r\n        ]}\r\n        request={async (params) => {\r\n          console.log('请求参数:', params);\r\n          try {\r\n            const res = await request('/api/goods/list/page/vo', {\r\n              method: 'POST',\r\n              data: {\r\n                current: params.current,\r\n                pageSize: params.pageSize,\r\n                goodsName: params.goodsName,\r\n                unit: params.unit,\r\n              },\r\n            });\r\n            console.log('响应数据:', res);\r\n            return {\r\n              data: res.records || [],\r\n              success: true,\r\n              total: Number(res.total) || 0,\r\n            };\r\n          } catch (error) {\r\n            console.error('获取商品列表失败:', error);\r\n            message.error('获取商品列表失败');\r\n            return {\r\n              data: [],\r\n              success: false,\r\n              total: 0,\r\n            };\r\n          }\r\n        }}\r\n        editable={{\r\n          type: 'single',\r\n          onSave: async (key, record) => {\r\n            try {\r\n              const res = await request('/api/goods/update', {\r\n                method: 'POST',\r\n                data: {\r\n                  goodsId: record.goodsId,\r\n                  goodsName: record.goodsName,\r\n                  unit: record.unit,\r\n                  // unitPrice: record.unitPrice,\r\n                  sellPrice: record.sellPrice,\r\n                  inventory: record.inventory,\r\n                  remark: record.remark,\r\n                },\r\n              });\r\n              console.log('更新商品响应:', res);\r\n              if (res) {\r\n                message.success('更新成功');\r\n                actionRef.current?.reload();\r\n              } else {\r\n                message.error('更新失败');\r\n              }\r\n            } catch (error) {\r\n              console.error('更新商品失败:', error);\r\n              message.error('更新失败，请重试');\r\n            }\r\n          },\r\n        }}\r\n        columnsState={{\r\n          persistenceKey: 'goods-manage-table',\r\n          persistenceType: 'localStorage',\r\n          defaultValue: {\r\n            option: { fixed: 'right', disable: true },\r\n          },\r\n        }}\r\n        rowKey=\"goodsId\"\r\n        search={{\r\n          labelWidth: 'auto',\r\n          span: 8,\r\n          defaultCollapsed: false,\r\n        }}\r\n        options={{\r\n          setting: {\r\n            listsHeight: 400,\r\n          },\r\n          density: true,\r\n          fullScreen: true,\r\n          reload: true,\r\n        }}\r\n        form={{\r\n          syncToUrl: true,\r\n        }}\r\n        pagination={{\r\n          pageSize: 5,\r\n          onChange: (page) => console.log(page),\r\n        }}\r\n        dateFormatter=\"string\"\r\n        headerTitle=\"\"\r\n      />\r\n\r\n      <ModalForm\r\n        title=\"新增商品\"\r\n        width=\"400px\"\r\n        open={createModalVisible}\r\n        onOpenChange={setCreateModalVisible}\r\n        onFinish={async (values) => {\r\n          await handleAdd(values as API.GoodsAddRequest);\r\n        }}\r\n      >\r\n        <ProFormText\r\n          name=\"goodsName\"\r\n          label=\"商品名称\"\r\n          rules={[\r\n            {\r\n              required: true,\r\n              message: '请输入商品名称',\r\n            },\r\n          ]}\r\n        />\r\n        <ProFormText\r\n          name=\"unit\"\r\n          label=\"单位\"\r\n          rules={[\r\n            {\r\n              required: true,\r\n              message: '请输入单位',\r\n            },\r\n          ]}\r\n        />\r\n        <ProFormDigit\r\n          name=\"unitPrice\"\r\n          label=\"单价\"\r\n          min={0}\r\n          rules={[\r\n            {\r\n              required: true,\r\n              message: '请输入单价',\r\n            },\r\n          ]}\r\n        />\r\n        <ProFormDigit\r\n          name=\"sellPrice\"\r\n          label=\"售价\"\r\n          min={0}\r\n          rules={[\r\n            {\r\n              required: true,\r\n              message: '请输入售价',\r\n            },\r\n          ]}\r\n        />\r\n        <ProFormDigit\r\n          name=\"inventory\"\r\n          label=\"库存\"\r\n          min={0}\r\n          rules={[\r\n            {\r\n              required: true,\r\n              message: '请输入库存',\r\n            },\r\n          ]}\r\n        />\r\n        <ProFormText\r\n          name=\"remark\"\r\n          label=\"备注\"\r\n        />\r\n      </ModalForm>\r\n    </div>\r\n  );\r\n}; ",
       "__isJSFile": true,
       "__absFile": "C:/bysj/gymsystem-frontend/src/pages/Admin/GoodsManage/index.tsx"
     },
-    "24": {
+    "25": {
       "path": "/admin/goods-transactions-manage",
       "name": "商品销售管理",
       "icon": "TransactionOutlined",
       "access": "canAdmin",
       "file": "@/pages/Admin/GoodsTransactionsManage/index.tsx",
       "parentId": "ant-design-pro-layout",
-      "id": "24",
+      "id": "25",
       "absPath": "/admin/goods-transactions-manage",
       "__content": "import type { ActionType, ProColumns } from '@ant-design/pro-components';\r\nimport { ProTable, TableDropdown, ModalForm, ProFormText } from '@ant-design/pro-components';\r\nimport { useRef, useState } from 'react';\r\nimport { message } from 'antd';\r\nimport request from '@/utils/request';\r\n\r\n// 商品销售记录管理\r\nconst columns: ProColumns<API.GoodsTransactions>[] = [\r\n  {\r\n    dataIndex: 'id',\r\n    valueType: 'index',\r\n    width: 48,\r\n    title: '序号',\r\n    hideInSearch: true,\r\n    editable: false,\r\n    render: (_, __, index) => index + 1,\r\n  },\r\n  {\r\n    title: '商品ID',\r\n    dataIndex: 'goodsId',\r\n    hideInSearch: false,\r\n  },\r\n  {\r\n    title: '会员ID',\r\n    dataIndex: 'memberId',\r\n    hideInSearch: false,\r\n  },\r\n  {\r\n    title: '购买数量',\r\n    dataIndex: 'count',\r\n    hideInSearch: true, // 关闭搜索条件\r\n  },\r\n  {\r\n    title: '总价',\r\n    dataIndex: 'price',\r\n    hideInSearch: true, // 关闭搜索条件\r\n  },\r\n  {\r\n    title: '更新时间',\r\n    dataIndex: 'updateTime',\r\n    valueType: 'dateTime',\r\n    sorter: true,\r\n    hideInSearch: true,\r\n    editable: false,\r\n  },\r\n  {\r\n    title: '操作',\r\n    valueType: 'option',\r\n    render: (text, record, _, action) => [\r\n      <a\r\n        key=\"editable\"\r\n        onClick={() => {\r\n          if (record.id) {\r\n            action?.startEditable?.(record.id);\r\n          }\r\n        }}\r\n      >\r\n        编辑\r\n      </a>,\r\n      <TableDropdown\r\n        key=\"actionGroup\"\r\n        onSelect={async (key) => {\r\n          if (key === 'delete' && record.id) {\r\n            try {\r\n              const res = await request('/api/goodsTransactions/delete', {\r\n                method: 'POST',\r\n                data: { id: record.id },\r\n              });\r\n              console.log('删除销售记录响应:', res);\r\n              if (res) {\r\n                message.success('删除成功');\r\n                action?.reload();\r\n              } else {\r\n                message.error('删除失败');\r\n              }\r\n            } catch (error) {\r\n              console.error('删除销售记录失败:', error);\r\n              message.error('删除失败，请重试');\r\n            }\r\n          }\r\n        }}\r\n        menus={[{ key: 'delete', name: '删除' }]}\r\n      />,\r\n    ],\r\n  },\r\n];\r\n\r\nexport default () => {\r\n  const actionRef = useRef<ActionType>();\r\n  const [createModalVisible, setCreateModalVisible] = useState<boolean>(false);\r\n\r\n  const handleAdd = async (fields: API.GoodsTransactionsAddRequest) => {\r\n    try {\r\n      const res = await request('/api/goodsTransactions/add', {\r\n        method: 'POST',\r\n        data: fields,\r\n      });\r\n      console.log('添加销售记录响应:', res);\r\n      if (res) {\r\n        message.success('添加成功');\r\n        setCreateModalVisible(false);\r\n        actionRef.current?.reload();\r\n      } else {\r\n        message.error('添加失败');\r\n      }\r\n    } catch (error) {\r\n      console.error('添加销售记录失败:', error);\r\n      message.error('添加失败，请重试');\r\n    }\r\n  };\r\n\r\n  return (\r\n    <div style={{ minHeight: 'calc(100vh - 120px)', paddingBottom: '120px', marginBottom: '60px' }}>\r\n      <ProTable<API.GoodsTransactions>\r\n        columns={columns}\r\n        actionRef={actionRef}\r\n        cardBordered\r\n        toolBarRender={() => [\r\n          <a\r\n            key=\"add\"\r\n            onClick={() => {\r\n              setCreateModalVisible(true);\r\n            }}\r\n          >\r\n            新增销售记录\r\n          </a>,\r\n        ]}\r\n        request={async (params) => {\r\n          console.log('请求参数:', params);\r\n          try {\r\n            const res = await request('/api/goodsTransactions/list/page/vo', {\r\n              method: 'POST',\r\n              data: {\r\n                current: params.current,\r\n                pageSize: params.pageSize,\r\n                goodsId: params.goodsId,\r\n                memberId: params.memberId,\r\n                countMin: params.countMin,\r\n                countMax: params.countMax,\r\n                priceMin: params.priceMin,\r\n                priceMax: params.priceMax,\r\n                createTimeStart: params.createTimeStart,\r\n                createTimeEnd: params.createTimeEnd,\r\n                sortField: params.sortField,\r\n                sortOrder: params.sortOrder,\r\n              },\r\n            });\r\n            console.log('响应数据:', res);\r\n            return {\r\n              data: res.records || [],\r\n              success: true,\r\n              total: Number(res.total) || 0,\r\n            };\r\n          } catch (error) {\r\n            console.error('获取销售记录列表失败:', error);\r\n            message.error('获取销售记录列表失败');\r\n            return {\r\n              data: [],\r\n              success: false,\r\n              total: 0,\r\n            };\r\n          }\r\n        }}\r\n        editable={{\r\n          type: 'single',\r\n          onSave: async (key, record) => {\r\n            try {\r\n              const res = await request('/api/goodsTransactions/update', {\r\n                method: 'POST',\r\n                data: {\r\n                  id: record.id,\r\n                  goodsId: record.goodsId,\r\n                  memberId: record.memberId,\r\n                  count: record.count,\r\n                  price: record.price,\r\n                },\r\n              });\r\n              console.log('更新销售记录响应:', res);\r\n              if (res) {\r\n                message.success('更新成功');\r\n                actionRef.current?.reload();\r\n              } else {\r\n                message.error('更新失败');\r\n              }\r\n            } catch (error) {\r\n              console.error('更新销售记录失败:', error);\r\n              message.error('更新失败，请重试');\r\n            }\r\n          },\r\n        }}\r\n        columnsState={{\r\n          persistenceKey: 'goods-transactions-manage-table',\r\n          persistenceType: 'localStorage',\r\n          defaultValue: {\r\n            option: { fixed: 'right', disable: true },\r\n          },\r\n        }}\r\n        rowKey=\"id\"\r\n        search={{\r\n          labelWidth: 'auto',\r\n          span: 8,\r\n          defaultCollapsed: false,\r\n        }}\r\n        options={{\r\n          setting: {\r\n            listsHeight: 400,\r\n          },\r\n          density: true,\r\n          fullScreen: true,\r\n          reload: true,\r\n        }}\r\n        form={{\r\n          syncToUrl: true,\r\n        }}\r\n        pagination={{\r\n          pageSize: 5,\r\n          onChange: (page) => console.log(page),\r\n        }}\r\n        dateFormatter=\"string\"\r\n        headerTitle=\"\"\r\n      />\r\n\r\n      <ModalForm\r\n        title=\"新增销售记录\"\r\n        width=\"400px\"\r\n        open={createModalVisible}\r\n        onOpenChange={setCreateModalVisible}\r\n        onFinish={async (values) => {\r\n          const data = {\r\n            ...values,\r\n            goodsId: Number(values.goodsId),\r\n            memberId: values.memberId,\r\n            count: Number(values.count),\r\n            price: Number(values.price),\r\n          };\r\n          await handleAdd(data as API.GoodsTransactionsAddRequest);\r\n        }}\r\n      >\r\n        <ProFormText\r\n          name=\"goodsId\"\r\n          label=\"商品ID\"\r\n          rules={[\r\n            {\r\n              required: true,\r\n              message: '请输入商品ID',\r\n            },\r\n            {\r\n              pattern: /^\\d+$/,\r\n              message: '请输入有效的数字ID',\r\n            },\r\n          ]}\r\n        />\r\n        <ProFormText\r\n          name=\"memberId\"\r\n          label=\"会员ID\"\r\n          rules={[\r\n            {\r\n              required: true,\r\n              message: '请输入会员ID',\r\n            },\r\n          ]}\r\n        />\r\n        <ProFormText\r\n          name=\"count\"\r\n          label=\"购买数量\"\r\n          rules={[\r\n            {\r\n              required: true,\r\n              message: '请输入购买数量',\r\n            },\r\n            {\r\n              pattern: /^\\d+$/,\r\n              message: '请输入有效的数字',\r\n            },\r\n          ]}\r\n        />\r\n        <ProFormText\r\n          name=\"price\"\r\n          label=\"单价\"\r\n          rules={[\r\n            {\r\n              required: true,\r\n              message: '请输入单价',\r\n            },\r\n            {\r\n              pattern: /^\\d+(\\.\\d{1,2})?$/,\r\n              message: '请输入有效的金额',\r\n            },\r\n          ]}\r\n        />\r\n      </ModalForm>\r\n    </div>\r\n  );\r\n}; ",
       "__isJSFile": true,
       "__absFile": "C:/bysj/gymsystem-frontend/src/pages/Admin/GoodsTransactionsManage/index.tsx"
     },
-    "25": {
+    "26": {
       "path": "*",
       "layout": false,
       "file": "@/pages/404.tsx",
-      "id": "25",
+      "id": "26",
       "absPath": "/*",
       "__content": "import { history } from '@umijs/max';\nimport { Button, Result } from 'antd';\nimport React from 'react';\nconst NoFoundPage: React.FC = () => (\n  <Result\n    status=\"404\"\n    title=\"404\"\n    subTitle={'抱歉，您访问的页面不存在。'}\n    extra={\n      <Button type=\"primary\" onClick={() => history.push('/')}>\n        {'返回首页'}\n      </Button>\n    }\n  />\n);\nexport default NoFoundPage;\n",
       "__isJSFile": true,
@@ -4871,7 +5413,7 @@
     "tslibVersion": "2.8.1"
   },
   "faviconFiles": [],
-  "port": 8000,
+  "port": 8001,
   "host": "0.0.0.0",
   "ip": "192.168.226.1",
   "antd": {
@@ -6039,7 +6581,7 @@
             "format": "esm"
           },
           "src/utils/request.ts": {
-            "bytes": 1887,
+            "bytes": 1892,
             "imports": [
               {
                 "path": "umi-request",
@@ -6128,7 +6670,7 @@
             "format": "esm"
           },
           "src/components/RightContent/AvatarDropdown.tsx": {
-            "bytes": 3891,
+            "bytes": 4232,
             "imports": [
               {
                 "path": "src/api/memberController.ts",
@@ -6286,7 +6828,7 @@
             "format": "esm"
           },
           "src/app.tsx": {
-            "bytes": 7738,
+            "bytes": 8542,
             "imports": [
               {
                 "path": "src/api/memberController.ts",
@@ -6337,6 +6879,11 @@
                 "path": "src/components/ui/toaster.tsx",
                 "kind": "import-statement",
                 "original": "@/components/ui/toaster"
+              },
+              {
+                "path": "react",
+                "kind": "import-statement",
+                "external": true
               }
             ],
             "format": "esm"
@@ -6940,7 +7487,7 @@
             "format": "esm"
           },
           "src/api/courseBookingController.ts": {
-            "bytes": 1626,
+            "bytes": 2442,
             "imports": [
               {
                 "path": "src/utils/request.ts",
@@ -7933,8 +8480,49 @@
             ],
             "format": "esm"
           },
+          "src/pages/Member/Bookings/index.tsx": {
+            "bytes": 5169,
+            "imports": [
+              {
+                "path": "@ant-design/pro-components",
+                "kind": "import-statement",
+                "external": true
+              },
+              {
+                "path": "@ant-design/pro-components",
+                "kind": "import-statement",
+                "external": true
+              },
+              {
+                "path": "src/.umi/exports.ts",
+                "kind": "import-statement",
+                "original": "@umijs/max"
+              },
+              {
+                "path": "src/api/courseBookingController.ts",
+                "kind": "import-statement",
+                "original": "@/api/courseBookingController"
+              },
+              {
+                "path": "src/utils/request.ts",
+                "kind": "import-statement",
+                "original": "@/utils/request"
+              },
+              {
+                "path": "react",
+                "kind": "import-statement",
+                "external": true
+              },
+              {
+                "path": "antd",
+                "kind": "import-statement",
+                "external": true
+              }
+            ],
+            "format": "esm"
+          },
           "src/pages/Admin/MemberManage/index.tsx": {
-            "bytes": 8553,
+            "bytes": 8650,
             "imports": [
               {
                 "path": "@ant-design/pro-components",
@@ -8131,7 +8719,7 @@
             "format": "esm"
           },
           "src/pages/Admin/CoachManage/index.tsx": {
-            "bytes": 12662,
+            "bytes": 12725,
             "imports": [
               {
                 "path": "@ant-design/pro-components",
@@ -8381,7 +8969,7 @@
             "format": "esm"
           },
           "src/.umi/core/route.tsx": {
-            "bytes": 6682,
+            "bytes": 6942,
             "imports": [
               {
                 "path": "react",
@@ -8457,6 +9045,11 @@
                 "path": "src/pages/Member/Register/index.tsx",
                 "kind": "dynamic-import",
                 "original": "@/pages/Member/Register/index.tsx"
+              },
+              {
+                "path": "src/pages/Member/Bookings/index.tsx",
+                "kind": "dynamic-import",
+                "original": "@/pages/Member/Bookings/index.tsx"
               },
               {
                 "path": "src/pages/Admin/MemberManage/index.tsx",
@@ -9567,6 +10160,26 @@
               },
               {
                 "path": "react",
+                "kind": "import-statement",
+                "external": true
+              },
+              {
+                "path": "@ant-design/pro-components",
+                "kind": "import-statement",
+                "external": true
+              },
+              {
+                "path": "@ant-design/pro-components",
+                "kind": "import-statement",
+                "external": true
+              },
+              {
+                "path": "react",
+                "kind": "import-statement",
+                "external": true
+              },
+              {
+                "path": "antd",
                 "kind": "import-statement",
                 "external": true
               },
@@ -11020,7 +11633,7 @@
                 "bytesInOutput": 1304
               },
               "src/utils/request.ts": {
-                "bytesInOutput": 1564
+                "bytesInOutput": 1569
               },
               "src/api/memberController.ts": {
                 "bytesInOutput": 1564
@@ -11035,7 +11648,7 @@
                 "bytesInOutput": 817
               },
               "src/components/RightContent/AvatarDropdown.tsx": {
-                "bytesInOutput": 3994
+                "bytesInOutput": 4378
               },
               "src/components/index.ts": {
                 "bytesInOutput": 134
@@ -11059,7 +11672,7 @@
                 "bytesInOutput": 760
               },
               "src/app.tsx": {
-                "bytesInOutput": 5827
+                "bytesInOutput": 5845
               },
               "src/.umi/core/helmetContext.ts": {
                 "bytesInOutput": 129
@@ -11080,7 +11693,7 @@
                 "bytesInOutput": 384
               },
               "src/.umi/plugin-layout/icons.tsx": {
-                "bytesInOutput": 1583
+                "bytesInOutput": 1603
               },
               "src/.umi/plugin-layout/runtime.tsx": {
                 "bytesInOutput": 815
@@ -11140,7 +11753,7 @@
                 "bytesInOutput": 1839
               },
               "src/api/courseBookingController.ts": {
-                "bytesInOutput": 846
+                "bytesInOutput": 1091
               },
               "src/pages/Course/fitness/ScheduleSection.tsx": {
                 "bytesInOutput": 6385
@@ -11247,8 +11860,11 @@
               "src/pages/Member/Register/index.tsx": {
                 "bytesInOutput": 5883
               },
+              "src/pages/Member/Bookings/index.tsx": {
+                "bytesInOutput": 5723
+              },
               "src/pages/Admin/MemberManage/index.tsx": {
-                "bytesInOutput": 10338
+                "bytesInOutput": 10430
               },
               "src/pages/Admin/CourseManage/index.tsx": {
                 "bytesInOutput": 8399
@@ -11269,7 +11885,7 @@
                 "bytesInOutput": 10574
               },
               "src/pages/Admin/CoachManage/index.tsx": {
-                "bytesInOutput": 13232
+                "bytesInOutput": 13238
               },
               "src/api/equipmentController.ts": {
                 "bytesInOutput": 829
@@ -11278,7 +11894,7 @@
                 "bytesInOutput": 7656
               },
               "src/pages/Admin/GoodsManage/index.tsx": {
-                "bytesInOutput": 11440
+                "bytesInOutput": 11442
               },
               "src/pages/Admin/GoodsTransactionsManage/index.tsx": {
                 "bytesInOutput": 10422
@@ -11299,7 +11915,7 @@
                 "bytesInOutput": 6668
               },
               "src/.umi/core/route.tsx": {
-                "bytesInOutput": 6925
+                "bytesInOutput": 7190
               },
               "src/.umi/testBrowser.tsx": {
                 "bytesInOutput": 2391
@@ -11320,7 +11936,7 @@
                 "bytesInOutput": 1522
               }
             },
-            "bytes": 395982
+            "bytes": 402782
           }
         }
       }
@@ -15456,6 +16072,35 @@
           ],
           "start": 654,
           "type": "ImportDeclaration"
+        },
+        {
+          "end": 790,
+          "importKind": "value",
+          "source": "react",
+          "specifiers": [
+            {
+              "imported": "ReactElement",
+              "local": "ReactElement",
+              "type": "ImportSpecifier"
+            },
+            {
+              "imported": "JSXElementConstructor",
+              "local": "JSXElementConstructor",
+              "type": "ImportSpecifier"
+            },
+            {
+              "imported": "ReactNode",
+              "local": "ReactNode",
+              "type": "ImportSpecifier"
+            },
+            {
+              "imported": "ReactPortal",
+              "local": "ReactPortal",
+              "type": "ImportSpecifier"
+            }
+          ],
+          "start": 706,
+          "type": "ImportDeclaration"
         }
       ],
       "C:\\bysj\\gymsystem-frontend\\src\\components\\Footer\\MemberFooter.tsx": [
@@ -15617,7 +16262,7 @@
           "type": "ImportDeclaration"
         },
         {
-          "end": 148,
+          "end": 166,
           "importKind": "value",
           "source": "@ant-design/icons",
           "specifiers": [
@@ -15635,13 +16280,18 @@
               "imported": "UserOutlined",
               "local": "UserOutlined",
               "type": "ImportSpecifier"
+            },
+            {
+              "imported": "CalendarOutlined",
+              "local": "CalendarOutlined",
+              "type": "ImportSpecifier"
             }
           ],
           "start": 66,
           "type": "ImportDeclaration"
         },
         {
-          "end": 197,
+          "end": 215,
           "importKind": "value",
           "source": "@umijs/max",
           "specifiers": [
@@ -15656,11 +16306,11 @@
               "type": "ImportSpecifier"
             }
           ],
-          "start": 150,
+          "start": 168,
           "type": "ImportDeclaration"
         },
         {
-          "end": 236,
+          "end": 254,
           "importKind": "value",
           "source": "antd",
           "specifiers": [
@@ -15675,11 +16325,11 @@
               "type": "ImportSpecifier"
             }
           ],
-          "start": 199,
+          "start": 217,
           "type": "ImportDeclaration"
         },
         {
-          "end": 280,
+          "end": 298,
           "importKind": "value",
           "source": "antd-style",
           "specifiers": [
@@ -15689,11 +16339,11 @@
               "type": "ImportSpecifier"
             }
           ],
-          "start": 238,
+          "start": 256,
           "type": "ImportDeclaration"
         },
         {
-          "end": 336,
+          "end": 354,
           "importKind": "type",
           "source": "rc-menu/lib/interface",
           "specifiers": [
@@ -15703,11 +16353,11 @@
               "type": "ImportSpecifier"
             }
           ],
-          "start": 282,
+          "start": 300,
           "type": "ImportDeclaration"
         },
         {
-          "end": 381,
+          "end": 399,
           "importKind": "value",
           "source": "react",
           "specifiers": [
@@ -15721,11 +16371,11 @@
               "type": "ImportSpecifier"
             }
           ],
-          "start": 338,
+          "start": 356,
           "type": "ImportDeclaration"
         },
         {
-          "end": 421,
+          "end": 439,
           "importKind": "value",
           "source": "react-dom",
           "specifiers": [
@@ -15735,11 +16385,11 @@
               "type": "ImportSpecifier"
             }
           ],
-          "start": 383,
+          "start": 401,
           "type": "ImportDeclaration"
         },
         {
-          "end": 470,
+          "end": 488,
           "importKind": "value",
           "source": "../HeaderDropdown",
           "specifiers": [
@@ -15748,7 +16398,7 @@
               "type": "ImportDefaultSpecifier"
             }
           ],
-          "start": 423,
+          "start": 441,
           "type": "ImportDeclaration"
         }
       ],
@@ -20282,6 +20932,134 @@
             }
           ],
           "start": 416,
+          "type": "ImportDeclaration"
+        }
+      ],
+      "C:\\bysj\\gymsystem-frontend\\src\\pages\\Member\\Bookings\\index.tsx": [
+        {
+          "end": 60,
+          "importKind": "value",
+          "source": "@ant-design/pro-components",
+          "specifiers": [
+            {
+              "imported": "PageContainer",
+              "local": "PageContainer",
+              "type": "ImportSpecifier"
+            }
+          ],
+          "start": 1,
+          "type": "ImportDeclaration"
+        },
+        {
+          "end": 135,
+          "importKind": "type",
+          "source": "@ant-design/pro-components",
+          "specifiers": [
+            {
+              "imported": "ActionType",
+              "local": "ActionType",
+              "type": "ImportSpecifier"
+            },
+            {
+              "imported": "ProColumns",
+              "local": "ProColumns",
+              "type": "ImportSpecifier"
+            }
+          ],
+          "start": 62,
+          "type": "ImportDeclaration"
+        },
+        {
+          "end": 191,
+          "importKind": "value",
+          "source": "@ant-design/pro-components",
+          "specifiers": [
+            {
+              "imported": "ProTable",
+              "local": "ProTable",
+              "type": "ImportSpecifier"
+            }
+          ],
+          "start": 137,
+          "type": "ImportDeclaration"
+        },
+        {
+          "end": 231,
+          "importKind": "value",
+          "source": "@umijs/max",
+          "specifiers": [
+            {
+              "imported": "useModel",
+              "local": "useModel",
+              "type": "ImportSpecifier"
+            }
+          ],
+          "start": 193,
+          "type": "ImportDeclaration"
+        },
+        {
+          "end": 306,
+          "importKind": "value",
+          "source": "@/api/courseBookingController",
+          "specifiers": [
+            {
+              "imported": "deleteMyBookingUsingPost",
+              "local": "deleteMyBookingUsingPost",
+              "type": "ImportSpecifier"
+            }
+          ],
+          "start": 233,
+          "type": "ImportDeclaration"
+        },
+        {
+          "end": 346,
+          "importKind": "value",
+          "source": "@/utils/request",
+          "specifiers": [
+            {
+              "local": "request",
+              "type": "ImportDefaultSpecifier"
+            }
+          ],
+          "start": 308,
+          "type": "ImportDeclaration"
+        },
+        {
+          "end": 379,
+          "importKind": "value",
+          "source": "react",
+          "specifiers": [
+            {
+              "imported": "useRef",
+              "local": "useRef",
+              "type": "ImportSpecifier"
+            }
+          ],
+          "start": 348,
+          "type": "ImportDeclaration"
+        },
+        {
+          "end": 427,
+          "importKind": "value",
+          "source": "antd",
+          "specifiers": [
+            {
+              "imported": "Button",
+              "local": "Button",
+              "type": "ImportSpecifier"
+            },
+            {
+              "imported": "Modal",
+              "local": "Modal",
+              "type": "ImportSpecifier"
+            },
+            {
+              "imported": "message",
+              "local": "message",
+              "type": "ImportSpecifier"
+            }
+          ],
+          "start": 381,
           "type": "ImportDeclaration"
         }
       ],

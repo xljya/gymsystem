@@ -32,12 +32,42 @@ export async function deleteBookingUsingPost(
   });
 }
 
+/** deleteMyBooking POST /api/course/booking/delete/my */
+export async function deleteMyBookingUsingPost(
+  body: API.DeleteRequest,
+  options?: { [key: string]: any },
+) {
+  return request<API.BaseResponseBoolean_>('/api/course/booking/delete/my', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: body,
+    ...(options || {}),
+  });
+}
+
 /** listBookingVOByPage POST /api/course/booking/list/page/vo */
 export async function listBookingVoByPageUsingPost(
   body: API.CourseBookingQueryRequest,
   options?: { [key: string]: any },
 ) {
   return request<API.BaseResponsePageCourseBookingVO_>('/api/course/booking/list/page/vo', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: body,
+    ...(options || {}),
+  });
+}
+
+/** listMyBookingVOByPage POST /api/course/booking/list/page/vo/my */
+export async function listMyBookingVoByPageUsingPost(
+  body: API.CourseBookingQueryRequest,
+  options?: { [key: string]: any },
+) {
+  return request<API.BaseResponsePageCourseBookingVO_>('/api/course/booking/list/page/vo/my', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
