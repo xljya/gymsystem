@@ -6,6 +6,7 @@ import com.liucf.gymsystembackend.model.dto.course.CourseBookingQueryRequest;
 import com.liucf.gymsystembackend.model.entity.CourseBooking;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.liucf.gymsystembackend.model.vo.CourseBookingVO;
+import com.liucf.gymsystembackend.model.dto.course.CourseBookingAddRequest;
 
 import java.util.Date;
 import java.util.List;
@@ -70,4 +71,21 @@ public interface CourseBookingService extends IService<CourseBooking> {
      * 更新出勤状态
      */
     boolean updateAttendanceStatus(Long bookingId, Integer attendanceStatus);
+
+    /**
+     * 会员取消自己的预约
+     *
+     * @param bookingId 预约ID
+     * @param memberId 会员ID
+     * @return 是否成功取消
+     */
+    boolean cancelMemberBooking(Long bookingId, Long memberId);
+
+    /**
+     * 处理课程预约请求（新建或更新已取消的预约）
+     *
+     * @param courseBookingAddRequest 预约请求参数
+     * @return 预约记录ID
+     */
+    Long processBookingRequest(CourseBookingAddRequest courseBookingAddRequest);
 }

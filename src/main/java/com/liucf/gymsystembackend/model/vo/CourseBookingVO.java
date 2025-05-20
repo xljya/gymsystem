@@ -26,6 +26,35 @@ public class CourseBookingVO implements Serializable {
      */
     private Long memberId;
 
+    /**
+     * 会员名称
+     */
+    private String memberName;
+
+    /**
+     * 课程名称
+     */
+    private String courseName;
+
+    /**
+     * 课程日期
+     */
+    private Date courseDate;
+
+    /**
+     * 开始时间
+     */
+    private String startTime;
+
+    /**
+     * 结束时间
+     */
+    private String endTime;
+
+    /**
+     * 上课地点
+     */
+    private String location;
 
     /**
      * 预约状态(0-已取消,1-已预约,2-已完成)
