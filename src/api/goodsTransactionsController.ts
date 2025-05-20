@@ -3,17 +3,10 @@
 import request from '@/utils/request';
 
 /** addGoodsTransactions POST /api/goodsTransactions/add */
-/**
- * 新增商品交易记录
- * @param body 商品交易添加请求体
- * @param options 可选的请求配置参数
- * @returns 返回包含新建记录ID的基础响应
- */
 export async function addGoodsTransactionsUsingPost(
   body: API.GoodsTransactionsAddRequest,
   options?: { [key: string]: any },
 ) {
-  // 发送POST请求到 /api/goodsTransactions/add，提交商品交易数据
   return request<API.BaseResponseLong_>('/api/goodsTransactions/add', {
     method: 'POST',
     headers: {

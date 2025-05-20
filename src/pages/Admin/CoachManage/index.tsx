@@ -44,9 +44,12 @@ const columns: ProColumns<API.CoachVO>[] = [
     width: 100,
     render: (_, record) => (
       <div style={{ width: '100%', textAlign: 'center' }}>
-        <Image 
-          src={record.coachAvatar || 'https://28082003.com/images/preview.jpg'} 
-          width={50} 
+        <Image
+          src={
+            record.coachAvatar ||
+            'https://image.liucf.com/images/2025/05/90f433495b9f855d61092482c6bfaaef.png'
+          }
+          width={50}
           height={50}
           style={{ objectFit: 'cover' }}
         />
@@ -97,11 +100,7 @@ const columns: ProColumns<API.CoachVO>[] = [
     },
     render: (_, record) => {
       const color = record.coachStatus === 0 ? 'success' : 'error';
-      return (
-        <Tag color={color}>
-          {record.coachStatus === 0 ? '在职' : '离职'}
-        </Tag>
-      );
+      return <Tag color={color}>{record.coachStatus === 0 ? '在职' : '离职'}</Tag>;
     },
   },
   {
@@ -130,23 +129,23 @@ const columns: ProColumns<API.CoachVO>[] = [
         key="actionGroup"
         onSelect={(key) => {
           if (key === 'delete' && record.coachId) {
-            deleteCoachUsingPost({ id: record.coachId }).then((res) => {
-              console.log('删除响应:', res);
-              if (res) {
-                message.success('删除成功');
-                action?.reload();
-              } else {
+            deleteCoachUsingPost({ id: record.coachId })
+              .then((res) => {
+                console.log('删除响应:', res);
+                if (res) {
+                  message.success('删除成功');
+                  action?.reload();
+                } else {
+                  message.error('删除失败');
+                }
+              })
+              .catch((error) => {
+                console.error('删除错误:', error);
                 message.error('删除失败');
-              }
-            }).catch(error => {
-              console.error('删除错误:', error);
-              message.error('删除失败');
-            });
+              });
           }
         }}
-        menus={[
-          { key: 'delete', name: '删除' },
-        ]}
+        menus={[{ key: 'delete', name: '删除' }]}
       />,
     ],
   },

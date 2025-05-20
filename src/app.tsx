@@ -10,6 +10,9 @@ import type { RunTimeLayoutConfig } from '@umijs/max';
 import { history } from '@umijs/max';
 import defaultSettings, { memberSettings } from '../config/defaultSettings';
 import { Toaster } from "@/components/ui/toaster";
+import { ReactElement, JSXElementConstructor, ReactNode, ReactPortal } from 'react';
+
+
 
 /**
  * 判断当前是否为开发环境
@@ -29,10 +32,11 @@ export const request: RequestConfig = {
   timeout: 1000000,
 };
 
+
+
 /**
  * 获取应用初始状态
  * 这个函数会在应用启动时被调用，用于初始化全局状态
-/**
  * @returns 包含设置、当前会员信息、加载状态和获取会员信息函数的对象
  */
 export async function getInitialState(): Promise<{
@@ -50,7 +54,7 @@ export async function getInitialState(): Promise<{
         return {
           ...res,
           memberAvatar: res.memberAvatar || SYSTEM_LOGO,
-        };
+        } as API.LoginMemberVO;
       }
       return undefined;
     } catch (error) {
@@ -71,17 +75,20 @@ export async function getInitialState(): Promise<{
       currentUser,
       settings:
         currentUser?.memberRole === 'admin'
-          ? defaultSettings // 管理员使用默认配置
-          : memberSettings, // 会员使用会员配置
+          ? defaultSettings as any // 使用类型断言避免类型错误
+          : memberSettings as any, // 使用类型断言避免类型错误
     };
   }
+  
+  // 添加默认返回值，避免typescript报错
+  return { fetchUserInfo };
 }
 
 /**
  * 布局配置
  * 配置应用的布局、菜单、权限等
  */
-export const layout: RunTimeLayoutConfig = ({ initialState, setInitialState }) => {
+export const layout: RunTimeLayoutConfig = ({ initialState, setInitialState }: any) => {
   // 定义不需要布局的路由白名单
   const layoutWhitelist = [
     '/member/login',
@@ -126,7 +133,7 @@ export const layout: RunTimeLayoutConfig = ({ initialState, setInitialState }) =
     avatarProps: {
       src: initialState?.currentUser?.memberAvatar || SYSTEM_LOGO,
       title: <AvatarName />,
-      render: (_, avatarChildren) => {
+      render: (_: any, avatarChildren: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | null | undefined) => {
         return <AvatarDropdown>{avatarChildren}</AvatarDropdown>;
       },
     },
@@ -150,7 +157,7 @@ export const layout: RunTimeLayoutConfig = ({ initialState, setInitialState }) =
     // 自定义 403 页面
     // unAccessible: <div>unAccessible</div>,
     // 增加一个 loading 的状态
-    childrenRender: (children) => {
+    childrenRender: (children: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | null | undefined) => {
       return (
         // 页脚始终保持在底部
         <div
@@ -166,9 +173,9 @@ export const layout: RunTimeLayoutConfig = ({ initialState, setInitialState }) =
             <SettingDrawer
               disableUrlParams
               enableDarkTheme
-              settings={layoutSettings}
+              settings={layoutSettings as any} // 使用类型断言避免类型错误
               onSettingChange={(settings) => {
-                setInitialState((preInitialState) => ({
+                setInitialState((preInitialState: any) => ({
                   ...preInitialState,
                   settings,
                 }));
@@ -180,7 +187,7 @@ export const layout: RunTimeLayoutConfig = ({ initialState, setInitialState }) =
       );
     },
     ...layoutSettings,
-  };
+  } as any; // 使用类型断言避免类型错误
 };
 
 /**
@@ -192,7 +199,18 @@ export const layout: RunTimeLayoutConfig = ({ initialState, setInitialState }) =
 //   ...errorConfig,
 // };
 
-export function onRouteChange({ location, clientRoutes, routes, action }) {
+// 添加类型定义
+interface RouteChangeParams {
+  location: {
+    pathname: string;
+    [key: string]: any;
+  };
+  clientRoutes: any[];
+  routes: any[];
+  action: string;
+}
+
+export function onRouteChange({ location, action }: RouteChangeParams) {
   if (typeof window !== 'undefined') {
     let targetPath = location.pathname;
     let shouldScrollToOffset = false;

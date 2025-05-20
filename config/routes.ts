@@ -88,6 +88,13 @@ const routes = [
     access: 'guest',
   },
   {
+    path: '/member/bookings',
+    name: '我的预约',
+    component: './Member/Bookings',
+    hideInMenu: true,
+    access: 'canMember',
+  },
+  {
     path: '/admin/memberManage',
     name: '会员管理',
     icon: 'UserOutlined',

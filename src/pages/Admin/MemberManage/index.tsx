@@ -41,7 +41,13 @@ const columns: ProColumns<API.MemberVO>[] = [
     dataIndex: 'memberAvatar',
     render: (_, record) => (
       <div>
-        <Image src={record.memberAvatar || 'https://28082003.com/images/preview.jpg'} width={100} />
+        <Image
+          src={
+            record.memberAvatar ||
+            'https://image.liucf.com/images/2025/05/90f433495b9f855d61092482c6bfaaef.png'
+          }
+          width={100}
+        />
       </div>
     ),
   },
@@ -64,11 +70,7 @@ const columns: ProColumns<API.MemberVO>[] = [
     },
     render: (_, record) => {
       const color = record.memberRole === 'admin' ? 'success' : 'processing';
-      return (
-        <Tag color={color}>
-          {record.memberRole === 'admin' ? '管理员' : '普通会员'}
-        </Tag>
-      );
+      return <Tag color={color}>{record.memberRole === 'admin' ? '管理员' : '普通会员'}</Tag>;
     },
   },
   {
@@ -97,23 +99,23 @@ const columns: ProColumns<API.MemberVO>[] = [
         key="actionGroup"
         onSelect={(key) => {
           if (key === 'delete' && record.id) {
-            deleteMemberUsingPost({ id: record.id }).then((res) => {
-              console.log('删除响应:', res);
-              if (res) {
-                message.success('删除成功');
-                action?.reload();
-              } else {
+            deleteMemberUsingPost({ id: record.id })
+              .then((res) => {
+                console.log('删除响应:', res);
+                if (res) {
+                  message.success('删除成功');
+                  action?.reload();
+                } else {
+                  message.error('删除失败');
+                }
+              })
+              .catch((error) => {
+                console.error('删除错误:', error);
                 message.error('删除失败');
-              }
-            }).catch(error => {
-              console.error('删除错误:', error);
-              message.error('删除失败');
-            });
+              });
           }
         }}
-        menus={[
-          { key: 'delete', name: '删除' },
-        ]}
+        menus={[{ key: 'delete', name: '删除' }]}
       />,
     ],
   },

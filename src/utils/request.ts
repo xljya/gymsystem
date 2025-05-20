@@ -11,7 +11,7 @@ import { history } from "@@/core/history";
  */
 const request = extend({
     credentials: 'include', // 默认请求是否带上cookie
-    prefix: process.env.NODE_ENV === 'production' ? 'http://gym-backend.28082003.com' : undefined
+    prefix: process.env.NODE_ENV === 'production' ? 'https://gym-backend.28082003.com' : undefined
     // requestType: 'form',
 });
 
