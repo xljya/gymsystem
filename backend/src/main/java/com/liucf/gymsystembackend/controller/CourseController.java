@@ -130,10 +130,10 @@ public class CourseController {
     }
 
     /**
-     * 分页获取课程列表（仅管理员）
+     * 分页获取课程列表
      */
     @PostMapping("/list/page")
-//    @AuthCheck(mustRole = MemberConstant.ADMIN_ROLE)
+    @AuthCheck(mustRole = MemberConstant.MEMBER_ROLE)
     public BaseResponse<Page<CourseVO>> listCourseByPage(@RequestBody CourseQueryRequest courseQueryRequest) {
         ThrowUtils.throwIf(courseQueryRequest == null, ErrorCode.PARAMS_ERROR);
         long current = courseQueryRequest.getCurrent();
@@ -148,7 +148,7 @@ public class CourseController {
     }
 
     @GetMapping("/list/category/{categoryId}")
-//    @AuthCheck(mustRole = MemberConstant.ADMIN_ROLE)
+    @AuthCheck(mustRole = MemberConstant.MEMBER_ROLE)
     public BaseResponse<List<CourseVO>> listCourseByCategoryId(@PathVariable Long categoryId) {
         if (categoryId == null || categoryId <= 0) {
             throw new BusinessException(ErrorCode.PARAMS_ERROR);
@@ -158,7 +158,7 @@ public class CourseController {
     }
 
     @GetMapping("/list/coach/{coachId}")
-//    @AuthCheck(mustRole = MemberConstant.ADMIN_ROLE)
+    @AuthCheck(mustRole = MemberConstant.MEMBER_ROLE)
     public BaseResponse<List<CourseVO>> listCourseByCoachId(@PathVariable Long coachId) {
         if (coachId == null || coachId <= 0) {
             throw new BusinessException(ErrorCode.PARAMS_ERROR);

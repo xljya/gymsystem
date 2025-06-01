@@ -64,4 +64,24 @@ public class Goods {
      * 是否删除(0-未删除,1-已删除)
      */
     private Integer isDelete;
+
+    /**
+     * 商品类别ID
+     */
+    private Integer gdcategoryId;
+
+    /**
+     * 商品主图URL
+     */
+    private String goodAvatar;
+
+    /**
+     * 商品特点（"25g 乳清蛋白/份","添加BCAA 支链氨基酸"）
+     */
+    private Object features;
+
+    /**
+     * 规格参数（JSON格式，如{"颜色":"红色","重量":"500g"}）
+     */
+    private Object specifications;
 }

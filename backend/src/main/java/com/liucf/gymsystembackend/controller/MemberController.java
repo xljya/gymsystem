@@ -14,6 +14,7 @@ import com.liucf.gymsystembackend.model.dto.member.MemberLoginRequest;
 import com.liucf.gymsystembackend.model.dto.member.MemberQueryRequest;
 import com.liucf.gymsystembackend.model.dto.member.MemberRegisterRequest;
 import com.liucf.gymsystembackend.model.dto.member.MemberUpdateRequest;
+import com.liucf.gymsystembackend.model.dto.member.MemberPasswordUpdateRequest;
 import com.liucf.gymsystembackend.model.entity.Members;
 import com.liucf.gymsystembackend.model.vo.LoginMemberVO;
 import com.liucf.gymsystembackend.model.vo.MemberVO;
@@ -176,6 +177,80 @@ public class MemberController {
         List<MemberVO> memberVOList = membersService.getMemberVOList(memberPage.getRecords());
         memberVOPage.setRecords(memberVOList);
         return ResultUtils.success(memberVOPage);
+    }
+
+    /**
+     * 获取个人信息（当前登录会员）
+     */
+    @GetMapping("/get/my")
+    @AuthCheck(mustRole = MemberConstant.MEMBER_ROLE)
+    public BaseResponse<MemberVO> getMyMemberInfo(HttpServletRequest request) {
+        // 获取当前登录会员
+        Members loginMember = membersService.getLoginMember(request);
+        // 将完整会员信息转换为脱敏的 MemberVO
+        MemberVO memberVO = membersService.getMemberVO(loginMember);
+        return ResultUtils.success(memberVO);
+    }
+
+    /**
+     * 会员修改个人信息
+     */
+    @PostMapping("/update/my")
+    @AuthCheck(mustRole = MemberConstant.MEMBER_ROLE)
+    public BaseResponse<Boolean> updateMyInfo(@RequestBody MemberUpdateRequest memberUpdateRequest, 
+                                             HttpServletRequest request) {
+        // 参数校验
+        ThrowUtils.throwIf(memberUpdateRequest == null, ErrorCode.PARAMS_ERROR);
+        
+        // 获取当前登录会员
+        Members loginMember = membersService.getLoginMember(request);
+        Long memberId = loginMember.getId();
+        
+        // 设置会员ID，确保只能修改自己的信息
+        memberUpdateRequest.setId(memberId);
+        
+        // 创建一个新的 Members 对象用于更新
+        Members member = new Members();
+        BeanUtils.copyProperties(memberUpdateRequest, member);
+        
+        // 不允许修改的敏感字段设为 null，避免被更新
+        member.setMemberAccount(null);  // 不允许修改账号
+        member.setMemberRole(null);     // 不允许修改角色
+        member.setMemberPassword(null); // 不允许通过此接口修改密码
+        member.setCreateTime(null);     // 不允许修改创建时间
+        member.setIsDelete(null);       // 不允许修改删除标记
+        
+        // 更新会员信息
+        boolean result = membersService.updateById(member);
+        ThrowUtils.throwIf(!result, ErrorCode.OPERATION_ERROR);
+        
+        return ResultUtils.success(true);
+    }
+
+    /**
+     * 会员修改密码
+     */
+    @PostMapping("/update/password")
+    @AuthCheck(mustRole = MemberConstant.MEMBER_ROLE)
+    public BaseResponse<Boolean> updatePassword(@RequestBody MemberPasswordUpdateRequest passwordUpdateRequest, 
+                                               HttpServletRequest request) {
+        // 参数校验
+        ThrowUtils.throwIf(passwordUpdateRequest == null, ErrorCode.PARAMS_ERROR);
+        
+        // 获取当前登录会员
+        Members loginMember = membersService.getLoginMember(request);
+        Long memberId = loginMember.getId();
+        
+        // 修改密码
+        boolean result = membersService.updatePassword(
+            memberId,
+            passwordUpdateRequest.getOldPassword(),
+            passwordUpdateRequest.getNewPassword(),
+            passwordUpdateRequest.getCheckPassword()
+        );
+        
+        ThrowUtils.throwIf(!result, ErrorCode.OPERATION_ERROR);
+        return ResultUtils.success(true);
     }
 }
 

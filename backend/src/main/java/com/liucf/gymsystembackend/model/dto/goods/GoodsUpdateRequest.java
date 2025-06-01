@@ -16,7 +16,7 @@ public class GoodsUpdateRequest implements Serializable {
     /**
      * 商品ID
      */
-    private Long goodsId;
+    private Integer goodsId;
 
     /**
      * 商品名称
@@ -47,4 +47,24 @@ public class GoodsUpdateRequest implements Serializable {
      * 商品备注
      */
     private String remark;
+
+    /**
+     * 商品类别ID
+     */
+    private Integer gdcategoryId;
+
+    /**
+     * 商品主图URL
+     */
+    private String goodAvatar;
+
+    /**
+     * 商品特点（JSON数组格式字符串）
+     */
+    private String features;
+
+    /**
+     * 规格参数（JSON对象格式字符串）
+     */
+    private String specifications;
 } 

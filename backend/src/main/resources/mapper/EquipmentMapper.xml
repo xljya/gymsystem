@@ -6,15 +6,26 @@
 
     <resultMap id="BaseResultMap" type="com.liucf.gymsystembackend.model.entity.Equipment">
             <id property="eqId" column="eq_id" jdbcType="BIGINT"/>
+            <result property="eqcategoryId" column="eqcategory_id" jdbcType="BIGINT"/>
             <result property="eqName" column="eq_name" jdbcType="VARCHAR"/>
             <result property="eqText" column="eq_text" jdbcType="VARCHAR"/>
             <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
             <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
             <result property="isDelete" column="is_delete" jdbcType="TINYINT"/>
+            <result property="shortDescription" column="short_description" jdbcType="VARCHAR"/>
+            <result property="description" column="description" jdbcType="VARCHAR"/>
+            <result property="specifications" column="specifications" jdbcType="OTHER"/>
+            <result property="features" column="features" jdbcType="OTHER"/>
+            <result property="image" column="image" jdbcType="VARCHAR"/>
+            <result property="images" column="images" jdbcType="OTHER"/>
+            <result property="featured" column="featured" jdbcType="TINYINT"/>
     </resultMap>
 
     <sql id="Base_Column_List">
-        eq_id,eq_name,eq_text,
-        create_time,update_time,is_delete
+        eq_id,eqcategory_id,eq_name,
+        eq_text,create_time,update_time,
+        is_delete,short_description,description,
+        specifications,features,image,
+        images,featured
     </sql>
 </mapper>

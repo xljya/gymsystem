@@ -44,7 +44,22 @@ public class GoodsAddRequest implements Serializable {
     private String remark;
 
     /**
-     * 商品ID
+     * 商品类别ID
      */
-    private Long goodsId;
+    private Integer gdcategoryId;
+
+    /**
+     * 商品主图URL
+     */
+    private String goodAvatar;
+
+    /**
+     * 商品特点（JSON数组格式字符串，如："[\"25g 乳清蛋白/份\",\"添加BCAA 支链氨基酸\"]"）
+     */
+    private String features;
+
+    /**
+     * 规格参数（JSON对象格式字符串，如："{\"颜色\":\"红色\",\"重量\":\"500g\"}"）
+     */
+    private String specifications;
 } 

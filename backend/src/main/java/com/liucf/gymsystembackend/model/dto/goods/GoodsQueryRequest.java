@@ -20,12 +20,17 @@ public class GoodsQueryRequest extends PageRequest implements Serializable {
     /**
      * 商品ID
      */
-    private Long goodsId;
+    private Integer goodsId;
 
     /**
-     * 商品名称
+     * 商品名称 (用于模糊查询)
      */
     private String goodsName;
+
+    /**
+     * 商品类别ID (用于精确查询)
+     */
+    private Integer gdcategoryId;
 
     /**
      * 计量单位
