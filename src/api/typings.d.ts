@@ -47,15 +47,21 @@ declare namespace API {
     message?: string;
   };
 
+  type BaseResponseEquipmentCategoryVO_ = {
+    code?: number;
+    data?: EquipmentCategoryVO;
+    message?: string;
+  };
+
   type BaseResponseEquipmentVO_ = {
     code?: number;
     data?: EquipmentVO;
     message?: string;
   };
 
-  type BaseResponseGoods_ = {
+  type BaseResponseGoodsCategoryVO_ = {
     code?: number;
-    data?: Goods;
+    data?: GoodsCategoryVO;
     message?: string;
   };
 
@@ -80,6 +86,30 @@ declare namespace API {
   type BaseResponseInt_ = {
     code?: number;
     data?: number;
+    message?: string;
+  };
+
+  type BaseResponseIPageEquipmentCategoryVO_ = {
+    code?: number;
+    data?: IPageEquipmentCategoryVO_;
+    message?: string;
+  };
+
+  type BaseResponseIPageEquipmentVO_ = {
+    code?: number;
+    data?: IPageEquipmentVO_;
+    message?: string;
+  };
+
+  type BaseResponseIPageGoodsCategoryVO_ = {
+    code?: number;
+    data?: IPageGoodsCategoryVO_;
+    message?: string;
+  };
+
+  type BaseResponseIPageGoodsVO_ = {
+    code?: number;
+    data?: IPageGoodsVO_;
     message?: string;
   };
 
@@ -167,21 +197,9 @@ declare namespace API {
     message?: string;
   };
 
-  type BaseResponsePageEquipmentVO_ = {
-    code?: number;
-    data?: PageEquipmentVO_;
-    message?: string;
-  };
-
   type BaseResponsePageGoodsTransactionsVO_ = {
     code?: number;
     data?: PageGoodsTransactionsVO_;
-    message?: string;
-  };
-
-  type BaseResponsePageGoodsVO_ = {
-    code?: number;
-    data?: PageGoodsVO_;
     message?: string;
   };
 
@@ -535,39 +553,105 @@ declare namespace API {
 
   type Equipment = {
     createTime?: string;
+    description?: string;
     eqId?: number;
     eqName?: string;
     eqText?: string;
+    eqcategoryId?: number;
+    featured?: number;
+    features?: Record<string, any>;
+    image?: string;
+    images?: Record<string, any>;
     isDelete?: number;
+    shortDescription?: string;
+    specifications?: Record<string, any>;
     updateTime?: string;
   };
 
   type EquipmentAddRequest = {
+    description?: string;
     eqName?: string;
     eqText?: string;
+    eqcategoryId?: number;
+    featured?: number;
+    features?: string;
+    image?: string;
+    images?: string;
+    shortDescription?: string;
+    specifications?: string;
+  };
+
+  type EquipmentCategoryAddRequest = {
+    categoryDescription?: string;
+    categoryIcon?: string;
+    categoryImage?: string;
+    categoryName?: string;
+  };
+
+  type EquipmentCategoryQueryRequest = {
+    categoryName?: string;
+    current?: number;
+    eqcategoryId?: number;
+    pageSize?: number;
+    sortField?: string;
+    sortOrder?: string;
+  };
+
+  type EquipmentCategoryUpdateRequest = {
+    categoryDescription?: string;
+    categoryIcon?: string;
+    categoryImage?: string;
+    categoryName?: string;
+    eqcategoryId?: number;
+  };
+
+  type EquipmentCategoryVO = {
+    categoryDescription?: string;
+    categoryName?: string;
+    createTime?: string;
+    eqcategoryId?: number;
+    updateTime?: string;
   };
 
   type EquipmentQueryRequest = {
     current?: number;
     eqId?: number;
     eqName?: string;
-    eqStatus?: number;
+    eqcategoryId?: number;
+    featured?: number;
     pageSize?: number;
     sortField?: string;
     sortOrder?: string;
   };
 
   type EquipmentUpdateRequest = {
+    description?: string;
     eqId?: number;
     eqName?: string;
     eqText?: string;
+    eqcategoryId?: number;
+    featured?: number;
+    features?: string;
+    image?: string;
+    images?: string;
+    shortDescription?: string;
+    specifications?: string;
   };
 
   type EquipmentVO = {
+    categoryName?: string;
     createTime?: string;
+    description?: string;
     eqId?: number;
     eqName?: string;
-    eqText?: string;
+    eqcategoryId?: number;
+    featured?: number;
+    features?: string;
+    image?: string;
+    images?: string;
+    shortDescription?: string;
+    specifications?: string;
+    updateTime?: string;
   };
 
   type getCoachByIdUsingGETParams = {
@@ -605,14 +689,19 @@ declare namespace API {
     eqId?: number;
   };
 
-  type getEquipmentVOByIdUsingGETParams = {
-    /** eqId */
-    eqId?: number;
+  type getEquipmentCategoryVOByIdUsingGETParams = {
+    /** id */
+    id?: number;
   };
 
-  type getGoodsByIdUsingGETParams = {
-    /** goodsId */
-    goodsId?: number;
+  type getEquipmentVOByIdUsingGETParams = {
+    /** eqId */
+    eqId: number;
+  };
+
+  type getGoodsCategoryVOByIdUsingGETParams = {
+    /** id */
+    id?: number;
   };
 
   type getGoodsTransactionsByIdUsingGETParams = {
@@ -627,7 +716,7 @@ declare namespace API {
 
   type getGoodsVOByIdUsingGETParams = {
     /** goodsId */
-    goodsId?: number;
+    goodsId: number;
   };
 
   type getMemberByIdUsingGETParams = {
@@ -640,31 +729,56 @@ declare namespace API {
     id?: number;
   };
 
-  type Goods = {
-    createTime?: string;
-    goodsId?: number;
+  type GoodsAddRequest = {
+    features?: string;
+    gdcategoryId?: number;
+    goodAvatar?: string;
     goodsName?: string;
     inventory?: number;
-    isDelete?: number;
     remark?: string;
     sellPrice?: number;
+    specifications?: string;
     unit?: string;
     unitPrice?: number;
-    updateTime?: string;
   };
 
-  type GoodsAddRequest = {
-    goodsId?: number;
-    goodsName?: string;
-    inventory?: number;
-    remark?: string;
-    sellPrice?: number;
-    unit?: string;
-    unitPrice?: number;
+  type GoodsCategoryAddRequest = {
+    categoryDescription?: string;
+    categoryIcon?: string;
+    categoryImage?: string;
+    categoryName?: string;
+  };
+
+  type GoodsCategoryQueryRequest = {
+    categoryName?: string;
+    current?: number;
+    gdcategoryId?: number;
+    pageSize?: number;
+    sortField?: string;
+    sortOrder?: string;
+  };
+
+  type GoodsCategoryUpdateRequest = {
+    categoryDescription?: string;
+    categoryIcon?: string;
+    categoryImage?: string;
+    categoryName?: string;
+    gdcategoryId?: number;
+  };
+
+  type GoodsCategoryVO = {
+    categoryDescription?: string;
+    categoryIcon?: string;
+    categoryImage?: string;
+    categoryName?: string;
+    createTime?: string;
+    gdcategoryId?: number;
+    updateTime?: string;
   };
 
   type GoodsQueryRequest = {
     current?: number;
+    gdcategoryId?: number;
     goodsId?: number;
     goodsName?: string;
     isDelete?: number;
@@ -732,23 +846,66 @@ declare namespace API {
   };
 
   type GoodsUpdateRequest = {
+    features?: string;
+    gdcategoryId?: number;
+    goodAvatar?: string;
     goodsId?: number;
     goodsName?: string;
     inventory?: number;
     remark?: string;
     sellPrice?: number;
+    specifications?: string;
     unit?: string;
     unitPrice?: number;
   };
 
   type GoodsVO = {
+    categoryName?: string;
     createTime?: string;
+    features?: string;
+    gdcategoryId?: number;
+    goodAvatar?: string;
     goodsId?: number;
     goodsName?: string;
     inventory?: number;
     remark?: string;
     sellPrice?: number;
+    specifications?: string;
     unit?: string;
+    unitPrice?: number;
+    updateTime?: string;
+  };
+
+  type IPageEquipmentCategoryVO_ = {
+    current?: number;
+    pages?: number;
+    records?: EquipmentCategoryVO[];
+    size?: number;
+    total?: number;
+  };
+
+  type IPageEquipmentVO_ = {
+    current?: number;
+    pages?: number;
+    records?: EquipmentVO[];
+    size?: number;
+    total?: number;
+  };
+
+  type IPageGoodsCategoryVO_ = {
+    current?: number;
+    pages?: number;
+    records?: GoodsCategoryVO[];
+    size?: number;
+    total?: number;
+  };
+
+  type IPageGoodsVO_ = {
+    current?: number;
+    pages?: number;
+    records?: GoodsVO[];
+    size?: number;
+    total?: number;
   };
 
   type listCourseByCategoryIdUsingGETParams = {
@@ -788,6 +945,12 @@ declare namespace API {
   type MemberLoginRequest = {
     memberAccount?: string;
     memberPassword?: string;
+  };
+
+  type MemberPasswordUpdateRequest = {
+    checkPassword?: string;
+    newPassword?: string;
+    oldPassword?: string;
   };
 
   type MemberQueryRequest = {
@@ -888,26 +1051,10 @@ declare namespace API {
     total?: number;
   };
 
-  type PageEquipmentVO_ = {
-    current?: number;
-    pages?: number;
-    records?: EquipmentVO[];
-    size?: number;
-    total?: number;
-  };
-
   type PageGoodsTransactionsVO_ = {
     current?: number;
     pages?: number;
     records?: GoodsTransactionsVO[];
-    size?: number;
-    total?: number;
-  };
-
-  type PageGoodsVO_ = {
-    current?: number;
-    pages?: number;
-    records?: GoodsVO[];
     size?: number;
     total?: number;
   };

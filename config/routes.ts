@@ -95,6 +95,13 @@ const routes = [
     access: 'canMember',
   },
   {
+    path: '/member/settings',
+    name: '个人设置',
+    component: './Member/Settings',
+    hideInMenu: true,
+    access: 'canMember',
+  },
+  {
     path: '/admin/memberManage',
     name: '会员管理',
     icon: 'UserOutlined',

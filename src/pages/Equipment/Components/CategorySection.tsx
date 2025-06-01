@@ -1,18 +1,17 @@
-
 import { Link } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
 import { Dumbbell, Bike } from "lucide-react";
 
 const categories = [
   {
-    id: 'cardio',
+    id: '1',
     name: '有氧器械',
     description: '提升心肺功能，增强耐力',
     icon: <Bike className="w-10 h-10 text-gym-accent" />,
     image: 'https://image.liucf.com/images/2025/05/715aaff5c48c04e1dd1cca498e8633cb.jpeg',
   },
   {
-    id: 'strength',
+    id: '2',
     name: '力量器械',
     description: '增强肌肉力量，塑造身体线条',
     icon: <Dumbbell className="w-10 h-10 text-gym-accent" />,
@@ -20,7 +19,7 @@ const categories = [
       'https://img.28082003.com//xlxlimg_1747424592083_3.jpg',
   },
   {
-    id: 'functional',
+    id: '3',
     name: '功能性训练器械',
     description: '提高身体协调性和灵活性',
     icon: <Dumbbell className="w-10 h-10 text-gym-accent" />,
@@ -28,7 +27,7 @@ const categories = [
       'https://img.28082003.com//xlxlimg_1747424871489_0.jpg',
   },
   {
-    id: 'accessories',
+    id: '4',
     name: '健身配件',
     description: '辅助训练，提高健身效果',
     icon: <Bike className="w-10 h-10 text-gym-accent" />,
@@ -50,7 +49,7 @@ const CategorySection = () => {
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {categories.map((category) => (
-            <Link key={category.id} to={`/equipment/all?category=${category.id}`}>
+            <Link key={category.id} to={`/equipment/all?category_id=${category.id}`}>
               <Card className="h-full overflow-hidden hover-scale">
                 <div className="h-48 relative overflow-hidden">
                   <img 

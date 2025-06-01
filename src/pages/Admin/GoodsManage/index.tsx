@@ -98,7 +98,7 @@ const columns: ProColumns<API.GoodsVO>[] = [
   },
   {
     title: '备注',
-    dataIndex: 'remark',
+    dataIndex: 'goodAvatar',
     hideInSearch: true,
   },
   {
@@ -234,7 +234,7 @@ export default () => {
                   // unitPrice: record.unitPrice,
                   sellPrice: record.sellPrice,
                   inventory: record.inventory,
-                  remark: record.remark,
+                  goodAvatar: record.goodAvatar,
                 },
               });
               console.log('更新商品响应:', res);
@@ -345,7 +345,7 @@ export default () => {
           ]}
         />
         <ProFormText
-          name="remark"
+          name="goodAvatar"
           label="备注"
         />
       </ModalForm>

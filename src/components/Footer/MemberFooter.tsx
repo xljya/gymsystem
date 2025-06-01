@@ -37,7 +37,7 @@ const MemberFooter = () => {
                 </svg>
               </a>
               {/* GitHub图标 */}
-              <a href="https://github.com/xljya" className="text-white hover:text-lesmills-red">
+              <a href="https://github.com/xljya/gymsystem" className="text-white hover:text-lesmills-red">
                 <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path
                     fillRule="evenodd"

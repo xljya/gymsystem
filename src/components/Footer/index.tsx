@@ -31,7 +31,7 @@ const Footer: React.FC = () => {
         {
           key: 'github',
           title: <GithubOutlined />, // 使用 GitHub 图标
-          href: 'https://github.com/xljya',
+          href: 'https://github.com/xljya/gymsystem',
           blankTarget: true
         },
         // 博客链接
