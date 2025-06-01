@@ -8,7 +8,9 @@ import * as courseCategoryController from './courseCategoryController';
 import * as courseController from './courseController';
 import * as coursePurchaseController from './coursePurchaseController';
 import * as courseScheduleController from './courseScheduleController';
+import * as equipmentCategoryController from './equipmentCategoryController';
 import * as equipmentController from './equipmentController';
+import * as goodsCategoryController from './goodsCategoryController';
 import * as goodsController from './goodsController';
 import * as goodsTransactionsController from './goodsTransactionsController';
 import * as memberController from './memberController';
@@ -20,7 +22,9 @@ export default {
   courseScheduleController,
   coursePurchaseController,
   equipmentController,
+  equipmentCategoryController,
   goodsController,
+  goodsCategoryController,
   goodsTransactionsController,
   memberController,
 };

@@ -88,6 +88,10 @@ export const AvatarDropdown: React.FC<GlobalHeaderRightProps> = ({ menu, childre
         history.push('/member/bookings');
         return;
       }
+      if (key === 'settings') {
+        history.push('/member/settings');
+        return;
+      }
       history.push(`/account/${key}`);
     },
     [],
@@ -124,11 +128,6 @@ export const AvatarDropdown: React.FC<GlobalHeaderRightProps> = ({ menu, childre
             label: '个人中心',
           },
           {
-            key: 'settings',
-            icon: <SettingOutlined />,
-            label: '个人设置',
-          },
-          {
             type: 'divider' as const,
           },
         ]
@@ -139,6 +138,11 @@ export const AvatarDropdown: React.FC<GlobalHeaderRightProps> = ({ menu, childre
             key: 'my-bookings',
             icon: <CalendarOutlined />,
             label: '我的预约',
+          },
+          {
+            key: 'settings',
+            icon: <SettingOutlined />,
+            label: '个人设置',
           },
         ]
       : []),

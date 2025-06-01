@@ -55,6 +55,14 @@ export async function getLoginMemberUsingGet(options?: { [key: string]: any }) {
   });
 }
 
+/** getMyMemberInfo GET /api/member/get/my */
+export async function getMyMemberInfoUsingGet(options?: { [key: string]: any }) {
+  return request<API.BaseResponseMemberVO_>('/api/member/get/my', {
+    method: 'GET',
+    ...(options || {}),
+  });
+}
+
 /** getMemberVOById GET /api/member/get/vo */
 export async function getMemberVoByIdUsingGet(
   // 叠加生成的Param类型 (非body参数swagger默认没有生成对象)
@@ -137,6 +145,36 @@ export async function updateMemberUsingPost(
   options?: { [key: string]: any },
 ) {
   return request<API.BaseResponseBoolean_>('/api/member/update', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: body,
+    ...(options || {}),
+  });
+}
+
+/** updateMyInfo POST /api/member/update/my */
+export async function updateMyInfoUsingPost(
+  body: API.MemberUpdateRequest,
+  options?: { [key: string]: any },
+) {
+  return request<API.BaseResponseBoolean_>('/api/member/update/my', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: body,
+    ...(options || {}),
+  });
+}
+
+/** updatePassword POST /api/member/update/password */
+export async function updatePasswordUsingPost(
+  body: API.MemberPasswordUpdateRequest,
+  options?: { [key: string]: any },
+) {
+  return request<API.BaseResponseBoolean_>('/api/member/update/password', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

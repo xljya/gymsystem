@@ -331,9 +331,15 @@ declare namespace API {
     attendanceStatus?: number;
     bookingId?: number;
     bookingStatus?: number;
+    courseDate?: string;
+    courseName?: string;
     createTime?: string;
+    endTime?: string;
+    location?: string;
     memberId?: number;
+    memberName?: string;
     scheduleId?: number;
+    startTime?: string;
   };
 
   type CourseCategoryAddRequest = {
@@ -782,6 +788,12 @@ declare namespace API {
   type MemberLoginRequest = {
     memberAccount?: string;
     memberPassword?: string;
+  };
+
+  type MemberPasswordUpdateRequest = {
+    checkPassword?: string;
+    newPassword?: string;
+    oldPassword?: string;
   };
 
   type MemberQueryRequest = {

@@ -28,7 +28,7 @@ export interface Equipment {
 export const equipmentData: Equipment[] = [
   {
     // 器械ID，唯一标识
-    id: "treadmill-pro-2000",
+    id: "1",
     // 器械名称
     name: "高级跑步机 Pro 2000",
     // 分类（有氧器械）
@@ -67,7 +67,7 @@ export const equipmentData: Equipment[] = [
     featured: true
   },
   {
-    id: "power-rack-elite",
+    id: "4",
     name: "力量训练框架 Elite",
     category: "strength",
     shortDescription: "全功能力量训练框架，适合多种力量训练",
@@ -94,7 +94,7 @@ export const equipmentData: Equipment[] = [
     featured: true
   },
   {
-    id: "adjustable-dumbbell-set",
+    id: "6",
     name: "可调节哑铃套装",
     category: "functional",
     shortDescription: "一套哑铃满足多种重量需求，节省空间",
@@ -123,7 +123,7 @@ export const equipmentData: Equipment[] = [
     featured: true
   },
   {
-    id: "exercise-bike-spinner",
+    id: "2",
     name: "动感单车 Spinner",
     category: "cardio",
     shortDescription: "专业级动感单车，提供家庭和健身房级别的骑行体验",

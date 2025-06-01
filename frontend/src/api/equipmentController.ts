@@ -67,7 +67,7 @@ export async function listEquipmentVoByPageUsingPost(
   body: API.EquipmentQueryRequest,
   options?: { [key: string]: any },
 ) {
-  return request<API.BaseResponsePageEquipmentVO_>('/api/equipment/list/page/vo', {
+  return request<API.BaseResponseIPageEquipmentVO_>('/api/equipment/list/page/vo', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

@@ -4,7 +4,7 @@ import { ShoppingBag, Package, Box, Gift } from "lucide-react";
 
 const categories = [
   {
-    id: 'supplements',
+    id: '1',
     name: '营养补剂',
     description: '蛋白粉、BCAA 等运动营养补给',
     icon: <Package className="w-10 h-10 text-blue-500" />,
@@ -12,7 +12,7 @@ const categories = [
       'https://img.28082003.com//xlxlimg_1747424875211_0.jpg',
   },
   {
-    id: 'apparel',
+    id: '2',
     name: '运动服饰',
     description: '速干 T 恤、运动短裤、瑜伽裤等专业服饰',
     icon: <ShoppingBag className="w-10 h-10 text-blue-500" />,
@@ -20,7 +20,7 @@ const categories = [
       'https://img.28082003.com//xlxlimg_1747424875212_1.jpg',
   },
   {
-    id: 'accessories',
+    id: '3',
     name: '健身配件',
     description: '泡沫轴、弹力带、护具手套等辅助配件',
     icon: <Box className="w-10 h-10 text-blue-500" />,
@@ -28,7 +28,7 @@ const categories = [
       'https://img.28082003.com//xlxlimg_1747424875214_2.jpg',
   },
   {
-    id: 'gear',
+    id: '4',
     name: '训练装备',
     description: '跳绳、壶铃、瑜伽垫等小型器械',
     icon: <Gift className="w-10 h-10 text-blue-500" />,
@@ -50,7 +50,7 @@ const CategorySection = () => {
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {categories.map((category) => (
-            <Link to={`/goods/all?category=${category.id}`} key={category.id} className="hover-scale">
+            <Link to={`/goods/all?goods_category_id=${category.id}`} key={category.id} className="hover-scale">
               <Card className="h-full overflow-hidden border border-gray-200 rounded-lg shadow-md">
                 <div 
                   className="h-48 bg-cover bg-center"

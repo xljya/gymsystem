@@ -1,7 +1,7 @@
 export interface GoodsItem {
   id: string;
   goodsName: string;
-  remark: string; // 图片链接
+  goodAvatar: string; // 图片链接
   sellPrice: number;
   inventory: number;
   description: string;
@@ -22,7 +22,7 @@ export const goodsData: GoodsItem[] = [
   {
     id: "g001",
     goodsName: "高效乳清蛋白粉（巧克力味）",
-    remark: "https://img.28082003.com//xl20250512013748084.png",
+    goodAvatar: "https://img.28082003.com//xl20250512013748084.png",
     sellPrice: 299,
     inventory: 120,
     description: "每份含25g优质乳清蛋白，促进肌肉增长与修复，低脂低糖，口感顺滑易溶解。",
@@ -43,7 +43,7 @@ export const goodsData: GoodsItem[] = [
   {
     id: "g002",
     goodsName: "BCAA 支链氨基酸粉（西瓜味）",
-    remark: "https://img.28082003.com//xlxlimg_1747424606382_0.jpg",
+    goodAvatar: "https://img.28082003.com//xlxlimg_1747424606382_0.jpg",
     sellPrice: 229,
     inventory: 90,
     description: "2:1:1黄金比例BCAA，缓解运动疲劳，加速肌肉恢复，0糖0脂，清爽西瓜味。",
@@ -64,7 +64,7 @@ export const goodsData: GoodsItem[] = [
   {
     id: "g003",
     goodsName: "能量蛋白棒（巧克力焦糖）",
-    remark: "https://img.28082003.com//xlxlimg_1747424606384_1.jpg",
+    goodAvatar: "https://img.28082003.com//xlxlimg_1747424606384_1.jpg",
     sellPrice: 25,
     inventory: 300,
     description: "即食高蛋白能量棒，每根含20g蛋白质，外出携带方便，随时补充能量。",
@@ -87,7 +87,7 @@ export const goodsData: GoodsItem[] = [
   {
     id: "g004",
     goodsName: "速干运动T恤（男款）",
-    remark: "https://img.28082003.com//xlxlimg_1747424606385_2.jpg",
+    goodAvatar: "https://img.28082003.com//xlxlimg_1747424606385_2.jpg",
     sellPrice: 149,
     inventory: 200,
     description: "高性能速干面料，排汗透气，保持运动干爽，剪裁贴合展现身形。",
@@ -108,7 +108,7 @@ export const goodsData: GoodsItem[] = [
   {
     id: "g005",
     goodsName: "透气运动短裤（女款）",
-    remark: "https://img.28082003.com//xlxlimg_1747424606386_3.jpg",
+    goodAvatar: "https://img.28082003.com//xlxlimg_1747424606386_3.jpg",
     sellPrice: 129,
     inventory: 180,
     description: "轻盈速干面料配合内置安全短裤，运动更自如，适合跑步、训练及日常穿搭。",
@@ -129,7 +129,7 @@ export const goodsData: GoodsItem[] = [
   {
     id: "g006",
     goodsName: "高腰瑜伽紧身裤",
-    remark: "https://img.28082003.com//xlxlimg_1747424606388_4.jpg",
+    goodAvatar: "https://img.28082003.com//xlxlimg_1747424606388_4.jpg",
     sellPrice: 199,
     inventory: 150,
     description: "无缝针织技术，高弹贴合，塑形显瘦，适合瑜伽、普拉提与力量训练。",
@@ -152,7 +152,7 @@ export const goodsData: GoodsItem[] = [
   {
     id: "g007",
     goodsName: "专业泡沫轴",
-    remark: "https://img.28082003.com//xlxlimg_1747424606389_5.jpg",
+    goodAvatar: "https://img.28082003.com//xlxlimg_1747424606389_5.jpg",
     sellPrice: 99,
     inventory: 110,
     description: "EVA 高密度泡沫轴，帮助筋膜放松，缓解肌肉紧张，提升运动表现。",
@@ -173,7 +173,7 @@ export const goodsData: GoodsItem[] = [
   {
     id: "g008",
     goodsName: "多功能弹力带套装",
-    remark: "https://img.28082003.com//xlxlimg_1747424606390_6.jpg",
+    goodAvatar: "https://img.28082003.com//xlxlimg_1747424606390_6.jpg",
     sellPrice: 159,
     inventory: 140,
     description: "五档阻力等级，天然乳胶，满足力量训练、康复训练等多种需求，附便携收纳袋。",
@@ -194,7 +194,7 @@ export const goodsData: GoodsItem[] = [
   {
     id: "g009",
     goodsName: "防滑健身手套",
-    remark: "https://img.28082003.com//xlxlimg_1747424606392_7.jpg",
+    goodAvatar: "https://img.28082003.com//xlxlimg_1747424606392_7.jpg",
     sellPrice: 89,
     inventory: 90,
     description: "透气网眼设计与硅胶防滑掌垫，提供抓握力并减少茧子，魔术贴方便调节松紧。",
@@ -217,7 +217,7 @@ export const goodsData: GoodsItem[] = [
   {
     id: "g010",
     goodsName: "专业调速钢丝跳绳",
-    remark: "https://img.28082003.com//xlxlimg_1747424606393_8.jpg",
+    goodAvatar: "https://img.28082003.com//xlxlimg_1747424606393_8.jpg",
     sellPrice: 79,
     inventory: 100,
     description: "轴承连接旋转顺畅，长度可调，适合高强度间歇训练与燃脂。",
@@ -238,7 +238,7 @@ export const goodsData: GoodsItem[] = [
   {
     id: "g011",
     goodsName: "环保TPE瑜伽垫",
-    remark: "https://img.28082003.com//xlxlimg_1747424606395_9.jpg",
+    goodAvatar: "https://img.28082003.com//xlxlimg_1747424606395_9.jpg",
     sellPrice: 139,
     inventory: 120,
     description: "6mm 双层结构，防滑纹理，提供优异支撑与缓冲，附便携背带。",
@@ -259,7 +259,7 @@ export const goodsData: GoodsItem[] = [
   {
     id: "g012",
     goodsName: "8KG 涂层壶铃",
-    remark: "https://image.liucf.com/images/2025/05/6c7b2438179189a4a766a78ee01d55f1.png",
+    goodAvatar: "https://image.liucf.com/images/2025/05/6c7b2438179189a4a766a78ee01d55f1.png",
     sellPrice: 249,
     inventory: 60,
     description: "铸铁材质外覆彩色乙烯基涂层，保护地面，人体工学把手舒适易握。",
