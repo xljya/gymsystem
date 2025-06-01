@@ -1,6 +1,6 @@
 package com.liucf.gymsystembackend.controller;
 
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.liucf.gymsystembackend.annotation.AuthCheck;
 import com.liucf.gymsystembackend.common.BaseResponse;
 import com.liucf.gymsystembackend.common.DeleteRequest;
@@ -20,10 +20,10 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
-import java.util.List;
+import javax.servlet.http.HttpServletRequest;
 
 /**
- * 器材接口
+ * 器械接口
  */
 @RestController
 @RequestMapping("/equipment")
@@ -34,21 +34,18 @@ public class EquipmentController {
     private EquipmentService equipmentService;
 
     /**
-     * 创建器材（仅管理员）
+     * 创建器械（仅管理员）
      */
     @PostMapping("/add")
     @AuthCheck(mustRole = MemberConstant.ADMIN_ROLE)
-    public BaseResponse<Long> addEquipment(@RequestBody EquipmentAddRequest equipmentAddRequest) {
+    public BaseResponse<Long> addEquipment(@RequestBody EquipmentAddRequest equipmentAddRequest, HttpServletRequest request) {
         ThrowUtils.throwIf(equipmentAddRequest == null, ErrorCode.PARAMS_ERROR);
-        Equipment equipment = new Equipment();
-        BeanUtils.copyProperties(equipmentAddRequest, equipment);
-        boolean result = equipmentService.addEquipment(equipment);
-        ThrowUtils.throwIf(!result, ErrorCode.OPERATION_ERROR);
-        return ResultUtils.success(equipment.getEqId());
+        Long newEquipmentId = equipmentService.addEquipment(equipmentAddRequest);
+        return ResultUtils.success(newEquipmentId);
     }
 
     /**
-     * 根据 id 获取器材（仅管理员）
+     * 根据 id 获取器械信息
      */
     @GetMapping("/get")
     @AuthCheck(mustRole = MemberConstant.ADMIN_ROLE)
@@ -60,61 +57,48 @@ public class EquipmentController {
     }
 
     /**
-     * 根据 id 获取脱敏的器材信息
+     * 根据 id 获取脱敏的器械信息
      */
     @GetMapping("/get/vo")
-    public BaseResponse<EquipmentVO> getEquipmentVOById(long eqId) {
-        BaseResponse<Equipment> response = getEquipmentById(eqId);
-        Equipment equipment = response.getData();
-        return ResultUtils.success(equipmentService.getEquipmentVO(equipment));
+    public BaseResponse<EquipmentVO> getEquipmentVOById(@RequestParam Long eqId, HttpServletRequest request) {
+        ThrowUtils.throwIf(eqId == null || eqId <= 0, ErrorCode.PARAMS_ERROR);
+        EquipmentVO equipmentVO = equipmentService.getEquipmentVOById(eqId, request);
+        ThrowUtils.throwIf(equipmentVO == null, ErrorCode.NOT_FOUND_ERROR, "器械不存在");
+        return ResultUtils.success(equipmentVO);
     }
 
     /**
-     * 删除器材（仅管理员）
+     * 删除器械（仅管理员）
      */
     @PostMapping("/delete")
     @AuthCheck(mustRole = MemberConstant.ADMIN_ROLE)
-    public BaseResponse<Boolean> deleteEquipment(@RequestBody DeleteRequest deleteRequest) {
-        if (deleteRequest == null || deleteRequest.getEqId() <= 0) {
-            throw new BusinessException(ErrorCode.PARAMS_ERROR);
-        }
-        boolean result = equipmentService.deleteEquipment(deleteRequest.getEqId());
-        if (!result) {
-            throw new BusinessException(ErrorCode.OPERATION_ERROR, "删除器材失败");
-        }
+    public BaseResponse<Boolean> deleteEquipment(@RequestBody DeleteRequest deleteRequest, HttpServletRequest request) {
+        ThrowUtils.throwIf(deleteRequest == null || deleteRequest.getId() == null || deleteRequest.getId() <= 0, ErrorCode.PARAMS_ERROR);
+        boolean result = equipmentService.deleteEquipment(deleteRequest.getId());
+        ThrowUtils.throwIf(!result, ErrorCode.OPERATION_ERROR, "删除器械失败");
         return ResultUtils.success(true);
     }
 
     /**
-     * 更新器材（仅管理员）
+     * 更新器械（仅管理员）
      */
     @PostMapping("/update")
     @AuthCheck(mustRole = MemberConstant.ADMIN_ROLE)
-    public BaseResponse<Boolean> updateEquipment(@RequestBody EquipmentUpdateRequest equipmentUpdateRequest) {
-        if (equipmentUpdateRequest == null || equipmentUpdateRequest.getEqId() == null) {
-            throw new BusinessException(ErrorCode.PARAMS_ERROR);
-        }
-        Equipment equipment = new Equipment();
-        BeanUtils.copyProperties(equipmentUpdateRequest, equipment);
-        boolean result = equipmentService.updateEquipment(equipment);
-        ThrowUtils.throwIf(!result, ErrorCode.OPERATION_ERROR);
+    public BaseResponse<Boolean> updateEquipment(@RequestBody EquipmentUpdateRequest equipmentUpdateRequest, HttpServletRequest request) {
+        ThrowUtils.throwIf(equipmentUpdateRequest == null || equipmentUpdateRequest.getEqId() == null, ErrorCode.PARAMS_ERROR);
+        boolean result = equipmentService.updateEquipment(equipmentUpdateRequest);
+        ThrowUtils.throwIf(!result, ErrorCode.OPERATION_ERROR, "更新器械失败");
         return ResultUtils.success(true);
     }
 
     /**
-     * 分页获取器材列表（仅管理员）
+     * 分页获取器械列表VO (对所有登录用户开放)
      */
     @PostMapping("/list/page/vo")
-    @AuthCheck(mustRole = MemberConstant.ADMIN_ROLE)
-    public BaseResponse<Page<EquipmentVO>> listEquipmentVOByPage(@RequestBody EquipmentQueryRequest equipmentQueryRequest) {
+    @AuthCheck(mustRole = MemberConstant.MEMBER_ROLE)
+    public BaseResponse<IPage<EquipmentVO>> listEquipmentVOByPage(@RequestBody EquipmentQueryRequest equipmentQueryRequest, HttpServletRequest request) {
         ThrowUtils.throwIf(equipmentQueryRequest == null, ErrorCode.PARAMS_ERROR);
-        long current = equipmentQueryRequest.getCurrent();
-        long pageSize = equipmentQueryRequest.getPageSize();
-        Page<Equipment> equipmentPage = equipmentService.page(new Page<>(current, pageSize),
-                equipmentService.getQueryWrapper(equipmentQueryRequest));
-        Page<EquipmentVO> equipmentVOPage = new Page<>(current, pageSize, equipmentPage.getTotal());
-        List<EquipmentVO> equipmentVOList = equipmentService.getEquipmentVOList(equipmentPage.getRecords());
-        equipmentVOPage.setRecords(equipmentVOList);
+        IPage<EquipmentVO> equipmentVOPage = equipmentService.getEquipmentVOPage(equipmentQueryRequest, request);
         return ResultUtils.success(equipmentVOPage);
     }
 } 

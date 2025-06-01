@@ -92,4 +92,15 @@ public interface MembersService extends IService<Members> {
      * @return 查询包装器
      */
     QueryWrapper<Members> getQueryWrapper(MemberQueryRequest memberQueryRequest);
+
+    /**
+     * 会员修改密码
+     *
+     * @param memberId 会员ID
+     * @param oldPassword 旧密码
+     * @param newPassword 新密码
+     * @param checkPassword 确认密码
+     * @return 是否成功
+     */
+    boolean updatePassword(Long memberId, String oldPassword, String newPassword, String checkPassword);
 }

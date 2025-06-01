@@ -15,12 +15,17 @@
             <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
             <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
             <result property="isDelete" column="is_delete" jdbcType="TINYINT"/>
+            <result property="gdcategoryId" column="gdcategory_id" jdbcType="INTEGER"/>
+            <result property="goodAvatar" column="good_avatar" jdbcType="VARCHAR"/>
+            <result property="features" column="features" jdbcType="OTHER"/>
+            <result property="specifications" column="specifications" jdbcType="OTHER"/>
     </resultMap>
 
     <sql id="Base_Column_List">
         goods_id,goods_name,unit,
         unit_price,sell_price,inventory,
         remark,create_time,update_time,
-        is_delete
+        is_delete,gdcategory_id,good_avatar,
+        features,specifications
     </sql>
 </mapper>

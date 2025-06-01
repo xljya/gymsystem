@@ -63,6 +63,8 @@ public class MembersServiceImpl extends ServiceImpl<MembersMapper, Members>
         member.setMemberPassword(encryptPassword);
         member.setMemberName("Stargaze");
         member.setMemberRole(MemberRoleEnum.MEMBER.getValue());
+        // 设置默认头像链接
+        member.setMemberAvatar("https://img.28082003.com//xl19e30fdf18962bc9.jpg");
         boolean saveResult = this.save(member);
         if (!saveResult) {
             throw new BusinessException(ErrorCode.SYSTEM_ERROR, "注册失败，数据库错误");
@@ -181,6 +183,42 @@ public class MembersServiceImpl extends ServiceImpl<MembersMapper, Members>
         queryWrapper.like(StrUtil.isNotBlank(memberName), "member_name", memberName);
         queryWrapper.orderBy(StrUtil.isNotBlank(sortField), "ascend".equals(sortOrder), sortField);
         return queryWrapper;
+    }
+
+    @Override
+    public boolean updatePassword(Long memberId, String oldPassword, String newPassword, String checkPassword) {
+        // 1. 校验参数
+        if (memberId == null || memberId <= 0) {
+            throw new BusinessException(ErrorCode.PARAMS_ERROR, "用户ID不合法");
+        }
+        if (StrUtil.hasBlank(oldPassword, newPassword, checkPassword)) {
+            throw new BusinessException(ErrorCode.PARAMS_ERROR, "参数为空");
+        }
+        if (newPassword.length() < 8 || checkPassword.length() < 8) {
+            throw new BusinessException(ErrorCode.PARAMS_ERROR, "新密码长度不能小于8位");
+        }
+        if (!newPassword.equals(checkPassword)) {
+            throw new BusinessException(ErrorCode.PARAMS_ERROR, "两次输入的新密码不一致");
+        }
+
+        // 2. 获取会员信息
+        Members member = this.getById(memberId);
+        if (member == null) {
+            throw new BusinessException(ErrorCode.NOT_FOUND_ERROR, "用户不存在");
+        }
+
+        // 3. 验证旧密码
+        String encryptOldPassword = getEncryptPassword(oldPassword);
+        if (!encryptOldPassword.equals(member.getMemberPassword())) {
+            throw new BusinessException(ErrorCode.PARAMS_ERROR, "原密码错误");
+        }
+
+        // 4. 更新密码
+        String encryptNewPassword = getEncryptPassword(newPassword);
+        member.setMemberPassword(encryptNewPassword);
+
+        // 5. 保存更新
+        return this.updateById(member);
     }
 }
 
