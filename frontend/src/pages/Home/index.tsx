@@ -12,10 +12,10 @@ import PartnersSection from './PartnersSection';
 import Programs from './Programs';
 
 const images = [
-  'https://image.liucf.com/images/2025/04/432f02f157d8bcdb87aba0ffcb94bd72.jpg',
-  'https://image.liucf.com/images/2025/04/b11b212ca4ce5bdfa335fb946bdccb0d.jpg',
-  'https://image.liucf.com/images/2025/04/5ae0501c13a43d599eb16976c1a53693.jpg',
-  'https://image.liucf.com/images/2025/04/afa5cf032bf8244b348581245473e76a.jpg',
+  'https://cdn.jsdelivr.net/gh/xljya/image/post/xlimg_1749058966224_0.jpg',
+  'https://cdn.jsdelivr.net/gh/xljya/image/post/xlimg_1749058966225_1.jpg',
+  'https://cdn.jsdelivr.net/gh/xljya/image/post/xlimg_1749058966227_2.jpg',
+  'https://cdn.jsdelivr.net/gh/xljya/image/post/xlimg_1749058966229_3.jpg',
 ];
 
 const HomePage: React.FC = () => {

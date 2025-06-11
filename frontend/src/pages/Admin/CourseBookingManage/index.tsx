@@ -1,12 +1,12 @@
-import request from '@/utils/request';
 import type { ActionType, ProColumns } from '@ant-design/pro-components';
-import { ProFormSelect, ProTable, TableDropdown, ModalForm, ProFormText, ProFormDateTimePicker } from '@ant-design/pro-components';
+import { ProFormSelect, ProTable, TableDropdown, ModalForm, ProFormText } from '@ant-design/pro-components';
 import { message } from 'antd';
 import { useRef, useState } from 'react';
 import {
   addBookingUsingPost,
   deleteBookingUsingPost,
   updateBookingUsingPost,
+  listBookingVoByPageUsingPost,
 } from '@/api/courseBookingController';
 
 const columns: ProColumns<API.CourseBookingVO>[] = [
@@ -79,22 +79,21 @@ const columns: ProColumns<API.CourseBookingVO>[] = [
       </a>,
       <TableDropdown
         key="actionGroup"
-        onSelect={(key) => {
+        onSelect={async (key) => {
           if (key === 'delete' && record.bookingId) {
-            deleteBookingUsingPost({ id: record.bookingId })
-              .then((res) => {
-                console.log('删除响应:', res);
-                if (res) {
-                  message.success('删除成功');
-                  action?.reload();
-                } else {
-                  message.error('删除失败');
-                }
-              })
-              .catch((error) => {
-                console.error('删除错误:', error);
+            try {
+              const res = await deleteBookingUsingPost({ id: record.bookingId });
+              console.log('删除响应:', res);
+              if (res) {
+                message.success('删除成功');
+                action?.reload();
+              } else {
                 message.error('删除失败');
-              });
+              }
+            } catch (error) {
+              console.error('删除错误:', error);
+              message.error('删除失败');
+            }
           }
         }}
         menus={[{ key: 'delete', name: '删除' }]}
@@ -144,17 +143,14 @@ export default () => {
           // 打印请求参数，便于调试
           console.log('请求参数:', params);
           // 发送 POST 请求到后端接口，获取课程预约分页数据
-          const res = await request('/api/course/booking/list/page/vo', {
-            method: 'POST',
-            data: {
-              // 搜索条件
-              current: params.current,
-              pageSize: params.pageSize,
-              bookingId: params.bookingId,
-              bookingStatus: params.bookingStatus,
-              attendanceStatus: params.attendanceStatus,
-            },
-          });
+          const res = await listBookingVoByPageUsingPost({
+            // 搜索条件
+            current: params.current,
+            pageSize: params.pageSize,
+            bookingId: params.bookingId,
+            bookingStatus: params.bookingStatus,
+            attendanceStatus: params.attendanceStatus,
+          }) as API.PageCourseBookingVO_;
           // 打印响应数据，便于调试
           console.log('响应数据:', res);
           // 返回 ProTable 需要的数据格式

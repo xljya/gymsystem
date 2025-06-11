@@ -7,12 +7,24 @@ import { Separator } from "@/components/ui/separator";
 import { ArrowLeft, PackageSearch } from "lucide-react";
 import { Spin, message, Empty } from "antd";
 import { getEquipmentVoByIdUsingGet } from "@/api/equipmentController";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 // 器械详情页
 const EquipmentDetail = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const [equipment, setEquipment] = useState<API.EquipmentVO | null>(null);
+  const [parsedData, setParsedData] = useState<{
+    images: string[];
+    features: string[];
+    specifications: Record<string, string>;
+  } | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
@@ -41,6 +53,17 @@ const EquipmentDetail = () => {
 
           if (equipmentData) {
             setEquipment(equipmentData);
+            // Parse JSON strings
+            try {
+              const images = equipmentData.images ? JSON.parse(equipmentData.images as string) : [];
+              const features = equipmentData.features ? JSON.parse(equipmentData.features as string) : [];
+              const specifications = equipmentData.specifications ? JSON.parse(equipmentData.specifications as string) : {};
+              setParsedData({ images, features, specifications });
+            } catch (e) {
+              console.error("Failed to parse equipment data JSON:", e);
+              message.error("解析器械数据时出错");
+              setParsedData({ images: [], features: [], specifications: {} });
+            }
           } else {
             if (!(response && typeof (response as any).code === 'number')) {
                 message.error("获取器械详情失败或数据为空");
@@ -105,6 +128,37 @@ const EquipmentDetail = () => {
     );
   };
 
+  const renderFeatures = (features: string[] | undefined | null) => {
+    if (!features || features.length === 0) return null;
+    return (
+      <div>
+        <h3 className="text-lg font-semibold text-gym-primary mb-2 mt-3">产品特性</h3>
+        <ul className="list-disc list-inside space-y-1 text-gray-700">
+          {features.map((feature, index) => (
+            <li key={index}>{feature}</li>
+          ))}
+        </ul>
+      </div>
+    );
+  };
+
+  const renderSpecifications = (specs: Record<string, string> | undefined | null) => {
+    if (!specs || Object.keys(specs).length === 0) return null;
+    return (
+      <div>
+        <h3 className="text-lg font-semibold text-gym-primary mb-2 mt-3">规格参数</h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-2 text-gray-700">
+          {Object.entries(specs).map(([key, value]) => (
+            <div key={key} className="flex">
+              <span className="font-semibold w-28 shrink-0">{key}:</span>
+              <span>{value}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  };
+
   return (
     <div className="min-h-[calc(100vh-150px)] flex flex-col">
       <main className="flex-grow py-8 md:py-12">
@@ -123,14 +177,37 @@ const EquipmentDetail = () => {
           <div className="bg-white shadow-xl rounded-lg p-6 md:p-10">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
               <div className="space-y-4">
-                <div className="aspect-w-1 aspect-h-1 overflow-hidden rounded-lg bg-gray-100 border p-2 flex items-center justify-center">
-                  <img 
-                    src={equipment.image || '/placeholder-image.png'}
-                    alt={equipment.eqName || '器械图片'}
-                    className="max-w-full max-h-[500px] object-contain"
-                    onError={(e) => { (e.target as HTMLImageElement).src = '/placeholder-image.png'; }}
-                  />
-                </div>
+                <Carousel className="w-full">
+                  <CarouselContent>
+                    {parsedData?.images && parsedData.images.length > 0 ? (
+                      parsedData.images.map((img, index) => (
+                        <CarouselItem key={index}>
+                          <div className="h-[650px] overflow-hidden rounded-lg border">
+                            <img
+                              src={img || '/placeholder-image.png'}
+                              alt={`${equipment.eqName || '器械图片'} ${index + 1}`}
+                              className="w-full h-full object-cover"
+                              onError={(e) => { (e.target as HTMLImageElement).src = '/placeholder-image.png'; }}
+                            />
+                          </div>
+                        </CarouselItem>
+                      ))
+                    ) : (
+                      <CarouselItem>
+                        <div className="h-[650px] overflow-hidden rounded-lg border">
+                          <img
+                            src={equipment.image || '/placeholder-image.png'}
+                            alt={equipment.eqName || '器械图片'}
+                            className="w-full h-full object-cover"
+                            onError={(e) => { (e.target as HTMLImageElement).src = '/placeholder-image.png'; }}
+                          />
+                        </div>
+                      </CarouselItem>
+                    )}
+                  </CarouselContent>
+                  <CarouselPrevious className="left-2" />
+                  <CarouselNext className="right-2" />
+                </Carousel>
               </div>
 
               <div className="flex flex-col">
@@ -150,8 +227,8 @@ const EquipmentDetail = () => {
                     <span className="font-semibold text-gray-600">设备ID:</span> {equipment.eqId}
                   </p>
                   {renderSection("详细描述", equipment.description)}
-                  {renderSection("特性", equipment.features)}
-                  {renderSection("规格参数", equipment.specifications)}
+                  {renderFeatures(parsedData?.features)}
+                  {renderSpecifications(parsedData?.specifications)}
                   {equipment.createTime && (
                     <p className="mt-3">
                       <span className="font-semibold text-gray-600">上架日期:</span> {new Date(equipment.createTime).toLocaleDateString()}

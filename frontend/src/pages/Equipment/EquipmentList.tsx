@@ -128,17 +128,19 @@ const EquipmentList = () => {
       const queryParams: API.EquipmentQueryRequest = {
         current: currentPage,
         pageSize,
-        // Using 'as any' for eqcategoryId temporarily. IMPORTANT: Resolve Linter/type issue.
         eqcategoryId: categoryIdToQuery === "0" ? undefined : Number(categoryIdToQuery) as any,
       };
-      const response = await listEquipmentVoByPageUsingPost(queryParams) as API.PageEquipmentVO_;
+      const response: any = await listEquipmentVoByPageUsingPost(queryParams);
       console.log("[EquipmentList] Equipments API response:", JSON.stringify(response, null, 2));
+
+      const records = response?.records || response?.data?.records;
+      const total = response?.total || response?.data?.total;
       
-      if (response && response.records) {
-        setEquipments(response.records);
+      if (records) {
+        setEquipments(records);
         setPagination(prev => ({
           ...prev,
-          total: response.total || 0,
+          total: total || 0,
           current: currentPage,
         }));
       } else {

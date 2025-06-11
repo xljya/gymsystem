@@ -88,16 +88,16 @@
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
+  
   .gym-container {
     @apply container mx-auto px-4 md:px-8;
   }
+  
   /* 卡片悬停放大 */
   .hover-scale {
     @apply transition-transform duration-300 hover:scale-105;
   }
-}
 
-@layer base {
   * {
     @apply border-border;
   }
@@ -121,7 +121,6 @@
   h3 {
     @apply text-xl md:text-2xl lg:text-3xl;
   }
-
 }
 
 @layer components {

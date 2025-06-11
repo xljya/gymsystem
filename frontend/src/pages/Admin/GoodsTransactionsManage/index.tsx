@@ -2,7 +2,12 @@ import type { ActionType, ProColumns } from '@ant-design/pro-components';
 import { ProTable, TableDropdown, ModalForm, ProFormText } from '@ant-design/pro-components';
 import { useRef, useState } from 'react';
 import { message } from 'antd';
-import request from '@/utils/request';
+import {
+  deleteGoodsTransactionsUsingPost,
+  addGoodsTransactionsUsingPost,
+  listGoodsTransactionsVoByPageUsingPost,
+  updateGoodsTransactionsUsingPost,
+} from '@/api/goodsTransactionsController';
 
 // 商品销售记录管理
 const columns: ProColumns<API.GoodsTransactions>[] = [
@@ -62,10 +67,7 @@ const columns: ProColumns<API.GoodsTransactions>[] = [
         onSelect={async (key) => {
           if (key === 'delete' && record.id) {
             try {
-              const res = await request('/api/goodsTransactions/delete', {
-                method: 'POST',
-                data: { id: record.id },
-              });
+              const res = await deleteGoodsTransactionsUsingPost({ id: record.id });
               console.log('删除销售记录响应:', res);
               if (res) {
                 message.success('删除成功');
@@ -91,10 +93,7 @@ export default () => {
 
   const handleAdd = async (fields: API.GoodsTransactionsAddRequest) => {
     try {
-      const res = await request('/api/goodsTransactions/add', {
-        method: 'POST',
-        data: fields,
-      });
+      const res = await addGoodsTransactionsUsingPost(fields);
       console.log('添加销售记录响应:', res);
       if (res) {
         message.success('添加成功');
@@ -128,23 +127,20 @@ export default () => {
         request={async (params) => {
           console.log('请求参数:', params);
           try {
-            const res = await request('/api/goodsTransactions/list/page/vo', {
-              method: 'POST',
-              data: {
-                current: params.current,
-                pageSize: params.pageSize,
-                goodsId: params.goodsId,
-                memberId: params.memberId,
-                countMin: params.countMin,
-                countMax: params.countMax,
-                priceMin: params.priceMin,
-                priceMax: params.priceMax,
-                createTimeStart: params.createTimeStart,
-                createTimeEnd: params.createTimeEnd,
-                sortField: params.sortField,
-                sortOrder: params.sortOrder,
-              },
-            });
+            const res = await listGoodsTransactionsVoByPageUsingPost({
+              current: params.current,
+              pageSize: params.pageSize,
+              goodsId: params.goodsId,
+              memberId: params.memberId,
+              countMin: params.countMin,
+              countMax: params.countMax,
+              priceMin: params.priceMin,
+              priceMax: params.priceMax,
+              createTimeStart: params.createTimeStart,
+              createTimeEnd: params.createTimeEnd,
+              sortField: params.sortField,
+              sortOrder: params.sortOrder,
+            }) as API.PageGoodsTransactionsVO_;
             console.log('响应数据:', res);
             return {
               data: res.records || [],
@@ -165,15 +161,12 @@ export default () => {
           type: 'single',
           onSave: async (key, record) => {
             try {
-              const res = await request('/api/goodsTransactions/update', {
-                method: 'POST',
-                data: {
-                  id: record.id,
-                  goodsId: record.goodsId,
-                  memberId: record.memberId,
-                  count: record.count,
-                  price: record.price,
-                },
+              const res = await updateGoodsTransactionsUsingPost({
+                id: record.id,
+                goodsId: record.goodsId,
+                memberId: record.memberId,
+                count: record.count,
+                price: record.price,
               });
               console.log('更新销售记录响应:', res);
               if (res) {

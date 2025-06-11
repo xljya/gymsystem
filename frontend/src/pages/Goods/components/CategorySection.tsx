@@ -9,7 +9,7 @@ const categories = [
     description: '蛋白粉、BCAA 等运动营养补给',
     icon: <Package className="w-10 h-10 text-blue-500" />,
     image:
-      'https://img.28082003.com//xlxlimg_1747424875211_0.jpg',
+      'https://cdn.jsdelivr.net/gh/xljya/image/post/xlimg_1749058937730_0.jpg',
   },
   {
     id: '2',
@@ -17,7 +17,7 @@ const categories = [
     description: '速干 T 恤、运动短裤、瑜伽裤等专业服饰',
     icon: <ShoppingBag className="w-10 h-10 text-blue-500" />,
     image:
-      'https://img.28082003.com//xlxlimg_1747424875212_1.jpg',
+      'https://cdn.jsdelivr.net/gh/xljya/image/post/xlimg_1749058937731_1.jpg',
   },
   {
     id: '3',
@@ -25,7 +25,7 @@ const categories = [
     description: '泡沫轴、弹力带、护具手套等辅助配件',
     icon: <Box className="w-10 h-10 text-blue-500" />,
     image:
-      'https://img.28082003.com//xlxlimg_1747424875214_2.jpg',
+      'https://cdn.jsdelivr.net/gh/xljya/image/post/xlimg_1749058937732_2.jpg',
   },
   {
     id: '4',
@@ -33,7 +33,7 @@ const categories = [
     description: '跳绳、壶铃、瑜伽垫等小型器械',
     icon: <Gift className="w-10 h-10 text-blue-500" />,
     image:
-      'https://img.28082003.com//xlxlimg_1747424875215_3.jpg',
+      'https://cdn.jsdelivr.net/gh/xljya/image/post/xlimg_1749058937733_3.jpg',
   },
 ];
 

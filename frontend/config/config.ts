@@ -130,5 +130,5 @@ export default defineConfig({
   },
   esbuildMinifyIIFE: true,
   requestRecord: {},
-  tailwindcss: {},
+  // tailwindcss: {},  // 临时禁用以测试超时问题
 });

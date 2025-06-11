@@ -4,7 +4,11 @@ import { Avatar, Button, Card, Form, Input, message, Space, Tabs, Divider, Radio
 import { useEffect, useState } from 'react';
 import { UserOutlined, LockOutlined, LoadingOutlined } from '@ant-design/icons';
 import type { TabsProps } from 'antd';
-import request from '@/utils/request';
+import {
+  getMyMemberInfoUsingGet,
+  updateMyInfoUsingPost,
+  updatePasswordUsingPost,
+} from '@/api/memberController';
 
 const MemberSettings = () => {
   const { initialState } = useModel('@@initialState');
@@ -17,41 +21,25 @@ const MemberSettings = () => {
   // 获取最新的用户信息
   const fetchUserInfo = async () => {
     try {
-      // 使用request直接调用API - 对应 getMyMemberInfoUsingGet
-      const res = await request('/api/member/get/my', {
-        method: 'GET'
-      });
+      // 使用标准API函数调用
+      const res = await getMyMemberInfoUsingGet() as API.MemberVO;
       console.log('获取用户信息响应完整内容:', JSON.stringify(res, null, 2));
       
-      // 检查返回数据格式，可能直接返回数据对象或返回包装的响应对象
-      if (res) {
-        let userData = res;
+      // 响应拦截器已经解包了数据，res 直接就是 MemberVO 对象
+      if (res && res.id && res.memberAccount) {
+        console.log('成功获取用户信息数据:', res);
+        // 更新表单数据
+        profileForm.setFieldsValue({
+          memberName: res.memberName || '',
+          memberAvatar: res.memberAvatar || '',
+          gender: res.gender, // 添加性别字段
+        });
         
-        // 如果响应是标准的包装格式 {code, data, message}
-        if (res.code === 0 && res.data) {
-          userData = res.data;
-        }
-        
-        // 判断必须字段是否存在，用于验证返回的是否是用户数据
-        if (userData.id && userData.memberAccount) {
-          console.log('成功获取用户信息数据:', userData);
-          // 更新表单数据
-          profileForm.setFieldsValue({
-            memberName: userData.memberName || '',
-            memberAvatar: userData.memberAvatar || '',
-            gender: userData.gender, // 添加性别字段
-          });
-          
-          // 更新页面状态
-          setPageStatus('ready');
-          return userData;
-        } else {
-          console.error('返回数据不是有效的用户信息:', userData);
-          setPageStatus('error');
-          return null;
-        }
+        // 更新页面状态
+        setPageStatus('ready');
+        return res;
       } else {
-        console.error('API响应为空');
+        console.error('返回数据不是有效的用户信息:', res);
         setPageStatus('error');
         return null;
       }
@@ -108,23 +96,17 @@ const MemberSettings = () => {
     console.log('提交的个人资料:', values);
     
     try {
-      // 使用request直接调用API - 对应 updateMyInfoUsingPost
-      const res = await request('/api/member/update/my', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        data: {
-          memberName: values.memberName,
-          memberAvatar: values.memberAvatar,
-          gender: values.gender, 
-        },
+      // 使用标准API函数调用
+      const res = await updateMyInfoUsingPost({
+        memberName: values.memberName,
+        memberAvatar: values.memberAvatar,
+        gender: values.gender,
       });
       
       console.log('更新个人资料响应:', JSON.stringify(res, null, 2));
       
-      // 无论响应格式如何，检查是否成功
-      if ((res && res.code === 0) || (res === true)) {
+      // 响应拦截器已经解包了数据，res 直接就是布尔值
+      if (res) {
         message.success('更新成功');
         
         // 更新全局状态中的用户信息
@@ -138,7 +120,7 @@ const MemberSettings = () => {
           }
         }
       } else {
-        message.error(`更新失败: ${res?.message || '未知错误'}`);
+        message.error(`更新失败: 未知错误`);
       }
     } catch (error) {
       console.error('更新个人资料错误:', error);
@@ -168,27 +150,21 @@ const MemberSettings = () => {
     console.log('提交密码修改请求');
     
     try {
-      // 使用request直接调用API - 对应 updatePasswordUsingPost
-      const res = await request('/api/member/update/password', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        data: {
-          oldPassword: values.oldPassword,
-          newPassword: values.newPassword,
-          checkPassword: values.confirmPassword, // 确保字段名与API匹配
-        },
+      // 使用标准API函数调用
+      const res = await updatePasswordUsingPost({
+        oldPassword: values.oldPassword,
+        newPassword: values.newPassword,
+        checkPassword: values.confirmPassword, // 确保字段名与API匹配
       });
       
       console.log('修改密码响应:', JSON.stringify(res, null, 2));
       
-      // 检查各种可能的成功响应格式
-      if ((res && res.code === 0) || (res === true)) {
+      // 响应拦截器已经解包了数据，res 直接就是布尔值
+      if (res) {
         message.success('密码修改成功');
         passwordForm.resetFields();
       } else {
-        message.error(`密码修改失败: ${res?.message || '未知错误'}`);
+        message.error(`密码修改失败: 未知错误`);
       }
     } catch (error) {
       console.error('修改密码错误:', error);

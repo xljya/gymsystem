@@ -7,7 +7,7 @@ import ScheduleSection from './fitness/ScheduleSection';
 import { useState, useEffect } from 'react';
 import { useParams, useModel } from '@umijs/max';
 import type { FitnessClass, Trainer, CategoryType, LinkedCategory } from '@/types';
-import type { API } from '@/services/ant-design-pro/typings';
+import type { API } from '@/api/typings';
 import { fetchCategories, fetchCourses, fetchTrainers } from '@/pages/Course/fitness/api';
 import { Spin, message } from 'antd';
 

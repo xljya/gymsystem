@@ -46,10 +46,12 @@ const getIntensityText = (intensity: 'low' | 'medium' | 'high') => {
 const ClassCard: React.FC<ClassCardProps> = ({ fitnessClass, trainer /*, currentUser */ }) => {
   // const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
 
+  // 🔧 修改：直接使用原图，移除压缩参数
   let imageUrl = fitnessClass.image;
-  if (imageUrl.includes('img.28082003.com') && !imageUrl.includes('!/fw/300')) {
-    const [base, query] = imageUrl.split('?');
-    imageUrl = `${base}!/fw/300${query ? '?' + query : ''}`;
+  
+  // 如果URL中包含 !/fw/300 参数，将其移除以加载原图
+  if (imageUrl.includes('!/fw/300')) {
+    imageUrl = imageUrl.replace('!/fw/300', '');
   }
 
   return (

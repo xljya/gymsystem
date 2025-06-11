@@ -3,7 +3,6 @@ import { ProTable, TableDropdown, ModalForm, ProFormText, ProFormSelect } from '
 import { useRef, useState } from 'react';
 import { Image, message, Tag } from 'antd';
 import { listMemberVoByPageUsingPost, updateMemberUsingPost, deleteMemberUsingPost, addMemberUsingPost } from '@/api/memberController';
-import request from '@/utils/request';
 
 const columns: ProColumns<API.MemberVO>[] = [
   {
@@ -44,7 +43,7 @@ const columns: ProColumns<API.MemberVO>[] = [
         <Image
           src={
             record.memberAvatar ||
-            'https://image.liucf.com/images/2025/05/90f433495b9f855d61092482c6bfaaef.png'
+            'https://cdn.jsdelivr.net/gh/xljya/image/post/xlimg_1749058911861_0.png'
           }
           width={100}
         />
@@ -97,22 +96,21 @@ const columns: ProColumns<API.MemberVO>[] = [
       </a>,
       <TableDropdown
         key="actionGroup"
-        onSelect={(key) => {
+        onSelect={async (key) => {
           if (key === 'delete' && record.id) {
-            deleteMemberUsingPost({ id: record.id })
-              .then((res) => {
-                console.log('删除响应:', res);
-                if (res) {
-                  message.success('删除成功');
-                  action?.reload();
-                } else {
-                  message.error('删除失败');
-                }
-              })
-              .catch((error) => {
-                console.error('删除错误:', error);
+            try {
+              const res = await deleteMemberUsingPost({ id: record.id });
+              console.log('删除响应:', res);
+              if (res) {
+                message.success('删除成功');
+                action?.reload();
+              } else {
                 message.error('删除失败');
-              });
+              }
+            } catch (error) {
+              console.error('删除错误:', error);
+              message.error('删除失败');
+            }
           }
         }}
         menus={[{ key: 'delete', name: '删除' }]}
@@ -160,17 +158,14 @@ export default () => {
         ]}
         request={async (params) => {
           console.log('请求参数:', params);
-          const res = await request('/api/member/list/page/vo', {
-            method: 'POST',
-            data: {
-              current: params.current,
-              pageSize: params.pageSize,
-              memberName: params.memberName,
-              memberAccount: params.memberAccount,
-              memberRole: params.memberRole,
-              gender: params.gender,
-            },
-          });
+          const res = await listMemberVoByPageUsingPost({
+            current: params.current,
+            pageSize: params.pageSize,
+            memberName: params.memberName,
+            memberAccount: params.memberAccount,
+            memberRole: params.memberRole,
+            gender: params.gender,
+          }) as API.PageMemberVO_;
           console.log('响应数据:', res);
           return {
             data: res.records || [],

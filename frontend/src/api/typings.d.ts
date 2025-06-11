@@ -283,6 +283,7 @@ declare namespace API {
     coachAvatar?: string;
     coachId?: number;
     coachName?: string;
+    coachSalary?: string;
     coachStatus?: number;
     courseType?: string;
     createTime?: string;

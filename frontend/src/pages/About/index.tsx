@@ -46,7 +46,7 @@ const About = () => {
             </div>
             <div className="rounded-lg overflow-hidden shadow-lg">
               <img
-                src="https://img.28082003.com//xlxlimg_1747424592095_15.jpg"
+                src="https://cdn.jsdelivr.net/gh/xljya/image/post/xlimg_1749058855565_17.jpg"
                 alt="健身房环境"
                 className="w-full h-auto object-cover"
               />
@@ -91,7 +91,7 @@ const About = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
             <div className="order-2 lg:order-1 rounded-lg overflow-hidden shadow-lg">
               <img
-                src="https://img.28082003.com//xlxlimg_1747424592093_13.jpg"
+                src="https://cdn.jsdelivr.net/gh/xljya/image/post/xlimg_1749058855563_15.jpg"
                 alt="专业团队"
                 className="w-full h-auto object-cover"
               />

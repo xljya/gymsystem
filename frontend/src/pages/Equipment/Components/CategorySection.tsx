@@ -8,7 +8,7 @@ const categories = [
     name: '有氧器械',
     description: '提升心肺功能，增强耐力',
     icon: <Bike className="w-10 h-10 text-gym-accent" />,
-    image: 'https://image.liucf.com/images/2025/05/715aaff5c48c04e1dd1cca498e8633cb.jpeg',
+    image: 'https://cdn.jsdelivr.net/gh/xljya/image/post/xlimg_1749058925165_0.jpeg',
   },
   {
     id: '2',
@@ -16,7 +16,7 @@ const categories = [
     description: '增强肌肉力量，塑造身体线条',
     icon: <Dumbbell className="w-10 h-10 text-gym-accent" />,
     image:
-      'https://img.28082003.com//xlxlimg_1747424592083_3.jpg',
+      'https://cdn.jsdelivr.net/gh/xljya/image/post/xlimg_1749058925167_1.jpg',
   },
   {
     id: '3',
@@ -24,7 +24,7 @@ const categories = [
     description: '提高身体协调性和灵活性',
     icon: <Dumbbell className="w-10 h-10 text-gym-accent" />,
     image:
-      'https://img.28082003.com//xlxlimg_1747424871489_0.jpg',
+      'https://cdn.jsdelivr.net/gh/xljya/image/post/xlimg_1749058925167_2.jpg',
   },
   {
     id: '4',
@@ -32,7 +32,7 @@ const categories = [
     description: '辅助训练，提高健身效果',
     icon: <Bike className="w-10 h-10 text-gym-accent" />,
     image:
-      'https://img.28082003.com//xlxlimg_1747424592088_9.jpg',
+      'https://cdn.jsdelivr.net/gh/xljya/image/post/xlimg_1749058855560_11.jpg',
   },
 ];
 
