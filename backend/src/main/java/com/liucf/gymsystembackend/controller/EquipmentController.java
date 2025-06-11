@@ -101,4 +101,30 @@ public class EquipmentController {
         IPage<EquipmentVO> equipmentVOPage = equipmentService.getEquipmentVOPage(equipmentQueryRequest, request);
         return ResultUtils.success(equipmentVOPage);
     }
+
+    /**
+     * 分页获取器械列表VO (GET请求，对所有登录用户开放)
+     */
+    @GetMapping("/list/page/vo")
+    @AuthCheck(mustRole = MemberConstant.MEMBER_ROLE)
+    public BaseResponse<IPage<EquipmentVO>> listEquipmentVOByPageGet(
+            @RequestParam(defaultValue = "1") long current,
+            @RequestParam(defaultValue = "10") long pageSize,
+            @RequestParam(required = false) Long eqId,
+            @RequestParam(required = false) String eqName,
+            @RequestParam(required = false) Long eqcategoryId,
+            @RequestParam(required = false) Integer featured,
+            HttpServletRequest request) {
+        
+        EquipmentQueryRequest equipmentQueryRequest = new EquipmentQueryRequest();
+        equipmentQueryRequest.setCurrent((int) current);
+        equipmentQueryRequest.setPageSize((int) pageSize);
+        equipmentQueryRequest.setEqId(eqId);
+        equipmentQueryRequest.setEqName(eqName);
+        equipmentQueryRequest.setEqcategoryId(eqcategoryId);
+        equipmentQueryRequest.setFeatured(featured);
+        
+        IPage<EquipmentVO> equipmentVOPage = equipmentService.getEquipmentVOPage(equipmentQueryRequest, request);
+        return ResultUtils.success(equipmentVOPage);
+    }
 } 

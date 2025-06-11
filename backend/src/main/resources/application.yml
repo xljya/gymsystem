@@ -2,6 +2,10 @@ spring:
   application:
     name: gymsystem-backend # 应用名称
   # 默认 dev 环境
+  # 而项目中没有 application-dev.yml，Spring Boot 就不会加载任何额外配置文件（只会加载 application.yml）
+  # 先加载：application.yml（基础配置，通用配置）
+  # 再加载：application-dev.yml（根据激活的 prod profile）
+  # 最终结果：application-dev.yml 中的属性会覆盖掉 application.yml 中相同的属性。
   profiles:
     active: dev
   # 支持 swagger3
@@ -10,10 +14,10 @@ spring:
       matching-strategy: ant_path_matcher
   session:
     store-type: none
-  # 数据库配置
+  # 数据库配置，我的mysql8端口是3308
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/gymsystem
+    url: jdbc:mysql://localhost:3308/gymsystem
     username: root
     password: 123456
 server:
