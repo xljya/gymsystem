@@ -179,6 +179,18 @@ public class EquipmentServiceImpl extends ServiceImpl<EquipmentMapper, Equipment
         }
         EquipmentVO equipmentVO = new EquipmentVO();
         BeanUtils.copyProperties(equipment, equipmentVO);
+        
+        // 处理JSON字段的类型转换
+        if (equipment.getSpecifications() != null) {
+            equipmentVO.setSpecifications(equipment.getSpecifications().toString());
+        }
+        if (equipment.getFeatures() != null) {
+            equipmentVO.setFeatures(equipment.getFeatures().toString());
+        }
+        if (equipment.getImages() != null) {
+            equipmentVO.setImages(equipment.getImages().toString());
+        }
+        
         if (equipment.getEqcategoryId() != null) {
             EquipmentCategory category = equipmentCategoryMapper.selectById(equipment.getEqcategoryId());
             if (category != null) {

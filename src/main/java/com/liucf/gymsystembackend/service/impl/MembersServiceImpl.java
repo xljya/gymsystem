@@ -64,7 +64,7 @@ public class MembersServiceImpl extends ServiceImpl<MembersMapper, Members>
         member.setMemberName("Stargaze");
         member.setMemberRole(MemberRoleEnum.MEMBER.getValue());
         // 设置默认头像链接
-        member.setMemberAvatar("https://img.28082003.com//xl19e30fdf18962bc9.jpg");
+        member.setMemberAvatar("https://image.liucf.com/images/2025/06/971a2d8a93fcf17ac3d3601c0ee820ed.jpeg");
         boolean saveResult = this.save(member);
         if (!saveResult) {
             throw new BusinessException(ErrorCode.SYSTEM_ERROR, "注册失败，数据库错误");
