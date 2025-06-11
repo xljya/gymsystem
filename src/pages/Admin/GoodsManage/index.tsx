@@ -2,7 +2,12 @@ import type { ActionType, ProColumns } from '@ant-design/pro-components';
 import { ProTable, TableDropdown, ModalForm, ProFormText, ProFormDigit } from '@ant-design/pro-components';
 import { useRef, useState } from 'react';
 import { message } from 'antd';
-import request from '@/utils/request';
+import {
+  deleteGoodsUsingPost,
+  addGoodsUsingPost,
+  listGoodsVoByPageUsingPost,
+  updateGoodsUsingPost,
+} from '@/api/goodsController';
 
 const columns: ProColumns<API.GoodsVO>[] = [
   {
@@ -128,10 +133,7 @@ const columns: ProColumns<API.GoodsVO>[] = [
         onSelect={async (key) => {
           if (key === 'delete' && record.goodsId) {
             try {
-              const res = await request('/api/goods/delete', {
-                method: 'POST',
-                data: { goodsId: record.goodsId },
-              });
+              const res = await deleteGoodsUsingPost({ goodsId: record.goodsId });
               console.log('删除商品响应:', res);
               if (res) {
                 message.success('删除成功');
@@ -159,10 +161,7 @@ export default () => {
 
   const handleAdd = async (fields: API.GoodsAddRequest) => {
     try {
-      const res = await request('/api/goods/add', {
-        method: 'POST',
-        data: fields,
-      });
+      const res = await addGoodsUsingPost(fields);
       console.log('添加商品响应:', res);
       if (res) {
         message.success('添加成功');
@@ -196,15 +195,12 @@ export default () => {
         request={async (params) => {
           console.log('请求参数:', params);
           try {
-            const res = await request('/api/goods/list/page/vo', {
-              method: 'POST',
-              data: {
-                current: params.current,
-                pageSize: params.pageSize,
-                goodsName: params.goodsName,
-                unit: params.unit,
-              },
-            });
+            const res = await listGoodsVoByPageUsingPost({
+              current: params.current,
+              pageSize: params.pageSize,
+              goodsName: params.goodsName,
+              unit: params.unit,
+            }) as API.IPageGoodsVO_;
             console.log('响应数据:', res);
             return {
               data: res.records || [],
@@ -225,17 +221,13 @@ export default () => {
           type: 'single',
           onSave: async (key, record) => {
             try {
-              const res = await request('/api/goods/update', {
-                method: 'POST',
-                data: {
-                  goodsId: record.goodsId,
-                  goodsName: record.goodsName,
-                  unit: record.unit,
-                  // unitPrice: record.unitPrice,
-                  sellPrice: record.sellPrice,
-                  inventory: record.inventory,
-                  goodAvatar: record.goodAvatar,
-                },
+              const res = await updateGoodsUsingPost({
+                goodsId: record.goodsId,
+                goodsName: record.goodsName,
+                unit: record.unit,
+                sellPrice: record.sellPrice,
+                inventory: record.inventory,
+                goodAvatar: record.goodAvatar,
               });
               console.log('更新商品响应:', res);
               if (res) {

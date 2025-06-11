@@ -2,8 +2,12 @@ import type { ActionType, ProColumns } from '@ant-design/pro-components';
 import { ProTable, TableDropdown, ModalForm, ProFormText } from '@ant-design/pro-components';
 import { useRef, useState } from 'react';
 import { message } from 'antd';
-import { updateCoursePurchaseUsingPost, deleteCoursePurchaseUsingPost, addCoursePurchaseUsingPost } from '@/api/coursePurchaseController';
-import request from '@/utils/request';
+  import { 
+    updateCoursePurchaseUsingPost, 
+    deleteCoursePurchaseUsingPost, 
+    addCoursePurchaseUsingPost,
+    listCoursePurchaseVoByPageUsingPost
+  } from '@/api/coursePurchaseController';
 
 const columns: ProColumns<API.CoursePurchaseVO>[] = [
   {
@@ -140,17 +144,14 @@ export default () => {
         ]}
         request={async (params) => {
           console.log('请求参数:', params);
-          const res = await request('/api/coursePurchase/list/page/vo', {
-            method: 'POST',
-            data: {
-              current: params.current,
-              pageSize: params.pageSize,
-              memberId: params.memberId,
-              courseId: params.courseId,
-              status: params.status,
-              paymentStatus: params.status,
-            },
-          });
+          const res = await listCoursePurchaseVoByPageUsingPost({
+            current: params.current,
+            pageSize: params.pageSize,
+            memberId: params.memberId,
+            courseId: params.courseId,
+            status: params.status,
+            paymentStatus: params.status,
+          }) as API.PageCoursePurchaseVO_;
           console.log('响应数据:', res);
           return {
             data: res.records || [],

@@ -2,8 +2,8 @@ import {
   addScheduleUsingPost,
   deleteScheduleUsingPost,
   updateScheduleUsingPost,
+  listScheduleByPageUsingPost,
 } from '@/api/courseScheduleController';
-import request from '@/utils/request';
 import type { ActionType, ProColumns } from '@ant-design/pro-components';
 import {
   ModalForm,
@@ -112,20 +112,20 @@ const columns: ProColumns<API.CourseScheduleVO>[] = [
       </a>,
       <TableDropdown
         key="actionGroup"
-        onSelect={(key) => {
+        onSelect={async (key) => {
           if (key === 'delete' && record.scheduleId) {
-            deleteScheduleUsingPost({ id: record.scheduleId })
-              .then((res) => {
-                if (res) {
-                  message.success('删除成功');
-                  action?.reload();
-                } else {
-                  message.error('删除失败');
-                }
-              })
-              .catch(() => {
-                message.error('删除操作异常');
-              });
+            try {
+              const res = await deleteScheduleUsingPost({ id: record.scheduleId });
+              if (res) {
+                message.success('删除成功');
+                action?.reload();
+              } else {
+                message.error('删除失败');
+              }
+            } catch (error) {
+              console.error('删除错误:', error);
+              message.error('删除操作异常');
+            }
           }
         }}
         menus={[{ key: 'delete', name: '删除' }]}
@@ -173,16 +173,13 @@ export default () => {
         request={async (params) => {
           console.log('请求参数:', params);
 
-          const res = await request('/api/course/schedule/list/page/vo', {
-            method: 'POST',
-            data: {
-              current: params.current,
-              pageSize: params.pageSize,
-              courseId: params.courseId,
-              coachId: params.coachId,
-              status: params.status,
-            },
-          });
+          const res = await listScheduleByPageUsingPost({
+            current: params.current,
+            pageSize: params.pageSize,
+            courseId: params.courseId,
+            coachId: params.coachId,
+            status: params.status,
+          }) as API.PageCourseScheduleVO_;
           console.log('响应数据:', res);
           return {
             data: res.records || [],

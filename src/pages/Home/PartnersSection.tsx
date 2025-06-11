@@ -9,37 +9,37 @@ const brandPartners = [
   {
     id: 1,
     name: '品牌 A',
-    logoUrl: 'https://image.liucf.com/images/2025/04/ffb30097ade2ef17775d42e7e3418ebf.avif',
+    logoUrl: 'https://cdn.jsdelivr.net/gh/xljya/image/post/xlimg_1749058975064_0.avif',
     linkUrl: 'https://www.cursor.com/',
   },
   {
     id: 2,
     name: '品牌 B',
-    logoUrl: 'https://image.liucf.com/images/2025/04/5e57bfd9dfb9fa01e057206d275539e5.webp',
+    logoUrl: 'https://cdn.jsdelivr.net/gh/xljya/image/post/xlimg_1749058975065_1.webp',
     linkUrl: 'https://chatgpt.com/',
   },
   {
     id: 3,
     name: '品牌 C',
-    logoUrl: 'https://image.liucf.com/images/2025/04/6e936a6d9a2ee84e02bc18a23736b7e8.png',
+    logoUrl: 'https://cdn.jsdelivr.net/gh/xljya/image/post/xlimg_1749058975067_2.png',
     linkUrl: 'https://www.deepseek.com/',
   },
   {
     id: 4,
     name: '品牌 D',
-    logoUrl: 'https://image.liucf.com/images/2025/04/92428c150b738025360250e8725c6d67.png',
+    logoUrl: 'https://cdn.jsdelivr.net/gh/xljya/image/post/xlimg_1749058975068_3.png',
     linkUrl: 'https://github.com/',
   },
   {
     id: 5,
     name: '品牌 E',
-    logoUrl: 'https://image.liucf.com/images/2025/05/e697701b4950608cdb41ec0ea923ccf3.svg',
+    logoUrl: 'https://cdn.jsdelivr.net/gh/xljya/image/post/xlimg_1749058975069_4.svg',
     linkUrl: 'https://lovable.dev/',
   },
   {
     id: 6,
     name: '品牌 F',
-    logoUrl: 'https://image.liucf.com/images/2025/04/d0e56d131bfb5f12169280b4ac424a3a.png',
+    logoUrl: 'https://cdn.jsdelivr.net/gh/xljya/image/post/xlimg_1749058975071_5.png',
     linkUrl: 'https://leonardo.ai/',
   },
 ];

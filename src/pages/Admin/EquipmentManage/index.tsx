@@ -2,8 +2,8 @@ import {
   addEquipmentUsingPost,
   deleteEquipmentUsingPost,
   updateEquipmentUsingPost,
+  listEquipmentVoByPageUsingPost,
 } from '@/api/equipmentController';
-import request from '@/utils/request';
 import type { ActionType, ProColumns } from '@ant-design/pro-components';
 import { ModalForm, ProFormText, ProTable, TableDropdown } from '@ant-design/pro-components';
 import { message } from 'antd';
@@ -35,7 +35,7 @@ const columns: ProColumns<API.EquipmentVO>[] = [
   },
   {
     title: '器材描述',
-    dataIndex: 'eqText',
+    dataIndex: 'description',
     hideInSearch: true,
   },
   {
@@ -62,22 +62,21 @@ const columns: ProColumns<API.EquipmentVO>[] = [
       </a>,
       <TableDropdown
         key="actionGroup"
-        onSelect={(key) => {
+        onSelect={async (key) => {
           if (key === 'delete' && record.eqId) {
-            deleteEquipmentUsingPost({ eqId: Number(record.eqId) })
-              .then((res) => {
-                console.log('删除响应:', res);
-                if (res) {
-                  message.success('删除成功');
-                  action?.reload();
-                } else {
-                  message.error('删除失败');
-                }
-              })
-              .catch((error) => {
-                console.error('删除错误:', error);
+            try {
+              const res = await deleteEquipmentUsingPost({ eqId: Number(record.eqId) });
+              console.log('删除响应:', res);
+              if (res) {
+                message.success('删除成功');
+                action?.reload();
+              } else {
                 message.error('删除失败');
-              });
+              }
+            } catch (error) {
+              console.error('删除错误:', error);
+              message.error('删除失败');
+            }
           }
         }}
         menus={[{ key: 'delete', name: '删除' }]}
@@ -124,14 +123,11 @@ export default () => {
         ]}
         request={async (params) => {
           console.log('请求参数:', params);
-          const res = await request('/api/equipment/list/page/vo', {
-            method: 'POST',
-            data: {
-              current: params.current,
-              pageSize: params.pageSize,
-              eqName: params.eqName,
-            },
-          });
+          const res = await listEquipmentVoByPageUsingPost({
+            current: params.current,
+            pageSize: params.pageSize,
+            eqName: params.eqName,
+          }) as API.IPageEquipmentVO_;
           console.log('响应数据:', res);
           return {
             data: res.records || [],
@@ -146,7 +142,7 @@ export default () => {
               const res = await updateEquipmentUsingPost({
                 eqId: record.eqId,
                 eqName: record.eqName,
-                eqText: record.eqText,
+                eqText: record.description,
               });
               console.log('更新响应:', res);
               if (res) {

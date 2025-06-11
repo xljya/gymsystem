@@ -2,8 +2,10 @@ import { PageContainer } from '@ant-design/pro-components';
 import type { ActionType, ProColumns } from '@ant-design/pro-components';
 import { ProTable } from '@ant-design/pro-components';
 import { useModel } from '@umijs/max';
-import { deleteMyBookingUsingPost } from '@/api/courseBookingController';
-import request from '@/utils/request';
+import {
+  deleteMyBookingUsingPost,
+  listMyBookingVoByPageUsingPost,
+} from '@/api/courseBookingController';
 import { useRef } from 'react';
 import { Button, Modal, message } from 'antd';
 
@@ -132,14 +134,11 @@ const MemberBookings = () => {
           console.log('会员预约-请求参数:', params);
           
           try {
-            // 使用与管理员相同的请求方式
-            const res = await request('/api/course/booking/list/page/vo/my', {
-              method: 'POST',
-              data: {
-                memberId: currentUser.id,
-                current: params.current,
-                pageSize: params.pageSize,
-              },
+            // 使用标准API函数调用
+            const res = await listMyBookingVoByPageUsingPost({
+              memberId: currentUser.id,
+              current: params.current,
+              pageSize: params.pageSize,
             });
             
             // 打印响应数据，便于调试

@@ -2,8 +2,8 @@ import {
   addCourseUsingPost,
   deleteCourseUsingPost,
   updateCourseUsingPost,
+  listCourseByPageUsingPost,
 } from '@/api/courseController';
-import request from '@/utils/request';
 import type { ActionType, ProColumns } from '@ant-design/pro-components';
 import {
   ModalForm,
@@ -74,22 +74,21 @@ const columns: ProColumns<API.CourseVO>[] = [
       </a>,
       <TableDropdown
         key="actionGroup"
-        onSelect={(key) => {
+        onSelect={async (key) => {
           if (key === 'delete' && record.courseId) {
-            deleteCourseUsingPost(record.courseId)
-              .then((res) => {
-                console.log('删除响应:', res);
-                if (res) {
-                  message.success('删除成功');
-                  action?.reload();
-                } else {
-                  message.error('删除失败');
-                }
-              })
-              .catch((error) => {
-                console.error('删除错误:', error);
+            try {
+              const res = await deleteCourseUsingPost(record.courseId);
+              console.log('删除响应:', res);
+              if (res) {
+                message.success('删除成功');
+                action?.reload();
+              } else {
                 message.error('删除失败');
-              });
+              }
+            } catch (error) {
+              console.error('删除错误:', error);
+              message.error('删除失败');
+            }
           }
         }}
         menus={[{ key: 'delete', name: '删除' }]}
@@ -131,15 +130,12 @@ export default () => {
         ]}
         request={async (params) => {
           console.log('请求参数:', params);
-          const res = await request('/api/course/list/page', {
-            method: 'POST',
-            data: {
-              current: params.current,
-              pageSize: params.pageSize,
-              courseId: params.courseId,
-              courseName: params.courseName,
-            },
-          });
+          const res = await listCourseByPageUsingPost({
+            current: params.current,
+            pageSize: params.pageSize,
+            courseId: params.courseId,
+            courseName: params.courseName,
+          }) as API.PageCourseVO_;
 
           return {
             data: res.records || [],

@@ -1,3 +1,4 @@
+import '../public/tailwind.css';
 import { getLoginMemberUsingGet } from '@/api/memberController';
 import { AvatarDropdown, AvatarName } from '@/components';
 import AdminFooter from '@/components/Footer';

@@ -13,7 +13,7 @@ const programsList = [
     title: '全部课程',
     description: '全部课程。',
     image:
-      'https://img.28082003.com//xlxlimg_1747424879777_0.jpg',
+      'https://cdn.jsdelivr.net/gh/xljya/image/post/xlimg_1749058985653_0.jpg',
     color: 'bg-red-500',
     link: '/course/0',
   },
@@ -22,7 +22,7 @@ const programsList = [
     title: '瑜伽',
     description: '瑜伽。',
     image:
-      'https://img.28082003.com//xlxlimg_1747424879778_1.jpg',
+      'https://cdn.jsdelivr.net/gh/xljya/image/post/xlimg_1749058985655_1.jpg',
     color: 'bg-blue-500',
     link: '/course/1',
   },
@@ -31,7 +31,7 @@ const programsList = [
     title: '格斗',
     description: '格斗。',
     image:
-      'https://img.28082003.com//xlxlimg_1747424879779_2.jpg',
+      'https://cdn.jsdelivr.net/gh/xljya/image/post/xlimg_1749058985656_2.jpg',
     color: 'bg-yellow-500',
     link: '/course/7',
   },
@@ -40,7 +40,7 @@ const programsList = [
     title: '力量训练',
     description: '力量训练。',
     image:
-      'https://img.28082003.com//xlxlimg_1747424879780_3.jpg',
+      'https://cdn.jsdelivr.net/gh/xljya/image/post/xlimg_1749058985656_3.jpg',
     color: 'bg-green-500',
     link: '/course/2',
   },

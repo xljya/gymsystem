@@ -2,8 +2,12 @@ import type { ActionType, ProColumns } from '@ant-design/pro-components';
 import { ProTable, TableDropdown, ModalForm, ProFormText, ProFormSelect, ProFormDatePicker } from '@ant-design/pro-components';
 import { useRef, useState } from 'react';
 import { Image, message, Tag } from 'antd';
-import { updateCoachUsingPost, deleteCoachUsingPost, addCoachUsingPost } from '@/api/coachController';
-import request from '@/utils/request';
+import {
+  updateCoachUsingPost,
+  deleteCoachUsingPost,
+  addCoachUsingPost,
+  listCoachVoByPageUsingPost,
+} from '@/api/coachController';
 
 // 教练管理
 const columns: ProColumns<API.CoachVO>[] = [
@@ -47,7 +51,7 @@ const columns: ProColumns<API.CoachVO>[] = [
         <Image
           src={
             record.coachAvatar ||
-            'https://image.liucf.com/images/2025/05/90f433495b9f855d61092482c6bfaaef.png'
+            'https://cdn.jsdelivr.net/gh/xljya/image/post/xlimg_1749058911861_0.png'
           }
           width={50}
           height={50}
@@ -127,22 +131,21 @@ const columns: ProColumns<API.CoachVO>[] = [
       </a>,
       <TableDropdown
         key="actionGroup"
-        onSelect={(key) => {
+        onSelect={async (key) => {
           if (key === 'delete' && record.coachId) {
-            deleteCoachUsingPost({ id: record.coachId })
-              .then((res) => {
-                console.log('删除响应:', res);
-                if (res) {
-                  message.success('删除成功');
-                  action?.reload();
-                } else {
-                  message.error('删除失败');
-                }
-              })
-              .catch((error) => {
-                console.error('删除错误:', error);
+            try {
+              const res = await deleteCoachUsingPost({ id: record.coachId });
+              console.log('删除响应:', res);
+              if (res) {
+                message.success('删除成功');
+                action?.reload();
+              } else {
                 message.error('删除失败');
-              });
+              }
+            } catch (error) {
+              console.error('删除错误:', error);
+              message.error('删除失败');
+            }
           }
         }}
         menus={[{ key: 'delete', name: '删除' }]}
@@ -158,12 +161,12 @@ export default () => {
   /**
    * 新增教练的表单是如何提交的？
    * 
-   * 1. 当用户点击“新增教练”按钮时，createModalVisible 设为 true，弹出 ModalForm 表单。
+   * 1. 当用户点击"新增教练"按钮时，createModalVisible 设为 true，弹出 ModalForm 表单。
    * 2. 用户填写表单后，点击提交，ModalForm 的 onFinish 会被触发。
    * 3. onFinish 会调用 handleAdd 方法，并将表单填写的数据（values）作为参数传入。
    * 4. handleAdd 方法内部会调用 addCoachUsingPost(fields) 向后端发送新增教练的请求。
-   * 5. 如果后端返回成功，弹出“添加成功”提示，关闭弹窗，并刷新表格数据。
-   * 6. 如果失败，则弹出“添加失败”提示。
+   * 5. 如果后端返回成功，弹出"添加成功"提示，关闭弹窗，并刷新表格数据。
+   * 6. 如果失败，则弹出"添加失败"提示。
    */
   const handleAdd = async (fields: API.CoachAddRequest) => {
     try {
@@ -204,20 +207,17 @@ export default () => {
           // 打印请求参数，便于调试
           console.log('请求参数:', params);
           // 发送 POST 请求到后端接口，获取教练分页数据
-          const res = await request('/api/coach/list/page/vo', {
-            method: 'POST',
-            data: {
-              // 当前页码
-              current: params.current,
-              // 每页条数
-              pageSize: params.pageSize,
-              // 搜索条件：教练姓名
-              coachName: params.coachName,
-              // 搜索条件：教练账号
-              coachAccount: params.coachAccount,
-              // 搜索条件：性别
-              gender: params.gender,
-            },
+          const res = await listCoachVoByPageUsingPost({
+            // 当前页码
+            current: params.current,
+            // 每页条数
+            pageSize: params.pageSize,
+            // 搜索条件：教练姓名
+            coachName: params.coachName,
+            // 搜索条件：教练账号
+            coachAccount: params.coachAccount,
+            // 搜索条件：性别
+            gender: params.gender,
           });
           // 打印响应数据，便于调试
           console.log('响应数据:', res);

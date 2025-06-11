@@ -1,10 +1,14 @@
 module.exports = {
   // Updated content paths
   content: [
-    "./src/**/*.{js,jsx,ts,tsx}",
-    "./src/pages/**/*.{js,jsx,ts,tsx}",
-    "./src/components/**/*.{js,jsx,ts,tsx}",
-    "./src/layouts/**/*.{js,jsx,ts,tsx}",
+    './src/app.tsx',
+    './src/global.tsx',
+    './src/pages/**/*.{js,jsx,ts,tsx}',
+    './src/components/**/*.{js,jsx,ts,tsx}',
+    './src/layouts/**/*.{js,jsx,ts,tsx}',
+    './src/services/**/*.{js,jsx,ts,tsx}',
+    './src/hooks/**/*.{js,jsx,ts,tsx}',
+    './src/utils/**/*.{js,jsx,ts,tsx}',
   ],
   // 启用 class 模式的暗色主题
   darkMode: ['class'],

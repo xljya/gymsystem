@@ -46,23 +46,21 @@ const CustomCarousel: React.FC = () => {
       title: 'BODYPUMP',
       description: '...', // 内容不再显示，可以保留数据或移除
       image:
-        'https://lmimirroralphapvr.azureedge.net/static/media/32448/d96dbe7e-e65c-43cc-b570-693385c7f7f4/lm-workouts-bodypump-equipment-960x560.jpg',
+        'https://cdn.jsdelivr.net/gh/xljya/image/post/lm-workouts-bodypump-equipment-960x560.jpg',
       link: '/equipment/all?category=strength',
     },
     {
       id: 2,
       title: 'BODYCOMBAT',
       description: '...',
-      image:
-        'https://img.28082003.com//xlxlimg_1747424871489_0.jpg',
+      image: 'https://cdn.jsdelivr.net/gh/xljya/image/post/20250605010316215.png',
       link: '/equipment/all?category=functional',
     },
     {
       id: 3,
       title: 'SHAPES',
       description: '...',
-      image:
-        'https://img.28082003.com//xlxlimg_1747424592088_9.jpg',
+      image: 'https://cdn.jsdelivr.net/gh/xljya/image/post/xlxlimg_1747424592088_9.jpg',
       link: '/equipment/all?category=accessories',
     },
   ];

@@ -1,5 +1,9 @@
-import { addCategoryUsingPost, deleteCategoryUsingPost, updateCategoryUsingPost } from '@/api/courseCategoryController';
-import request from '@/utils/request';
+import { 
+  addCategoryUsingPost, 
+  deleteCategoryUsingPost, 
+  updateCategoryUsingPost,
+  listCategoryByPageUsingPost
+} from '@/api/courseCategoryController';
 import type { ActionType, ProColumns } from '@ant-design/pro-components';
 import { ModalForm, ProFormText, ProTable, TableDropdown } from '@ant-design/pro-components';
 import { message } from 'antd';
@@ -68,22 +72,21 @@ const columns: ProColumns<API.CourseCategoryVO>[] = [
       </a>,
       <TableDropdown
         key="actionGroup"
-        onSelect={(key) => {
+        onSelect={async (key) => {
           if (key === 'delete' && record.categoryId) {
-            deleteCategoryUsingPost({ id: record.categoryId })
-              .then((res) => {
-                console.log('删除响应:', res);
-                if (res) {
-                  message.success('删除成功');
-                  action?.reload();
-                } else {
-                  message.error('删除失败');
-                }
-              })
-              .catch((error) => {
-                console.error('删除错误:', error);
+            try {
+              const res = await deleteCategoryUsingPost({ id: record.categoryId });
+              console.log('删除响应:', res);
+              if (res) {
+                message.success('删除成功');
+                action?.reload();
+              } else {
                 message.error('删除失败');
-              });
+              }
+            } catch (error) {
+              console.error('删除错误:', error);
+              message.error('删除失败');
+            }
           }
         }}
         menus={[{ key: 'delete', name: '删除' }]}
@@ -130,17 +133,13 @@ export default () => {
         request={async (params) => {
           // 打印请求参数，便于调试
           console.log('请求参数:', params);
-          // 发送 GET 请求到后端接口，获取课程类别分页数据
+          // 发送 POST 请求到后端接口，获取课程类别分页数据
           try {
-            const res = await request('/api/course/category/list/page/vo', {
-              method: 'POST',
-              // 搜索条件
-              data: {
-                current: params.current,
-                pageSize: params.pageSize,
-                categoryName: params.categoryName,
-              },
-            });
+            const res = await listCategoryByPageUsingPost({
+              current: params.current,
+              pageSize: params.pageSize,
+              categoryName: params.categoryName,
+            }) as API.PageCourseCategoryVO_;
             // 打印响应数据，便于调试
             console.log('响应数据:', res);
             // 返回 ProTable 需要的数据格式
