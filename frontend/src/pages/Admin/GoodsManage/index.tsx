@@ -1,7 +1,7 @@
 import type { ActionType, ProColumns } from '@ant-design/pro-components';
 import { ProTable, TableDropdown, ModalForm, ProFormText, ProFormDigit } from '@ant-design/pro-components';
 import { useRef, useState } from 'react';
-import { message } from 'antd';
+import { message, Image } from 'antd';
 import {
   deleteGoodsUsingPost,
   addGoodsUsingPost,
@@ -102,9 +102,19 @@ const columns: ProColumns<API.GoodsVO>[] = [
     },
   },
   {
-    title: '备注',
+    title: '图片',
     dataIndex: 'goodAvatar',
-    hideInSearch: true,
+    render: (_, record) => (
+      <Image
+        src={
+          record.goodAvatar ||
+          'https://cdn.jsdelivr.net/gh/xljya/image/post/xlimg_1749058911861_0.png'
+        }
+        width={100}
+        height={100}
+        style={{ objectFit: 'cover', borderRadius: '4px' }}
+      />
+    ),
   },
   {
     title: '创建时间',
@@ -147,9 +157,7 @@ const columns: ProColumns<API.GoodsVO>[] = [
             }
           }
         }}
-        menus={[
-          { key: 'delete', name: '删除' },
-        ]}
+        menus={[{ key: 'delete', name: '删除' }]}
       />,
     ],
   },
@@ -338,7 +346,8 @@ export default () => {
         />
         <ProFormText
           name="goodAvatar"
-          label="备注"
+          label="图片地址"
+          placeholder="请输入图片链接"
         />
       </ModalForm>
     </div>

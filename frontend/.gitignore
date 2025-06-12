@@ -13,6 +13,8 @@ url-map.json
 url-map-db.json
 
 replace-db-images.js
-
+src/.umi
+src/.umi-production
 
 url-map.json
+
