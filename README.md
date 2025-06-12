@@ -210,13 +210,11 @@ npm run dev
 
 访问地址：http://localhost:8000
 
+
+
 ### 启动后端
 
-```bash
-cd backend
-mvn clean install
-java -jar target/*.jar
-```
+配置一下Maven仓库、JDK、application.yml、在pom.xml Run Maven 即可运行项目。
 
 接口默认地址：http://localhost:8080
 
@@ -274,8 +272,12 @@ java -jar target/*.jar
 ## 可以完善地方（ai美化）
 
 1. 增加会员金额  现在商品购买 都是不需要花钱的，可以增加课程购买功能，器械预约功能。
+
 2. 对黑暗模式的兼容不太好。
+
 3. 管理员登录后，左上角健身房管理系统点击后跳转到/，提示没权限
-4.  后端返回字段远多余前端需要字段，数据冗余
-5. 
+
+4. 后端返回字段远多余前端需要字段，数据冗余
+
+   
 
