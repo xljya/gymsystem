@@ -8,12 +8,13 @@
 
 项目分为会员页面和管理员页面
 
-
 ### 注册
 
 ![image-20250605031221442](https://image.liucf.com/images/2025/06/b34f446471ae066906a71c9663ddf288.png)
 
 ### 登录
+
+> **会员账号是ceshi1，管理员账号是liucf1，会员和管理员密码都是12345678。**
 
 ![image-20250605031300228](https://image.liucf.com/images/2025/06/fdf8d9aa8e1040b5b18a8e72b53c3987.png)
 
@@ -81,21 +82,71 @@
 
 ### 管理员页面
 
+#### 欢迎
+
+![image-20250612152359522](https://image.liucf.com/images/2025/06/539d0ed8a49f7d65509b5071ce56a4f0.png)
+
+
+
+#### 会员管理
+
+![image-20250612152521092](https://image.liucf.com/images/2025/06/d6c6706fc2cff17857f35a55da3e3499.png)
+
+
+
+#### 课程管理
+
+![image-20250612152847071](https://image.liucf.com/images/2025/06/e21215dc854a892e6dd4f0f0352e4145.png)
+
+
+
+#### 课程类别管理
+
+![image-20250612152926045](https://image.liucf.com/images/2025/06/ae4c0547d39d008c68d87129dc4fc1c4.png)
 
 
 
 
 
+#### 课程排期管理
+
+![image-20250612153329827](https://image.liucf.com/images/2025/06/566c7c3392a0de45b8a9db70f0c69e8f.png)
 
 
+
+#### 课程预约管理
+
+![image-20250612153713706](https://image.liucf.com/images/2025/06/549fe4ac579a4063e60323ab2120518b.png)
+
+
+
+#### 教练管理
+
+![image-20250612153730747](https://image.liucf.com/images/2025/06/8c8360406b7eea455631ae2d0d7d32e2.png)
+
+
+
+#### 器械管理
+
+![image-20250612153755753](https://image.liucf.com/images/2025/06/ca18e41f49a1c4a4fa38febb4044ac3f.png)
+
+
+
+#### 商品管理
+
+![image-20250612173058312](https://image.liucf.com/images/2025/06/79b19dc365d92ccc355f8df448cf3ee4.png)
+
+
+
+
+
+#### 商品销售管理
+
+![image-20250612173123370](https://image.liucf.com/images/2025/06/ae294bcd838aff20fd1d51b36a5c3f4f.png)
 
 
 
 ---
-
-
-
-
 
 
 
@@ -222,5 +273,9 @@ java -jar target/*.jar
 
 ## 可以完善地方（ai美化）
 
-增加会员金额  现在买东西 都是不需要花钱的
+1. 增加会员金额  现在商品购买 都是不需要花钱的，可以增加课程购买功能，器械预约功能。
+2. 对黑暗模式的兼容不太好。
+3. 管理员登录后，左上角健身房管理系统点击后跳转到/，提示没权限
+4.  后端返回字段远多余前端需要字段，数据冗余
+5. 
 

@@ -1,0 +1,64 @@
+version: '3.8'
+
+services:
+  # 后端服务
+  backend:
+    container_name: gymsystem-backend
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"  # 映射后端端口，便于直接访问后端API进行调试
+    environment:
+      # Spring Boot 生产环境配置
+      - SPRING_PROFILES_ACTIVE=prod
+      # 如果有数据库配置，可以在这里添加
+      # - SPRING_DATASOURCE_URL=jdbc:mysql://db:3306/gymsystem
+      # - SPRING_DATASOURCE_USERNAME=root
+      # - SPRING_DATASOURCE_PASSWORD=password
+    networks:
+      - gymsystem-network
+    # 如果有数据库服务，可以添加依赖
+    # depends_on:
+    #   - db
+
+  # 前端服务
+  frontend:
+    container_name: gymsystem-frontend
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"      # 生产环境：将容器的80端口映射到主机的80端口
+      # - "8000:80"  # 开发环境：如果80端口被占用，可以使用8000端口
+    depends_on:
+      - backend        # 确保后端服务先启动
+    networks:
+      - gymsystem-network
+
+  # 可选：数据库服务（如果您使用Docker部署数据库）
+  # db:
+  #   container_name: gymsystem-db
+  #   image: mysql:8.0
+  #   environment:
+  #     - MYSQL_ROOT_PASSWORD=password
+  #     - MYSQL_DATABASE=gymsystem
+  #     - MYSQL_USER=user
+  #     - MYSQL_PASSWORD=password
+  #   ports:
+  #     - "3306:3306"
+  #   volumes:
+  #     - db_data:/var/lib/mysql
+  #     # 如果有初始化脚本，可以挂载到容器中
+  #     # - ./backend/src/main/resources/sql:/docker-entrypoint-initdb.d
+  #   networks:
+  #     - gymsystem-network
+
+# 定义网络
+networks:
+  gymsystem-network:
+    driver: bridge
+
+# 定义数据卷（如果使用数据库）
+# volumes:
+#   db_data:
