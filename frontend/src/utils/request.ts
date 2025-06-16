@@ -1,4 +1,4 @@
-/**
+﻿/**
  * 网络请求工具
  * 基于 umi-request 封装的请求工具，提供统一的请求配置和拦截器处理
  * 更详细的 api 文档: https://github.com/umijs/umi-request
@@ -12,8 +12,6 @@ import { history } from "@@/core/history";
  */
 const request = extend({
     credentials: 'include', // 默认请求携带 cookie，用于处理 session 认证
-    // 根据环境设置 API 基础路径：生产环境使用线上地址，开发环境使用本地代理
-    prefix: process.env.NODE_ENV === 'production' ? 'https://gym-backend.28082003.com' : undefined
     // requestType: 'form', // 可选：设置请求体类型为表单数据
 });
 
@@ -21,7 +19,7 @@ const request = extend({
  * 请求拦截器
  * 在每个请求发送前自动添加认证头信息
  */
-request.interceptors.request.use((url, options): any => {
+request.interceptors.request.use((url: any, options: any) => {
     // 控制台输出请求地址，便于调试
     console.log(`发起请求: ${url}`);
     
@@ -47,7 +45,7 @@ request.interceptors.request.use((url, options): any => {
  * 响应拦截器
  * 统一处理所有 HTTP 响应，包括成功和错误情况
  */
-request.interceptors.response.use(async (response): Promise<any> => {
+request.interceptors.response.use(async (response: any): Promise<any> => {
     // 克隆响应对象并解析为 JSON，避免流被消费后无法再次读取
     const res = await response.clone().json();
     console.log('响应数据:', res);

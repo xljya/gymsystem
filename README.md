@@ -269,15 +269,110 @@ npm run dev
 
 
 
-## 可以完善地方（ai美化）
+## 可以完善地方
 
-1. 增加会员金额  现在商品购买 都是不需要花钱的，可以增加课程购买功能，器械预约功能。
+1. **缺乏付费机制与功能拓展**  
+   当前商品购买功能未涉及任何支付逻辑，所有商品均可直接获取。建议引入**会员充值功能**，并进一步增加如**课程购买**、**器械预约**等增值服务模块，以增强系统的商业化能力和用户粘性。
 
-2. 对黑暗模式的兼容不太好。
+2. **黑暗模式兼容性不足**  
+   系统界面对暗色主题支持较差，部分组件在开启黑暗模式后显示异常，影响用户体验。建议优化暗黑模式下的 UI 样式兼容性，提升整体视觉一致性。
 
-3. 管理员登录后，左上角健身房管理系统点击后跳转到/，提示没权限
+3. **管理员首页跳转异常**  
+   管理员登录后点击左上角“健身房管理系统”Logo，会跳转至根路径 `/`，但该路径提示“无权限访问”。建议：  
+   - 设置正确的首页路由跳转逻辑；  
+   - 或为根路径配置合适的权限控制与展示内容。
 
-4. 后端返回字段远多余前端需要字段，数据冗余
+4. **后端接口字段冗余**  
+   当前后端返回的数据中包含大量前端未使用字段，造成接口数据冗余，不利于前端开发与维护。建议在接口设计阶段对返回字段进行精简，仅返回前端所需的核心数据，以优化数据传输效率和可读性。
 
-   
+
+
+
+
+
+
+ 
+# 项目部署
+为了方便，项目就部署在宝塔了，因为用的是腾讯云服务器，和宝塔有合作，所以不需要登录手机号，还不错。
+
+## 前端
+### 配置文件
+配置了生产环境的域名：src\utils\request. ts
+```ts
+const request = extend({
+    credentials: 'include', // 默认请求携带 cookie，用于处理 session 认证
+    // 根据环境设置 API 基础路径：生产环境使用线上地址，开发环境使用本地代理
+    prefix: process.env.NODE_ENV === 'production' ? 'https://gym-backend.28082003.com' : undefined
+    // requestType: 'form', // 可选：设置请求体类型为表单数据
+});
+```
+
+
+### 打包
+![image.png|300](https://image.liucf.com/images/2025/06/c95331df800f83aed49c6107f4a4aa47.png)
+
+### 部署
+#### PHP 项目
+>记得上传打包后的 dist 文件夹，然后将文件夹内容移动到网站根目录下
+>一般来说上传之后，ctrl+x，ctrl+v，然后删除 dist 文件夹即可。
+
+![image.png|300](https://image.liucf.com/images/2025/06/e49d19295d59bc0c8835233a012d0a2d.png)
+![image.png|300](https://image.liucf.com/images/2025/06/0b5a4dea51860d5e09c9644ffb3510c3.png)
+
+在网站设置里面添加一行配置，**主要用于防止直接访问子路由时出现 404 错误**：
+```nginx
+try_files $uri $uri/ /index.html;
+```
+![image.png|300](https://image.liucf.com/images/2025/06/63eead9b3570b6f053524d4dee8a21a2.png)
+
+至此，前端项目部署完毕。
+
+
+## 后端
+### 数据库
+**数据库导出**：
+![image.png|300](https://image.liucf.com/images/2025/06/4fccddc92172468645b048cc79dbece0.png)
+![image.png|300](https://image.liucf.com/images/2025/06/6fd0e6ba077ead70df73a994cf3479dd.png)
+
+**数据库导入**，先在宝塔面板创建数据库，权限设为所有人：
+![image.png|300](https://image.liucf.com/images/2025/06/f172425748ea63acb0ba15b72be26cf5.png)
+然后回到本地 mysql 进行连接：
+![image.png|300](https://image.liucf.com/images/2025/06/495bacb44af2793963e7346a8bd060ab.png)
+接着右键数据库，运行 SQL 脚本即可：
+![image.png|300](https://image.liucf.com/images/2025/06/ed54163a7c96f0b02a563da9f26ec91f.png)
+
+### 配置文件
+在 application. yml 的基础上，我写了一个 application-prod. yml，里面内容是云服务器的数据库端口、账号、密码：
+```yml
+spring:  
+  # 数据库配置  
+  datasource:  
+    driver-class-name: com.mysql.cj.jdbc.Driver  
+    url: jdbc:mysql://localhost:3306/gymsystem  
+    username: liucf  
+    password: **********
+```
+
+
+### 打包
+打包后端代码：
+![image.png|300](https://image.liucf.com/images/2025/06/d1939dd3e113534af0816332ba317219.png)
+
+
+### 部署
+#### Java 项目
+>记得上传 jar 包到自定义文件夹，我传到了/www/wwwroot/gym后端
+![image.png|300](https://image.liucf.com/images/2025/06/9bfd347c25895ebf28c5b22dc1ecca8a.png)
+![image.png|300](https://image.liucf.com/images/2025/06/c8c99c0624b46eda7688cca87ddad8a0.png)
+
+```cmd
+/www/server/java/jdk1.8.0_371/bin/java -jar  -Xmx1024M -Xms256M /www/wwwroot/gym后端/gymsystem-backend-0.0.1-SNAPSHOT.jar --spring.profiles.active=prod
+```
+
+
+#### 反向代理
+![image.png|300](https://image.liucf.com/images/2025/06/60aa9bcb1280eec89e76cffb5463d9a8.png)
+
+
+
 

@@ -19,6 +19,10 @@ services:
     depends_on:
       - frontend
       - backend
+    ulimits:
+      nofile:
+        soft: 65535
+        hard: 65535
 
   # 后端服务
   backend:
@@ -32,6 +36,12 @@ services:
       - SPRING_PROFILES_ACTIVE=prod
     networks:
       - gymsystem-network
+    extra_hosts:
+      - "host.docker.internal:host-gateway"  # ⭐ 添加这一行，支持容器内访问宿主机
+    ulimits:
+      nofile:
+        soft: 65535
+        hard: 65535
 
   # 前端服务
   frontend:
@@ -44,6 +54,10 @@ services:
       - backend
     networks:
       - gymsystem-network
+    ulimits:
+      nofile:
+        soft: 65535
+        hard: 65535
 
 # 定义网络
 networks:
