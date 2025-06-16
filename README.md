@@ -291,7 +291,7 @@ npm run dev
 
 
 
- 
+
 # 项目部署
 为了方便，项目就部署在宝塔了，因为用的是腾讯云服务器，和宝塔有合作，所以不需要登录手机号，还不错。
 
@@ -331,15 +331,15 @@ try_files $uri $uri/ /index.html;
 ## 后端
 ### 数据库
 **数据库导出**：
-![image.png|300](https://image.liucf.com/images/2025/06/4fccddc92172468645b048cc79dbece0.png)
+![image.png](https://image.liucf.com/images/2025/06/4fccddc92172468645b048cc79dbece0.png)
 ![image.png|300](https://image.liucf.com/images/2025/06/6fd0e6ba077ead70df73a994cf3479dd.png)
 
 **数据库导入**，先在宝塔面板创建数据库，权限设为所有人：
 ![image.png|300](https://image.liucf.com/images/2025/06/f172425748ea63acb0ba15b72be26cf5.png)
 然后回到本地 mysql 进行连接：
-![image.png|300](https://image.liucf.com/images/2025/06/495bacb44af2793963e7346a8bd060ab.png)
+![image.png](https://image.liucf.com/images/2025/06/495bacb44af2793963e7346a8bd060ab.png)
 接着右键数据库，运行 SQL 脚本即可：
-![image.png|300](https://image.liucf.com/images/2025/06/ed54163a7c96f0b02a563da9f26ec91f.png)
+![image.png](https://image.liucf.com/images/2025/06/ed54163a7c96f0b02a563da9f26ec91f.png)
 
 ### 配置文件
 在 application. yml 的基础上，我写了一个 application-prod. yml，里面内容是云服务器的数据库端口、账号、密码：
@@ -372,7 +372,6 @@ spring:
 
 #### 反向代理
 ![image.png|300](https://image.liucf.com/images/2025/06/60aa9bcb1280eec89e76cffb5463d9a8.png)
-
 
 
 
